@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Dispatch Clearance Report - {{record_id}}</title>
+<title>Site Receipt Report - {{record_id}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,168 +28,122 @@
   .kv-table th { width: 30%; }
   .compact td, .compact th { padding: 3.5px 6px; font-size: 9pt; }
   .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
-  .photo-card { border: 0.6pt solid #BBB; padding: 8px; background: #FAFAFA; font-size: 9pt; }
-  .photo-card .ph-title { font-weight: 600; color: #000; margin-bottom: 4px; }
-  .photo-thumb { height: 90px; background: #EEE; border: 0.6pt dashed #999; display: flex; align-items: center; justify-content: center; font-size: 8.5pt; color: #888; margin-bottom: 5px; }
-  .photo-meta { font-size: 8.5pt; color: #666; }
-  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; page-break-inside: avoid; }
-  .sigbox { border: 0.6pt solid #BBB; padding: 10px 12px; min-height: 110px; }
-  .sigbox h4 { font-size: 9.5pt; color: #000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 0.6pt solid #D4A017; padding-bottom: 4px; }
-  .sigbox .siglabel { color: #888; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
-  .sigbox .signame { color: #000; font-weight: 600; font-size: 11pt; margin-top: 12px; font-family: 'Cormorant Garamond', Georgia, serif; }
-  .sigbox .sigrole { font-size: 9pt; color: #555; }
-  .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
-  .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10pt; }
-  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
-  .stamp-locked { position: fixed; top: 35mm; right: -10mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 60pt; font-weight: 700; color: #D4A017; opacity: 0.30; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
-  section { page-break-inside: avoid; }
-  .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
-  .variance-ok { color: #2a6a2a; font-weight: 600; }
-  .variance-bad { color: #A02020; font-weight: 700; }
-  .auth-block { border: 1.5px solid #000; padding: 10px 12px; margin-top: 10px; background: #FAFAFA; }
+  .photo-tile { border: 0.6pt solid #BBB; padding: 4px; text-align: center; background: #FAFAFA; }
+  .photo-tile .ph { background: #E8E8E8; height: 80px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 9pt; }
+  .photo-tile .cap { margin-top: 4px; font-size: 8.5pt; color: #555; }
+  .review-banner { background: #FFF8DC; border-left: 3px solid #D4A017; padding: 8px 10px; margin: 8px 0; font-size: 9.5pt; }
+  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; padding-top: 12px; border-top: 1.5px solid #000; }
+  .signoff .box { border: 0.6pt solid #BBB; padding: 8px 10px; min-height: 110px; background: #FAFAFA; }
+  .signoff .box .role { font-size: 8.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .signoff .box .name { font-size: 12pt; font-weight: 600; color: #000; margin-top: 22px; font-family: 'Cormorant Garamond', Georgia, serif; }
+  .signoff .box .date { font-size: 9pt; color: #555; margin-top: 4px; }
+  .pending-block { background: #FFEBEB; border-left: 3px solid #C0392B; padding: 8px 10px; min-height: 90px; color: #C0392B; font-weight: 600; font-size: 10pt; }
+  .footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; font-size: 8pt; color: #888; border-top: 0.5pt solid #CCC; padding-top: 4px; }
+  .locked-stamp { position: fixed; top: 30mm; right: 18mm; font-size: 60pt; color: #D4A017; opacity: 0.30; transform: rotate(-30deg); font-weight: 700; pointer-events: none; }
+  .receipt-status { display: inline-block; padding: 2px 10px; border-radius: 3px; font-size: 9.5pt; font-weight: 600; }
+  .status-ok { background: #E6F4EA; color: #1B5E20; }
+  .status-discrepancy { background: #FFF8DC; color: #B58300; }
+  .status-rejected { background: #FFEBEB; color: #C0392B; }
 </style>
 </head>
 <body>
 
-{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+{{#is_locked}}<div class="locked-stamp">LOCKED &mdash; FINAL</div>{{/is_locked}}
 
 <div class="doc-header">
   <div class="brand">
-    <div>
-      <div class="logo">IQRA</div>
-      <div class="tag">Quality Assured.</div>
-    </div>
+    <div class="logo">IQRA</div>
+    <div class="tag">Quality Assured.</div>
   </div>
   <div class="header-meta">
-    <div class="title">Dispatch Clearance Report</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-017B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
-    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Dispatch Trip ID:</span> <strong>{{dispatch_trip_id}}</strong></div>
-    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Dispatch Date:</span> {{dispatch_date}}</div>
+    <div class="title">SITE RECEIPT REPORT</div>
+    <div class="row"><span class="label">Form:</span> SE-013</div>
+    <div class="row"><span class="label">Report No:</span> {{record_id}}</div>
+    <div class="row"><span class="label">Project:</span> EPE Jinnaram PEB (J-126)</div>
+    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}}</div>
   </div>
 </div>
 
-<section>
-  <h2>1. Trip Header</h2>
-  <table class="kv-table compact">
-    <tr><th>Dispatch Trip ID</th><td><strong>{{dispatch_trip_id}}</strong></td>
-        <th>Vehicle Number</th><td>{{vehicle_number}}</td></tr>
-    <tr><th>Driver Name</th><td>{{driver_name}}</td>
-        <th>Driver Mobile</th><td>{{driver_mobile}}</td></tr>
-    <tr><th>Transporter</th><td>{{transporter}}</td>
-        <th>LR / Consignment No</th><td>{{lr_no}}</td></tr>
-    <tr><th>Dispatch Date</th><td>{{dispatch_date}}</td>
-        <th>Expected Site Receipt</th><td>{{expected_site_receipt_date}}</td></tr>
-    <tr><th>Origin</th><td>{{origin_location}}</td>
-        <th>Destination (Site)</th><td>{{destination_site}}</td></tr>
-  </table>
-</section>
+<h2>Receipt Header</h2>
+<table class="kv-table compact">
+  <tr><th>Dispatch Trip ID</th><td>{{dispatch_trip_id}}</td></tr>
+  <tr><th>Vehicle Number (received)</th><td>{{vehicle_confirmation}}</td></tr>
+  <tr><th>Site Receipt Date</th><td>{{site_receipt_date}}</td></tr>
+  <tr><th>Activity Date</th><td>{{activity_date}}</td></tr>
+  <tr><th>Site Receiver</th><td>{{site_receiver_name}}</td></tr>
+  <tr><th>Unloading Location</th><td>{{unloading_location}}</td></tr>
+  <tr><th>Phase / Package</th><td>{{phase_name}}</td></tr>
+</table>
 
-<section>
-  <h2>2. Packages Dispatched (from FRM-U2-017A)</h2>
-  <table class="compact">
-    <thead>
-      <tr><th>#</th><th>Package ID</th><th>Part Marks</th><th>Member Marks</th><th>Weight (MT)</th><th>Pack Photo</th></tr>
-    </thead>
-    <tbody>
-      {{#packages}}
-      <tr>
-        <td class="num">{{seq}}</td>
-        <td><span class="link-pill">{{package_id}}</span></td>
-        <td>{{part_marks}}</td>
-        <td>{{member_marks}}</td>
-        <td class="num">{{weight_mt}}</td>
-        <td>{{pack_photo_filename}}</td>
-      </tr>
-      {{/packages}}
-    </tbody>
-  </table>
-</section>
+<h2>Dispatch Reconciliation</h2>
+<table class="kv-table compact">
+  <tr><th>Packages Dispatched</th><td>{{package_count_dispatched}}</td></tr>
+  <tr><th>Packages Received</th><td>{{package_count_received}}</td></tr>
+  <tr><th>Packing-List Match</th><td>{{packing_list_match_summary}}</td></tr>
+  <tr><th>Weight Variance vs Weigh Slip (%)</th><td class="num">{{weight_variance_pct}}</td></tr>
+</table>
 
-<section>
-  <h2>3. Weight Reconciliation</h2>
-  <table class="compact">
-    <thead><tr><th>Source</th><th>Weight (MT)</th><th>Reference</th></tr></thead>
-    <tbody>
-      <tr><td>Total calculated from packages (sum)</td><td class="num">{{calculated_total_weight}}</td><td>Sum of package weights above</td></tr>
-      <tr><td>Weigh-slip recorded</td><td class="num">{{weigh_slip_weight}}</td><td>Weigh-slip {{weigh_slip_no}} &mdash; {{weigh_bridge_name}}</td></tr>
-      <tr><td><strong>Variance</strong></td><td class="num"><strong>{{weight_variance_mt}} MT ({{weight_variance_pct}}%)</strong></td>
-          <td class="{{variance_class}}">{{variance_flag_text}}</td></tr>
-    </tbody>
-  </table>
-  <div class="small">Acceptance: variance &le; 5%. If exceeded, dispatch requires explicit IQRA override before release.</div>
-</section>
+<h2>Member Marks Received</h2>
+<table class="compact">
+  <thead><tr><th>Member Mark</th><th>Part Marks</th><th>Drawing Ref</th><th>Condition</th></tr></thead>
+  <tbody>
+    {{#received_members}}
+    <tr><td>{{member_mark}}</td><td>{{part_marks}}</td><td>{{drawing_no_rev}}</td><td>{{condition}}</td></tr>
+    {{/received_members}}
+    {{^received_members}}
+    <tr><td colspan="4" class="small">Member-mark list resolves at compile-time from linked Assembly Member Register rows.</td></tr>
+    {{/received_members}}
+  </tbody>
+</table>
 
-<section>
-  <h2>4. Packing List &amp; Loading Photos</h2>
-  <table class="kv-table compact">
-    <tr><th>Packing List Document</th><td>{{packing_list_filename}}</td>
-        <th>Packing List Date</th><td>{{packing_list_date}}</td></tr>
-  </table>
-  <div class="photo-grid">
-    {{#loading_photos}}
-    <div class="photo-card">
-      <div class="ph-title">{{title}}</div>
-      <div class="photo-thumb">[ Photo: {{filename}} ]</div>
-      <div class="photo-meta"><span><strong>Captured:</strong> {{captured_at}}</span> <span><strong>OCR:</strong> {{ocr_confidence}}% ({{ocr_status}})</span></div>
-      <div class="photo-meta"><span><strong>Note:</strong> {{note}}</span></div>
-    </div>
-    {{/loading_photos}}
+<h2>Damage / Discrepancy Observations</h2>
+<table class="kv-table compact">
+  <tr><th>Damage Observations</th><td>{{damage_observations}}{{^damage_observations}}<span class="small">None recorded.</span>{{/damage_observations}}</td></tr>
+  <tr><th>NCR Raised?</th><td>{{#ncr_raised}}<span class="receipt-status status-rejected">Yes &mdash; NCR Ref {{ncr_reference}}</span>{{/ncr_raised}}{{^ncr_raised}}<span class="small">No</span>{{/ncr_raised}}</td></tr>
+  <tr><th>Materials Quarantined?</th><td>{{quarantine_status}}</td></tr>
+</table>
+
+<h2>Photo Evidence</h2>
+<div class="photo-grid">
+  <div class="photo-tile">
+    <div class="ph">Unloading / Site Receipt Photos</div>
+    <div class="cap">{{site_receipt_photo_caption}}{{^site_receipt_photo_caption}}Drive: {{site_receipt_photo_set_drive_url}}{{/site_receipt_photo_caption}}</div>
   </div>
-</section>
-
-<section>
-  <h2>5. IQRA Pre-Dispatch Verification</h2>
-  <table class="compact">
-    <thead><tr><th>Check Item</th><th>Status</th><th>Note</th></tr></thead>
-    <tbody>
-      {{#iqra_checks}}
-      <tr><td>{{item}}</td><td>{{status}}</td><td>{{note}}</td></tr>
-      {{/iqra_checks}}
-    </tbody>
-  </table>
-</section>
-
-<section>
-  <h2>6. Dispatch Authorization</h2>
-  <div class="auth-block">
-    <table class="compact">
-      <thead><tr><th>Action</th><th>Authorised By</th><th>Role</th><th>Date / Time</th></tr></thead>
-      <tbody>
-        <tr><td>NSPL Release</td><td>{{nspl_release_by}}</td><td>{{nspl_release_role}}</td><td>{{nspl_release_dt}}</td></tr>
-        <tr><td>IQRA Verification</td><td>{{iqra_verify_by}}</td><td>{{iqra_verify_role}}</td><td>{{iqra_verify_dt}}</td></tr>
-      </tbody>
-    </table>
+  <div class="photo-tile">
+    <div class="ph">Packing List Match Photo</div>
+    <div class="cap">{{site_packing_list_match_photo_caption}}{{^site_packing_list_match_photo_caption}}Drive: {{site_packing_list_match_photo_drive_url}}{{/site_packing_list_match_photo_caption}}</div>
   </div>
-  <div class="small" style="margin-top:6px;">Expected Site Receipt linkage: <span class="link-pill">SE-013 ref {{se013_link}}</span> &mdash; status: {{se013_status}}</div>
-</section>
+</div>
 
-<section class="signoff">
-  <div class="sigbox">
-    <h4>NSPL &mdash; Checked &amp; Signed</h4>
-    <div class="siglabel">Submitted &amp; verified by NSPL Dispatch</div>
-    <div class="signame">{{nspl_name}}</div>
-    <div class="sigrole">{{nspl_role}}</div>
-    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+<h2>IQRA Review</h2>
+<div class="review-banner">
+  <strong>Status:</strong> {{iqra_review_status}}
+  {{#iqra_review_remarks}} &nbsp;&nbsp;<strong>Remarks:</strong> {{iqra_review_remarks}}{{/iqra_review_remarks}}
+  {{#iqra_condition_note}}<br><strong>Condition:</strong> {{iqra_condition_note}}{{/iqra_condition_note}}
+</div>
+
+<div class="signoff">
+  <div class="box">
+    <div class="role">NSPL Site QC &mdash; Checked &amp; Signed</div>
+    <div class="name">{{nspl_name}}</div>
+    <div class="date">{{nspl_role}} &middot; {{nspl_signed_date}}</div>
   </div>
-
   {{#iqra_signed_date}}
-  <div class="sigbox">
-    <h4>IQRA &mdash; Verified &amp; Signed</h4>
-    <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
-    <div class="signame">{{iqra_name}}</div>
-    <div class="sigrole">{{iqra_role}}</div>
-    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+  <div class="box">
+    <div class="role">IQRA &mdash; Verified &amp; Signed</div>
+    <div class="name">{{iqra_name}}</div>
+    <div class="date">{{iqra_role}} &middot; {{iqra_signed_date}}</div>
   </div>
   {{/iqra_signed_date}}
-
   {{^iqra_signed_date}}
-  <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
+  <div class="pending-block">
+    Pending IQRA approval &mdash; not for outward issue.
+  </div>
   {{/iqra_signed_date}}
-</section>
+</div>
 
-<div class="doc-footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/DSP/{{seq_padded}}</div>
+<div class="footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. | {{record_id}}</div>
   <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 
