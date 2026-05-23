@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>PT / DPT Inspection - {{record_id}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 15mm 15mm 22mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10.5pt; color: #444; line-height: 1.4; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3, h4 { color: #000; font-weight: 600; margin: 0; }
+  h2 { font-size: 12pt; margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid #D4A017; text-transform: uppercase; letter-spacing: 0.5px; }
+  .small { font-size: 9pt; color: #666; }
+  .accent { color: #D4A017; font-weight: 600; }
+  .doc-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 14px; }
+  .brand .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24pt; font-weight: 700; color: #000; line-height: 1; letter-spacing: 2px; }
+  .brand .tag { font-size: 8pt; color: #D4A017; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+  .header-meta { text-align: right; font-size: 9pt; color: #444; }
+  .header-meta .title { font-size: 13pt; color: #000; font-weight: 700; letter-spacing: 0.5px; }
+  .header-meta .row { margin-top: 3px; }
+  .header-meta .label { color: #888; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9.5pt; }
+  th, td { border: 0.6pt solid #BBB; padding: 5px 7px; vertical-align: top; text-align: left; }
+  th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .kv-table th { width: 30%; }
+  .compact td, .compact th { padding: 3.5px 6px; font-size: 9pt; }
+  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+  .photo-card { border: 0.6pt solid #BBB; padding: 8px; background: #FAFAFA; font-size: 9pt; }
+  .photo-card .ph-title { font-weight: 600; color: #000; margin-bottom: 4px; }
+  .photo-thumb { height: 90px; background: #EEE; border: 0.6pt dashed #999; display: flex; align-items: center; justify-content: center; font-size: 8.5pt; color: #888; margin-bottom: 5px; }
+  .photo-meta { font-size: 8.5pt; color: #666; }
+  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; page-break-inside: avoid; }
+  .sigbox { border: 0.6pt solid #BBB; padding: 10px 12px; min-height: 110px; }
+  .sigbox h4 { font-size: 9.5pt; color: #000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 0.6pt solid #D4A017; padding-bottom: 4px; }
+  .sigbox .siglabel { color: #888; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  .sigbox .signame { color: #000; font-weight: 600; font-size: 11pt; margin-top: 12px; font-family: 'Cormorant Garamond', Georgia, serif; }
+  .sigbox .sigrole { font-size: 9pt; color: #555; }
+  .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
+  .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10pt; }
+  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .stamp-locked { position: fixed; top: 35mm; right: -10mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 60pt; font-weight: 700; color: #D4A017; opacity: 0.30; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
+  section { page-break-inside: avoid; }
+  .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
+  .result-accept { color: #2a6a2a; font-weight: 700; }
+  .result-reject { color: #A02020; font-weight: 700; }
+</style>
+</head>
+<body>
+
+{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+
+<div class="doc-header">
+  <div class="brand">
+    <div>
+      <div class="logo">IQRA</div>
+      <div class="tag">Quality Assured.</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="title">PT / DPT Inspection Report</div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-013 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
+    <div class="row"><span class="label">DPT Record ID:</span> <strong>{{dpt_record_id}}</strong></div>
+    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
+  </div>
+</div>
+
+<section>
+  <h2>1. DPT Trigger Object</h2>
+  <table class="kv-table compact">
+    <tr><th>Trigger Source Form</th><td><strong>{{trigger_source_form}}</strong></td>
+        <th>Trigger Release Ref</th><td><span class="link-pill">{{trigger_release_ref}}</span></td></tr>
+    <tr><th>Parent Member Mark</th><td>{{parent_member_mark}}</td>
+        <th>Attachment Part Mark</th><td>{{attachment_part_mark}}</td></tr>
+    <tr><th>Drawing / Weld Location Ref</th><td colspan="3">{{drawing_weld_location_ref}}</td></tr>
+    <tr><th>NDT Method</th><td>DPT (Dye Penetrant Testing)</td>
+        <th>Source Mode</th><td>{{source_mode}}</td></tr>
+    <tr><th>UT Applicability</th><td>{{ut_applicability}}</td>
+        <th>RT Applicability</th><td>{{rt_applicability}}</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>2. Inspector &amp; Equipment</h2>
+  <table class="compact">
+    <thead><tr><th>Item</th><th>Selection</th><th>Qualification / Calibration Status</th></tr></thead>
+    <tbody>
+      <tr><td>DPT Inspector</td><td>{{dpt_inspector_name}}</td><td>{{pt_personnel_qual_status}}</td></tr>
+      <tr><td>Light Meter</td><td>{{light_meter_id}}</td><td>{{light_meter_cal_status}}</td></tr>
+      <tr><td>Light Reading (lux)</td><td colspan="2" class="num">{{light_reading_lux}} (min req. {{light_min_lux}})</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>3. DPT Result</h2>
+  <table class="compact kv-table">
+    <tr><th>DPT Result</th><td colspan="3"><span class="{{dpt_result_class}}">{{dpt_result}}</span></td></tr>
+    <tr><th>Indication / Observation Note</th><td colspan="3">{{indication_observation_note}}</td></tr>
+    <tr><th>Auto Repair Trigger Status</th><td>{{auto_repair_trigger_status}}</td>
+        <th>Linked 014 Repair Ref</th><td>{{linked_014_repair_ref}}</td></tr>
+    <tr><th>DPT Clearance Feed to 007C</th><td colspan="3">{{dpt_clearance_to_007c}}</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>4. Photo Evidence</h2>
+  <div class="photo-grid">
+    {{#photos}}
+    <div class="photo-card">
+      <div class="ph-title">{{title}}</div>
+      <div class="photo-thumb">[ Photo: {{filename}} ]</div>
+      <div class="photo-meta"><span><strong>Captured:</strong> {{captured_at}}</span> <span><strong>OCR:</strong> {{ocr_confidence}}% ({{ocr_status}})</span></div>
+      <div class="photo-meta"><span><strong>Note:</strong> {{note}}</span></div>
+    </div>
+    {{/photos}}
+  </div>
+</section>
+
+<section>
+  <h2>5. Acceptance Packs</h2>
+  <table class="kv-table compact">
+    <tr><th>DPT Trigger Acceptance Pack</th><td colspan="3">{{dpt_trigger_acceptance_pack}}</td></tr>
+    <tr><th>Auto DPT Acceptance Pack</th><td colspan="3">{{auto_dpt_acceptance_pack}}</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>6. IQRA Review &amp; Gate Release</h2>
+  <table class="compact">
+    <thead><tr><th>Status</th><th>Review Date</th><th>Reviewer</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_review_note}}</td></tr>
+    </tbody>
+  </table>
+  <div class="small">Gate Release: <strong>{{gate_release_status}}</strong>. Rejected DPT trigs FRM-U2-014 repair workflow; accepted DPT clears parent weld for final release.</div>
+</section>
+
+<section class="signoff">
+  <div class="sigbox">
+    <h4>NSPL &mdash; Checked &amp; Signed</h4>
+    <div class="siglabel">Submitted &amp; verified by NSPL NDT</div>
+    <div class="signame">{{nspl_name}}</div>
+    <div class="sigrole">{{nspl_role}}</div>
+    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+  </div>
+
+  {{#iqra_signed_date}}
+  <div class="sigbox">
+    <h4>IQRA &mdash; Verified &amp; Signed</h4>
+    <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
+    <div class="signame">{{iqra_name}}</div>
+    <div class="sigrole">{{iqra_role}}</div>
+    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+  </div>
+  {{/iqra_signed_date}}
+
+  {{^iqra_signed_date}}
+  <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
+  {{/iqra_signed_date}}
+</section>
+
+<div class="doc-footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/DPT/{{seq_padded}}</div>
+  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+</div>
+
+</body>
+</html>

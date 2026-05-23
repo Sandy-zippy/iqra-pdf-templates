@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * IQRA QMS — PDF template renderer
- * Usage: node render.mjs                     # renders all templates
- *        node render.mjs imir-005            # renders one template
+ * IQRA QMS - HTML-only renderer (no Puppeteer required)
+ * Substitutes Mustache placeholders into ./{name}.html using
+ * ./sample-data/{name}.json, writes preview/{name}.rendered.html.
  *
- * Reads ./sample-data/{name}.json, substitutes Mustache placeholders into
- * ./{name}.html, and writes the PDF to ./preview/{name}.pdf.
- *
- * Uses Puppeteer from the pilani-group pitch-deck install (per memory).
+ * Use this for sandboxed environments where the Puppeteer install
+ * lives outside the working directory. For PDF rendering, run
+ * render.mjs (requires Puppeteer access).
  */
 
 import fs from 'node:fs';
@@ -15,16 +14,6 @@ import path from 'node:path';
 import url from 'node:url';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const PUPPETEER_PATH = '/Users/sandy/Downloads/Claude Code/client-data/pilani-group/pitch-deck/node_modules/puppeteer';
-
-// ---- Tiny mustache implementation (subset) ----------------------------
-// Supports:
-//   {{ var }} and {{ a.b.c }}
-//   {{# section }}...{{/ section }}   (truthy / array iteration)
-//   {{^ section }}...{{/ section }}   (inverted)
-//
-// Good enough for our 5 templates; n8n production will use the native
-// Puppeteer node + a Mustache module which is fully compliant.
 
 function lookup(ctxStack, key) {
   if (key === '.') return ctxStack[ctxStack.length - 1];
@@ -59,7 +48,6 @@ function escapeHtml(s) {
 
 function render(tpl, data) {
   const ctxStack = [data];
-
   function walk(str) {
     let out = '';
     let i = 0;
@@ -71,7 +59,6 @@ function render(tpl, data) {
       if (close === -1) { out += str.slice(open); break; }
       const tag = str.slice(open + 2, close).trim();
       i = close + 2;
-
       if (tag.startsWith('#') || tag.startsWith('^')) {
         const inverted = tag.startsWith('^');
         const key = tag.slice(1).trim();
@@ -99,7 +86,7 @@ function render(tpl, data) {
           }
         }
       } else if (tag.startsWith('/')) {
-        // stray closer — skip
+        // skip
       } else {
         const val = lookup(ctxStack, tag);
         if (val == null) out += '';
@@ -108,11 +95,8 @@ function render(tpl, data) {
     }
     return out;
   }
-
   return walk(tpl);
 }
-
-// ---- Main -------------------------------------------------------------
 
 const templates = [
   'drawing-issue-001',
@@ -139,48 +123,34 @@ const templates = [
   'dossier-index-018',
   'nspl-weekly'
 ];
+
 const only = process.argv[2];
 const list = only ? [only] : templates;
 
 const previewDir = path.join(__dirname, 'preview');
 if (!fs.existsSync(previewDir)) fs.mkdirSync(previewDir, { recursive: true });
 
-const puppeteer = (await import(path.join(PUPPETEER_PATH, 'lib', 'esm', 'puppeteer', 'puppeteer.js'))).default;
-
-const browser = await puppeteer.launch({
-  headless: 'new',
-  args: ['--no-sandbox', '--disable-setuid-sandbox'],
-});
-
-try {
-  for (const name of list) {
-    const tplPath = path.join(__dirname, `${name}.html`);
-    const dataPath = path.join(__dirname, 'sample-data', `${name}.json`);
-    const outPath = path.join(previewDir, `${name}.pdf`);
-
-    if (!fs.existsSync(tplPath)) { console.error(`[skip] no template ${tplPath}`); continue; }
-    if (!fs.existsSync(dataPath)) { console.error(`[skip] no sample data ${dataPath}`); continue; }
-
+let okCount = 0;
+let failCount = 0;
+for (const name of list) {
+  const tplPath = path.join(__dirname, `${name}.html`);
+  const dataPath = path.join(__dirname, 'sample-data', `${name}.json`);
+  if (!fs.existsSync(tplPath)) { console.error(`[skip] no template ${tplPath}`); failCount++; continue; }
+  if (!fs.existsSync(dataPath)) { console.error(`[skip] no sample data ${dataPath}`); failCount++; continue; }
+  try {
     const tpl = fs.readFileSync(tplPath, 'utf8');
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
     const html = render(tpl, data);
-
-    // also drop the rendered HTML for visual inspection
-    const renderedHtmlPath = path.join(previewDir, `${name}.rendered.html`);
-    fs.writeFileSync(renderedHtmlPath, html, 'utf8');
-
-    const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: 'networkidle0' });
-    await page.pdf({
-      path: outPath,
-      format: 'A4',
-      printBackground: true,
-      displayHeaderFooter: false,
-      margin: { top: '15mm', right: '15mm', bottom: '22mm', left: '15mm' },
-    });
-    await page.close();
-    console.log(`[ok] ${name} -> ${outPath}`);
+    const outPath = path.join(previewDir, `${name}.rendered.html`);
+    fs.writeFileSync(outPath, html, 'utf8');
+    // Sanity check: did any unresolved Mustache placeholders remain?
+    const unresolved = (html.match(/\{\{[^}]+\}\}/g) || []).filter(m => !m.includes('pageNumber') && !m.includes('totalPages'));
+    const status = unresolved.length === 0 ? 'ok ' : `WARN(${unresolved.length} unresolved)`;
+    console.log(`[${status}] ${name} -> ${outPath}`);
+    okCount++;
+  } catch (e) {
+    console.error(`[fail] ${name}: ${e.message}`);
+    failCount++;
   }
-} finally {
-  await browser.close();
 }
+console.log(`\nRendered ${okCount}/${list.length} templates (failures: ${failCount})`);

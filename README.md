@@ -1,15 +1,36 @@
 # IQRA QMS — PDF Templates
 
-5 HTML+CSS templates used by **n8n workflow `iqra-pdf-generation`** (Agent B) to render
+**23 HTML+CSS templates** used by **n8n workflow `iqra-pdf-generation`** (Agent B) to render
 official inspection PDFs for the EPE Jinnaram PEB project (J-126).
 
 | Template | Form | Trigger | Output naming |
 |---|---|---|---|
-| `imir-005.html` | FRM-U2-005 Incoming Material Inspection | IMIR record set to `Accepted` / `Accepted with condition` | `NSPL-EPE-IMIR-{seq:04d}.pdf` |
-| `traveller-006.html` | FRM-U2-006 Traveller / Material Traceability | Traveller record Accepted | `NSPL-EPE-TRV-{seq:04d}.pdf` |
-| `cutting-007a.html` | FRM-U2-007A Cutting Inspection | Cutting record Accepted | `NSPL-EPE-CUT-{seq:04d}.pdf` |
-| `dispatch-017b.html` | FRM-U2-017B Dispatch Clearance | Dispatch Trip record Accepted | `NSPL-EPE-DSP-{seq:04d}.pdf` |
+| `drawing-issue-001.html` | FRM-U2-001 Drawing Issue Register | Drawing Package Accepted | `NSPL-EPE-DWG-{seq:04d}.pdf` |
+| `document-master-002.html` | FRM-U2-002 Document / Procedure Master List | Register update Accepted | `NSPL-EPE-DOC-{seq:04d}.pdf` |
+| `calibration-003.html` | FRM-U2-003 Calibration Master Record | Calibration record Accepted | `NSPL-EPE-CAL-{seq:04d}.pdf` |
+| `readiness-004.html` | FRM-U2-004 Readiness Closure Checklist | Readiness Package Accepted | `NSPL-EPE-RDY-{seq:04d}.pdf` |
+| `imir-005.html` | FRM-U2-005 Incoming Material Inspection | IMIR Accepted / Accepted with condition | `NSPL-EPE-IMIR-{seq:04d}.pdf` |
+| `traveller-006.html` | FRM-U2-006 Traveller / Material Traceability | Traveller Accepted | `NSPL-EPE-TRV-{seq:04d}.pdf` |
+| `cutting-007a.html` | FRM-U2-007A Cutting Inspection | Cutting Accepted | `NSPL-EPE-CUT-{seq:04d}.pdf` |
+| `drilling-parts-007b.html` | FRM-U2-007B Drilling (Assembly Parts) | Drilling Accepted | `NSPL-EPE-DRL-P-{seq:04d}.pdf` |
+| `drilling-builtup-007c.html` | FRM-U2-007C Drilling (Built-up Members) | Drilling Accepted | `NSPL-EPE-DRL-M-{seq:04d}.pdf` |
+| `fitup-saw-008a.html` | FRM-U2-008A Built-up Fit-up (SAW) | Fit-up Accepted | `NSPL-EPE-FIT-S-{seq:04d}.pdf` |
+| `fitup-fcaw-008b.html` | FRM-U2-008B Attachment Fit-up (FCAW) | Fit-up Accepted | `NSPL-EPE-FIT-F-{seq:04d}.pdf` |
+| `welding-saw-012a.html` | FRM-U2-012A SAW Welding Inspection | Welding Accepted | `NSPL-EPE-WLD-S-{seq:04d}.pdf` |
+| `welding-fcaw-012b.html` | FRM-U2-012B FCAW Welding Inspection | Welding Accepted | `NSPL-EPE-WLD-F-{seq:04d}.pdf` |
+| `pt-dpt-013.html` | FRM-U2-013 PT / DPT Inspection | DPT Accepted / Rejected | `NSPL-EPE-DPT-{seq:04d}.pdf` |
+| `repair-014.html` | FRM-U2-014 Repair Closure | Repair Closure Accepted | `NSPL-EPE-RPR-{seq:04d}.pdf` |
+| `final-release-015.html` | FRM-U2-015 Final Dimensional Release | Final Release Accepted | `NSPL-EPE-FNL-{seq:04d}.pdf` |
+| `blasting-016a.html` | FRM-U2-016A Blasting / Surface Prep | Blasting Accepted | `NSPL-EPE-BLT-{seq:04d}.pdf` |
+| `primer-016b.html` | FRM-U2-016B Primer Application | Primer Accepted | `NSPL-EPE-PRM-{seq:04d}.pdf` |
+| `final-coat-016c.html` | FRM-U2-016C Final Coat Application | Final Coat Accepted | `NSPL-EPE-FCT-{seq:04d}.pdf` |
+| `marking-packing-017a.html` | FRM-U2-017A Marking & Packing | Package Accepted | `NSPL-EPE-PKG-{seq:04d}.pdf` |
+| `dispatch-017b.html` | FRM-U2-017B Dispatch Clearance | Dispatch Trip Accepted | `NSPL-EPE-DSP-{seq:04d}.pdf` |
+| `dossier-index-018.html` | FRM-U2-018 Dossier Index (FRM-UI-022 style) | Dossier Compilation Accepted | `NSPL-EPE-DOS-{seq:04d}.pdf` |
 | `nspl-weekly.html` | NSPL Weekly Status Report for EPE Review | Manual trigger (Tuesday weekly cron) | `NSPL-EPE-WSR-{seq:04d}.pdf` |
+
+**Initial 5 templates** (IMIR, Traveller, Cutting, Dispatch, NSPL Weekly) were built by Agent C.
+**Remaining 18 templates** (001, 002, 003, 004, 007B, 007C, 008A, 008B, 012A, 012B, 013, 014, 015, 016A, 016B, 016C, 017A, 018) added by Agent H following the same styling spec.
 
 All output PDFs are pushed to Drive folder `1NbGic6olppElgWJudWXmqtM8ajP8WaQZ` via
 the `iqra-drive-upload` workflow and the resulting URL is written back to the
@@ -87,17 +108,25 @@ is_locked                                    // bool
 
 ```
 cd /Users/sandy/iqra-airtable-build/pdf-templates
-node render.mjs                  # renders all 5
-node render.mjs imir-005         # renders one
+node render.mjs                       # renders all 23 templates as PDFs (Puppeteer)
+node render.mjs drawing-issue-001     # renders one
+
+# HTML-only (sandbox-friendly, no Puppeteer required):
+node render-html-only.mjs             # writes preview/{name}.rendered.html for all 23
 
 # Output:
-#   preview/imir-005.pdf
-#   preview/imir-005.rendered.html   (substituted HTML for quick eyeball)
+#   preview/{name}.pdf
+#   preview/{name}.rendered.html   (substituted HTML for quick eyeball)
 ```
 
 `render.mjs` re-uses the Puppeteer install at
 `/Users/sandy/Downloads/Claude Code/client-data/pilani-group/pitch-deck/node_modules/puppeteer`
 and ships a tiny inline Mustache implementation (no extra `npm install` needed).
+
+`render-html-only.mjs` is the sandbox-friendly companion: runs the same Mustache
+implementation but skips Puppeteer, so it works in restricted shells where the
+cross-directory Puppeteer install isn't reachable. It also flags any unresolved
+`{{ placeholder }}` tags as a sanity check.
 
 `screenshot.mjs` produces page-1 PNGs in `preview/` for visual QA.
 
