@@ -1,0 +1,91 @@
+{
+  "record_id": "NSPL-EPE-DSP-0006",
+  "report_no": "NSPL-EPE-DSP-0006",
+  "seq_padded": "0006",
+  "project_id": "J-126 EPE Jinnaram PEB",
+  "phase": "Phase II / Phase III interface",
+  "dispatch_trip_id": "NSPL-EPE-DSP-0006",
+  "report_issue_date": "2026-04-13",
+  "dispatch_date": "2026-04-13",
+  "vehicle_number": "TS 16 UB 4427",
+  "driver_name": "K. Sridhar",
+  "driver_mobile": "+91 98765 11203",
+  "transporter": "Sri Sai Logistics (Hyd)",
+  "lr_no": "SSL-LR-26-04-2189",
+  "expected_site_receipt_date": "2026-04-14",
+  "origin_location": "NSPL Jinnaram Fabrication Yard, Sangareddy",
+  "destination_site": "EPE Process Filters & Accumulators Site, Plot 31, IDA Bollaram",
+  "packages": [
+    { "seq": 1, "package_id": "PKG-J126-017A-0014", "part_marks": "PM-C1-FLG-001, PM-C1-FLG-002, PM-C1-WEB-001, PM-C1-STF-001 (x4)", "member_marks": "MC-C1",    "weight_mt": "7.42",  "pack_photo_filename": "pkg_0014.jpg" },
+    { "seq": 2, "package_id": "PKG-J126-017A-0015", "part_marks": "PM-C2-FLG-001, PM-C2-FLG-002, PM-C2-WEB-001",                              "member_marks": "MC-C2",    "weight_mt": "6.18",  "pack_photo_filename": "pkg_0015.jpg" },
+    { "seq": 3, "package_id": "PKG-J126-017A-0016", "part_marks": "PM-R-PRT-001 x6 (rafter portal segments)",                                  "member_marks": "MR-1, MR-2", "weight_mt": "9.05",  "pack_photo_filename": "pkg_0016.jpg" },
+    { "seq": 4, "package_id": "PKG-J126-017A-0017", "part_marks": "PM-BR-001 x12 (bracing channels)",                                         "member_marks": "MB-1",     "weight_mt": "2.78",  "pack_photo_filename": "pkg_0017.jpg" }
+  ],
+  "calculated_total_weight": "25.43",
+  "weigh_slip_weight": "25.61",
+  "weight_variance_mt": "0.18",
+  "weight_variance_pct": "0.71",
+  "variance_class": "variance-ok",
+  "variance_flag_text": "Within tolerance (≤ 5%)",
+  "weigh_slip_no": "WB-26-04-7702",
+  "weigh_bridge_name": "Sai Krupa Weigh Bridge, Patancheru",
+  "packing_list_filename": "PL_DSP_0006.pdf",
+  "packing_list_date": "2026-04-13",
+  "loading_photos": [
+    {
+      "title": "Vehicle empty bed (pre-loading)",
+      "filename": "dsp_0006_empty.jpg",
+      "captured_at": "2026-04-13 08:24 IST",
+      "ocr_confidence": "82",
+      "ocr_status": "High",
+      "note": "Vehicle reg TS 16 UB 4427 visible on rear plate."
+    },
+    {
+      "title": "Packages loaded — overview",
+      "filename": "dsp_0006_loaded_overview.jpg",
+      "captured_at": "2026-04-13 10:42 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "All four packages loaded, members oriented as per packing list."
+    },
+    {
+      "title": "Lashing & edge protection",
+      "filename": "dsp_0006_lashing.jpg",
+      "captured_at": "2026-04-13 10:48 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Webbing straps with corner protectors at every cross-tie."
+    },
+    {
+      "title": "Vehicle leaving yard with seal",
+      "filename": "dsp_0006_seal.jpg",
+      "captured_at": "2026-04-13 11:15 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "NSPL outgoing seal SL-2026-04-220 fixed before gate-out."
+    }
+  ],
+  "iqra_checks": [
+    { "item": "All packages have accepted FRM-U2-017A records", "status": "Pass", "note": "4/4 packages verified" },
+    { "item": "Painting / coating data closed (where applicable)", "status": "Pass", "note": "Primer FRM-U2-016B accepted for all members" },
+    { "item": "Permanent part-mark stamping visible on every member", "status": "Pass", "note": "Verified on representative sample (8 of 12)" },
+    { "item": "Member packing aligns with site receipt sequence (SE-013)", "status": "Pass", "note": "Site informed of trip via WhatsApp" },
+    { "item": "Weight reconciliation within 5%", "status": "Pass", "note": "0.71% variance — well within tolerance" },
+    { "item": "Lashing, edge protection, road safety", "status": "Pass", "note": "Driver briefed; insurance copy carried" }
+  ],
+  "nspl_release_by": "Mahesh Naidu",
+  "nspl_release_role": "NSPL Dispatch In-charge",
+  "nspl_release_dt": "2026-04-13 11:05 IST",
+  "iqra_verify_by": "Padmanabhan Krishnan",
+  "iqra_verify_role": "IQRA Site Quality Lead",
+  "iqra_verify_dt": "2026-04-13 11:12 IST",
+  "se013_link": "SE-013-J126-0011 (expected)",
+  "se013_status": "Awaiting site receipt confirmation",
+  "nspl_name": "Mahesh Naidu",
+  "nspl_role": "NSPL Dispatch In-charge",
+  "nspl_signed_date": "2026-04-13",
+  "iqra_name": "Padmanabhan Krishnan",
+  "iqra_role": "IQRA Site Quality Lead",
+  "iqra_signed_date": "2026-04-13",
+  "is_locked": false
+}

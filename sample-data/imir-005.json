@@ -1,0 +1,105 @@
+{
+  "record_id": "NSPL-EPE-IMIR-0001",
+  "report_no": "NSPL-EPE-IMIR-0001",
+  "seq_padded": "0001",
+  "project_id": "J-126 EPE Jinnaram PEB",
+  "phase": "Phase III",
+  "package_name": "PO 2530014 / Lot Group 03",
+  "imir_lot_id": "IMIR-J126-005-0042",
+  "report_issue_date": "2026-04-11",
+  "activity_date": "2026-04-09",
+  "material_family": "Hot Rolled Steel Plate",
+  "material_description": "Plate, HR, IS 2062 E350BR, 12mm x 1500 x 6000",
+  "po_number": "2530014",
+  "mtc_no": "JSPL-MTC-2026-04-1187",
+  "challan_no": "JSPL-DC-44231",
+  "heat_no": "HJ4-26-04-018",
+  "lot_no": "LOT-26-04-227",
+  "grade": "IS 2062 E350BR",
+  "qty_received": "24.65",
+  "qty_accepted": "23.82",
+  "qty_hold": "0.83",
+  "storage_location": "NSPL Stockyard A-3, Bay 12",
+  "chem": {
+    "C": "0.18", "Mn": "1.42", "Si": "0.33", "P": "0.022", "S": "0.015",
+    "Cr": "0.04", "Ni": "0.02", "Mo": "0.01", "V": "0.005", "Cu": "0.06",
+    "Al": "0.025", "N": "0.008", "Cb": "0.002", "Ti": "0.003"
+  },
+  "spec": {
+    "C": "0.20 max", "Mn": "1.50 max", "Si": "0.45 max", "P": "0.040 max", "S": "0.040 max",
+    "Cr": "—", "Ni": "—", "Mo": "—", "V": "—", "Cu": "—",
+    "Al": "0.02 min", "N": "0.012 max", "Cb": "—", "Ti": "—"
+  },
+  "chem_reference_standard": "IS 2062:2011 Table 2 (E350BR)",
+  "mtc_chem_ocr_confidence": 96,
+  "mech": {
+    "yield": "375", "yield_result": "Within",
+    "uts": "528", "uts_result": "Within",
+    "elongation": "24.5", "elongation_result": "Within",
+    "impact": "62", "impact_result": "Within"
+  },
+  "mech_spec": {
+    "yield": "350 min", "uts": "490 min", "elongation": "22 min", "impact": "27 min @ 0°C"
+  },
+  "mech_reference_standard": "IS 1608 (Tensile), IS 1757 (Charpy V-notch)",
+  "mtc_mech_ocr_confidence": 94,
+  "heat_mark_extracted": "HJ4-26-04-018",
+  "heat_mark_ocr_confidence": 88,
+  "heat_mark_match_result": "Match",
+  "sticker_extracted": "LOT-26-04-227",
+  "sticker_ocr_confidence": 92,
+  "sticker_match_result": "Match",
+  "severity_flag": "Normal",
+  "severity_class": "normal",
+  "ncr_raised_id": "—",
+  "conflict_summary": "No conflict. Chemistry, mechanical, heat marking, and sticker all align with MTC. 0.83 MT held due to surface scaling on one plate; balance accepted.",
+  "nspl_confirmation_status": "Confirmed",
+  "nspl_confirmation_date": "2026-04-09",
+  "nspl_confirmed_by": "S. Reddy (NSPL QA/QC)",
+  "nspl_confirmation_note": "Extracted values cross-checked against physical MTC and DC. Variance within tolerance.",
+  "iqra_review_status": "Accepted with condition",
+  "iqra_review_date": "2026-04-10",
+  "iqra_reviewer": "P. Krishnan (IQRA)",
+  "iqra_condition_note": "Accepted on condition that the 0.83 MT held plate is segregated and not consumed until surface scaling is rectified and re-presented.",
+  "photos": [
+    {
+      "title": "Material Identification — Heat marking on plate",
+      "filename": "imir_0042_heat_mark.jpg",
+      "captured_at": "2026-04-09 11:24 IST",
+      "ocr_confidence": "88",
+      "ocr_status": "High",
+      "note": "Heat number HJ4-26-04-018 stamped clearly on edge."
+    },
+    {
+      "title": "Material Identification — Mill sticker",
+      "filename": "imir_0042_sticker.jpg",
+      "captured_at": "2026-04-09 11:25 IST",
+      "ocr_confidence": "92",
+      "ocr_status": "High",
+      "note": "Sticker shows LOT-26-04-227, grade E350BR, dimensions match DC."
+    },
+    {
+      "title": "Physical Condition — Surface (overview)",
+      "filename": "imir_0042_surface_overview.jpg",
+      "captured_at": "2026-04-09 11:33 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Most of consignment in clean rolled condition."
+    },
+    {
+      "title": "Physical Condition — Held plate (scaling)",
+      "filename": "imir_0042_held_plate.jpg",
+      "captured_at": "2026-04-09 11:38 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Localised heavy scaling on one plate, segregated and marked HOLD."
+    }
+  ],
+  "nspl_name": "Sukumar Reddy",
+  "nspl_role": "NSPL QA/QC Engineer",
+  "nspl_signed_date": "2026-04-09",
+  "iqra_name": "Padmanabhan Krishnan",
+  "iqra_role": "IQRA Site Quality Lead",
+  "iqra_signed_date": "2026-04-10",
+  "is_locked": true
+}

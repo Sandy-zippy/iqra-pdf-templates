@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>NSPL Status Report - {{report_no}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 15mm 15mm 22mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10pt; color: #444; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3, h4 { color: #000; font-weight: 600; margin: 0; }
+  h1 { font-size: 15pt; }
+  h2 { font-size: 11.5pt; margin: 16px 0 6px; padding-bottom: 4px; border-bottom: 1.5px solid #D4A017; text-transform: uppercase; letter-spacing: 0.5px; }
+  h3 { font-size: 10pt; margin: 8px 0 4px; color: #000; }
+  .small { font-size: 8.8pt; color: #666; }
+  .accent { color: #D4A017; font-weight: 600; }
+  .doc-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 12px; }
+  .brand .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24pt; font-weight: 700; color: #000; line-height: 1; letter-spacing: 2px; }
+  .brand .tag { font-size: 8pt; color: #D4A017; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+  .header-meta { text-align: right; font-size: 9pt; color: #444; }
+  .header-meta .title { font-size: 13pt; color: #000; font-weight: 700; letter-spacing: 0.3px; }
+  .header-meta .subtitle { font-size: 9.5pt; color: #555; margin-top: 2px; font-style: italic; }
+  .header-meta .row { margin-top: 3px; }
+  .header-meta .label { color: #888; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 8px; font-size: 9pt; }
+  th, td { border: 0.6pt solid #BBB; padding: 5px 7px; vertical-align: top; text-align: left; }
+  th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 8.8pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .kv-table th { width: 28%; }
+  .compact td, .compact th { padding: 4px 6px; font-size: 8.8pt; }
+  .narrative { font-size: 9.8pt; line-height: 1.55; }
+  .narrative p { margin: 0 0 8px; }
+  .narrative .nlabel { color: #000; font-weight: 600; display: block; margin-bottom: 2px; font-size: 9.5pt; }
+  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; page-break-inside: avoid; }
+  .sigbox { border: 0.6pt solid #BBB; padding: 10px 12px; min-height: 110px; }
+  .sigbox h4 { font-size: 9.5pt; color: #000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 0.6pt solid #D4A017; padding-bottom: 4px; }
+  .sigbox .siglabel { color: #888; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  .sigbox .signame { color: #000; font-weight: 600; font-size: 11pt; margin-top: 12px; font-family: 'Cormorant Garamond', Georgia, serif; }
+  .sigbox .sigrole { font-size: 9pt; color: #555; }
+  .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
+  .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10pt; }
+  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .stamp-locked { position: fixed; top: 35mm; right: -10mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 60pt; font-weight: 700; color: #D4A017; opacity: 0.30; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
+  section { page-break-inside: avoid; }
+  .section-tag { color: #D4A017; font-weight: 700; margin-right: 6px; }
+  .assumption-box { background: #FFFBF0; border: 0.6pt solid #D4A017; padding: 10px 12px; font-size: 9.2pt; line-height: 1.55; }
+  .assumption-box p { margin: 0 0 6px; }
+</style>
+</head>
+<body>
+
+{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+
+<div class="doc-header">
+  <div class="brand">
+    <div>
+      <div class="logo">IQRA</div>
+      <div class="tag">Quality Assured.</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="title">NSPL Status Report for EPE Review Meeting</div>
+    <div class="subtitle">{{project_name}}</div>
+    <div class="row"><span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Reporting Period:</span> {{period_from}} to {{period_to}}</div>
+    <div class="row"><span class="label">Meeting Date:</span> {{meeting_date}}</div>
+  </div>
+</div>
+
+<!-- A. REPORT HEADER -->
+<section>
+  <h2><span class="section-tag">A.</span> Report Header</h2>
+  <table class="kv-table compact">
+    <tr><th>Item</th><th>Entry</th></tr>
+    <tr><th>Report Title</th><td>{{report_title}}</td></tr>
+    <tr><th>Report No.</th><td><strong>{{report_no}}</strong></td></tr>
+    <tr><th>Project</th><td>{{project_name}}</td></tr>
+    <tr><th>Client / Owner</th><td>{{client_owner}}</td></tr>
+    <tr><th>PMC</th><td>{{pmc}}</td></tr>
+    <tr><th>Vendor</th><td>{{vendor}}</td></tr>
+    <tr><th>IQRA Role</th><td>{{iqra_role}}</td></tr>
+    <tr><th>Reporting Period</th><td>{{period_from}} to {{period_to}}</td></tr>
+    <tr><th>Data Cut-off</th><td>{{data_cutoff}}</td></tr>
+    <tr><th>Meeting Date</th><td>{{meeting_date}}</td></tr>
+    <tr><th>Prepared By</th><td>{{prepared_by}}</td></tr>
+    <tr><th>Issued By</th><td>{{issued_by}}</td></tr>
+    <tr><th>Circulation</th><td>{{circulation}}</td></tr>
+    <tr><th>Project Quantity Basis</th><td>{{quantity_basis}}</td></tr>
+    <tr><th>Progress Logic Used</th><td>{{progress_logic}}</td></tr>
+  </table>
+</section>
+
+<!-- B. EXECUTIVE WEEKLY POSITION -->
+<section>
+  <h2><span class="section-tag">B.</span> Executive Weekly Position</h2>
+  <div class="narrative">
+    <p><span class="nlabel">Overall Weekly Position</span>{{exec.overall_position}}</p>
+    <p><span class="nlabel">What Moved This Week</span>{{exec.what_moved}}</p>
+    <p><span class="nlabel">What Is Planned Up to Next Tuesday</span>{{exec.what_planned}}</p>
+    <p><span class="nlabel">Main Held / Support Points</span>{{exec.main_held}}</p>
+    <p><span class="nlabel">Main Commitments Due Before Next Review</span>{{exec.main_commitments}}</p>
+  </div>
+</section>
+
+<!-- C. CURRENT PROJECT POSITION -->
+<section>
+  <h2><span class="section-tag">C.</span> Current Project Position</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Reporting Level</th><th>Basis</th><th>Present Position</th>
+        <th>This Week Movement</th><th>Planned Next</th>
+        <th>Held / Support Point</th><th>Tentative Date / Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#current_position}}
+      <tr>
+        <td><strong>{{level}}</strong></td>
+        <td>{{basis}}</td>
+        <td>{{present_position}}</td>
+        <td>{{this_week_movement}}</td>
+        <td>{{planned_next}}</td>
+        <td>{{held_point}}</td>
+        <td>{{tentative_remarks}}</td>
+      </tr>
+      {{/current_position}}
+    </tbody>
+  </table>
+</section>
+
+<!-- D. ACTIVE FRONTS SUMMARY -->
+<section>
+  <h2><span class="section-tag">D.</span> Active Fronts Summary &mdash; Unit II / Unit I / Site</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Lane</th><th>Front Type</th><th>Phase / Area / Item / Trip</th>
+        <th>Present Position</th><th>Completed This Week</th>
+        <th>Planned Up to Next Tuesday</th><th>NSPL QC Position</th>
+        <th>IQRA Link</th><th>Held / Support</th><th>Tentative Completion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#active_fronts}}
+      <tr>
+        <td>{{lane}}</td>
+        <td>{{front_type}}</td>
+        <td>{{phase_area}}</td>
+        <td>{{present_position}}</td>
+        <td>{{completed_this_week}}</td>
+        <td>{{planned_next}}</td>
+        <td>{{nspl_qc_position}}</td>
+        <td>{{iqra_link}}</td>
+        <td>{{held_support}}</td>
+        <td>{{tentative_completion}}</td>
+      </tr>
+      {{/active_fronts}}
+    </tbody>
+  </table>
+</section>
+
+<!-- E. COMPLETED THIS WEEK -->
+<section>
+  <h2><span class="section-tag">E.</span> Completed This Week</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Sl. No.</th><th>Lane</th><th>Phase / Area / Item</th>
+        <th>Completed This Week</th><th>Why It Matters for Next Stage</th><th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#completed}}
+      <tr>
+        <td class="num">{{seq}}</td>
+        <td>{{lane}}</td>
+        <td>{{phase_area}}</td>
+        <td>{{completed}}</td>
+        <td>{{why_matters}}</td>
+        <td>{{remarks}}</td>
+      </tr>
+      {{/completed}}
+    </tbody>
+  </table>
+</section>
+
+<!-- F. PLANNED NEXT -->
+<section>
+  <h2><span class="section-tag">F.</span> Planned Next / One-Week Lookahead</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Sl. No.</th><th>Lane</th><th>Planned Activity Up to Next Tuesday</th>
+        <th>Why It Matters</th><th>Input / Support Needed</th><th>Target by Next Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#planned}}
+      <tr>
+        <td class="num">{{seq}}</td>
+        <td>{{lane}}</td>
+        <td>{{activity}}</td>
+        <td>{{why_matters}}</td>
+        <td>{{input_needed}}</td>
+        <td>{{target_date}}</td>
+      </tr>
+      {{/planned}}
+    </tbody>
+  </table>
+
+  {{#has_two_week_view}}
+  <h3>Two-Week Lookahead</h3>
+  <table class="compact">
+    <thead>
+      <tr><th>Period</th><th>Likely Fronts</th><th>What Must Stay Clear</th><th>Likely Result by Period End</th></tr>
+    </thead>
+    <tbody>
+      {{#two_week_lookahead}}
+      <tr>
+        <td>{{period}}</td>
+        <td>{{likely_fronts}}</td>
+        <td>{{must_stay_clear}}</td>
+        <td>{{likely_result}}</td>
+      </tr>
+      {{/two_week_lookahead}}
+    </tbody>
+  </table>
+  {{/has_two_week_view}}
+</section>
+
+<!-- G. HELD POINTS -->
+<section>
+  <h2><span class="section-tag">G.</span> Held Points / Support Needed / Clarifications</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Sl. No.</th><th>Point Type</th><th>Point</th>
+        <th>Present Position</th><th>Effect on Next Stage</th>
+        <th>Owner</th><th>Target Closure Date</th><th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#held_points}}
+      <tr>
+        <td class="num">{{seq}}</td>
+        <td>{{point_type}}</td>
+        <td>{{point}}</td>
+        <td>{{present_position}}</td>
+        <td>{{effect_next_stage}}</td>
+        <td>{{owner}}</td>
+        <td>{{target_closure}}</td>
+        <td>{{remarks}}</td>
+      </tr>
+      {{/held_points}}
+    </tbody>
+  </table>
+</section>
+
+<!-- H. COMMITMENTS CARRIED -->
+<section>
+  <h2><span class="section-tag">H.</span> Commitments Carried from Last Review</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Commitment ID</th><th>Commitment Point</th><th>Made By</th>
+        <th>Made To</th><th>Meeting Reference</th><th>Date Committed</th>
+        <th>Target Closure</th><th>Present Status</th><th>Dependency</th>
+        <th>This-Week Update</th><th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#commitments_carried}}
+      <tr>
+        <td><strong>{{id}}</strong></td>
+        <td>{{point}}</td>
+        <td>{{made_by}}</td>
+        <td>{{made_to}}</td>
+        <td>{{meeting_ref}}</td>
+        <td>{{date_committed}}</td>
+        <td>{{target_closure}}</td>
+        <td>{{present_status}}</td>
+        <td>{{dependency}}</td>
+        <td>{{this_week_update}}</td>
+        <td>{{remarks}}</td>
+      </tr>
+      {{/commitments_carried}}
+    </tbody>
+  </table>
+</section>
+
+<!-- I. COMMITMENTS PROPOSED -->
+<section>
+  <h2><span class="section-tag">I.</span> Commitments Proposed / To Be Confirmed for Next Review</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Commitment ID</th><th>Proposed Commitment Point</th><th>Proposed By</th>
+        <th>Proposed To</th><th>Review Reference</th>
+        <th>Proposed Closure Date</th><th>Dependency</th><th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#commitments_proposed}}
+      <tr>
+        <td><strong>{{id}}</strong></td>
+        <td>{{point}}</td>
+        <td>{{proposed_by}}</td>
+        <td>{{proposed_to}}</td>
+        <td>{{review_ref}}</td>
+        <td>{{proposed_closure}}</td>
+        <td>{{dependency}}</td>
+        <td>{{remarks}}</td>
+      </tr>
+      {{/commitments_proposed}}
+    </tbody>
+  </table>
+</section>
+
+<!-- J. TENTATIVE COMPLETION DATES -->
+<section>
+  <h2><span class="section-tag">J.</span> Tentative Completion Dates</h2>
+  <table class="compact">
+    <thead>
+      <tr><th>Scope / Front</th><th>Present Position</th><th>Tentative Completion Date</th><th>Basis / Remarks</th></tr>
+    </thead>
+    <tbody>
+      {{#tentative_dates}}
+      <tr>
+        <td>{{scope}}</td>
+        <td>{{present_position}}</td>
+        <td>{{tentative_date}}</td>
+        <td>{{basis_remarks}}</td>
+      </tr>
+      {{/tentative_dates}}
+    </tbody>
+  </table>
+</section>
+
+<!-- K. ANNEXURE LIST -->
+<section>
+  <h2><span class="section-tag">K.</span> Short Reference Annexure List</h2>
+  <table class="compact">
+    <thead><tr><th>Annexure Ref</th><th>Description</th><th>Why Attached</th></tr></thead>
+    <tbody>
+      {{#annexures}}
+      <tr>
+        <td><strong>{{ref}}</strong></td>
+        <td>{{description}}</td>
+        <td>{{why_attached}}</td>
+      </tr>
+      {{/annexures}}
+    </tbody>
+  </table>
+</section>
+
+{{#has_assumption_note}}
+<!-- L. ASSUMPTION NOTE -->
+<section>
+  <h2><span class="section-tag">L.</span> Assumption Note</h2>
+  <div class="assumption-box">
+    <p>{{assumption.intro}}</p>
+    <table class="compact">
+      <thead><tr><th>Drawn from Current Project Basis</th><th>Assumed for Illustration Only</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>{{assumption.drawn_from_basis}}</td>
+          <td>{{assumption.illustration_only}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+{{/has_assumption_note}}
+
+<!-- SIGNOFF -->
+<section class="signoff">
+  <div class="sigbox">
+    <h4>NSPL &mdash; Prepared &amp; Issued</h4>
+    <div class="siglabel">NSPL QA/QC and Planning &mdash; Management Issued</div>
+    <div class="signame">{{nspl_name}}</div>
+    <div class="sigrole">{{nspl_role}}</div>
+    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+  </div>
+
+  {{#iqra_signed_date}}
+  <div class="sigbox">
+    <h4>IQRA &mdash; Owner-Side Reviewed</h4>
+    <div class="siglabel">Owner-side guidance / selective witness support</div>
+    <div class="signame">{{iqra_name}}</div>
+    <div class="sigrole">{{iqra_role}}</div>
+    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+  </div>
+  {{/iqra_signed_date}}
+
+  {{^iqra_signed_date}}
+  <div class="pending">Pending IQRA owner-side review &mdash; not for outward circulation</div>
+  {{/iqra_signed_date}}
+</section>
+
+<div class="doc-footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/WSR/{{seq_padded}}</div>
+  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+</div>
+
+</body>
+</html>

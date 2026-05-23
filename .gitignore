@@ -1,0 +1,4 @@
+preview/
+sample-data/*.tmp
+node_modules/
+*.log

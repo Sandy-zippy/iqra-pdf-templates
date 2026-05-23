@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>IMIR Report - {{record_id}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 15mm 15mm 22mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #444;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  h1, h2, h3, h4 { color: #000; font-weight: 600; margin: 0; }
+  h1 { font-size: 16pt; letter-spacing: 0.5px; }
+  h2 { font-size: 12pt; margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid #D4A017; text-transform: uppercase; letter-spacing: 0.5px; }
+  h3 { font-size: 10.5pt; margin: 10px 0 4px; color: #000; }
+  .small { font-size: 9pt; color: #666; }
+  .muted { color: #777; }
+  .accent { color: #D4A017; font-weight: 600; }
+
+  /* HEADER */
+  .doc-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px; margin-bottom: 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand .logo {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 24pt; font-weight: 700; color: #000; line-height: 1;
+    letter-spacing: 2px;
+  }
+  .brand .tag {
+    font-size: 8pt; color: #D4A017; letter-spacing: 1px;
+    font-weight: 600; text-transform: uppercase;
+  }
+  .header-meta { text-align: right; font-size: 9pt; color: #444; }
+  .header-meta .title { font-size: 13pt; color: #000; font-weight: 700; letter-spacing: 0.5px; }
+  .header-meta .row { margin-top: 3px; }
+  .header-meta .label { color: #888; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9.5pt; }
+  th, td { border: 0.6pt solid #BBB; padding: 5px 7px; vertical-align: top; text-align: left; }
+  th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.pass td { color: #2a6a2a; }
+  tr.fail td { color: #a02020; font-weight: 600; }
+  .kv-table th { width: 30%; }
+  .compact td, .compact th { padding: 3.5px 6px; font-size: 9pt; }
+
+  /* SEVERITY */
+  .sev {
+    display: inline-block; padding: 2px 8px; border-radius: 3px;
+    font-size: 8.5pt; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .sev.normal   { background: #E8F0E8; color: #2a6a2a; border: 0.6pt solid #2a6a2a; }
+  .sev.amber    { background: #FFF6E0; color: #8A6A00; border: 0.6pt solid #D4A017; }
+  .sev.red      { background: #FBE5E5; color: #A02020; border: 0.6pt solid #A02020; }
+  .sev.critical { background: #2A0000; color: #FFF; border: 0.6pt solid #000; }
+
+  /* PHOTO EVIDENCE */
+  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+  .photo-card { border: 0.6pt solid #BBB; padding: 8px; background: #FAFAFA; font-size: 9pt; }
+  .photo-card .ph-title { font-weight: 600; color: #000; margin-bottom: 4px; }
+  .photo-thumb {
+    height: 90px; background: #EEE; border: 0.6pt dashed #999;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8.5pt; color: #888; margin-bottom: 5px;
+  }
+  .photo-meta { font-size: 8.5pt; color: #666; }
+  .photo-meta span { display: inline-block; margin-right: 10px; }
+
+  /* SIGNOFF */
+  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; page-break-inside: avoid; }
+  .sigbox { border: 0.6pt solid #BBB; padding: 10px 12px; min-height: 110px; }
+  .sigbox h4 { font-size: 9.5pt; color: #000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 0.6pt solid #D4A017; padding-bottom: 4px; }
+  .sigbox .siglabel { color: #888; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  .sigbox .signame { color: #000; font-weight: 600; font-size: 11pt; margin-top: 12px; font-family: 'Cormorant Garamond', Georgia, serif; }
+  .sigbox .sigrole { font-size: 9pt; color: #555; }
+  .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
+  .pending {
+    background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020;
+    padding: 14px; text-align: center; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; font-size: 10pt;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    position: fixed; bottom: 8mm; left: 15mm; right: 15mm;
+    border-top: 0.6pt solid #999; padding-top: 4px;
+    font-size: 8.5pt; color: #666; display: flex; justify-content: space-between;
+  }
+
+  /* LOCKED STAMP */
+  .stamp-locked {
+    position: fixed; top: 35mm; right: -10mm;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 60pt; font-weight: 700; color: #D4A017;
+    opacity: 0.30; transform: rotate(-30deg);
+    pointer-events: none; z-index: 999;
+    letter-spacing: 2px; white-space: nowrap;
+  }
+
+  section { page-break-inside: avoid; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+</style>
+</head>
+<body>
+
+{{#is_locked}}
+<div class="stamp-locked">LOCKED &mdash; FINAL</div>
+{{/is_locked}}
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="brand">
+    <div>
+      <div class="logo">IQRA</div>
+      <div class="tag">Quality Assured.</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="title">Incoming Material Inspection Report</div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-005 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
+    <div class="row"><span class="label">IMIR Lot ID:</span> <strong>{{imir_lot_id}}</strong></div>
+    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
+  </div>
+</div>
+
+<!-- RECEIPT DETAILS -->
+<section>
+  <h2>1. Receipt Details</h2>
+  <table class="kv-table compact">
+    <tr><th>Phase / Package</th><td>{{phase}} / {{package_name}}</td>
+        <th>Material Family</th><td>{{material_family}}</td></tr>
+    <tr><th>Material Description</th><td colspan="3">{{material_description}}</td></tr>
+    <tr><th>PO Number</th><td>{{po_number}}</td>
+        <th>MTC No.</th><td>{{mtc_no}}</td></tr>
+    <tr><th>Challan No.</th><td>{{challan_no}}</td>
+        <th>Heat No.</th><td>{{heat_no}}</td></tr>
+    <tr><th>Lot No.</th><td>{{lot_no}}</td>
+        <th>Grade</th><td>{{grade}}</td></tr>
+    <tr><th>Quantity Received</th><td class="num">{{qty_received}} MT</td>
+        <th>Quantity Accepted</th><td class="num">{{qty_accepted}} MT</td></tr>
+    <tr><th>Quantity on Hold</th><td class="num">{{qty_hold}} MT</td>
+        <th>Storage Location</th><td>{{storage_location}}</td></tr>
+  </table>
+</section>
+
+<!-- MTC CHEMISTRY -->
+<section>
+  <h2>2. Extracted MTC &mdash; Chemistry (% by mass)</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th>Element</th><th>C</th><th>Mn</th><th>Si</th><th>P</th><th>S</th><th>Cr</th><th>Ni</th><th>Mo</th><th>V</th><th>Cu</th><th>Al</th><th>N</th><th>Cb</th><th>Ti</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Extracted</th>
+        <td class="num">{{chem.C}}</td><td class="num">{{chem.Mn}}</td><td class="num">{{chem.Si}}</td>
+        <td class="num">{{chem.P}}</td><td class="num">{{chem.S}}</td><td class="num">{{chem.Cr}}</td>
+        <td class="num">{{chem.Ni}}</td><td class="num">{{chem.Mo}}</td><td class="num">{{chem.V}}</td>
+        <td class="num">{{chem.Cu}}</td><td class="num">{{chem.Al}}</td><td class="num">{{chem.N}}</td>
+        <td class="num">{{chem.Cb}}</td><td class="num">{{chem.Ti}}</td>
+      </tr>
+      <tr>
+        <th>Spec Limit</th>
+        <td class="num">{{spec.C}}</td><td class="num">{{spec.Mn}}</td><td class="num">{{spec.Si}}</td>
+        <td class="num">{{spec.P}}</td><td class="num">{{spec.S}}</td><td class="num">{{spec.Cr}}</td>
+        <td class="num">{{spec.Ni}}</td><td class="num">{{spec.Mo}}</td><td class="num">{{spec.V}}</td>
+        <td class="num">{{spec.Cu}}</td><td class="num">{{spec.Al}}</td><td class="num">{{spec.N}}</td>
+        <td class="num">{{spec.Cb}}</td><td class="num">{{spec.Ti}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="small">Reference: {{chem_reference_standard}} &nbsp;|&nbsp; OCR Confidence: <span class="accent">{{mtc_chem_ocr_confidence}}%</span></div>
+</section>
+
+<!-- MECHANICAL -->
+<section>
+  <h2>3. Extracted MTC &mdash; Mechanical Properties</h2>
+  <table class="compact">
+    <thead>
+      <tr><th>Property</th><th>Extracted Value</th><th>Project Requirement</th><th>Within Spec</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Yield Strength (MPa)</td><td class="num">{{mech.yield}}</td><td class="num">{{mech_spec.yield}}</td><td>{{mech.yield_result}}</td></tr>
+      <tr><td>Ultimate Tensile Strength (MPa)</td><td class="num">{{mech.uts}}</td><td class="num">{{mech_spec.uts}}</td><td>{{mech.uts_result}}</td></tr>
+      <tr><td>Elongation (%)</td><td class="num">{{mech.elongation}}</td><td class="num">{{mech_spec.elongation}}</td><td>{{mech.elongation_result}}</td></tr>
+      <tr><td>Impact Energy (J)</td><td class="num">{{mech.impact}}</td><td class="num">{{mech_spec.impact}}</td><td>{{mech.impact_result}}</td></tr>
+    </tbody>
+  </table>
+  <div class="small">Test Method Reference: {{mech_reference_standard}} &nbsp;|&nbsp; OCR Confidence: <span class="accent">{{mtc_mech_ocr_confidence}}%</span></div>
+</section>
+
+<!-- IDENTITY VERIFICATION -->
+<section>
+  <h2>4. Identity Verification</h2>
+  <table class="compact">
+    <thead><tr><th>Source</th><th>Captured Value</th><th>Expected (MTC)</th><th>OCR Confidence</th><th>Match</th></tr></thead>
+    <tbody>
+      <tr><td>Heat-Marking Photo (stamped on plate)</td><td>{{heat_mark_extracted}}</td><td>{{heat_no}}</td><td class="num">{{heat_mark_ocr_confidence}}%</td><td>{{heat_mark_match_result}}</td></tr>
+      <tr><td>Sticker / Tag Photo</td><td>{{sticker_extracted}}</td><td>{{lot_no}}</td><td class="num">{{sticker_ocr_confidence}}%</td><td>{{sticker_match_result}}</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CONFLICT SEVERITY -->
+<section>
+  <h2>5. Conflict Severity Flag</h2>
+  <table class="compact kv-table">
+    <tr>
+      <th>Severity (Rule A17)</th>
+      <td><span class="sev {{severity_class}}">{{severity_flag}}</span></td>
+      <th>Auto-Raised NCR</th>
+      <td>{{ncr_raised_id}}</td>
+    </tr>
+    <tr>
+      <th>Conflict Summary</th>
+      <td colspan="3">{{conflict_summary}}</td>
+    </tr>
+  </table>
+</section>
+
+<!-- NSPL CONFIRM + IQRA REVIEW -->
+<section>
+  <h2>6. NSPL Confirmation &amp; IQRA Review</h2>
+  <table class="compact">
+    <thead><tr><th>Stage</th><th>Status</th><th>Date</th><th>Reviewer</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>NSPL Confirmation</td><td>{{nspl_confirmation_status}}</td><td>{{nspl_confirmation_date}}</td><td>{{nspl_confirmed_by}}</td><td>{{nspl_confirmation_note}}</td></tr>
+      <tr><td>IQRA Review</td><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_condition_note}}</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- PHOTO EVIDENCE -->
+<section>
+  <h2>7. Photo Evidence</h2>
+  <div class="photo-grid">
+    {{#photos}}
+    <div class="photo-card">
+      <div class="ph-title">{{title}}</div>
+      <div class="photo-thumb">[ Photo: {{filename}} ]</div>
+      <div class="photo-meta">
+        <span><strong>Captured:</strong> {{captured_at}}</span>
+        <span><strong>OCR:</strong> {{ocr_confidence}}% ({{ocr_status}})</span>
+      </div>
+      <div class="photo-meta"><span><strong>Note:</strong> {{note}}</span></div>
+    </div>
+    {{/photos}}
+  </div>
+</section>
+
+<!-- SIGNOFF -->
+<section class="signoff">
+  <div class="sigbox">
+    <h4>NSPL &mdash; Checked &amp; Signed</h4>
+    <div class="siglabel">Submitted &amp; verified by NSPL QA/QC</div>
+    <div class="signame">{{nspl_name}}</div>
+    <div class="sigrole">{{nspl_role}}</div>
+    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+  </div>
+
+  {{#iqra_signed_date}}
+  <div class="sigbox">
+    <h4>IQRA &mdash; Verified &amp; Signed</h4>
+    <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
+    <div class="signame">{{iqra_name}}</div>
+    <div class="sigrole">{{iqra_role}}</div>
+    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+  </div>
+  {{/iqra_signed_date}}
+
+  {{^iqra_signed_date}}
+  <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
+  {{/iqra_signed_date}}
+</section>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/IMIR/{{seq_padded}}</div>
+  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+</div>
+
+</body>
+</html>
