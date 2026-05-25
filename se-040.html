@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SE-040 - NSPL Issue Cover Sheet to IQRA for Final Review - {{record_id}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 15mm 15mm 22mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: #FFFDF7;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5pt; color: #2A2A35; line-height: 1.42;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1, h2, h3, h4 { color: #000; font-weight: 600; margin: 0; }
+  h1 { font-size: 16pt; letter-spacing: 0.5px; }
+  h2 { font-size: 12pt; margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid #D4A017; text-transform: uppercase; letter-spacing: 0.5px; }
+  h3 { font-size: 10.5pt; margin: 10px 0 4px; color: #000; }
+  .small { font-size: 9pt; color: #666; }
+  .muted { color: #777; }
+  .accent { color: #D4A017; font-weight: 600; }
+  .lime-pill { display: inline-block; background: #D5EB4B; color: #2A2A35; padding: 2px 9px; border-radius: 3px; font-size: 9pt; font-weight: 700; letter-spacing: 0.4px; }
+  .doc-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24pt; font-weight: 700; color: #000; line-height: 1; letter-spacing: 2px; }
+  .brand .tag { font-size: 8pt; color: #D4A017; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+  .header-meta { text-align: right; font-size: 9pt; color: #444; }
+  .header-meta .title { font-size: 13pt; color: #000; font-weight: 700; letter-spacing: 0.5px; }
+  .header-meta .row { margin-top: 3px; }
+  .header-meta .label { color: #888; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9.5pt; }
+  th, td { border: 0.6pt solid #BBB; padding: 5px 7px; vertical-align: top; text-align: left; }
+  th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .kv-table th { width: 32%; }
+  .compact td, .compact th { padding: 3.5px 6px; font-size: 9pt; }
+  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+  .photo-tile { border: 0.6pt solid #BBB; padding: 6px; text-align: center; background: #FAFAFA; }
+  .photo-tile .ph { background: #ECECEC; height: 80px; display: flex; align-items: center; justify-content: center; color: #777; font-size: 9pt; }
+  .photo-tile .cap { margin-top: 4px; font-size: 8.5pt; color: #555; word-wrap: break-word; }
+  .review-banner { background: #FFF8DC; border-left: 3px solid #D4A017; padding: 8px 10px; margin: 8px 0; font-size: 9.5pt; }
+  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; padding-top: 12px; border-top: 1.5px solid #000; page-break-inside: avoid; }
+  .signoff .box { border: 0.6pt solid #BBB; padding: 8px 10px; min-height: 110px; background: #FAFAFA; }
+  .signoff .box .role { font-size: 8.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .signoff .box .name { font-size: 12pt; font-weight: 600; color: #000; margin-top: 22px; font-family: 'Cormorant Garamond', Georgia, serif; }
+  .signoff .box .date { font-size: 9pt; color: #555; margin-top: 4px; }
+  .pending-block { background: #FFEBEB; border-left: 3px solid #C0392B; padding: 8px 10px; min-height: 90px; color: #C0392B; font-weight: 600; font-size: 10pt; }
+  .footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; font-size: 8pt; color: #888; border-top: 0.5pt solid #CCC; padding-top: 4px; }
+  .locked-stamp { position: fixed; top: 30mm; right: 18mm; font-size: 60pt; color: #D4A017; opacity: 0.30; transform: rotate(-30deg); font-weight: 700; pointer-events: none; font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 2px; }
+  .placeholder-banner { background: #FFF3E0; border: 1px dashed #D4A017; padding: 16px 18px; margin: 14px 0; color: #8A6A00; font-size: 10.5pt; }
+  .placeholder-banner strong { color: #5A4400; }
+  section { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+{{#is_locked}}<div class="locked-stamp">LOCKED — FINAL</div>{{/is_locked}}
+
+<div class="doc-header">
+  <div class="brand">
+    <div>
+      <div class="logo">IQRA</div>
+      <div class="tag">Quality Assured.</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="title">NSPL ISSUE COVER SHEET TO IQRA FOR FINAL REVIEW</div>
+    <div class="row"><span class="label">Form:</span> <span class="lime-pill">SE-040</span></div>
+    <div class="row"><span class="label">Project:</span> J-126 EPE Jinnaram PEB</div>
+    <div class="row"><span class="label">Phase:</span> Site Erection</div>
+    <div class="row"><span class="label">Record:</span> <strong>{{record_id}}</strong></div>
+    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}}</div>
+  </div>
+</div>
+
+<div class="placeholder-banner">
+  <strong>Form schema pending Raghu's review.</strong><br>
+  This template is a placeholder. The Layer 1 field set for <strong>SE-040</strong>
+  has not yet been finalised in the canonical workbook. PDF generation for this form
+  is on hold until field detail is added in the source spec and this template is
+  regenerated.
+</div>
+
+<h2>Record Metadata</h2>
+<table class="kv-table compact">
+  <tr><th>Record ID</th><td>{{record_id}}</td></tr>
+  <tr><th>Project</th><td>J-126 EPE Jinnaram PEB</td></tr>
+  <tr><th>Phase</th><td>Site Erection</td></tr>
+  <tr><th>Activity Date</th><td>{{activity_date}}</td></tr>
+  <tr><th>Submission Date</th><td>{{submission_timestamp}}</td></tr>
+  <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
+  <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
+</table>
+
+<h2>IQRA Review</h2>
+<div class="review-banner">
+  <strong>Status:</strong> {{iqra_review_status}}
+  {{#iqra_condition_note}}<br><strong>Condition:</strong> {{iqra_condition_note}}{{/iqra_condition_note}}
+  {{#return_hold_reason_note}}<br><strong>Return / Hold Reason:</strong> {{return_hold_reason_note}}{{/return_hold_reason_note}}
+</div>
+
+<div class="signoff">
+  <div class="box">
+    <div class="role">NSPL — Maker</div>
+    <div class="name">{{nspl_name}}</div>
+    <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Site QC{{/nspl_role}}</div>
+    <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
+  </div>
+  {{#iqra_signed_date}}
+  <div class="box">
+    <div class="role">IQRA — Checker</div>
+    <div class="name">{{iqra_name}}</div>
+    <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>
+    <div class="date">Signed: {{iqra_signed_date}}</div>
+  </div>
+  {{/iqra_signed_date}}
+  {{^iqra_signed_date}}
+  <div class="pending-block">
+    Pending IQRA approval — record not yet locked for outward issue.
+  </div>
+  {{/iqra_signed_date}}
+</div>
+
+<div class="footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. | SE-040 | NSPL/EPE/{{record_id}}</div>
+  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+</div>
+
+</body>
+</html>
