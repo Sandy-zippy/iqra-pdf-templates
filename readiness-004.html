@@ -45,6 +45,13 @@
   .summary-card { border: 1.2px solid #000; padding: 10px 12px; background: #FAFAFA; margin-bottom: 8px; }
   .summary-card .row { display: flex; justify-content: space-between; padding: 3px 0; }
   .summary-card .num-big { font-size: 18pt; font-weight: 700; color: #000; font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  /* Brand asset injection — added 2026-05-26 */
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .stamp-img { height: 90px; width: auto; opacity: 0.88; margin-top: 8px; display: block; }
+  .sigbox { position: relative; }
 </style>
 </head>
 <body>
@@ -53,9 +60,13 @@
 
 <div class="doc-header">
   <div class="brand">
-    <div>
-      <div class="logo">IQRA</div>
+    <div class="brand-row">
+      <img class="logo-img" src="brand-assets/iqra-logo.jpg" alt="Iqra Quality Services">
       <div class="tag">Quality Assured.</div>
+    </div>
+    <div class="brand-row" style="margin-left:18px;">
+      <img class="nspl-logo-img" src="brand-assets/nspl-logo.jpeg" alt="Nischay Steels Pvt Ltd">
+      <div class="tag" style="font-size:7.5pt;">Nischay Steels Pvt. Ltd.</div>
     </div>
   </div>
   <div class="header-meta">
@@ -145,6 +156,7 @@
   <div class="sigbox">
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Compiled by NSPL Project Engineer</div>
+    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="signame">{{nspl_name}}</div>
     <div class="sigrole">{{nspl_role}}</div>
     <div class="sigdate">Signed: {{nspl_signed_date}}</div>
@@ -154,6 +166,10 @@
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="signame">{{iqra_name}}</div>
     <div class="sigrole">{{iqra_role}}</div>
     <div class="sigdate">Signed: {{iqra_signed_date}}</div>
@@ -166,7 +182,7 @@
 </section>
 
 <div class="doc-footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/RDY/{{seq_padded}}</div>
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | NSPL/EPE/RDY/{{seq_padded}}</div>
   <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 

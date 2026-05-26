@@ -47,6 +47,13 @@
   .section-tag { color: #D4A017; font-weight: 700; margin-right: 6px; }
   .assumption-box { background: #FFFBF0; border: 0.6pt solid #D4A017; padding: 10px 12px; font-size: 9.2pt; line-height: 1.55; }
   .assumption-box p { margin: 0 0 6px; }
+
+  /* Brand asset injection — added 2026-05-26 */
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .stamp-img { height: 90px; width: auto; opacity: 0.88; margin-top: 8px; display: block; }
+  .sigbox { position: relative; }
 </style>
 </head>
 <body>
@@ -55,9 +62,13 @@
 
 <div class="doc-header">
   <div class="brand">
-    <div>
-      <div class="logo">IQRA</div>
+    <div class="brand-row">
+      <img class="logo-img" src="brand-assets/iqra-logo.jpg" alt="Iqra Quality Services">
       <div class="tag">Quality Assured.</div>
+    </div>
+    <div class="brand-row" style="margin-left:18px;">
+      <img class="nspl-logo-img" src="brand-assets/nspl-logo.jpeg" alt="Nischay Steels Pvt Ltd">
+      <div class="tag" style="font-size:7.5pt;">Nischay Steels Pvt. Ltd.</div>
     </div>
   </div>
   <div class="header-meta">
@@ -401,7 +412,7 @@
 </section>
 
 <div class="doc-footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/WSR/{{seq_padded}}</div>
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | NSPL/EPE/WSR/{{seq_padded}}</div>
   <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 

@@ -44,6 +44,13 @@
   .status-ok { background: #E6F4EA; color: #1B5E20; }
   .status-discrepancy { background: #FFF8DC; color: #B58300; }
   .status-rejected { background: #FFEBEB; color: #C0392B; }
+
+  /* Brand asset injection — added 2026-05-26 */
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .stamp-img { height: 90px; width: auto; opacity: 0.88; margin-top: 8px; display: block; }
+  .sigbox { position: relative; }
 </style>
 </head>
 <body>
@@ -125,6 +132,7 @@
 <div class="signoff">
   <div class="box">
     <div class="role">NSPL Site QC &mdash; Checked &amp; Signed</div>
+    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="name">{{nspl_name}}</div>
     <div class="date">{{nspl_role}} &middot; {{nspl_signed_date}}</div>
   </div>
@@ -143,7 +151,7 @@
 </div>
 
 <div class="footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. | {{record_id}}</div>
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | {{record_id}}</div>
   <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 

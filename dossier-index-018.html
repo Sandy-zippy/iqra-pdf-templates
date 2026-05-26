@@ -47,6 +47,13 @@
   .kpi-card .kpi-label { font-size: 8.5pt; color: #666; text-transform: uppercase; letter-spacing: 0.4px; }
   .kpi-card .kpi-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22pt; font-weight: 700; color: #000; line-height: 1.1; margin-top: 2px; }
   .kpi-card .kpi-tag { font-size: 8pt; color: #D4A017; font-weight: 600; }
+
+  /* Brand asset injection — added 2026-05-26 */
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .stamp-img { height: 90px; width: auto; opacity: 0.88; margin-top: 8px; display: block; }
+  .sigbox { position: relative; }
 </style>
 </head>
 <body>
@@ -55,9 +62,13 @@
 
 <div class="doc-header">
   <div class="brand">
-    <div>
-      <div class="logo">IQRA</div>
+    <div class="brand-row">
+      <img class="logo-img" src="brand-assets/iqra-logo.jpg" alt="Iqra Quality Services">
       <div class="tag">Quality Assured.</div>
+    </div>
+    <div class="brand-row" style="margin-left:18px;">
+      <img class="nspl-logo-img" src="brand-assets/nspl-logo.jpeg" alt="Nischay Steels Pvt Ltd">
+      <div class="tag" style="font-size:7.5pt;">Nischay Steels Pvt. Ltd.</div>
     </div>
   </div>
   <div class="header-meta">
@@ -164,6 +175,7 @@
 <section class="signoff">
   <div class="sigbox">
     <h4>Compiled by NSPL</h4>
+    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="siglabel">Dossier compiled by NSPL Document Control</div>
     <div class="signame">{{nspl_name}}</div>
     <div class="sigrole">{{nspl_role}}</div>
@@ -186,7 +198,7 @@
 </section>
 
 <div class="doc-footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/DOS/{{seq_padded}}</div>
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | NSPL/EPE/DOS/{{seq_padded}}</div>
   <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 

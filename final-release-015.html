@@ -46,6 +46,13 @@
   .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
   .result-pass { color: #2a6a2a; font-weight: 600; }
   .result-fail { color: #A02020; font-weight: 600; }
+
+  /* Brand asset injection — added 2026-05-26 */
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .stamp-img { height: 90px; width: auto; opacity: 0.88; margin-top: 8px; display: block; }
+  .sigbox { position: relative; }
 </style>
 </head>
 <body>
@@ -54,9 +61,13 @@
 
 <div class="doc-header">
   <div class="brand">
-    <div>
-      <div class="logo">IQRA</div>
+    <div class="brand-row">
+      <img class="logo-img" src="brand-assets/iqra-logo.jpg" alt="Iqra Quality Services">
       <div class="tag">Quality Assured.</div>
+    </div>
+    <div class="brand-row" style="margin-left:18px;">
+      <img class="nspl-logo-img" src="brand-assets/nspl-logo.jpeg" alt="Nischay Steels Pvt Ltd">
+      <div class="tag" style="font-size:7.5pt;">Nischay Steels Pvt. Ltd.</div>
     </div>
   </div>
   <div class="header-meta">
@@ -152,6 +163,9 @@
   <div class="sigbox">
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; verified by NSPL QA/QC</div>
+    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
+    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
+    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="signame">{{nspl_name}}</div>
     <div class="sigrole">{{nspl_role}}</div>
     <div class="sigdate">Signed: {{nspl_signed_date}}</div>
@@ -161,6 +175,10 @@
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
+    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="signame">{{iqra_name}}</div>
     <div class="sigrole">{{iqra_role}}</div>
     <div class="sigdate">Signed: {{iqra_signed_date}}</div>
@@ -173,7 +191,7 @@
 </section>
 
 <div class="doc-footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. | NSPL/EPE/FNL/{{seq_padded}}</div>
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | NSPL/EPE/FNL/{{seq_padded}}</div>
   <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 
