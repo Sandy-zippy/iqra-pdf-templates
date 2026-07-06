@@ -75,9 +75,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Primer Application</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-016B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-016B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Primer Record ID:</span> <strong>{{primer_record_id}}</strong></div>
+    <div class="row"><span class="label">Primer Record ID:</span> <strong>{{u2_016b_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -85,13 +85,13 @@
 <section>
   <h2>1. Member &amp; Primer Header</h2>
   <table class="kv-table compact">
-    <tr><th>Released Blasting Ref</th><td><span class="link-pill">{{parent_016a_ref}}</span></td>
-        <th>Member Mark</th><td><strong>{{member_mark}}</strong></td></tr>
-    <tr><th>Approved Primer System</th><td>{{approved_primer_system_ref}}</td>
-        <th>Primer Brand</th><td>{{primer_brand}}</td></tr>
-    <tr><th>Primer Product Name</th><td>{{primer_product_name}}</td>
-        <th>Primer Batch / Lot No.</th><td>{{primer_batch_lot_no}}</td></tr>
-    <tr><th>Application Method Observed</th><td>{{application_method}}</td>
+    <tr><th>Released Blasting Ref</th><td><span class="link-pill">{{parent_016a_release_ref_read_only}}</span></td>
+        <th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td></tr>
+    <tr><th>Approved Primer System</th><td>{{approved_primer_system_ref_read_only}}</td>
+        <th>Primer Brand</th><td>{{primer_brand_read_only}}</td></tr>
+    <tr><th>Primer Product Name</th><td>{{primer_product_name_read_only}}</td>
+        <th>Primer Batch / Lot No.</th><td>{{primer_batch_lot_no_read_only}}</td></tr>
+    <tr><th>Application Method Observed</th><td>{{application_method_observed}}</td>
         <th>WFT Measurement (microns)</th><td class="num">{{wft_measurement}}</td></tr>
   </table>
 </section>
@@ -99,11 +99,11 @@
 <section>
   <h2>2. Blast-to-Primer Window</h2>
   <table class="compact kv-table">
-    <tr><th>Parent Blasting Completion</th><td>{{parent_blasting_completion_ts}}</td>
-        <th>Primer Deadline (4hr)</th><td>{{parent_primer_deadline_ts}}</td></tr>
-    <tr><th>Primer Start Timestamp</th><td>{{primer_start_ts}}</td>
-        <th>Primer Completion Timestamp</th><td>{{primer_completion_ts}}</td></tr>
-    <tr><th>4-Hour Window Compliance</th><td><span class="window-{{window_class}}">{{four_hour_window_compliance}}</span></td>
+    <tr><th>Parent Blasting Completion</th><td>{{parent_016a_blasting_completion_timestamp_read_only}}</td>
+        <th>Primer Deadline (4hr)</th><td>{{parent_016a_primer_deadline_timestamp_read_only}}</td></tr>
+    <tr><th>Primer Start Timestamp</th><td>{{primer_start_timestamp}}</td>
+        <th>Primer Completion Timestamp</th><td>{{primer_application_completion_timestamp}}</td></tr>
+    <tr><th>4-Hour Window Compliance</th><td><span class="window-{{window_class}}">{{4_hour_window_compliance_status}}</span></td>
         <th>Reblast Required</th><td>{{reblast_required_status}}</td></tr>
   </table>
 </section>
@@ -113,10 +113,10 @@
   <table class="compact">
     <thead><tr><th>Parameter</th><th>Measured</th><th>Acceptance</th></tr></thead>
     <tbody>
-      <tr><td>Ambient Temperature (&deg;C)</td><td class="num">{{ambient_temp}}</td><td>{{ambient_temp_criteria}}</td></tr>
-      <tr><td>Relative Humidity (%)</td><td class="num">{{relative_humidity}}</td><td>{{rh_criteria}}</td></tr>
-      <tr><td>Steel Surface Temperature (&deg;C)</td><td class="num">{{steel_surface_temp}}</td><td>{{steel_surface_temp_criteria}}</td></tr>
-      <tr><td>Dew Point Temperature (&deg;C)</td><td class="num">{{dew_point_temp}}</td><td>-</td></tr>
+      <tr><td>Ambient Temperature (&deg;C)</td><td class="num">{{ambient_temperature}}</td><td>10 &ndash; 40 &deg;C</td></tr>
+      <tr><td>Relative Humidity (%)</td><td class="num">{{relative_humidity}}</td><td>&le; 85%</td></tr>
+      <tr><td>Steel Surface Temperature (&deg;C)</td><td class="num">{{steel_surface_temperature}}</td><td>&ge; 3&deg;C above dew point</td></tr>
+      <tr><td>Dew Point Temperature (&deg;C)</td><td class="num">{{dew_point_temperature}}</td><td>-</td></tr>
       <tr><td>Dew Point Margin (&deg;C)</td><td class="num">{{dew_point_margin}}</td><td>&ge; 3&deg;C steel above dew point</td></tr>
     </tbody>
   </table>
@@ -128,9 +128,9 @@
   <table class="compact">
     <thead><tr><th>Check</th><th>Specified</th><th>Measured</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Primer DFT Minimum (microns)</td><td class="num">{{primer_dft_min}}</td><td class="num">{{dft_measurement}}</td><td class="{{dft_class}}">{{dft_compliance_status}}</td></tr>
-      <tr><td>Primer DFT Maximum (microns)</td><td class="num">{{primer_dft_max}}</td><td class="num">{{dft_measurement}}</td><td class="{{dft_class}}">{{dft_compliance_status}}</td></tr>
-      <tr><td>Primer Visual Appearance</td><td>{{primer_visual_criteria}}</td><td>{{primer_visual_obs}}</td><td class="{{primer_visual_class}}">{{primer_visual_status}}</td></tr>
+      <tr><td>Primer DFT Minimum (microns)</td><td class="num">{{approved_primer_dft_minimum_read_only}}</td><td class="num">{{dft_measurement}}</td><td class="{{dft_class}}">{{dft_compliance_status}}</td></tr>
+      <tr><td>Primer DFT Maximum (microns)</td><td class="num">{{approved_primer_dft_maximum_read_only}}</td><td class="num">{{dft_measurement}}</td><td class="{{dft_class}}">{{dft_compliance_status}}</td></tr>
+      <tr><td>Primer Visual Appearance</td><td>-</td><td>-</td><td class="{{primer_visual_class}}">{{primer_visual_appearance_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -138,8 +138,8 @@
 <section>
   <h2>5. Final-Coat Recoat Window</h2>
   <table class="compact kv-table">
-    <tr><th>Earliest Final-Coat Timestamp</th><td>{{primer_cure_earliest_ts}}</td>
-        <th>Maximum Recoat Deadline</th><td>{{primer_max_recoat_deadline_ts}}</td></tr>
+    <tr><th>Earliest Final-Coat Timestamp</th><td>{{primer_cure_earliest_final_coat_timestamp}}</td>
+        <th>Maximum Recoat Deadline</th><td>{{primer_maximum_recoat_deadline_timestamp}}</td></tr>
     <tr><th>Final-Coat Recoat Window Status</th><td colspan="3"><strong>{{final_coat_recoat_window_status}}</strong></td></tr>
   </table>
 </section>

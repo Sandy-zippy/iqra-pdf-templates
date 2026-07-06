@@ -75,9 +75,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Blasting / Surface Preparation</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-016A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-016A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Blasting ID:</span> <strong>{{blasting_id}}</strong></div>
+    <div class="row"><span class="label">Blasting ID:</span> <strong>{{u2_016a_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -85,14 +85,14 @@
 <section>
   <h2>1. Member &amp; Plan Header</h2>
   <table class="kv-table compact">
-    <tr><th>Released Final Release Ref</th><td><span class="link-pill">{{parent_015_ref}}</span></td>
-        <th>Member Mark</th><td><strong>{{member_mark}}</strong></td></tr>
-    <tr><th>Final Fabrication Drawing</th><td>{{final_fab_drawing_ref}}</td>
+    <tr><th>Released Final Release Ref</th><td><span class="link-pill">{{parent_015_release_ref_read_only}}</span></td>
+        <th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td></tr>
+    <tr><th>Final Fabrication Drawing</th><td>{{final_fabrication_drawing_ref_read_only}}</td>
         <th>Source Mode</th><td>{{source_mode}}</td></tr>
-    <tr><th>Surface Preparation Standard</th><td>{{surface_prep_standard}}</td>
-        <th>Surface Profile Requirement</th><td>{{surface_profile_requirement}}</td></tr>
-    <tr><th>Blasting Equipment</th><td>{{blasting_equipment_id}}</td>
-        <th>Equipment Calibration Status</th><td>{{blasting_equipment_cal_status}}</td></tr>
+    <tr><th>Surface Preparation Standard</th><td>{{surface_preparation_standard_read_only}}</td>
+        <th>Surface Profile Requirement</th><td>{{surface_profile_requirement_read_only}}</td></tr>
+    <tr><th>Blasting Equipment</th><td>{{approved_blasting_requirement_pack_read_only}}</td>
+        <th>Equipment Calibration Status</th><td>{{blasting_equipment_calibration_status}}</td></tr>
   </table>
 </section>
 
@@ -101,10 +101,10 @@
   <table class="compact">
     <thead><tr><th>Parameter</th><th>Measured</th><th>Acceptance</th></tr></thead>
     <tbody>
-      <tr><td>Ambient Temperature (&deg;C)</td><td class="num">{{ambient_temp}}</td><td>{{ambient_temp_criteria}}</td></tr>
-      <tr><td>Relative Humidity (%)</td><td class="num">{{relative_humidity}}</td><td>{{rh_criteria}}</td></tr>
-      <tr><td>Steel Surface Temperature (&deg;C)</td><td class="num">{{steel_surface_temp}}</td><td>{{steel_surface_temp_criteria}}</td></tr>
-      <tr><td>Dew Point Temperature (&deg;C)</td><td class="num">{{dew_point_temp}}</td><td>-</td></tr>
+      <tr><td>Ambient Temperature (&deg;C)</td><td class="num">{{ambient_temperature}}</td><td>10 &ndash; 40 &deg;C</td></tr>
+      <tr><td>Relative Humidity (%)</td><td class="num">{{relative_humidity}}</td><td>&le; 85%</td></tr>
+      <tr><td>Steel Surface Temperature (&deg;C)</td><td class="num">{{steel_surface_temperature}}</td><td>&ge; 3&deg;C above dew point</td></tr>
+      <tr><td>Dew Point Temperature (&deg;C)</td><td class="num">{{dew_point_temperature}}</td><td>-</td></tr>
       <tr><td>Dew Point Margin (&deg;C)</td><td class="num">{{dew_point_margin}}</td><td>&ge; 3&deg;C steel above dew point</td></tr>
     </tbody>
   </table>
@@ -116,9 +116,9 @@
   <table class="compact">
     <thead><tr><th>Check</th><th>Observation</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Surface Preparation Readiness</td><td>{{surface_prep_readiness_obs}}</td><td class="{{surface_prep_readiness_class}}">{{surface_prep_readiness_status}}</td></tr>
-      <tr><td>Surface Profile Measurement (microns)</td><td class="num">{{surface_profile_measurement}}</td><td class="{{surface_profile_class}}">{{surface_profile_status}}</td></tr>
-      <tr><td>Cleanliness Grade Verification</td><td>{{cleanliness_grade_obs}}</td><td class="{{cleanliness_class}}">{{cleanliness_grade_status}}</td></tr>
+      <tr><td>Surface Preparation Readiness</td><td>-</td><td class="{{surface_prep_readiness_class}}">{{surface_preparation_readiness_status}}</td></tr>
+      <tr><td>Surface Profile Measurement (microns)</td><td class="num">{{surface_profile_measurement}}</td><td class="{{surface_profile_class}}">{{surface_profile_acceptance_status}}</td></tr>
+      <tr><td>Cleanliness Grade Verification</td><td>-</td><td class="{{cleanliness_class}}">{{cleanliness_grade_verification_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -126,9 +126,9 @@
 <section>
   <h2>4. 4-Hour Window Compliance</h2>
   <table class="compact kv-table">
-    <tr><th>Blasting Completion Timestamp</th><td>{{blasting_completion_ts}}</td>
-        <th>Primer Deadline Timestamp</th><td>{{primer_deadline_ts}}</td></tr>
-    <tr><th>4-Hour Window Status</th><td><span class="window-{{window_class}}">{{window_status}}</span></td>
+    <tr><th>Blasting Completion Timestamp</th><td>{{blasting_completion_timestamp}}</td>
+        <th>Primer Deadline Timestamp</th><td>{{primer_deadline_timestamp}}</td></tr>
+    <tr><th>4-Hour Window Status</th><td><span class="window-{{window_class}}">{{4_hour_window_status}}</span></td>
         <th>Reblast Required</th><td>{{reblast_required_status}}</td></tr>
   </table>
   <div class="small">Rule: Primer application must commence within 4 hours of blast completion to prevent surface oxidation. Reblast triggers if window expires before primer start.</div>
