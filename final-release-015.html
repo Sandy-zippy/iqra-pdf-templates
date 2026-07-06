@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Final Dimensional Release</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-015 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-015 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Final Release ID:</span> <strong>{{final_release_id}}</strong></div>
+    <div class="row"><span class="label">Final Release ID:</span> <strong>{{u2_015_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,10 +82,10 @@
 <section>
   <h2>1. Completed Member Header</h2>
   <table class="kv-table compact">
-    <tr><th>Completed Fabricated Member</th><td><span class="link-pill">{{member_ref}}</span></td>
-        <th>Member Mark</th><td><strong>{{member_mark}}</strong></td></tr>
-    <tr><th>Parent 012A Release Ref</th><td><span class="link-pill">{{parent_012a_ref}}</span></td>
-        <th>Final Fabrication Drawing Ref</th><td>{{final_fab_drawing_ref}}</td></tr>
+    <tr><th>Completed Fabricated Member</th><td><span class="link-pill">{{completed_fabricated_member_selection}}</span></td>
+        <th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td></tr>
+    <tr><th>Parent 012A Release Ref</th><td><span class="link-pill">{{parent_012a_release_ref_read_only}}</span></td>
+        <th>Final Fabrication Drawing Ref</th><td>{{final_fabrication_drawing_ref_read_only}}</td></tr>
     <tr><th>Source Mode</th><td>{{source_mode}}</td>
         <th>First-Off / Repeat Run</th><td>{{first_off_or_repeat}}</td></tr>
   </table>
@@ -96,12 +96,12 @@
   <table class="compact">
     <thead><tr><th>Pack</th><th>Status</th><th>Reference</th></tr></thead>
     <tbody>
-      <tr><td>Child Part Completion Pack</td><td>{{child_part_pack_status}}</td><td>{{child_part_pack_ref}}</td></tr>
-      <tr><td>Built-up SAW Chain Pack</td><td>{{builtup_saw_chain_status}}</td><td>{{builtup_saw_chain_ref}}</td></tr>
-      <tr><td>Attachment FCAW Chain Pack</td><td>{{attachment_fcaw_chain_status}}</td><td>{{attachment_fcaw_chain_ref}}</td></tr>
-      <tr><td>NDT / Repair / Post-Weld Drilling Chain</td><td>{{ndt_repair_chain_status}}</td><td>{{ndt_repair_chain_ref}}</td></tr>
-      <tr><td>Upstream Record Completeness Pack</td><td>{{upstream_completeness_status}}</td><td>{{upstream_completeness_ref}}</td></tr>
-      <tr><td>Master Upstream Acceptance Pack</td><td><strong>{{master_upstream_status}}</strong></td><td>{{master_upstream_ref}}</td></tr>
+      <tr><td>Child Part Completion Pack</td><td colspan="2">{{child_part_completion_pack}}</td></tr>
+      <tr><td>Built-up SAW Chain Pack</td><td colspan="2">{{built_up_saw_chain_pack}}</td></tr>
+      <tr><td>Attachment FCAW Chain Pack</td><td colspan="2">{{attachment_fcaw_chain_pack}}</td></tr>
+      <tr><td>NDT / Repair / Post-Weld Drilling Chain</td><td colspan="2">{{ndt_repair_post_weld_drilling_chain_pack}}</td></tr>
+      <tr><td>Upstream Record Completeness Pack</td><td colspan="2">{{upstream_record_completeness_pack}}</td></tr>
+      <tr><td>Master Upstream Acceptance Pack</td><td colspan="2"><strong>{{master_upstream_acceptance_pack}}</strong></td></tr>
     </tbody>
   </table>
 </section>
@@ -111,12 +111,12 @@
   <table class="compact">
     <thead><tr><th>Dimension</th><th>Expected (mm)</th><th>Measured (mm)</th><th>Deviation</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Length</td><td class="num">{{expected_length}}</td><td class="num">{{measured_length}}</td><td class="num">{{length_deviation}}</td><td class="{{length_class}}">{{length_status}}</td></tr>
-      <tr><td>Depth</td><td class="num">{{expected_depth}}</td><td class="num">{{measured_depth}}</td><td class="num">{{depth_deviation}}</td><td class="{{depth_class}}">{{depth_status}}</td></tr>
-      <tr><td>Width</td><td class="num">{{expected_width}}</td><td class="num">{{measured_width}}</td><td class="num">{{width_deviation}}</td><td class="{{width_class}}">{{width_status}}</td></tr>
+      <tr><td>Length</td><td class="num">{{expected_length_read_only}}</td><td class="num">{{measured_length}}</td><td class="num">{{length_deviation}}</td><td class="{{length_class}}">{{length_status}}</td></tr>
+      <tr><td>Depth</td><td class="num">{{expected_depth_read_only}}</td><td class="num">{{measured_depth}}</td><td class="num">{{depth_deviation}}</td><td class="{{depth_class}}">{{depth_status}}</td></tr>
+      <tr><td>Width</td><td class="num">{{expected_width_read_only}}</td><td class="num">{{measured_width}}</td><td class="num">{{width_deviation}}</td><td class="{{width_class}}">{{width_status}}</td></tr>
     </tbody>
   </table>
-  <div class="small">Overall Member Dimensions Status: <strong class="{{overall_dim_class}}">{{overall_dim_status}}</strong></div>
+  <div class="small">Overall Member Dimensions Status: <strong class="{{overall_dim_class}}">{{overall_member_dimensions_status}}</strong></div>
 </section>
 
 <section>
@@ -126,10 +126,10 @@
     <tbody>
       <tr><td>Sweep Measurement</td><td>{{sweep_measurement}}</td><td class="{{sweep_camber_class}}">{{sweep_camber_status}}</td></tr>
       <tr><td>Camber Measurement</td><td>{{camber_measurement}}</td><td class="{{sweep_camber_class}}">{{sweep_camber_status}}</td></tr>
-      <tr><td>Hole Pattern Verification</td><td>{{hole_pattern_observation}}</td><td class="{{hole_pattern_class}}">{{hole_pattern_status}}</td></tr>
-      <tr><td>Attachment Location &amp; Completeness</td><td>{{attachment_completeness_observation}}</td><td class="{{attachment_class}}">{{attachment_completeness_status}}</td></tr>
-      <tr><td>Final Visual Weld Appearance</td><td>{{final_visual_weld_observation}}</td><td class="{{final_visual_class}}">{{final_visual_weld_status}}</td></tr>
-      <tr><td>Member Marking / Identification</td><td>{{member_marking_observation}}</td><td class="{{member_marking_class}}">{{member_marking_status}}</td></tr>
+      <tr><td>Hole Pattern Verification</td><td>{{hole_pattern_observation}}</td><td class="{{hole_pattern_class}}">{{hole_pattern_verification_status}}</td></tr>
+      <tr><td>Attachment Location &amp; Completeness</td><td>{{attachment_completeness_observation}}</td><td class="{{attachment_class}}">{{attachment_location_completeness_status}}</td></tr>
+      <tr><td>Final Visual Weld Appearance</td><td>{{final_visual_weld_observation}}</td><td class="{{final_visual_class}}">{{final_visual_weld_appearance_status}}</td></tr>
+      <tr><td>Member Marking / Identification</td><td>{{member_marking_observation}}</td><td class="{{member_marking_class}}">{{member_marking_identification_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -164,8 +164,6 @@
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; verified by NSPL QA/QC</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="signame">{{nspl_name}}</div>
     <div class="sigrole">{{nspl_role}}</div>
     <div class="sigdate">Signed: {{nspl_signed_date}}</div>
@@ -175,9 +173,6 @@
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="signame">{{iqra_name}}</div>
     <div class="sigrole">{{iqra_role}}</div>

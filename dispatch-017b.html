@@ -73,23 +73,23 @@
   </div>
   <div class="header-meta">
     <div class="title">Dispatch Clearance Report</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-017B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-017B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Dispatch Trip ID:</span> <strong>{{dispatch_trip_id}}</strong></div>
-    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Dispatch Date:</span> {{dispatch_date}}</div>
+    <div class="row"><span class="label">Dispatch Trip ID:</span> <strong>{{dispatch_id}}</strong></div>
+    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Dispatch Date:</span> {{activity_date}}</div>
   </div>
 </div>
 
 <section>
   <h2>1. Trip Header</h2>
   <table class="kv-table compact">
-    <tr><th>Dispatch Trip ID</th><td><strong>{{dispatch_trip_id}}</strong></td>
+    <tr><th>Dispatch Trip ID</th><td><strong>{{dispatch_id}}</strong></td>
         <th>Vehicle Number</th><td>{{vehicle_number}}</td></tr>
     <tr><th>Driver Name</th><td>{{driver_name}}</td>
         <th>Driver Mobile</th><td>{{driver_mobile}}</td></tr>
     <tr><th>Transporter</th><td>{{transporter}}</td>
         <th>LR / Consignment No</th><td>{{lr_no}}</td></tr>
-    <tr><th>Dispatch Date</th><td>{{dispatch_date}}</td>
+    <tr><th>Dispatch Date</th><td>{{activity_date}}</td>
         <th>Expected Site Receipt</th><td>{{expected_site_receipt_date}}</td></tr>
     <tr><th>Origin</th><td>{{origin_location}}</td>
         <th>Destination (Site)</th><td>{{destination_site}}</td></tr>
@@ -167,25 +167,25 @@
     <table class="compact">
       <thead><tr><th>Action</th><th>Authorised By</th><th>Role</th><th>Date / Time</th></tr></thead>
       <tbody>
-        <tr><td>NSPL Release</td><td>{{nspl_release_by}}</td><td>{{nspl_release_role}}</td><td>{{nspl_release_dt}}</td></tr>
-        <tr><td>IQRA Verification</td><td>{{iqra_verify_by}}</td><td>{{iqra_verify_role}}</td><td>{{iqra_verify_dt}}</td></tr>
+        <tr><td>NSPL Release</td><td>{{nspl_responsible_person}}</td><td>{{nspl_release_role}}</td><td>{{submission_date}}</td></tr>
+        <tr><td>IQRA Verification</td><td>{{iqra_reviewer}}</td><td>{{iqra_verify_role}}</td><td>{{iqra_review_date}}</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="small" style="margin-top:6px;">Expected Site Receipt linkage: <span class="link-pill">SE-013 ref {{se013_link}}</span> &mdash; status: {{se013_status}}</div>
+  <div class="small" style="margin-top:6px;">Expected Site Receipt linkage: <span class="link-pill">SE-013 ref {{se013_link}}</span> &mdash; status: {{frm_se_013_expected_receipt_trigger_status}}</div>
 </section>
 
 <section class="signoff">
   <div class="sigbox">
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; verified by NSPL Dispatch</div>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="signame">{{nspl_name}}</div>
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
+    <div class="signame">{{nspl_responsible_person}}</div>
     <div class="sigrole">{{nspl_role}}</div>
-    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+    <div class="sigdate">Signed: {{submission_date}}</div>
   </div>
 
-  {{#iqra_signed_date}}
+  {{#iqra_review_date}}
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
@@ -193,15 +193,15 @@
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="signame">{{iqra_name}}</div>
+    <div class="signame">{{iqra_reviewer}}</div>
     <div class="sigrole">{{iqra_role}}</div>
-    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+    <div class="sigdate">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_review_date}}
 
-  {{^iqra_signed_date}}
+  {{^iqra_review_date}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_signed_date}}
+  {{/iqra_review_date}}
 </section>
 
 <div class="doc-footer">

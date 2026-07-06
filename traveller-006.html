@@ -72,7 +72,7 @@
     <div class="title">Traveller / Material Traceability Register</div>
     <div class="row"><span class="label">Form:</span> FRM-U2-006 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Traveller ID:</span> <strong>{{traveller_id}}</strong></div>
+    <div class="row"><span class="label">Traveller ID:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -80,12 +80,12 @@
 <section>
   <h2>1. Traveller Header</h2>
   <table class="kv-table compact">
-    <tr><th>Traveller ID</th><td><strong>{{traveller_id}}</strong></td>
-        <th>Source IMIR Lot ID</th><td><span class="link-pill">{{imir_lot_id}}</span></td></tr>
-    <tr><th>Drawing No / Rev</th><td>{{drawing_no}} / {{drawing_rev}}</td>
+    <tr><th>Traveller ID</th><td><strong>{{record_id}}</strong></td>
+        <th>Source IMIR Lot ID</th><td><span class="link-pill">{{IMIR Lot ID (from lot)}}</span></td></tr>
+    <tr><th>Drawing No / Rev</th><td>{{drawing_no_rev}}</td>
         <th>Part Mark</th><td><strong>{{part_mark}}</strong></td></tr>
     <tr><th>Member Mark</th><td>{{member_mark}}</td>
-        <th>Assigned Quantity</th><td class="num">{{assigned_qty}} {{qty_uom}}</td></tr>
+        <th>Assigned Quantity</th><td class="num">{{assigned_quantity}}</td></tr>
     <tr><th>Applicability</th><td>{{applicability}}</td>
         <th>Source Mode</th><td>{{source_mode}}</td></tr>
   </table>
@@ -97,17 +97,17 @@
     <thead><tr><th>IMIR Lot ID</th><th>Material Description</th><th>Grade</th><th>Heat No</th><th>Lot No</th><th>Accepted Qty (MT)</th><th>Balance After This Traveller (MT)</th></tr></thead>
     <tbody>
       <tr>
-        <td><strong>{{imir_lot_id}}</strong></td>
-        <td>{{material_description}}</td>
-        <td>{{grade}}</td>
-        <td>{{heat_no}}</td>
-        <td>{{lot_no}}</td>
+        <td><strong>{{IMIR Lot ID (from lot)}}</strong></td>
+        <td>{{Size / Thickness (from lot)}}</td>
+        <td>{{Standard / Grade (from lot)}}</td>
+        <td>{{Heat / Lot No (from lot)}}</td>
+        <td>{{Heat / Lot No (from lot)}}</td>
         <td class="num">{{lot_accepted_qty}}</td>
-        <td class="num">{{lot_balance_qty}}</td>
+        <td class="num">{{Balance Qty (from lot)}}</td>
       </tr>
     </tbody>
   </table>
-  <div class="small">Rule A25 gate: source lot status was <span class="accent">{{lot_status}}</span> at the time of this Traveller assignment.</div>
+  <div class="small">Rule A25 gate: source lot status was <span class="accent">{{Release Status (from lot)}}</span> at the time of this Traveller assignment.</div>
 </section>
 
 <section>
@@ -118,10 +118,10 @@
       <tr>
         <td><strong>{{part_mark}}</strong></td>
         <td>{{member_mark}}</td>
-        <td>{{drawing_no}} Rev {{drawing_rev}}</td>
+        <td>{{drawing_no_rev}}</td>
         <td>{{part_description}}</td>
         <td class="num">{{bom_required_qty}}</td>
-        <td class="num">{{assigned_qty}}</td>
+        <td class="num">{{assigned_quantity}}</td>
       </tr>
     </tbody>
   </table>

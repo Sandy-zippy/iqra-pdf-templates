@@ -71,9 +71,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Readiness Closure Checklist</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-004 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
-    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase / Package:</span> {{phase_package}}</div>
-    <div class="row"><span class="label">Readiness Package ID:</span> <strong>{{readiness_package_id}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-004 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_number}}</strong></div>
+    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase / Package:</span> {{phase_packafrm}}</div>
+    <div class="row"><span class="label">Readiness Package ID:</span> <strong>{{readiness_packafrm_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -85,7 +85,7 @@
     <div class="row"><span>Closed</span><span class="closed">{{closed_count}}</span></div>
     <div class="row"><span>Open</span><span class="open">{{open_count}}</span></div>
     <div class="row"><span>Partial / Conditional</span><span class="partial">{{partial_count}}</span></div>
-    <div class="row"><span>Overall Readiness</span><strong>{{readiness_package_status}}</strong></div>
+    <div class="row"><span>Overall Readiness</span><strong>{{readiness_packafrm_status}}</strong></div>
   </div>
 </section>
 
@@ -98,7 +98,7 @@
     <tbody>
       {{#items}}
       <tr>
-        <td class="num">{{item_number}}</td>
+        <td class="num">{{readiness_item_number}}</td>
         <td>{{readiness_item}}</td>
         <td>{{required_evidence}}</td>
         <td>{{nspl_status}}</td>
@@ -120,13 +120,13 @@
       <tr><td>Document Master (FRM-U2-002)</td><td>{{linked_document_master_status}}</td><td>{{linked_document_note}}</td></tr>
       <tr><td>Calibration Master (FRM-U2-003)</td><td>{{linked_calibration_status}}</td><td>{{linked_calibration_note}}</td></tr>
       <tr><td>WPS / PQR / WPQ Master (FRM-U2-009)</td><td>{{linked_wps_pqr_wpq_status}}</td><td>{{linked_wps_note}}</td></tr>
-      <tr><td>Welder / Operator Continuity</td><td>{{linked_welder_continuity_status}}</td><td>{{linked_welder_note}}</td></tr>
+      <tr><td>Welder / Operator Continuity</td><td>{{linked_welder_operator_continuity_status}}</td><td>{{linked_welder_note}}</td></tr>
       <tr><td>PT Route</td><td>{{linked_pt_route_status}}</td><td>{{linked_pt_note}}</td></tr>
       <tr><td>QC Manpower</td><td>{{linked_qc_manpower_status}}</td><td>{{linked_qc_note}}</td></tr>
-      <tr><td>Blasting / Primer Facility</td><td>{{linked_blasting_facility_status}}</td><td>{{linked_blasting_note}}</td></tr>
+      <tr><td>Blasting / Primer Facility</td><td>{{linked_blasting_primer_facility_status}}</td><td>{{linked_blasting_note}}</td></tr>
       <tr><td>Primer System</td><td>{{linked_primer_system_status}}</td><td>{{linked_primer_note}}</td></tr>
-      <tr><td>Consumable / Flux / Wire</td><td>{{linked_consumable_status}}</td><td>{{linked_consumable_note}}</td></tr>
-      <tr><td>Dispatch / Dossier Route</td><td>{{linked_dispatch_dossier_status}}</td><td>{{linked_dispatch_note}}</td></tr>
+      <tr><td>Consumable / Flux / Wire</td><td>{{linked_consumable_flux_wire_status}}</td><td>{{linked_consumable_note}}</td></tr>
+      <tr><td>Dispatch / Dossier Route</td><td>{{linked_dispatch_dossier_route_status}}</td><td>{{linked_dispatch_note}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -134,7 +134,7 @@
 <section>
   <h2>4. IQRA Internal Allowance &amp; Production Promotion</h2>
   <table class="kv-table compact">
-    <tr><th>IQRA Internal Allowance Required</th><td>{{iqra_internal_allowance_required}}</td>
+    <tr><th>IQRA Internal Allowance Required</th><td>{{iqra_internal_allowance_note_required}}</td>
         <th>Allowance Note ID</th><td>{{iqra_internal_allowance_note_id}}</td></tr>
     <tr><th>Production Promotion Status</th><td>{{production_promotion_status}}</td>
         <th>Successor Unlock Flag</th><td>{{successor_unlock_flag}}</td></tr>
@@ -157,7 +157,7 @@
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Compiled by NSPL Project Engineer</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="signame">{{nspl_name}}</div>
+    <div class="signame">{{maker_name}}</div>
     <div class="sigrole">{{nspl_role}}</div>
     <div class="sigdate">Signed: {{nspl_signed_date}}</div>
   </div>
@@ -170,7 +170,7 @@
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="signame">{{iqra_name}}</div>
+    <div class="signame">{{checker_name}}</div>
     <div class="sigrole">{{iqra_role}}</div>
     <div class="sigdate">Signed: {{iqra_signed_date}}</div>
   </div>

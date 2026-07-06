@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Cutting Inspection Report</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-007A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-007A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Cutting ID:</span> <strong>{{cutting_id}}</strong></div>
+    <div class="row"><span class="label">Cutting ID:</span> <strong>{{u2_007a_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,77 +82,43 @@
 <section>
   <h2>1. Cutting Header</h2>
   <table class="kv-table compact">
-    <tr><th>Cutting ID</th><td><strong>{{cutting_id}}</strong></td>
-        <th>Source Traveller ID</th><td><span class="link-pill">{{traveller_id}}</span></td></tr>
-    <tr><th>Part Mark</th><td><strong>{{part_mark}}</strong></td>
-        <th>Member Mark</th><td>{{member_mark}}</td></tr>
-    <tr><th>Drawing No / Rev</th><td>{{drawing_no}} / {{drawing_rev}}</td>
-        <th>Material Description</th><td>{{material_description}}</td></tr>
-    <tr><th>Source Material Lot</th><td><span class="link-pill">{{imir_lot_id}}</span> (Heat {{heat_no}})</td>
-        <th>Grade</th><td>{{grade}}</td></tr>
+    <tr><th>Cutting ID</th><td><strong>{{u2_007a_record_id}}</strong></td>
+        <th>Source Traveller</th><td><span class="link-pill">{{traveller_link}}</span></td></tr>
+    <tr><th>Part / Sub-part Mark</th><td><strong>{{part_sub_part_mark}}</strong></td>
+        <th>Parent Assembly Mark</th><td>{{parent_assembly_mark}}</td></tr>
+    <tr><th>Drawing</th><td>{{drawing_link}}</td>
+        <th>Material Lot</th><td>{{material_lot_link}}</td></tr>
+    <tr><th>Source Material Lot</th><td><span class="link-pill">{{material_lot_id}}</span> (Heat {{heat_lot_batch_no}})</td>
+        <th>Grade</th><td>{{standard_grade}}</td></tr>
+    <tr><th>Physical Heat/Lot at Cutting Table</th><td><strong>{{physical_heat_lot_seen_at_cutting_table}}</strong></td>
+        <th>Heat vs IMIR Match</th><td>{{physical_heat_vs_imir_match_status}}</td></tr>
   </table>
 </section>
 
 <section>
   <h2>2. Cutting Plan</h2>
   <table class="kv-table compact">
-    <tr><th>Nesting Plan Reference</th><td>{{nesting_plan_ref}}</td>
-        <th>Machine</th><td>{{cutting_machine}}</td></tr>
-    <tr><th>Cutting Method</th><td>{{cutting_method}}</td>
-        <th>CNC Program No</th><td>{{cnc_program_no}}</td></tr>
-    <tr><th>Operator</th><td>{{cnc_operator}}</td>
-        <th>Date / Time</th><td>{{cutting_date}} {{cutting_time}}</td></tr>
+    <tr><th>Machine / Batch Run</th><td>{{cutting_batch_machine_run_ref}}</td>
+        <th>Cutting Method</th><td>{{cutting_method}}</td></tr>
+    <tr><th>CNC Program / Machine Ref</th><td>{{cnc_program_machine_ref}}</td>
+        <th>First-off / Repeat Run</th><td>{{first_off_repeat_run}}</td></tr>
+    <tr><th>Run / Phase Status</th><td>{{run_phase_status}}</td>
+        <th>Traveller-Child Mapping</th><td>{{traveller_child_mapping_selection}}</td></tr>
   </table>
 </section>
 
-<section>
-  <h2>3. Dimension Check</h2>
-  <table class="compact">
-    <thead>
-      <tr><th>Dimension</th><th>Specified (mm)</th><th>Tolerance (mm)</th><th>Measured (mm)</th><th>Deviation (mm)</th><th>Result</th></tr>
-    </thead>
-    <tbody>
-      {{#dimensions}}
-      <tr>
-        <td>{{name}}</td>
-        <td class="num">{{specified}}</td>
-        <td class="num">&plusmn; {{tolerance}}</td>
-        <td class="num">{{measured}}</td>
-        <td class="num">{{deviation}}</td>
-        <td class="{{result_class}}">{{result}}</td>
-      </tr>
-      {{/dimensions}}
-    </tbody>
-  </table>
-  <div class="small">Instrument: {{measuring_instrument}} (Cal Cert: {{calibration_cert}}, Valid till {{calibration_expiry}})</div>
-</section>
+<!-- Dimension Check + Edge Condition sections removed 2026-07-06: no backing fields on FRM-U2-007A_Cutting table (per-dimension / per-edge data lives in Cutting_Child_Output child records, which the PDF-generation workflow does not currently expand). Re-add with a {{#dimensions}} array only if the workflow is extended to join child records. -->
 
 <section>
-  <h2>4. Edge Condition &amp; Cut Quality</h2>
-  <table class="compact">
-    <thead><tr><th>Check Point</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
-    <tbody>
-      <tr><td>Edge straightness</td><td>{{edge_straightness_criteria}}</td><td>{{edge_straightness_obs}}</td><td class="{{edge_straightness_class}}">{{edge_straightness_result}}</td></tr>
-      <tr><td>Slag adherence</td><td>{{slag_criteria}}</td><td>{{slag_obs}}</td><td class="{{slag_class}}">{{slag_result}}</td></tr>
-      <tr><td>Burr / Sharp edges</td><td>{{burr_criteria}}</td><td>{{burr_obs}}</td><td class="{{burr_class}}">{{burr_result}}</td></tr>
-      <tr><td>Dross / Re-cast layer</td><td>{{dross_criteria}}</td><td>{{dross_obs}}</td><td class="{{dross_class}}">{{dross_result}}</td></tr>
-      <tr><td>Heat-affected zone (HAZ)</td><td>{{haz_criteria}}</td><td>{{haz_obs}}</td><td class="{{haz_class}}">{{haz_result}}</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section>
-  <h2>5. Quantity &amp; Yield</h2>
+  <h2>3. Quantity</h2>
   <table class="kv-table compact">
-    <tr><th>Quantity Cut</th><td class="num">{{qty_cut}} {{qty_uom}}</td>
-        <th>Scrap Recorded</th><td class="num">{{qty_scrap}} {{qty_uom}}</td></tr>
-    <tr><th>Yield (%)</th><td class="num">{{yield_pct}}</td>
-        <th>Scrap Disposition</th><td>{{scrap_disposition}}</td></tr>
+    <tr><th>Quantity Cut (this submission)</th><td class="num">{{qty_cut_this_submission}}</td>
+        <th>Source Mode</th><td>{{source_mode}}</td></tr>
   </table>
 </section>
 
 <section>
-  <h2>6. Photo Evidence</h2>
+  <h2>4. Photo Evidence</h2>
   <div class="photo-grid">
     {{#photos}}
     <div class="photo-card">
@@ -166,7 +132,7 @@
 </section>
 
 <section>
-  <h2>7. IQRA Review</h2>
+  <h2>5. IQRA Review</h2>
   <table class="compact">
     <thead><tr><th>Status</th><th>Review Date</th><th>Reviewer</th><th>Condition Note</th></tr></thead>
     <tbody>

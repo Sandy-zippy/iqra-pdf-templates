@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Marking &amp; Packing</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-017A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-017A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Package / Bundle Mark:</span> <strong>{{package_bundle_mark}}</strong></div>
+    <div class="row"><span class="label">Package / Bundle Mark:</span> <strong>{{packafrm_bundle_mark}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,10 +82,10 @@
 <section>
   <h2>1. Package Header</h2>
   <table class="kv-table compact">
-    <tr><th>Package / Bundle Mark</th><td><strong>{{package_bundle_mark}}</strong></td>
-        <th>Parent 016C Release Pack</th><td><span class="link-pill">{{parent_016c_ref}}</span></td></tr>
-    <tr><th>Qty Included in Package</th><td class="num">{{qty_in_package}}</td>
-        <th>Package Weight (MT)</th><td class="num">{{package_weight_mt}}</td></tr>
+    <tr><th>Package / Bundle Mark</th><td><strong>{{packafrm_bundle_mark}}</strong></td>
+        <th>Parent 016C Release Pack</th><td><span class="link-pill">{{parent_016c_release_pack_read_only}}</span></td></tr>
+    <tr><th>Qty Included in Package</th><td class="num">{{qty_included_in_packafrm}}</td>
+        <th>Package Weight (MT)</th><td class="num">{{packafrm_weight_mt}}</td></tr>
     <tr><th>Erection Area / Sequence</th><td>{{erection_area_sequence}}</td>
         <th>Source Mode</th><td>{{source_mode}}</td></tr>
   </table>
@@ -140,9 +140,9 @@
 <section>
   <h2>5. Acceptance &amp; Readiness</h2>
   <table class="kv-table compact">
-    <tr><th>016C Upstream Acceptance Pack</th><td colspan="3">{{upstream_acceptance_pack}}</td></tr>
-    <tr><th>Auto Marking / Packing Readiness Pack</th><td colspan="3"><strong>{{auto_readiness_pack}}</strong></td></tr>
-    <tr><th>Stage Passport Feedback to Parent Members</th><td colspan="3">{{stage_passport_feedback}}</td></tr>
+    <tr><th>016C Upstream Acceptance Pack</th><td colspan="3">{{016c_upstream_acceptance_pack}}</td></tr>
+    <tr><th>Auto Marking / Packing Readiness Pack</th><td colspan="3"><strong>{{auto_marking_packing_readiness_pack}}</strong></td></tr>
+    <tr><th>Stage Passport Feedback to Parent Members</th><td colspan="3">{{stafrm_passport_feedback_to_parent_members_marking_packing}}</td></tr>
   </table>
 </section>
 
@@ -151,7 +151,7 @@
   <table class="compact">
     <thead><tr><th>Status</th><th>Review Date</th><th>Reviewer</th><th>Note / Remarks</th></tr></thead>
     <tbody>
-      <tr><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_review_note}}</td></tr>
+      <tr><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_review_note_remarks}}</td></tr>
     </tbody>
   </table>
   <div class="small">Gate Release: <strong>{{gate_release_status}}</strong>. Released packages feed FRM-U2-017B Dispatch Clearance queue.</div>

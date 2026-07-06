@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Built-up Member Fit-up (SAW)</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-008A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-008A &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Fit-up ID:</span> <strong>{{fitup_id}}</strong></div>
+    <div class="row"><span class="label">Fit-up ID:</span> <strong>{{u2_008a_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,26 +82,26 @@
 <section>
   <h2>1. Built-up Member Header</h2>
   <table class="kv-table compact">
-    <tr><th>Member Mark</th><td><strong>{{member_mark}}</strong></td>
-        <th>Built-up Shop Drawing Ref</th><td>{{builtup_shop_drawing_ref}}</td></tr>
-    <tr><th>Web Plate Ref</th><td><span class="link-pill">{{web_plate_ref}}</span></td>
-        <th>Flange Plate Ref</th><td><span class="link-pill">{{flange_plate_ref}}</span></td></tr>
-    <tr><th>Fit-up Type</th><td>{{fitup_type}}</td>
-        <th>Dimensions L x W</th><td>{{dimensions_l_w}}</td></tr>
-    <tr><th>SAW WPS No.</th><td><span class="link-pill">{{saw_wps_no}}</span></td>
-        <th>First-Off / Repeat Run</th><td>{{first_off_or_repeat}}</td></tr>
+    <tr><th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td>
+        <th>Built-up Shop Drawing Ref</th><td>{{built_up_shop_drawing_ref_read_only}}</td></tr>
+    <tr><th>Web Plate Ref</th><td><span class="link-pill">{{web_plate_ref_read_only}}</span></td>
+        <th>Flange Plate Ref</th><td><span class="link-pill">{{flanfrm_plate_ref_read_only}}</span></td></tr>
+    <tr><th>Fit-up Type</th><td>{{fit_up_type_read_only}}</td>
+        <th>Dimensions L x W</th><td>{{dimensions_l_x_w_read_only}}</td></tr>
+    <tr><th>SAW WPS No.</th><td><span class="link-pill">{{saw_wps_no_read_only}}</span></td>
+        <th>First-Off / Repeat Run</th><td>{{first_off_repeat_run}}</td></tr>
   </table>
 </section>
 
 <section>
   <h2>2. Fit-up Geometric Checks</h2>
   <table class="compact">
-    <thead><tr><th>Check Item</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
+    <thead><tr><th>Check Item</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>Web Flatness</td><td>{{web_flatness_criteria}}</td><td>{{web_flatness_obs}}</td><td class="{{web_flatness_class}}">{{web_flatness_status}}</td></tr>
-      <tr><td>Perpendicularity (Web to Flange)</td><td>{{perpendicularity_criteria}}</td><td>{{perpendicularity_obs}}</td><td class="{{perpendicularity_class}}">{{perpendicularity_status}}</td></tr>
-      <tr><td>Root Gap</td><td>{{root_gap_criteria}}</td><td>{{root_gap_obs}}</td><td class="{{root_gap_class}}">{{root_gap_status}}</td></tr>
-      <tr><td>Web-to-Flange Position / Alignment</td><td>{{alignment_criteria}}</td><td>{{alignment_obs}}</td><td class="{{alignment_class}}">{{alignment_status}}</td></tr>
+      <tr><td>Web Flatness</td><td>{{web_flatness_status}}</td></tr>
+      <tr><td>Perpendicularity (Web to Flange)</td><td>{{perpendicularity_status}}</td></tr>
+      <tr><td>Root Gap</td><td>{{root_gap_status}}</td></tr>
+      <tr><td>Web-to-Flange Position / Alignment</td><td>{{web_to_flanfrm_position_alignment_evidence_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -109,10 +109,10 @@
 <section>
   <h2>3. Tack Weld &amp; Assembly Mark Verification</h2>
   <table class="compact">
-    <thead><tr><th>Check Item</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
+    <thead><tr><th>Check Item</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>Tack Weld Spacing</td><td>{{tack_spacing_criteria}}</td><td>{{tack_spacing_obs}}</td><td class="{{tack_spacing_class}}">{{tack_spacing_status}}</td></tr>
-      <tr><td>Assembly Mark Verification</td><td>{{assembly_mark_criteria}}</td><td>{{assembly_mark_obs}}</td><td class="{{assembly_mark_class}}">{{assembly_mark_status}}</td></tr>
+      <tr><td>Tack Weld Spacing</td><td>{{tack_weld_spacing_review_status}}</td></tr>
+      <tr><td>Assembly Mark Verification</td><td>{{assembly_mark_verification_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -134,9 +134,9 @@
 <section>
   <h2>5. Upstream Acceptance &amp; Fit-up Readiness</h2>
   <table class="compact kv-table">
-    <tr><th>Upstream Acceptance Pack</th><td>{{upstream_acceptance_pack}}</td>
-        <th>Fit-up Readiness for SAW</th><td><strong>{{fitup_readiness_for_saw}}</strong></td></tr>
-    <tr><th>Stage Passport Feedback</th><td colspan="3">{{stage_passport_feedback}}</td></tr>
+    <tr><th>Upstream Acceptance Pack</th><td>{{auto_upstream_acceptance_pack}}</td>
+        <th>Fit-up Readiness for SAW</th><td><strong>{{fit_up_readiness_for_saw}}</strong></td></tr>
+    <tr><th>Stage Passport Feedback</th><td colspan="3">{{stafrm_passport_feedback_to_assembly_object_built_up_fit_up}}</td></tr>
   </table>
 </section>
 

@@ -68,9 +68,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Drawing Issue Register</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-001 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
-    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase / Package:</span> {{phase_package}}</div>
-    <div class="row"><span class="label">Drawing Package ID:</span> <strong>{{drawing_package_id}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-001 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
+    <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase / Package:</span> {{phase_packafrm}}</div>
+    <div class="row"><span class="label">Drawing Package ID:</span> <strong>{{drawing_packafrm_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -78,59 +78,43 @@
 <section>
   <h2>1. Package Header</h2>
   <table class="kv-table compact">
-    <tr><th>Drawing Package ID</th><td><strong>{{drawing_package_id}}</strong></td>
-        <th>Phase / Package</th><td>{{phase_package}}</td></tr>
-    <tr><th>Assembly Drawing List</th><td>{{assembly_list_filename}}</td>
-        <th>Part Drawing List</th><td>{{part_list_filename}}</td></tr>
-    <tr><th>BOM File</th><td>{{bom_filename}}</td>
-        <th>Drawing Files Uploaded</th><td class="num">{{drawing_file_count}}</td></tr>
-    <tr><th>NSPL Confirmation</th><td>{{nspl_confirmation_status}}</td>
+    <tr><th>Drawing Package ID</th><td><strong>{{drawing_packafrm_id}}</strong></td>
+        <th>Phase / Package</th><td>{{phase_packafrm}}</td></tr>
+    <tr><th>Assembly Drawing No</th><td>{{assembly_drawing_number}}</td>
+        <th>Part Drawing No</th><td>{{part_drawing_number}}</td></tr>
+    <tr><th>Source Mode</th><td>{{source_mode}}</td>
+        <th>NSPL Responsible</th><td>{{nspl_responsible_person}}</td></tr>
+    <tr><th>NSPL Confirmation</th><td>{{nspl_confirmation_extracted_drawing_bom_data}}</td>
         <th>NSPL Remarks</th><td>{{nspl_remarks}}</td></tr>
   </table>
 </section>
 
 <section>
-  <h2>2. Extracted Drawings (Assembly &amp; Part)</h2>
-  <table class="compact">
-    <thead>
-      <tr><th>Drawing No</th><th>Title</th><th>Type</th><th>Rev</th><th>Release Date</th><th>Status</th></tr>
-    </thead>
-    <tbody>
-      {{#drawings}}
-      <tr>
-        <td><strong>{{drawing_no}}</strong></td>
-        <td>{{drawing_title}}</td>
-        <td>{{drawing_type}}</td>
-        <td>{{revision}}</td>
-        <td>{{release_date}}</td>
-        <td><span class="status-{{status_class}}">{{release_status}}</span></td>
-      </tr>
-      {{/drawings}}
-    </tbody>
+  <h2>2. Confirmed Drawings (Assembly &amp; Part)</h2>
+  <table class="kv-table compact">
+    <tr><th>Assembly Drawing No</th><td><strong>{{assembly_drawing_number}}</strong></td>
+        <th>Part Drawing No</th><td><strong>{{part_drawing_number}}</strong></td></tr>
+    <tr><th>Title</th><td>{{drawing_title}}</td>
+        <th>Type</th><td>{{drawing_type}}</td></tr>
+    <tr><th>Revision</th><td>{{revision}}</td>
+        <th>Release Date</th><td>{{release_date}}</td></tr>
+    <tr><th>Release Status</th><td colspan="3">{{release_status}}</td></tr>
   </table>
   <div class="small">Source: approved drawing lists + drawing title-block extraction. Rule A6: NSPL confirms extracted values; IQRA reviews for downstream availability.</div>
 </section>
 
 <section>
   <h2>3. BOM &mdash; Member &amp; Part Mapping</h2>
-  <table class="compact">
-    <thead>
-      <tr><th>Member Mark</th><th>Part Mark</th><th>Material Description</th><th>Grade</th><th>Size / Thk</th><th>Qty</th><th>Weight (MT)</th><th>Link Status</th></tr>
-    </thead>
-    <tbody>
-      {{#bom_rows}}
-      <tr>
-        <td>{{member_mark}}</td>
-        <td><strong>{{part_mark}}</strong></td>
-        <td>{{material_description}}</td>
-        <td>{{grade}}</td>
-        <td>{{size_thickness}}</td>
-        <td class="num">{{bom_quantity}}</td>
-        <td class="num">{{bom_weight}}</td>
-        <td>{{link_status}}</td>
-      </tr>
-      {{/bom_rows}}
-    </tbody>
+  <table class="kv-table compact">
+    <tr><th>Member Mark</th><td>{{member_mark}}</td>
+        <th>Part Mark</th><td><strong>{{part_mark}}</strong></td></tr>
+    <tr><th>Material Description</th><td>{{bom_material_description}}</td>
+        <th>Grade / Standard</th><td>{{bom_grade_standard}}</td></tr>
+    <tr><th>Size / Thickness</th><td>{{bom_size_thickness}}</td>
+        <th>Quantity</th><td class="num">{{bom_quantity}}</td></tr>
+    <tr><th>Weight (MT)</th><td class="num">{{bom_weight}}</td>
+        <th>Assembly&rarr;Part Link</th><td>{{assembly_to_part_link_status}}</td></tr>
+    <tr><th>Part&rarr;Part-Mark Link</th><td colspan="3">{{part_drawing_part_mark_link_status}}</td></tr>
   </table>
 </section>
 
@@ -141,7 +125,7 @@
         <th>Superseded Revision</th><td>{{superseded_revision}}</td></tr>
     <tr><th>Withdrawal Confirmed</th><td>{{withdrawal_confirmed}}</td>
         <th>Downstream Availability</th><td>{{downstream_availability_status}}</td></tr>
-    <tr><th>BOQ / Part Mark Master Sync</th><td colspan="3">{{boq_sync_status}}</td></tr>
+    <tr><th>BOQ / Part Mark Master Sync</th><td colspan="3">{{boq_part_mark_master_sync_status}}</td></tr>
   </table>
   <div class="small">Rule A26 (Drawing Issue Gate): Only Current revisions feed FRM-U2-005, U2-006 and U2-007A object-first dropdowns.</div>
 </section>

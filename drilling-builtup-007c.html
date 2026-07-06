@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Drilling Inspection &mdash; Built-up Members (Post-Weld)</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-007C &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-007C &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Drilling ID:</span> <strong>{{drilling_id}}</strong></div>
+    <div class="row"><span class="label">Drilling ID:</span> <strong>{{u2_007c_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,10 +82,10 @@
 <section>
   <h2>1. Released Assembly Header</h2>
   <table class="kv-table compact">
-    <tr><th>Released Assembly Selection</th><td><span class="link-pill">{{released_assembly_ref}}</span></td>
-        <th>Member Mark</th><td><strong>{{member_mark}}</strong></td></tr>
+    <tr><th>Released Assembly Selection</th><td><span class="link-pill">{{released_assembly_selection}}</span></td>
+        <th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td></tr>
     <tr><th>Phase Assignment</th><td>{{phase}}</td>
-        <th>Assembly Shop Drawing Ref</th><td>{{assembly_shop_drawing_ref}}</td></tr>
+        <th>Assembly Shop Drawing Ref</th><td>{{assembly_shop_drawing_ref_read_only}}</td></tr>
     <tr><th>Post-Weld Drilling Applicability</th><td>{{post_weld_drilling_applicability}}</td>
         <th>Source Mode</th><td>{{source_mode}}</td></tr>
     <tr><th>Assembly Predecessor Chain</th><td colspan="3">{{assembly_predecessor_chain_pack}}</td></tr>
@@ -98,7 +98,7 @@
     <tr><th>Drilling Method</th><td>{{drilling_method}}</td>
         <th>Drilling Location on Assembly</th><td>{{drilling_location_on_assembly}}</td></tr>
     <tr><th>Hole Pattern Source</th><td>{{hole_pattern_source}}</td>
-        <th>First-Off / Repeat Run</th><td>{{first_off_or_repeat}}</td></tr>
+        <th>First-Off / Repeat Run</th><td>{{first_off_repeat_run}}</td></tr>
   </table>
 </section>
 
@@ -109,9 +109,9 @@
       <tr><th>Check Point</th><th>Specified</th><th>Tolerance</th><th>Measured</th><th>Result</th></tr>
     </thead>
     <tbody>
-      <tr><td>Hole Diameter (mm)</td><td class="num">{{hole_diameter_spec}}</td><td class="num">{{hole_diameter_tol}}</td><td class="num">{{hole_diameter_meas}}</td><td class="{{hole_diameter_class}}">{{hole_diameter_result}}</td></tr>
-      <tr><td>Total Holes Drilled</td><td class="num">{{expected_holes_total}}</td><td>-</td><td class="num">{{total_holes_drilled}}</td><td class="{{total_holes_class}}">{{total_holes_result}}</td></tr>
-      <tr><td>Edge Distance (mm)</td><td class="num">{{edge_distance_spec}}</td><td class="num">{{edge_distance_tol}}</td><td class="num">{{edge_distance_meas}}</td><td class="{{edge_distance_class}}">{{edge_distance_result}}</td></tr>
+      <tr><td>Hole Diameter (mm)</td><td class="num">{{hole_diameter_spec}}</td><td class="num">{{hole_diameter_tol}}</td><td class="num">{{hole_diameter}}</td><td class="{{hole_diameter_class}}">{{hole_diameter_result}}</td></tr>
+      <tr><td>Total Holes Drilled</td><td class="num">{{expected_hole_scope_for_assembly_read_only}}</td><td>-</td><td class="num">{{total_number_of_holes_drilled}}</td><td class="{{total_holes_class}}">{{total_holes_result}}</td></tr>
+      <tr><td>Edge Distance (mm)</td><td class="num">{{edge_distance_spec}}</td><td class="num">{{edge_distance_tol}}</td><td class="num">{{edfrm_distance}}</td><td class="{{edge_distance_class}}">{{edge_distance_result}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -121,8 +121,8 @@
   <table class="compact">
     <thead><tr><th>Check Item</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>Burr Removal / Dross Condition</td><td>{{burr_criteria}}</td><td>{{burr_obs}}</td><td class="{{burr_class}}">{{burr_result}}</td></tr>
-      <tr><td>Member Local Distortion / Straightness</td><td>{{distortion_criteria}}</td><td>{{distortion_obs}}</td><td class="{{distortion_class}}">{{distortion_result}}</td></tr>
+      <tr><td>Burr Removal / Dross Condition</td><td>{{burr_criteria}}</td><td>{{burr_removal_dross_condition}}</td><td class="{{burr_class}}">{{burr_result}}</td></tr>
+      <tr><td>Member Local Distortion / Straightness</td><td>{{distortion_criteria}}</td><td>{{member_local_distortion_straightness_after_drilling}}</td><td class="{{distortion_class}}">{{distortion_result}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -132,7 +132,7 @@
   <table class="compact">
     <thead><tr><th>Check</th><th>Expected Hole Scope</th><th>Cumulative To Date</th><th>Guard Result</th></tr></thead>
     <tbody>
-      <tr><td>Holes Drilled vs Assembly Hole Scope</td><td class="num">{{expected_hole_scope}}</td><td class="num">{{cumulative_holes_drilled}}</td><td class="{{overrun_class}}">{{cumulative_overrun_guard}}</td></tr>
+      <tr><td>Holes Drilled vs Assembly Hole Scope</td><td class="num">{{expected_hole_scope_for_assembly_read_only}}</td><td class="num">{{cumulative_holes_drilled}}</td><td class="{{overrun_class}}">{{cumulative_overrun_guard_vs_assembly_hole_scope}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -159,7 +159,7 @@
       <tr><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_review_note}}</td></tr>
     </tbody>
   </table>
-  <div class="small">Stage Passport Feedback to Assembly Object (Post-Weld Drilling): <span class="accent">{{stage_passport_feedback}}</span> &nbsp;|&nbsp; Gate Release: <strong>{{gate_release_status}}</strong></div>
+  <div class="small">Stage Passport Feedback to Assembly Object (Post-Weld Drilling): <span class="accent">{{stafrm_passport_feedback_to_assembly_object_post_weld_drilli}}</span> &nbsp;|&nbsp; Gate Release: <strong>{{gate_release_status}}</strong></div>
 </section>
 
 <section class="signoff">

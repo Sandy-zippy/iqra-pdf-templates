@@ -74,7 +74,7 @@
     <div class="title">PT / DPT Inspection Report</div>
     <div class="row"><span class="label">Form:</span> FRM-U2-013 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">DPT Record ID:</span> <strong>{{dpt_record_id}}</strong></div>
+    <div class="row"><span class="label">DPT Record ID:</span> <strong>{{u2_013_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,15 +82,15 @@
 <section>
   <h2>1. DPT Trigger Object</h2>
   <table class="kv-table compact">
-    <tr><th>Trigger Source Form</th><td><strong>{{trigger_source_form}}</strong></td>
-        <th>Trigger Release Ref</th><td><span class="link-pill">{{trigger_release_ref}}</span></td></tr>
-    <tr><th>Parent Member Mark</th><td>{{parent_member_mark}}</td>
-        <th>Attachment Part Mark</th><td>{{attachment_part_mark}}</td></tr>
-    <tr><th>Drawing / Weld Location Ref</th><td colspan="3">{{drawing_weld_location_ref}}</td></tr>
+    <tr><th>Trigger Source Form</th><td><strong>{{trigfrmr_source_form_read_only}}</strong></td>
+        <th>Trigger Release Ref</th><td><span class="link-pill">{{trigfrmr_release_ref_read_only}}</span></td></tr>
+    <tr><th>Parent Member Mark</th><td>{{parent_member_mark_read_only}}</td>
+        <th>Attachment Part Mark</th><td>{{attachment_part_mark_read_only}}</td></tr>
+    <tr><th>Drawing / Weld Location Ref</th><td colspan="3">{{drawing_weld_location_ref_read_only}}</td></tr>
     <tr><th>NDT Method</th><td>DPT (Dye Penetrant Testing)</td>
         <th>Source Mode</th><td>{{source_mode}}</td></tr>
-    <tr><th>UT Applicability</th><td>{{ut_applicability}}</td>
-        <th>RT Applicability</th><td>{{rt_applicability}}</td></tr>
+    <tr><th>UT Applicability</th><td>{{ut_applicability_read_only}}</td>
+        <th>RT Applicability</th><td>{{rt_applicability_read_only}}</td></tr>
   </table>
 </section>
 
@@ -99,8 +99,8 @@
   <table class="compact">
     <thead><tr><th>Item</th><th>Selection</th><th>Qualification / Calibration Status</th></tr></thead>
     <tbody>
-      <tr><td>DPT Inspector</td><td>{{dpt_inspector_name}}</td><td>{{pt_personnel_qual_status}}</td></tr>
-      <tr><td>Light Meter</td><td>{{light_meter_id}}</td><td>{{light_meter_cal_status}}</td></tr>
+      <tr><td>DPT Inspector</td><td>{{dpt_inspector_name_read_only}}</td><td>{{pt_personnel_qualification_status}}</td></tr>
+      <tr><td>Light Meter</td><td>{{light_meter_selection}}</td><td>{{light_meter_calibration_status}}</td></tr>
       <tr><td>Light Reading (lux)</td><td colspan="2" class="num">{{light_reading_lux}} (min req. {{light_min_lux}})</td></tr>
     </tbody>
   </table>
@@ -111,9 +111,9 @@
   <table class="compact kv-table">
     <tr><th>DPT Result</th><td colspan="3"><span class="{{dpt_result_class}}">{{dpt_result}}</span></td></tr>
     <tr><th>Indication / Observation Note</th><td colspan="3">{{indication_observation_note}}</td></tr>
-    <tr><th>Auto Repair Trigger Status</th><td>{{auto_repair_trigger_status}}</td>
+    <tr><th>Auto Repair Trigger Status</th><td>{{auto_repair_trigfrmr_status}}</td>
         <th>Linked 014 Repair Ref</th><td>{{linked_014_repair_ref}}</td></tr>
-    <tr><th>DPT Clearance Feed to 007C</th><td colspan="3">{{dpt_clearance_to_007c}}</td></tr>
+    <tr><th>DPT Clearance Feed to 007C</th><td colspan="3">{{dpt_clearance_feed_to_007c}}</td></tr>
   </table>
 </section>
 
@@ -134,7 +134,7 @@
 <section>
   <h2>5. Acceptance Packs</h2>
   <table class="kv-table compact">
-    <tr><th>DPT Trigger Acceptance Pack</th><td colspan="3">{{dpt_trigger_acceptance_pack}}</td></tr>
+    <tr><th>DPT Trigger Acceptance Pack</th><td colspan="3">{{dpt_trigfrmr_acceptance_pack}}</td></tr>
     <tr><th>Auto DPT Acceptance Pack</th><td colspan="3">{{auto_dpt_acceptance_pack}}</td></tr>
   </table>
 </section>

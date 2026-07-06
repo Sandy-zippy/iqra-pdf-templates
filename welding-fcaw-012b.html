@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">FCAW Welding Inspection &mdash; Attachment</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-012B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-012B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Welding Record ID:</span> <strong>{{welding_record_id}}</strong></div>
+    <div class="row"><span class="label">Welding Record ID:</span> <strong>{{u2_012b_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,18 +82,18 @@
 <section>
   <h2>1. Member, Attachment &amp; WPS Header</h2>
   <table class="kv-table compact">
-    <tr><th>Released Attachment Fit-up</th><td><span class="link-pill">{{released_fitup_ref}}</span></td>
-        <th>Parent Member Mark</th><td><strong>{{parent_member_mark}}</strong></td></tr>
-    <tr><th>Attachment Part Mark</th><td><strong>{{part_mark}}</strong></td>
-        <th>Joint / Location</th><td>{{joint_location}}</td></tr>
-    <tr><th>Parent 012A Release Ref</th><td><span class="link-pill">{{parent_012a_ref}}</span></td>
-        <th>Parent 008B Release Ref</th><td><span class="link-pill">{{parent_008b_ref}}</span></td></tr>
-    <tr><th>Attachment Shop Drawing</th><td>{{attachment_shop_drawing_ref}}</td>
-        <th>Fit-up Type</th><td>{{fitup_type}}</td></tr>
+    <tr><th>Released Attachment Fit-up</th><td><span class="link-pill">{{released_attachment_fit_up_selection}}</span></td>
+        <th>Parent Member Mark</th><td><strong>{{parent_member_mark_read_only}}</strong></td></tr>
+    <tr><th>Attachment Part Mark</th><td><strong>{{attachment_part_mark_read_only}}</strong></td>
+        <th>Joint / Location</th><td>{{joint_location_read_only}}</td></tr>
+    <tr><th>Parent 012A Release Ref</th><td><span class="link-pill">{{parent_012a_release_ref_read_only}}</span></td>
+        <th>Parent 008B Release Ref</th><td><span class="link-pill">{{parent_008b_release_ref_read_only}}</span></td></tr>
+    <tr><th>Attachment Shop Drawing</th><td>{{attachment_shop_drawing_ref_read_only}}</td>
+        <th>Fit-up Type</th><td>{{fit_up_type_read_only}}</td></tr>
     <tr><th>Welding Process</th><td>FCAW</td>
-        <th>WPS No. (FCAW)</th><td><span class="link-pill">{{fcaw_wps_no}}</span></td></tr>
-    <tr><th>Qty Submitted for Welding</th><td class="num">{{qty_submitted_for_welding}}</td>
-        <th>First-Off / Repeat Run</th><td>{{first_off_or_repeat}}</td></tr>
+        <th>WPS No. (FCAW)</th><td><span class="link-pill">{{wps_no_fcaw_read_only}}</span></td></tr>
+    <tr><th>Qty Submitted for Welding</th><td class="num">{{qty_submitted_for_welding_read_only}}</td>
+        <th>First-Off / Repeat Run</th><td>{{first_off_repeat_run}}</td></tr>
   </table>
 </section>
 
@@ -102,8 +102,8 @@
   <table class="compact">
     <thead><tr><th>Item</th><th>Selection</th><th>Qualification / Calibration Status</th></tr></thead>
     <tbody>
-      <tr><td>FCAW Welder</td><td>{{fcaw_welder_name}}</td><td>{{fcaw_welder_qual_status}}</td></tr>
-      <tr><td>FCAW Machine</td><td>{{fcaw_machine_id}}</td><td>{{fcaw_machine_cal_status}}</td></tr>
+      <tr><td>FCAW Welder</td><td>{{fcaw_welder_selection}}</td><td>{{fcaw_welder_qualification_status}}</td></tr>
+      <tr><td>FCAW Machine</td><td>{{fcaw_machine_selection}}</td><td>{{fcaw_machine_calibration_status}}</td></tr>
       <tr><td>Weld Run / Shift Ref</td><td colspan="2">{{weld_run_shift_ref}}</td></tr>
     </tbody>
   </table>
@@ -114,11 +114,11 @@
   <table class="compact">
     <thead><tr><th>Check Item</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>VT Visual Review</td><td>{{vt_criteria}}</td><td>{{vt_obs}}</td><td class="{{vt_class}}">{{vt_result}}</td></tr>
-      <tr><td>Weld Bead / Profile Evidence</td><td>{{bead_criteria}}</td><td>{{bead_obs}}</td><td class="{{bead_class}}">{{bead_status}}</td></tr>
+      <tr><td>VT Visual Review</td><td>{{vt_criteria}}</td><td>{{vt_obs}}</td><td class="{{vt_class}}">{{vt_visual_review_result}}</td></tr>
+      <tr><td>Weld Bead / Profile Evidence</td><td>{{bead_criteria}}</td><td>{{bead_obs}}</td><td class="{{bead_class}}">{{weld_bead_profile_evidence_status}}</td></tr>
     </tbody>
   </table>
-  <div class="small">VT Scope: <span class="accent">{{vt_scope}}</span>. DPT follow-up: {{dpt_followup_applicability}}. UT applicability: {{ut_applicability}}. RT applicability: {{rt_applicability}}.</div>
+  <div class="small">VT Scope: <span class="accent">{{vt_scope_read_only}}</span>. DPT follow-up: {{dpt_follow_up_applicability}}. UT applicability: {{ut_applicability_read_only}}. RT applicability: {{rt_applicability_read_only}}.</div>
 </section>
 
 <section>
@@ -138,9 +138,9 @@
 <section>
   <h2>5. Acceptance Packs</h2>
   <table class="kv-table compact">
-    <tr><th>Upstream Acceptance Pack</th><td colspan="3">{{upstream_acceptance_pack}}</td></tr>
-    <tr><th>FCAW Welding Readiness Pack</th><td colspan="3">{{fcaw_welding_readiness_pack}}</td></tr>
-    <tr><th>Stage Passport Feedback to Parent Member</th><td colspan="3">{{stage_passport_feedback}}</td></tr>
+    <tr><th>Upstream Acceptance Pack</th><td colspan="3">{{auto_upstream_acceptance_pack}}</td></tr>
+    <tr><th>FCAW Welding Readiness Pack</th><td colspan="3">{{auto_fcaw_welding_readiness_pack}}</td></tr>
+    <tr><th>Stage Passport Feedback to Parent Member</th><td colspan="3">{{stafrm_passport_feedback_to_parent_member_attachment_welding}}</td></tr>
   </table>
 </section>
 

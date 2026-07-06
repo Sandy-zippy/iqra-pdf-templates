@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Repair Closure Report</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-014 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-014 &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Repair Record ID:</span> <strong>{{repair_record_id}}</strong></div>
+    <div class="row"><span class="label">Repair Record ID:</span> <strong>{{u2_014_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,25 +82,25 @@
 <section>
   <h2>1. Parent DPT Trigger</h2>
   <table class="kv-table compact">
-    <tr><th>Parent 013 Record Ref</th><td><span class="link-pill">{{parent_013_ref}}</span></td>
-        <th>Parent 013 DPT Result</th><td><strong>{{parent_013_dpt_result}}</strong></td></tr>
-    <tr><th>Trigger Source Form</th><td>{{trigger_source_form}}</td>
-        <th>Trigger Release Ref</th><td>{{trigger_release_ref}}</td></tr>
-    <tr><th>Parent Member Mark</th><td>{{parent_member_mark}}</td>
-        <th>Attachment Part Mark</th><td>{{attachment_part_mark}}</td></tr>
-    <tr><th>Drawing / Weld Location Ref</th><td colspan="3">{{drawing_weld_location_ref}}</td></tr>
+    <tr><th>Parent 013 Record Ref</th><td><span class="link-pill">{{parent_013_record_ref_read_only}}</span></td>
+        <th>Parent 013 DPT Result</th><td><strong>{{parent_013_dpt_result_read_only}}</strong></td></tr>
+    <tr><th>Trigger Source Form</th><td>{{trigfrmr_source_form_read_only}}</td>
+        <th>Trigger Release Ref</th><td>{{trigfrmr_release_ref_read_only}}</td></tr>
+    <tr><th>Parent Member Mark</th><td>{{parent_member_mark_read_only}}</td>
+        <th>Attachment Part Mark</th><td>{{attachment_part_mark_read_only}}</td></tr>
+    <tr><th>Drawing / Weld Location Ref</th><td colspan="3">{{drawing_weld_location_ref_read_only}}</td></tr>
   </table>
 </section>
 
 <section>
   <h2>2. Repair Plan</h2>
   <table class="kv-table compact">
-    <tr><th>Original Weld Process</th><td>{{original_weld_process}}</td>
-        <th>Original WPS No.</th><td><span class="link-pill">{{original_wps_no}}</span></td></tr>
-    <tr><th>Repair WPS No.</th><td><span class="link-pill">{{repair_wps_no}}</span></td>
+    <tr><th>Original Weld Process</th><td>{{original_weld_process_read_only}}</td>
+        <th>Original WPS No.</th><td><span class="link-pill">{{original_wps_no_read_only}}</span></td></tr>
+    <tr><th>Repair WPS No.</th><td><span class="link-pill">{{repair_wps_no_read_only}}</span></td>
         <th>Repair Method</th><td>{{repair_method}}</td></tr>
     <tr><th>Source Mode</th><td>{{source_mode}}</td>
-        <th>Repair Welder Ref</th><td>{{repair_welder_ref}}</td></tr>
+        <th>NSPL Responsible</th><td>{{nspl_responsible_person}}</td></tr>
   </table>
 </section>
 
@@ -110,14 +110,14 @@
     <tr><th>Repair Completion Note</th><td colspan="3">{{repair_completion_note}}</td></tr>
   </table>
   <div class="photo-grid">
-    {{#repair_photos}}
+    {{#photos}}
     <div class="photo-card">
       <div class="ph-title">{{title}}</div>
       <div class="photo-thumb">[ Photo: {{filename}} ]</div>
-      <div class="photo-meta"><span><strong>Captured:</strong> {{captured_at}}</span> <span><strong>OCR:</strong> {{ocr_confidence}}% ({{ocr_status}})</span></div>
+      <div class="photo-meta"><span><strong>Captured:</strong> {{captured_at}}</span></div>
       <div class="photo-meta"><span><strong>Note:</strong> {{note}}</span></div>
     </div>
-    {{/repair_photos}}
+    {{/photos}}
   </div>
 </section>
 
@@ -126,7 +126,7 @@
   <table class="compact">
     <thead><tr><th>Check</th><th>Status</th><th>Reference</th></tr></thead>
     <tbody>
-      <tr><td>Re-DPT Required</td><td>{{re_dpt_required_status}}</td><td>{{re_dpt_required_reason}}</td></tr>
+      <tr><td>Re-DPT Required</td><td>{{re_dpt_required_status}}</td><td></td></tr>
       <tr><td>Repeat 013 Linked Ref</td><td colspan="2"><span class="link-pill">{{repeat_013_linked_ref}}</span></td></tr>
       <tr><td>Repeat 013 Acceptance Status</td><td colspan="2" class="{{repeat_013_class}}">{{repeat_013_acceptance_status}}</td></tr>
     </tbody>
@@ -136,10 +136,10 @@
 <section>
   <h2>5. Acceptance &amp; Feedback Packs</h2>
   <table class="kv-table compact">
-    <tr><th>Auto Repair Trigger Validation Pack</th><td colspan="3">{{auto_repair_trigger_validation_pack}}</td></tr>
+    <tr><th>Auto Repair Trigger Validation Pack</th><td colspan="3">{{auto_repair_trigfrmr_validation_pack}}</td></tr>
     <tr><th>Auto Repair Closure Pack</th><td colspan="3">{{auto_repair_closure_pack}}</td></tr>
-    <tr><th>Parent 013 Auto Repair Trigger Status Feedback</th><td colspan="3">{{parent_013_feedback}}</td></tr>
-    <tr><th>Parent 013 Gate Reinstatement</th><td colspan="3">{{parent_013_gate_reinstatement}}</td></tr>
+    <tr><th>Parent 013 Auto Repair Trigger Status Feedback</th><td colspan="3">{{parent_013_auto_repair_trigfrmr_status_feedback}}</td></tr>
+    <tr><th>Parent 013 Gate Reinstatement</th><td colspan="3">{{parent_013_gate_reinstatement_feed}}</td></tr>
   </table>
 </section>
 
@@ -159,8 +159,6 @@
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; verified by NSPL QA/QC</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="signame">{{nspl_name}}</div>
     <div class="sigrole">{{nspl_role}}</div>
     <div class="sigdate">Signed: {{nspl_signed_date}}</div>
@@ -170,9 +168,6 @@
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="signame">{{iqra_name}}</div>
     <div class="sigrole">{{iqra_role}}</div>

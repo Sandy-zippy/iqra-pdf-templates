@@ -82,14 +82,14 @@
 <section>
   <h2>1. Traveller &amp; Object Header</h2>
   <table class="kv-table compact">
-    <tr><th>Traveller Child Mapping</th><td><span class="link-pill">{{traveller_id}}</span></td>
-        <th>Part / Sub-part Mark</th><td><strong>{{part_mark}}</strong></td></tr>
-    <tr><th>Parent Assembly Mark</th><td>{{parent_assembly_mark}}</td>
-        <th>IMIR Lot ID</th><td><span class="link-pill">{{imir_lot_id}}</span></td></tr>
-    <tr><th>Cutting Upstream Release</th><td><span class="link-pill">{{cutting_release_ref}}</span></td>
-        <th>Drawing / BOM Source Ref</th><td>{{drawing_bom_source_ref}}</td></tr>
+    <tr><th>Traveller Child Mapping</th><td><span class="link-pill">{{traveller_child_mapping_selection}}</span></td>
+        <th>Part / Sub-part Mark</th><td><strong>{{part_sub_part_mark_read_only}}</strong></td></tr>
+    <tr><th>Parent Assembly Mark</th><td>{{parent_assembly_mark_read_only}}</td>
+        <th>IMIR Lot ID</th><td><span class="link-pill">{{imir_lot_id_read_only}}</span></td></tr>
+    <tr><th>Cutting Upstream Release</th><td><span class="link-pill">{{cutting_upstream_release_ref_read_only}}</span></td>
+        <th>Drawing / BOM Source Ref</th><td>{{drawing_bom_source_reference_read_only}}</td></tr>
     <tr><th>Drilling Applicability</th><td>{{drilling_applicability}}</td>
-        <th>First-Off / Repeat Run</th><td>{{first_off_or_repeat}}</td></tr>
+        <th>First-Off / Repeat Run</th><td>{{first_off_repeat_run}}</td></tr>
   </table>
 </section>
 
@@ -98,11 +98,11 @@
   <table class="kv-table compact">
     <tr><th>Drilling Method</th><td>{{drilling_method}}</td>
         <th>Hole Pattern Source</th><td>{{hole_pattern_source}}</td></tr>
-    <tr><th>CNC Drill Program Setup</th><td>{{cnc_drill_program_setup}}</td>
+    <tr><th>CNC Drill Program Setup</th><td>{{cnc_drill_program_setup_capture}}</td>
         <th>CNC Program / Machine Ref</th><td>{{cnc_program_machine_ref}}</td></tr>
-    <tr><th>CNC Program Parse Result</th><td colspan="3">{{cnc_program_parse_result}}</td></tr>
-    <tr><th>Qty Parts Drilled This Submission</th><td class="num">{{qty_parts_drilled}}</td>
-        <th>Total Number of Holes Drilled</th><td class="num">{{total_holes_drilled}}</td></tr>
+    <tr><th>CNC Program Parse Result</th><td colspan="3">{{cnc_program_parse_result_hole_extract_status}}</td></tr>
+    <tr><th>Qty Parts Drilled This Submission</th><td class="num">{{qty_parts_drilled_this_submission}}</td>
+        <th>Total Number of Holes Drilled</th><td class="num">{{total_number_of_holes_drilled}}</td></tr>
   </table>
 </section>
 
@@ -113,9 +113,9 @@
       <tr><th>Check Point</th><th>Specified</th><th>Tolerance</th><th>Measured</th><th>Result</th></tr>
     </thead>
     <tbody>
-      <tr><td>Hole Diameter (mm)</td><td class="num">{{hole_diameter_spec}}</td><td class="num">{{hole_diameter_tol}}</td><td class="num">{{hole_diameter_meas}}</td><td class="{{hole_diameter_class}}">{{hole_diameter_result}}</td></tr>
-      <tr><td>Hole Pitch / Pattern (mm)</td><td>{{hole_pitch_spec}}</td><td>{{hole_pitch_tol}}</td><td>{{hole_pitch_meas}}</td><td class="{{hole_pitch_class}}">{{hole_pitch_result}}</td></tr>
-      <tr><td>Edge Distance (mm)</td><td class="num">{{edge_distance_spec}}</td><td class="num">{{edge_distance_tol}}</td><td class="num">{{edge_distance_meas}}</td><td class="{{edge_distance_class}}">{{edge_distance_result}}</td></tr>
+      <tr><td>Hole Diameter (mm)</td><td class="num">{{hole_diameter_spec}}</td><td class="num">{{hole_diameter_tol}}</td><td class="num">{{hole_diameter}}</td><td class="{{hole_diameter_class}}">{{hole_diameter_result}}</td></tr>
+      <tr><td>Hole Pitch / Pattern (mm)</td><td>{{hole_pitch_spec}}</td><td>{{hole_pitch_tol}}</td><td>{{hole_pitch_pattern}}</td><td class="{{hole_pitch_class}}">{{hole_pitch_result}}</td></tr>
+      <tr><td>Edge Distance (mm)</td><td class="num">{{edge_distance_spec}}</td><td class="num">{{edge_distance_tol}}</td><td class="num">{{edfrm_distance}}</td><td class="{{edge_distance_class}}">{{edge_distance_result}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -125,8 +125,8 @@
   <table class="compact">
     <thead><tr><th>Check Item</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>Burr Removal / Dross Condition</td><td>{{burr_criteria}}</td><td>{{burr_obs}}</td><td class="{{burr_class}}">{{burr_result}}</td></tr>
-      <tr><td>Plate Flatness After Drilling</td><td>{{flatness_criteria}}</td><td>{{flatness_obs}}</td><td class="{{flatness_class}}">{{flatness_result}}</td></tr>
+      <tr><td>Burr Removal / Dross Condition</td><td>{{burr_criteria}}</td><td>{{burr_removal_dross_condition}}</td><td class="{{burr_class}}">{{burr_result}}</td></tr>
+      <tr><td>Plate Flatness After Drilling</td><td>{{flatness_criteria}}</td><td>{{plate_flatness_after_drilling}}</td><td class="{{flatness_class}}">{{flatness_result}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -136,8 +136,8 @@
   <table class="compact">
     <thead><tr><th>Check</th><th>Expected</th><th>Cumulative To Date</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>Drilled Quantity vs Expected</td><td class="num">{{expected_drilled_qty}}</td><td class="num">{{cumulative_drilled_qty}}</td><td class="{{cumulative_qty_class}}">{{cumulative_qty_check}}</td></tr>
-      <tr><td>Holes Drilled vs Expected</td><td class="num">{{expected_holes_total}}</td><td class="num">{{cumulative_holes_drilled}}</td><td class="{{cumulative_holes_class}}">{{cumulative_holes_check}}</td></tr>
+      <tr><td>Drilled Quantity vs Expected</td><td class="num">{{expected_drilled_qty}}</td><td class="num">{{cumulative_drilled_qty_vs_expected_check}}</td><td class="{{cumulative_qty_class}}">{{cumulative_qty_check}}</td></tr>
+      <tr><td>Holes Drilled vs Expected</td><td class="num">{{expected_holes_total}}</td><td class="num">{{cumulative_holes_drilled_vs_expected_check}}</td><td class="{{cumulative_holes_class}}">{{cumulative_holes_check}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -164,7 +164,7 @@
       <tr><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_review_note}}</td></tr>
     </tbody>
   </table>
-  <div class="small">Stage Passport Feedback to Traveller (Drilling): <span class="accent">{{stage_passport_feedback}}</span> &nbsp;|&nbsp; Gate Release: <strong>{{gate_release_status}}</strong></div>
+  <div class="small">Stage Passport Feedback to Traveller (Drilling): <span class="accent">{{stafrm_passport_feedback_to_traveller_drilling}}</span> &nbsp;|&nbsp; Gate Release: <strong>{{gate_release_status}}</strong></div>
 </section>
 
 <section class="signoff">

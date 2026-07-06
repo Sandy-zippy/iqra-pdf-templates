@@ -72,9 +72,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Attachment Fit-up (FCAW)</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-008B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-008B &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Fit-up ID:</span> <strong>{{fitup_id}}</strong></div>
+    <div class="row"><span class="label">Fit-up ID:</span> <strong>{{u2_008b_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -82,26 +82,26 @@
 <section>
   <h2>1. Member &amp; Attachment Header</h2>
   <table class="kv-table compact">
-    <tr><th>Released Built-up Member</th><td><span class="link-pill">{{released_member_ref}}</span></td>
-        <th>Member Mark</th><td><strong>{{member_mark}}</strong></td></tr>
-    <tr><th>Parent SAW Release Ref</th><td><span class="link-pill">{{parent_saw_release_ref}}</span></td>
-        <th>Attachment Part Mark</th><td><strong>{{part_mark}}</strong></td></tr>
-    <tr><th>Attachment Shop Drawing Ref</th><td>{{attachment_shop_drawing_ref}}</td>
-        <th>Joint / Location</th><td>{{joint_location}}</td></tr>
-    <tr><th>Fit-up Type</th><td>{{fitup_type}}</td>
-        <th>Dimensions L x W</th><td>{{dimensions_l_w}}</td></tr>
-    <tr><th>WPS No. (FCAW)</th><td><span class="link-pill">{{fcaw_wps_no}}</span></td>
-        <th>Attachment Drilling Applicability</th><td>{{attachment_drilling_applicability}}</td></tr>
-    <tr><th>Accepted 007B Drilling Ref</th><td colspan="3"><span class="link-pill">{{accepted_007b_ref}}</span></td></tr>
+    <tr><th>Released Built-up Member</th><td><span class="link-pill">{{member_mark_read_only}}</span></td>
+        <th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td></tr>
+    <tr><th>Parent SAW Release Ref</th><td><span class="link-pill">{{parent_saw_release_ref_read_only}}</span></td>
+        <th>Attachment Part Mark</th><td><strong>{{part_mark_read_only}}</strong></td></tr>
+    <tr><th>Attachment Shop Drawing Ref</th><td>{{attachment_shop_drawing_ref_read_only}}</td>
+        <th>Joint / Location</th><td>{{joint_location_read_only}}</td></tr>
+    <tr><th>Fit-up Type</th><td>{{fit_up_type}}</td>
+        <th>Dimensions L x W</th><td>{{dimensions_l_x_w_read_only}}</td></tr>
+    <tr><th>WPS No. (FCAW)</th><td><span class="link-pill">{{wps_no_fcaw_read_only}}</span></td>
+        <th>Attachment Drilling Applicability</th><td>{{attachment_drilling_applicability_read_only}}</td></tr>
+    <tr><th>Accepted 007B Drilling Ref</th><td colspan="3"><span class="link-pill">{{accepted_007b_drilling_ref_read_only}}</span></td></tr>
   </table>
 </section>
 
 <section>
   <h2>2. Quantity Submitted</h2>
   <table class="kv-table compact">
-    <tr><th>Drawing / BOQ Total Attachment Qty</th><td class="num">{{drawing_total_attachment_qty}}</td>
+    <tr><th>Drawing / BOQ Total Attachment Qty</th><td class="num">{{drawing_boq_total_attachment_quantity_read_only}}</td>
         <th>Qty Submitted for Inspection</th><td class="num">{{qty_submitted_for_inspection}}</td></tr>
-    <tr><th>First-Off / Repeat Run</th><td>{{first_off_or_repeat}}</td>
+    <tr><th>First-Off / Repeat Run</th><td>{{first_off_repeat_run}}</td>
         <th>Source Mode</th><td>{{source_mode}}</td></tr>
   </table>
 </section>
@@ -111,11 +111,11 @@
   <table class="compact">
     <thead><tr><th>Check Item</th><th>Acceptance Criteria</th><th>Observation</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>Position / Orientation</td><td>{{position_criteria}}</td><td>{{position_obs}}</td><td class="{{position_class}}">{{position_status}}</td></tr>
-      <tr><td>Fit-up Gap</td><td>{{gap_criteria}}</td><td>{{gap_obs}}</td><td class="{{gap_class}}">{{gap_status}}</td></tr>
-      <tr><td>Plate Squareness / Gusset-Stiffener Position</td><td>{{squareness_criteria}}</td><td>{{squareness_obs}}</td><td class="{{squareness_class}}">{{squareness_status}}</td></tr>
-      <tr><td>Tack Weld Evidence</td><td>{{tack_criteria}}</td><td>{{tack_obs}}</td><td class="{{tack_class}}">{{tack_status}}</td></tr>
-      <tr><td>Weld-Size Clearance</td><td>{{weld_clearance_criteria}}</td><td>{{weld_clearance_obs}}</td><td class="{{weld_clearance_class}}">{{weld_clearance_status}}</td></tr>
+      <tr><td>Position / Orientation</td><td>{{position_criteria}}</td><td>{{position_obs}}</td><td class="{{position_class}}">{{position_orientation_evidence_status}}</td></tr>
+      <tr><td>Fit-up Gap</td><td>{{gap_criteria}}</td><td>{{gap_obs}}</td><td class="{{gap_class}}">{{fit_up_gap_evidence_status}}</td></tr>
+      <tr><td>Plate Squareness / Gusset-Stiffener Position</td><td>{{squareness_criteria}}</td><td>{{squareness_obs}}</td><td class="{{squareness_class}}">{{plate_squareness_gusset_stiffener_position_evidence_status}}</td></tr>
+      <tr><td>Tack Weld Evidence</td><td>{{tack_criteria}}</td><td>{{tack_obs}}</td><td class="{{tack_class}}">{{tack_weld_evidence_status}}</td></tr>
+      <tr><td>Weld-Size Clearance</td><td>{{weld_clearance_criteria}}</td><td>{{weld_clearance_obs}}</td><td class="{{weld_clearance_class}}">{{weld_size_clearance_evidence_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -137,9 +137,9 @@
 <section>
   <h2>5. Upstream Acceptance &amp; Fit-up Readiness</h2>
   <table class="compact kv-table">
-    <tr><th>Upstream Acceptance Pack</th><td>{{upstream_acceptance_pack}}</td>
-        <th>Fit-up Readiness for FCAW</th><td><strong>{{fitup_readiness_for_fcaw}}</strong></td></tr>
-    <tr><th>Stage Passport Feedback</th><td colspan="3">{{stage_passport_feedback}}</td></tr>
+    <tr><th>Upstream Acceptance Pack</th><td>{{auto_upstream_acceptance_pack}}</td>
+        <th>Fit-up Readiness for FCAW</th><td><strong>{{fit_up_readiness_for_fcaw}}</strong></td></tr>
+    <tr><th>Stage Passport Feedback</th><td colspan="3">{{stafrm_passport_feedback_to_assembly_object_attachment_fit_u}}</td></tr>
   </table>
 </section>
 
