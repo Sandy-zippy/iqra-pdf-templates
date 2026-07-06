@@ -109,12 +109,12 @@
     <tr><th>Registered Form Title</th><td>{{registered_form_title}}</td></tr>
     <tr><th>Revision / Version</th><td>{{revision_version}}</td></tr>
     <tr><th>Active From Date</th><td>{{active_from_date}}</td></tr>
-    <tr><th>Format File Upload</th><td>{{format_file_upload}}</td></tr>
+    <tr><th>Format File Upload</th><td>{{#format_file_upload}}{{filename}} {{/format_file_upload}}{{^format_file_upload}}<span class="muted">&mdash;</span>{{/format_file_upload}}</td></tr>
     <tr><th>Status</th><td>{{status}}</td></tr>
     <tr><th>Form Registry Sync Status</th><td>{{form_registry_sync_status}}</td></tr>
     <tr><th>Original Record Retained Flag</th><td>{{original_record_retained_flag}}</td></tr>
     <tr><th>Report Output Number</th><td>{{report_output_number}}</td></tr>
-    <tr><th>PDF Output Link</th><td>{{pdf_output_link}}</td></tr>
+    <tr><th>PDF Output Link</th><td>{{#pdf_output_link}}{{filename}} {{/pdf_output_link}}{{^pdf_output_link}}<span class="muted">&mdash;</span>{{/pdf_output_link}}</td></tr>
     <tr><th>Dossier Linkage</th><td>{{dossier_linkage}}</td></tr>
   </table>
 
