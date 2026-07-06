@@ -107,7 +107,7 @@
     <tr><th>Drawing Number / Reference</th><td>{{drawing_number_reference}}</td></tr>
     <tr><th>Revision</th><td>{{revision}}</td></tr>
     <tr><th>Drawing Use Condition</th><td>{{drawing_use_condition}}</td></tr>
-    <tr><th>Upload Drawing / Issue Evidence</th><td>{{upload_drawing_issue_evidence}}</td></tr>
+    <tr><th>Upload Drawing / Issue Evidence</th><td>{{#upload_drawing_issue_evidence_drive_url}}<a href="{{upload_drawing_issue_evidence_drive_url}}">{{upload_drawing_issue_evidence_filename}}{{^upload_drawing_issue_evidence_filename}}Open in Drive{{/upload_drawing_issue_evidence_filename}}</a>{{/upload_drawing_issue_evidence_drive_url}}{{^upload_drawing_issue_evidence_drive_url}}<span class="muted">See Attachments annexure</span>{{/upload_drawing_issue_evidence_drive_url}}</td></tr>
     <tr><th>Drawing Title</th><td>{{drawing_title}}</td></tr>
     <tr><th>Controlled Copy Location</th><td>{{controlled_copy_location}}</td></tr>
     <tr><th>Issued To</th><td>{{issued_to}}</td></tr>
