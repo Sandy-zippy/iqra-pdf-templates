@@ -107,7 +107,7 @@
     <tr><th>Site Start Check Area</th><td>{{site_start_check_area}}</td></tr>
     <tr><th>Minimum Site Start Status</th><td>{{minimum_site_start_status}}</td></tr>
     <tr><th>Briefing / Working Method Status</th><td>{{briefing_working_method_status}}</td></tr>
-    <tr><th>Upload Site Start Evidence</th><td>{{upload_site_start_evidence}}</td></tr>
+    <tr><th>Upload Site Start Evidence</th><td>{{#upload_site_start_evidence}}{{filename}} {{/upload_site_start_evidence}}{{^upload_site_start_evidence}}<span class="muted">Not uploaded</span>{{/upload_site_start_evidence}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -127,11 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_site_start_evidence}}
     <div class="photo-tile">
-      <div class="ph">Upload Site Start Evidence</div>
-      <div class="cap">{{#upload_site_start_evidence_drive_url}}<a href="{{upload_site_start_evidence_drive_url}}">{{upload_site_start_evidence_filename}}{{^upload_site_start_evidence_filename}}Open in Drive{{/upload_site_start_evidence_filename}}</a>{{/upload_site_start_evidence_drive_url}}{{^upload_site_start_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_site_start_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_site_start_evidence_ocr_status}}{{#upload_site_start_evidence_ocr_confidence}} ({{upload_site_start_evidence_ocr_confidence}}%){{/upload_site_start_evidence_ocr_confidence}}</div>
+      <div class="ph">Site Start Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}{{^filename}}Open evidence{{/filename}}</a></div>
     </div>
+    {{/upload_site_start_evidence}}
+    {{^upload_site_start_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Site Start Evidence</div>
+      <div class="cap muted">Not uploaded</div>
+    </div>
+    {{/upload_site_start_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
@@ -145,7 +152,6 @@
   <div class="box">
     <div class="role">NSPL — Maker</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="name">{{nspl_name}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Site QC{{/nspl_role}}</div>
     <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
@@ -153,8 +159,6 @@
   {{#iqra_signed_date}}
   <div class="box">
     <div class="role">IQRA — Checker</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="name">{{iqra_name}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>

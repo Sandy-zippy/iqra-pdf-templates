@@ -88,11 +88,9 @@
 </div>
 
 <div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-041</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
+  <strong>Partial schema.</strong> Core touch-up / restoration fields below are live and bound.
+  The full canonical field set for <strong>SE-041</strong> (expected 32 rows) is still pending
+  Raghu's detail in the source workbook; additional fields will be added on regeneration.
 </div>
 
 <h2>Record Metadata</h2>
@@ -106,6 +104,30 @@
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
 </table>
 
+<h2>Coating / Touch-up Restoration Detail</h2>
+<table class="kv-table compact">
+  <tr><th>Completion Area / Released Area / Grid / Bay</th><td>{{touch_up_completion_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Touch-up Summary Scope</th><td>{{touch_up_summary_scope}}</td></tr>
+  <tr><th>Touch-up Completion Condition</th><td>{{touch_up_completion_condition}}</td></tr>
+  <tr><th>Linked SE-033 Touch-up Record Set</th><td>{{linked_se_033_touch_up_record_set}}</td></tr>
+  <tr><th>SE-033 Record Count</th><td>{{se_033_record_count}}</td></tr>
+  <tr><th>Open SE-033 Count</th><td>{{open_se_033_count}}</td></tr>
+  {{#pending_point_touch_up_completion_note}}<tr><th>Pending Point / Completion Note</th><td>{{pending_point_touch_up_completion_note}}</td></tr>{{/pending_point_touch_up_completion_note}}
+</table>
+
+<h2>SE-025 Release Precondition &amp; Traceability</h2>
+<table class="kv-table compact">
+  <tr><th>Linked SE-025 Final Bolting Record</th><td>{{linked_se_025_final_bolting_record_id}}</td></tr>
+  <tr><th>SE-025 Area Release Status</th><td>{{se_025_area_release_status}}</td></tr>
+  <tr><th>SE-025 Release Precondition</th><td>{{se_025_release_precondition}}</td></tr>
+  {{#linked_correction_recheck_record_id}}<tr><th>Linked SE-034 Correction / Recheck</th><td>{{linked_correction_recheck_record_id}}</td></tr>{{/linked_correction_recheck_record_id}}
+  {{#site_dossier_link}}<tr><th>Site Dossier Index (SE-038)</th><td>{{site_dossier_link}}</td></tr>{{/site_dossier_link}}
+  <tr><th>Site-Modification Exclusion Confirmed</th><td>{{#site_modification_exclusion_confirmation}}Yes{{/site_modification_exclusion_confirmation}}{{^site_modification_exclusion_confirmation}}No{{/site_modification_exclusion_confirmation}}</td></tr>
+  <tr><th>ATR-Signature Exclusion Confirmed</th><td>{{#atr_signature_exclusion_confirmation}}Yes{{/atr_signature_exclusion_confirmation}}{{^atr_signature_exclusion_confirmation}}No{{/atr_signature_exclusion_confirmation}}</td></tr>
+</table>
+
+{{#dossier_annexure_flag}}<div class="review-banner"><strong>Flagged for site dossier annexure.</strong> Touch-up completion evidence attached to this record is compiled into the SE-038 site dossier.</div>{{/dossier_annexure_flag}}
+
 <h2>IQRA Review</h2>
 <div class="review-banner">
   <strong>Status:</strong> {{iqra_review_status}}
@@ -117,7 +139,6 @@
   <div class="box">
     <div class="role">NSPL — Maker</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="name">{{nspl_name}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Site QC{{/nspl_role}}</div>
     <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
@@ -125,8 +146,6 @@
   {{#iqra_signed_date}}
   <div class="box">
     <div class="role">IQRA — Checker</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="name">{{iqra_name}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>

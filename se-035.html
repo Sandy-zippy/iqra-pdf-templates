@@ -87,14 +87,6 @@
   </div>
 </div>
 
-<div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-035</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
-</div>
-
 <h2>Record Metadata</h2>
 <table class="kv-table compact">
   <tr><th>Record ID</th><td>{{record_id}}</td></tr>
@@ -105,6 +97,31 @@
   <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
 </table>
+
+<h2>Punch Point Detail</h2>
+<table class="kv-table compact">
+  <tr><th>Released Area / Grid / Bay</th><td>{{punch_point_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Source Record / Activity Ref</th><td>{{source_record_activity_reference}}</td></tr>
+  <tr><th>Punch Point Type / Description</th><td>{{punch_point_type_description}}</td></tr>
+  <tr><th>Severity</th><td>{{punch_point_severity}}</td></tr>
+  <tr><th>Status</th><td>{{punch_point_status}}</td></tr>
+  <tr><th>Responsible Party / Target Date</th><td>{{responsible_party_target_date}}</td></tr>
+  <tr><th>Target Completion Date</th><td>{{target_completion_date}}</td></tr>
+  <tr><th>Pending Point / Punch Note</th><td>{{pending_point_punch_note}}</td></tr>
+  {{#linked_correction_recheck_record_id}}<tr><th>Linked Correction / Recheck</th><td>{{linked_correction_recheck_record_id}}</td></tr>{{/linked_correction_recheck_record_id}}
+  {{#se_036_clearance_trigger}}<tr><th>SE-036 Clearance Trigger</th><td>{{se_036_clearance_trigger}}</td></tr>{{/se_036_clearance_trigger}}
+</table>
+
+<h2>Punch Point Evidence</h2>
+<div class="photo-grid">
+  {{#photos}}
+  <div class="photo-tile">
+    <div class="ph">[ Photo: {{filename}} ]</div>
+    <div class="cap">{{title}}{{#note}} &middot; {{note}}{{/note}}</div>
+  </div>
+  {{/photos}}
+</div>
+{{#dossier_annexure_flag}}<div class="small muted">Evidence flagged for Site Dossier annexure (SE-038).</div>{{/dossier_annexure_flag}}
 
 <h2>IQRA Review</h2>
 <div class="review-banner">

@@ -74,20 +74,16 @@
 <h2>Receipt Header</h2>
 <table class="kv-table compact">
   <tr><th>Dispatch Trip ID</th><td>{{dispatch_trip_id}}</td></tr>
-  <tr><th>Vehicle Number (received)</th><td>{{vehicle_confirmation}}</td></tr>
   <tr><th>Site Receipt Date</th><td>{{site_receipt_date}}</td></tr>
   <tr><th>Activity Date</th><td>{{activity_date}}</td></tr>
   <tr><th>Site Receiver</th><td>{{site_receiver_name}}</td></tr>
-  <tr><th>Unloading Location</th><td>{{unloading_location}}</td></tr>
-  <tr><th>Phase / Package</th><td>{{phase_name}}</td></tr>
+  <tr><th>Phase / Package</th><td>{{phase}}</td></tr>
 </table>
 
 <h2>Dispatch Reconciliation</h2>
 <table class="kv-table compact">
-  <tr><th>Packages Dispatched</th><td>{{package_count_dispatched}}</td></tr>
-  <tr><th>Packages Received</th><td>{{package_count_received}}</td></tr>
-  <tr><th>Packing-List Match</th><td>{{packing_list_match_summary}}</td></tr>
-  <tr><th>Weight Variance vs Weigh Slip (%)</th><td class="num">{{weight_variance_pct}}</td></tr>
+  <tr><th>All Packages Received</th><td>{{#all_packages_received}}Yes{{/all_packages_received}}{{^all_packages_received}}No{{/all_packages_received}}</td></tr>
+  <tr><th>Reconciliation Status</th><td>{{reconciliation_status}}</td></tr>
 </table>
 
 <h2>Member Marks Received</h2>
@@ -106,8 +102,6 @@
 <h2>Damage / Discrepancy Observations</h2>
 <table class="kv-table compact">
   <tr><th>Damage Observations</th><td>{{damage_observations}}{{^damage_observations}}<span class="small">None recorded.</span>{{/damage_observations}}</td></tr>
-  <tr><th>NCR Raised?</th><td>{{#ncr_raised}}<span class="receipt-status status-rejected">Yes &mdash; NCR Ref {{ncr_reference}}</span>{{/ncr_raised}}{{^ncr_raised}}<span class="small">No</span>{{/ncr_raised}}</td></tr>
-  <tr><th>Materials Quarantined?</th><td>{{quarantine_status}}</td></tr>
 </table>
 
 <h2>Photo Evidence</h2>
@@ -125,7 +119,6 @@
 <h2>IQRA Review</h2>
 <div class="review-banner">
   <strong>Status:</strong> {{iqra_review_status}}
-  {{#iqra_review_remarks}} &nbsp;&nbsp;<strong>Remarks:</strong> {{iqra_review_remarks}}{{/iqra_review_remarks}}
   {{#iqra_condition_note}}<br><strong>Condition:</strong> {{iqra_condition_note}}{{/iqra_condition_note}}
 </div>
 

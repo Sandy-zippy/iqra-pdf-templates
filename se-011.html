@@ -107,7 +107,7 @@
     <tr><th>Instrument / Tool Category</th><td>{{instrument_tool_category}}</td></tr>
     <tr><th>Instrument / Tool ID / Description</th><td>{{instrument_tool_id_description}}</td></tr>
     <tr><th>Instrument / Tool Use Condition</th><td>{{instrument_tool_use_condition}}</td></tr>
-    <tr><th>Upload Calibration / Tool Evidence</th><td>{{upload_calibration_tool_evidence}}</td></tr>
+    <tr><th>Upload Calibration / Tool Evidence</th><td>{{#upload_calibration_tool_evidence}}<a href="{{url}}">{{filename}}</a> {{/upload_calibration_tool_evidence}}{{^upload_calibration_tool_evidence}}<span class="muted">Not uploaded</span>{{/upload_calibration_tool_evidence}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -127,11 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_calibration_tool_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Calibration / Tool Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}</a></div>
+    </div>
+    {{/upload_calibration_tool_evidence}}
+    {{^upload_calibration_tool_evidence}}
     <div class="photo-tile">
       <div class="ph">Upload Calibration / Tool Evidence</div>
-      <div class="cap">{{#upload_calibration_tool_evidence_drive_url}}<a href="{{upload_calibration_tool_evidence_drive_url}}">{{upload_calibration_tool_evidence_filename}}{{^upload_calibration_tool_evidence_filename}}Open in Drive{{/upload_calibration_tool_evidence_filename}}</a>{{/upload_calibration_tool_evidence_drive_url}}{{^upload_calibration_tool_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_calibration_tool_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_calibration_tool_evidence_ocr_status}}{{#upload_calibration_tool_evidence_ocr_confidence}} ({{upload_calibration_tool_evidence_ocr_confidence}}%){{/upload_calibration_tool_evidence_ocr_confidence}}</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
     </div>
+    {{/upload_calibration_tool_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
@@ -146,7 +153,7 @@
     <div class="role">NSPL — Maker</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="name">{{nspl_name}}</div>
+    <div class="name">{{maker_name}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Site QC{{/nspl_role}}</div>
     <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
   </div>
@@ -156,7 +163,7 @@
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="name">{{iqra_name}}</div>
+    <div class="name">{{checker_name}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>
     <div class="date">Signed: {{iqra_signed_date}}</div>
   </div>

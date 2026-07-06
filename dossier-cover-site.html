@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Site Dossier Cover - {{dossier_id}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 15mm 15mm 22mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10.5pt; color: #444; line-height: 1.4; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3, h4 { color: #000; font-weight: 600; margin: 0; }
+  h2 { font-size: 12pt; margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid #D4A017; text-transform: uppercase; letter-spacing: 0.5px; }
+  .small { font-size: 9pt; color: #666; }
+  .accent { color: #D4A017; font-weight: 600; }
+  .doc-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 14px; }
+  .brand { display: flex; }
+  .brand .tag { font-size: 8pt; color: #D4A017; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+  .header-meta { text-align: right; font-size: 9pt; color: #444; }
+  .header-meta .title { font-size: 13pt; color: #000; font-weight: 700; letter-spacing: 0.5px; }
+  .header-meta .row { margin-top: 3px; }
+  .header-meta .label { color: #888; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9pt; }
+  th, td { border: 0.6pt solid #BBB; padding: 4px 6px; vertical-align: top; text-align: left; }
+  th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .kv-table th { width: 30%; }
+  .compact td, .compact th { padding: 3px 5px; font-size: 8.5pt; }
+  .signoff { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; page-break-inside: avoid; }
+  .sigbox { border: 0.6pt solid #BBB; padding: 10px 12px; min-height: 120px; position: relative; }
+  .sigbox h4 { font-size: 9.5pt; color: #000; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 0.6pt solid #D4A017; padding-bottom: 4px; }
+  .sigbox .siglabel { color: #888; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  .sigbox .signame { color: #000; font-weight: 600; font-size: 11pt; margin-top: 12px; font-family: 'Cormorant Garamond', Georgia, serif; }
+  .sigbox .sigrole { font-size: 9pt; color: #555; }
+  .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
+  .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10pt; }
+  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .stamp-locked { position: fixed; top: 40mm; right: -8mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 58pt; font-weight: 700; color: #D4A017; opacity: 0.28; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
+  section { page-break-inside: avoid; }
+  .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
+  .status-complete { color: #2a6a2a; font-weight: 600; }
+  .status-pending  { color: #8A6A00; font-weight: 600; }
+  .status-missing  { color: #A02020; font-weight: 700; }
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; margin: 6px 0 10px; }
+  .kpi-card { border: 1.2px solid #000; padding: 8px 10px; background: #FAFAFA; text-align: center; }
+  .kpi-card .kpi-label { font-size: 8.5pt; color: #666; text-transform: uppercase; letter-spacing: 0.4px; }
+  .kpi-card .kpi-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22pt; font-weight: 700; color: #000; line-height: 1.1; margin-top: 2px; }
+  .kpi-card .kpi-tag { font-size: 8pt; color: #D4A017; font-weight: 600; }
+
+  /* Brand asset injection — added 2026-05-26 */
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .stamp-img { height: 90px; width: auto; opacity: 0.88; margin-top: 8px; display: block; }
+
+  /* Cover-specific — added 2026-07-01 (dossier cover page) */
+  .cover-title { text-align: center; margin: 26px 0 20px; }
+  .cover-title .kicker { font-size: 9.5pt; letter-spacing: 3px; text-transform: uppercase; color: #D4A017; font-weight: 700; }
+  .cover-title .main { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34pt; font-weight: 700; color: #000; line-height: 1.05; margin-top: 4px; }
+  .cover-title .sub { font-size: 11pt; color: #555; margin-top: 6px; }
+  .id-band { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0 14px; }
+  .id-card { border: 1.2px solid #000; background: #FAFAFA; padding: 10px 14px; }
+  .id-card .id-label { font-size: 8pt; color: #666; text-transform: uppercase; letter-spacing: 0.6px; }
+  .id-card .id-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18pt; font-weight: 700; color: #000; line-height: 1.1; margin-top: 2px; }
+  .readiness { margin: 6px 0 4px; padding: 10px 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10.5pt; border: 1px solid; }
+  .readiness.ready { background: #E9F5E9; border-color: #2a6a2a; color: #2a6a2a; }
+  .readiness.hold  { background: #FFF6E0; border-color: #8A6A00; color: #8A6A00; }
+</style>
+</head>
+<body>
+
+{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+
+<div class="doc-header">
+  <div class="brand">
+    <div class="brand-row">
+      <img class="logo-img" src="brand-assets/iqra-logo.jpg" alt="Iqra Quality Services">
+      <div class="tag">Quality Assured.</div>
+    </div>
+    <div class="brand-row" style="margin-left:18px;">
+      <img class="nspl-logo-img" src="brand-assets/nspl-logo.jpeg" alt="Nischay Steels Pvt Ltd">
+      <div class="tag" style="font-size:7.5pt;">Nischay Steels Pvt. Ltd.</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="title">Site Quality Dossier &mdash; Cover</div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-018 &nbsp;|&nbsp; <span class="label">Output Ver:</span> {{dossier_output_version}}</div>
+    <div class="row"><span class="label">Project:</span> {{project}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
+    <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}}</div>
+  </div>
+</div>
+
+<div class="cover-title">
+  <div class="kicker">Site Receipt &amp; Erection Dossier</div>
+  <div class="main">{{dossier_type}}</div>
+  <div class="sub">{{project}} &nbsp;&middot;&nbsp; {{unit_lane}}</div>
+</div>
+
+<div class="id-band">
+  <div class="id-card">
+    <div class="id-label">Dossier ID</div>
+    <div class="id-value">{{dossier_id}}</div>
+  </div>
+  <div class="id-card">
+    <div class="id-label">Dispatch Trip ID</div>
+    <div class="id-value">{{dispatch_trip_id}}</div>
+  </div>
+</div>
+
+{{#is_ready}}<div class="readiness ready">{{dossier_readiness_status}}</div>{{/is_ready}}
+{{^is_ready}}<div class="readiness hold">{{dossier_readiness_status}}</div>{{/is_ready}}
+
+<section>
+  <h2>1. Project &amp; Dossier Header</h2>
+  <table class="kv-table compact">
+    <tr><th>Project</th><td>{{project}}</td>
+        <th>Job No.</th><td>{{job_no}}</td></tr>
+    <tr><th>Client</th><td>{{client}}</td>
+        <th>Vendor</th><td>{{vendor}}</td></tr>
+    <tr><th>Unit / Lane</th><td>{{unit_lane}}</td>
+        <th>Phase</th><td>{{phase}}</td></tr>
+    <tr><th>Dossier Type</th><td>{{dossier_type}}</td>
+        <th>Dossier Status</th><td><strong>{{dossier_status}}</strong></td></tr>
+    <tr><th>Compilation Date</th><td>{{compilation_date}}</td>
+        <th>Coverage Cut-off</th><td>{{dossier_coverage_cutoff}}</td></tr>
+    <tr><th>Evidence Completeness</th><td>{{evidence_completeness_status}}</td>
+        <th>Readiness</th><td>{{dossier_readiness_status}}</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>2. Coverage Summary</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Completion</div>
+      <div class="kpi-value">{{dossier_completion_percentage}}%</div>
+      <div class="kpi-tag">Chain Coverage</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Annexures</div>
+      <div class="kpi-value">{{annexure_count}}</div>
+      <div class="kpi-tag">Indexed</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Pending Items</div>
+      <div class="kpi-value">{{pending_item_count}}</div>
+      <div class="kpi-tag">Open</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Missing Evidence</div>
+      <div class="kpi-value">{{missing_evidence_count}}</div>
+      <div class="kpi-tag">To Close</div>
+    </div>
+  </div>
+  <div class="small">Coverage breakdown (per QAP form group): {{lot_member_dispatch_coverage}}</div>
+</section>
+
+<section>
+  <h2>3. Cross-System Linkages</h2>
+  <table class="compact">
+    <thead><tr><th>Linkage</th><th>Status / Reference</th></tr></thead>
+    <tbody>
+      <tr><td>Traveller Link</td><td>{{traveller_link_status}}</td></tr>
+      <tr><td>Dispatch Trip Link</td><td>{{dispatch_trip_link_status}}</td></tr>
+      <tr><td>LDP Link</td><td>{{ldp_link}}</td></tr>
+      <tr><td>Correction / Recheck Link</td><td>{{correction_recheck_link}}</td></tr>
+      <tr><td>Master Data Table Link</td><td>{{master_data_table_link}}</td></tr>
+      <tr><td>Original Record Preservation</td><td>{{original_record_preservation_status}}</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="signoff">
+  <div class="sigbox">
+    <h4>Compiled by NSPL</h4>
+    {{#nspl_acknowledgement}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_acknowledgement}}
+    <div class="siglabel">Dossier compiled by NSPL Document Control</div>
+    <div class="signame">{{compiled_by}}</div>
+    <div class="sigrole">NSPL Document Controller (Dossier Compilation)</div>
+    <div class="sigdate">Compilation Date: {{compilation_date}}</div>
+    {{#nspl_acknowledgement_remarks}}<div class="small" style="margin-top:6px;">{{nspl_acknowledgement_remarks}}</div>{{/nspl_acknowledgement_remarks}}
+  </div>
+
+  {{#iqra_review_date}}
+  <div class="sigbox">
+    <h4>IQRA &mdash; Reviewed &amp; Approved</h4>
+    {{#is_locked}}<img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">{{/is_locked}}
+    <div class="siglabel">Owner-side compilation review (Iqra Quality Services)</div>
+    <div class="signame">{{reviewed_approved_by}}</div>
+    <div class="sigrole">IQRA Site Quality Lead</div>
+    <div class="sigdate">Review Status: {{final_iqra_compilation_review_status}} &middot; {{iqra_review_date}}</div>
+    {{#iqra_compilation_remarks}}<div class="small" style="margin-top:6px;">{{iqra_compilation_remarks}}</div>{{/iqra_compilation_remarks}}
+  </div>
+  {{/iqra_review_date}}
+
+  {{^iqra_review_date}}
+  <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
+  {{/iqra_review_date}}
+</section>
+
+<div class="doc-footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | Dossier {{dossier_id}}</div>
+  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+</div>
+
+</body>
+</html>

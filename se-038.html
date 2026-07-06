@@ -87,13 +87,16 @@
   </div>
 </div>
 
-<div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-038</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
-</div>
+<h2>Dossier Index Details</h2>
+<table class="kv-table compact">
+  <tr><th>Dossier Area / Released Area / Grid / Bay</th><td>{{dossier_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Dossier Package Type</th><td>{{dossier_package_type}}</td></tr>
+  <tr><th>Record / Form Group</th><td>{{record_form_group}}</td></tr>
+  <tr><th>Dossier Readiness Condition</th><td>{{dossier_readiness_condition}}</td></tr>
+  <tr><th>Pending Point / Dossier Note</th><td>{{pending_point_dossier_note}}{{^pending_point_dossier_note}}&mdash;{{/pending_point_dossier_note}}</td></tr>
+  <tr><th>NSPL Dossier Acknowledgement</th><td>{{#se_nspl_dossier_acknowledgement}}Acknowledged{{/se_nspl_dossier_acknowledgement}}{{^se_nspl_dossier_acknowledgement}}Not acknowledged{{/se_nspl_dossier_acknowledgement}}</td></tr>
+</table>
+<p class="small muted">Extended 40-field dossier schema (per-package roll-up counts) pending Raghu's field detail; fields above are the confirmed mobile-visible set.</p>
 
 <h2>Record Metadata</h2>
 <table class="kv-table compact">

@@ -87,13 +87,7 @@
   </div>
 </div>
 
-<div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-036</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
-</div>
+<p class="small"><strong>Purpose:</strong> To capture and control the clearance of punch points raised against erected structure, closing each punch item and routing the record into the site dossier.</p>
 
 <h2>Record Metadata</h2>
 <table class="kv-table compact">
@@ -105,6 +99,35 @@
   <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
 </table>
+
+<h2>Layer 1 — NSPL Submission Data</h2>
+<table class="kv-table compact">
+  <tr><th>Punch Clearance Area / Released Area / Grid / Bay</th><td>{{punch_clearance_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Linked Punch Point ID (FRM-SE-035)</th><td>{{linked_punch_point_id}}</td></tr>
+  <tr><th>Clearance Action Summary</th><td>{{clearance_action_summary}}</td></tr>
+  <tr><th>Punch Clearance Condition</th><td>{{punch_clearance_condition}}</td></tr>
+  <tr><th>Pending Point / Clearance Note</th><td>{{pending_point_clearance_note}}</td></tr>
+</table>
+
+<h2>Layer 2 / 5 — Derived &amp; System Fields</h2>
+<table class="kv-table compact">
+  <tr><th>036 Record ID</th><td>{{se_036_record_id}}</td></tr>
+  <tr><th>Linked FRM-SE-035 Record ID</th><td>{{linked_frm_se_035_record_id}}</td></tr>
+  <tr><th>FRM-SE-035 Punch Status Update Flag</th><td>{{frm_se_035_punch_status_update_flag}}</td></tr>
+  <tr><th>Linked Correction / Recheck Record ID</th><td>{{linked_correction_recheck_record_id}}</td></tr>
+  <tr><th>Site Dossier Link</th><td>{{site_dossier_link}}</td></tr>
+  <tr><th>Site Modification Exclusion Confirmation</th><td>{{site_modification_exclusion_confirmation}}</td></tr>
+  <tr><th>ATR Signature Exclusion Confirmation</th><td>{{atr_signature_exclusion_confirmation}}</td></tr>
+  <tr><th>Review Status</th><td>{{review_status}}</td></tr>
+</table>
+
+<h2>Attachments</h2>
+<div class="photo-grid">
+  <div class="photo-tile">
+    <div class="ph">Clearance Evidence</div>
+    <div class="cap">{{#upload_clearance_evidence_drive_url}}<a href="{{upload_clearance_evidence_drive_url}}">{{upload_clearance_evidence_filename}}{{^upload_clearance_evidence_filename}}Open in Drive{{/upload_clearance_evidence_filename}}</a>{{/upload_clearance_evidence_drive_url}}{{^upload_clearance_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_clearance_evidence_drive_url}}</div>
+  </div>
+</div>
 
 <h2>IQRA Review</h2>
 <div class="review-banner">

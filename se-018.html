@@ -126,13 +126,20 @@
     <tr><th>Dashboard Flag</th><td>{{dashboard_flag}}</td></tr>
   </table>
 
-<h2>Attachments</h2>
+<h2>Attachments — Rafter / Beam Erection Evidence</h2>
 <div class="photo-grid">
+    {{#upload_rafter_beam_erection_evidence}}
     <div class="photo-tile">
-      <div class="ph">Upload Rafter / Beam Erection Evidence</div>
-      <div class="cap">{{#upload_rafter_beam_erection_evidence_drive_url}}<a href="{{upload_rafter_beam_erection_evidence_drive_url}}">{{upload_rafter_beam_erection_evidence_filename}}{{^upload_rafter_beam_erection_evidence_filename}}Open in Drive{{/upload_rafter_beam_erection_evidence_filename}}</a>{{/upload_rafter_beam_erection_evidence_drive_url}}{{^upload_rafter_beam_erection_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_rafter_beam_erection_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_rafter_beam_erection_evidence_ocr_status}}{{#upload_rafter_beam_erection_evidence_ocr_confidence}} ({{upload_rafter_beam_erection_evidence_ocr_confidence}}%){{/upload_rafter_beam_erection_evidence_ocr_confidence}}</div>
+      <div class="ph">Erection Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}{{^filename}}Open evidence{{/filename}}</a></div>
     </div>
+    {{/upload_rafter_beam_erection_evidence}}
+    {{^upload_rafter_beam_erection_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Rafter / Beam Erection Evidence</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
+    </div>
+    {{/upload_rafter_beam_erection_evidence}}
   </div>
 
 <h2>IQRA Review</h2>

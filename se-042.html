@@ -87,13 +87,14 @@
   </div>
 </div>
 
+{{#schema_pending_banner}}
 <div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-042</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
+  <strong>Numeric DFT / paint-batch extract-confirm loop pending Raghu's field detail.</strong><br>
+  The confirmed touch-up / paint / DFT values below are rendered from the built Layer 1
+  fields. The full OCR extract-confirm map (numeric DFT reading) is deferred until the
+  canonical 32-field schema for <strong>SE-042</strong> is finalised in the source spec.
 </div>
+{{/schema_pending_banner}}
 
 <h2>Record Metadata</h2>
 <table class="kv-table compact">
@@ -105,6 +106,29 @@
   <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
 </table>
+
+<h2>Touch-up Paint / Batch / Area / DFT</h2>
+<table class="kv-table compact">
+  <tr><th>Touch-up Paint Area / Released Area / Grid / Bay</th><td>{{touch_up_paint_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Paint Product / Batch Reference</th><td>{{paint_product_batch_reference}}</td></tr>
+  <tr><th>Linked Touch-up / Area Reference</th><td>{{linked_touch_up_area_reference}}</td></tr>
+  <tr><th>DFT Reading / Traceability Condition</th><td>{{dft_reading_traceability_condition}}</td></tr>
+  <tr><th>DFT Reading Summary</th><td>{{dft_reading_summary}}</td></tr>
+  {{#pending_point_paint_batch_dft_note}}<tr><th>Pending Point / Paint Batch / DFT Note</th><td>{{pending_point_paint_batch_dft_note}}</td></tr>{{/pending_point_paint_batch_dft_note}}
+  <tr><th>SE-025 Area Release Status</th><td>{{se_025_area_release_status}}</td></tr>
+</table>
+
+{{#upload_paint_batch_dft_evidence}}
+<h3>Paint Batch / DFT Evidence</h3>
+<div class="photo-grid">
+  {{#upload_paint_batch_dft_evidence}}
+  <div class="photo-tile">
+    <div class="ph"><img src="{{url}}" style="max-height:78px;max-width:100%;" alt="evidence"></div>
+    <div class="cap">{{filename}}</div>
+  </div>
+  {{/upload_paint_batch_dft_evidence}}
+</div>
+{{/upload_paint_batch_dft_evidence}}
 
 <h2>IQRA Review</h2>
 <div class="review-banner">

@@ -88,11 +88,9 @@
 </div>
 
 <div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-039</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
+  <strong>Partial schema.</strong> The confirmed daily-summary fields below are bound and live.
+  The full Layer 1 field set for <strong>SE-039</strong> (29 rows expected) is still pending
+  Raghu's field detail in the canonical workbook; remaining fields will be added on regeneration.
 </div>
 
 <h2>Record Metadata</h2>
@@ -105,6 +103,28 @@
   <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
 </table>
+
+<h2>Daily Progress Summary</h2>
+<table class="kv-table compact">
+  <tr><th>Daily Progress Area / Released Area / Grid / Bay</th><td>{{daily_progress_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Work Activity Summary</th><td>{{work_activity_summary}}</td></tr>
+  <tr><th>Completed / Progress Quantity</th><td>{{completed_progress_quantity}}</td></tr>
+  <tr><th>Open Point / Issue Status</th><td>{{open_point_issue_status}}</td></tr>
+  <tr><th>Pending Point / Daily Summary Note</th><td>{{pending_point_daily_summary_note}}</td></tr>
+  {{#backfill_flag}}<tr><th>Backfill Flag</th><td>{{backfill_flag}}{{#backfill_work_packet_id}} &middot; Packet: {{backfill_work_packet_id}}{{/backfill_work_packet_id}}</td></tr>{{/backfill_flag}}
+  {{#applicability}}<tr><th>Applicability</th><td>{{applicability}}{{#applicability_reason}} &middot; {{applicability_reason}}{{/applicability_reason}}</td></tr>{{/applicability}}
+</table>
+
+<h2>Progress Evidence</h2>
+<div class="photo-grid">
+  {{#photos}}
+  <div class="photo-tile">
+    <div class="ph">[ Photo: {{filename}} ]</div>
+    <div class="cap">{{#captured_at}}Captured: {{captured_at}}{{/captured_at}}{{#note}} &middot; {{note}}{{/note}}</div>
+  </div>
+  {{/photos}}
+  {{^photos}}<div class="photo-tile"><div class="cap muted">No progress photos uploaded for this record.</div></div>{{/photos}}
+</div>
 
 <h2>IQRA Review</h2>
 <div class="review-banner">

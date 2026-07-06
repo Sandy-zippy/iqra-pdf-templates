@@ -107,7 +107,7 @@
     <tr><th>Pedestal / Column Location Reference</th><td>{{pedestal_column_location_reference}}</td></tr>
     <tr><th>Anchor Bolt / Pedestal Readiness Condition</th><td>{{anchor_bolt_pedestal_readiness_condition}}</td></tr>
     <tr><th>Seating / Surface Condition</th><td>{{seating_surface_condition}}</td></tr>
-    <tr><th>Upload Civil Interface Evidence</th><td>{{upload_civil_interface_evidence}}</td></tr>
+    <tr><th>Upload Civil Interface Evidence</th><td>{{#upload_civil_interface_evidence}}{{filename}} {{/upload_civil_interface_evidence}}{{^upload_civil_interface_evidence}}<span class="muted">Not uploaded</span>{{/upload_civil_interface_evidence}}</td></tr>
     <tr><th>Drawing / Erection Reference</th><td>{{drawing_erection_reference}}</td></tr>
     <tr><th>Pending Point / Site Activity Note</th><td>{{pending_point_site_activity_note}}</td></tr>
   </table>
@@ -130,8 +130,7 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Upload Civil Interface Evidence</div>
-      <div class="cap">{{#upload_civil_interface_evidence_drive_url}}<a href="{{upload_civil_interface_evidence_drive_url}}">{{upload_civil_interface_evidence_filename}}{{^upload_civil_interface_evidence_filename}}Open in Drive{{/upload_civil_interface_evidence_filename}}</a>{{/upload_civil_interface_evidence_drive_url}}{{^upload_civil_interface_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_civil_interface_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_civil_interface_evidence_ocr_status}}{{#upload_civil_interface_evidence_ocr_confidence}} ({{upload_civil_interface_evidence_ocr_confidence}}%){{/upload_civil_interface_evidence_ocr_confidence}}</div>
+      <div class="cap">{{#upload_civil_interface_evidence}}<a href="{{url}}">{{filename}}</a><br>{{/upload_civil_interface_evidence}}{{^upload_civil_interface_evidence}}<span class="muted">Not uploaded</span>{{/upload_civil_interface_evidence}}</div>
     </div>
   </div>
 

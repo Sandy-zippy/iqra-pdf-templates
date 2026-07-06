@@ -87,14 +87,6 @@
   </div>
 </div>
 
-<div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-037</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
-</div>
-
 <h2>Record Metadata</h2>
 <table class="kv-table compact">
   <tr><th>Record ID</th><td>{{record_id}}</td></tr>
@@ -104,6 +96,27 @@
   <tr><th>Submission Date</th><td>{{submission_timestamp}}</td></tr>
   <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
+</table>
+
+<h2>Final Release / Handover</h2>
+<table class="kv-table compact">
+  <tr><th>Release Scope / Handover Area</th><td>{{release_scope_handover_area}}</td></tr>
+  <tr><th>Released Area / Grid / Bay</th><td>{{final_release_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Physical Completion Condition</th><td>{{physical_completion_condition}}</td></tr>
+  <tr><th>Punch / Record Readiness Condition</th><td>{{punch_record_readiness_condition}}</td></tr>
+  <tr><th>Pending Point / Final Release Note</th><td>{{pending_point_final_release_note}}</td></tr>
+  {{#applicability}}<tr><th>Applicability</th><td>{{applicability}}{{#applicability_reason}} &mdash; {{applicability_reason}}{{/applicability_reason}}</td></tr>{{/applicability}}
+</table>
+
+<h2>Preceding Gate Status</h2>
+<table class="kv-table compact">
+  <tr><th>SE-025 Final Bolting Status</th><td>{{linked_se_025_final_bolting_status_summary}}</td></tr>
+  <tr><th>Punch Point Closure Status</th><td>{{linked_punch_point_closure_status}}</td></tr>
+  <tr><th>Site Dossier Readiness</th><td>{{linked_site_dossier_readiness_status}}</td></tr>
+  {{#site_dossier_link}}<tr><th>Site Dossier Link</th><td>{{site_dossier_link}}</td></tr>{{/site_dossier_link}}
+  {{#linked_correction_recheck_record_id}}<tr><th>Linked Correction / Recheck</th><td>{{linked_correction_recheck_record_id}}</td></tr>{{/linked_correction_recheck_record_id}}
+  <tr><th>Site Modification Exclusion</th><td>{{#site_modification_exclusion_confirmation}}Confirmed{{/site_modification_exclusion_confirmation}}{{^site_modification_exclusion_confirmation}}Not confirmed{{/site_modification_exclusion_confirmation}}</td></tr>
+  <tr><th>ATR Signature Exclusion</th><td>{{#atr_signature_exclusion_confirmation}}Confirmed{{/atr_signature_exclusion_confirmation}}{{^atr_signature_exclusion_confirmation}}Not confirmed{{/atr_signature_exclusion_confirmation}}</td></tr>
 </table>
 
 <h2>IQRA Review</h2>

@@ -87,14 +87,6 @@
   </div>
 </div>
 
-<div class="placeholder-banner">
-  <strong>Form schema pending Raghu's review.</strong><br>
-  This template is a placeholder. The Layer 1 field set for <strong>SE-040</strong>
-  has not yet been finalised in the canonical workbook. PDF generation for this form
-  is on hold until field detail is added in the source spec and this template is
-  regenerated.
-</div>
-
 <h2>Record Metadata</h2>
 <table class="kv-table compact">
   <tr><th>Record ID</th><td>{{record_id}}</td></tr>
@@ -104,7 +96,30 @@
   <tr><th>Submission Date</th><td>{{submission_timestamp}}</td></tr>
   <tr><th>IQRA Review Date</th><td>{{iqra_review_date}}</td></tr>
   <tr><th>Report Issue Date</th><td>{{report_issue_date}}</td></tr>
+  <tr><th>Source Mode</th><td>{{source_mode}}</td></tr>
 </table>
+
+<h2>Issue Cover Details</h2>
+<table class="kv-table compact">
+  <tr><th>Issue Pack Area / Released Area / Grid / Bay</th><td>{{issue_pack_area_released_area_grid_bay}}</td></tr>
+  <tr><th>Issue Pack Type</th><td>{{issue_pack_type}}</td></tr>
+  <tr><th>Record / Dossier Package Reference</th><td>{{record_dossier_package_reference}}</td></tr>
+  <tr><th>Issue Readiness Condition</th><td>{{issue_readiness_condition}}</td></tr>
+  <tr><th>Linked SE-038 Dossier Index</th><td>{{linked_se_038_dossier_index_record_id}}</td></tr>
+  <tr><th>Pack Reissue Required</th><td>{{pack_reissue_required_status}}{{^pack_reissue_required_status}}<span class="small">Not flagged.</span>{{/pack_reissue_required_status}}</td></tr>
+</table>
+
+<h2>Scope Exclusions</h2>
+<table class="kv-table compact">
+  <tr><th>Site Modification Exclusion Confirmed</th><td>{{#site_modification_exclusion_confirmation}}Yes{{/site_modification_exclusion_confirmation}}{{^site_modification_exclusion_confirmation}}No{{/site_modification_exclusion_confirmation}}</td></tr>
+  <tr><th>ATR Signature Exclusion Confirmed</th><td>{{#atr_signature_exclusion_confirmation}}Yes{{/atr_signature_exclusion_confirmation}}{{^atr_signature_exclusion_confirmation}}No{{/atr_signature_exclusion_confirmation}}</td></tr>
+  {{#linked_correction_recheck_record_id}}<tr><th>Correction / Recheck Route</th><td>{{linked_correction_recheck_record_id}}</td></tr>{{/linked_correction_recheck_record_id}}
+</table>
+
+{{#pending_point_issue_cover_note}}
+<h2>Pending Points / Cover Note</h2>
+<div class="pending-block">{{pending_point_issue_cover_note}}</div>
+{{/pending_point_issue_cover_note}}
 
 <h2>IQRA Review</h2>
 <div class="review-banner">
@@ -117,7 +132,6 @@
   <div class="box">
     <div class="role">NSPL — Maker</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="name">{{nspl_name}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Site QC{{/nspl_role}}</div>
     <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
@@ -125,8 +139,6 @@
   {{#iqra_signed_date}}
   <div class="box">
     <div class="role">IQRA — Checker</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="name">{{iqra_name}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>

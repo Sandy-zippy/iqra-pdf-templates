@@ -107,7 +107,7 @@
     <tr><th>Connection / Member Reference</th><td>{{connection_member_reference}}</td></tr>
     <tr><th>Bolt Family / Lot Reference</th><td>{{bolt_family_lot_reference}}</td></tr>
     <tr><th>Snug Tightening Condition</th><td>{{snug_tightening_condition}}</td></tr>
-    <tr><th>Upload Snug Tightening Evidence</th><td>{{upload_snug_tightening_evidence}}</td></tr>
+    <tr><th>Upload Snug Tightening Evidence</th><td>{{#upload_snug_tightening_evidence}}{{filename}} {{/upload_snug_tightening_evidence}}{{^upload_snug_tightening_evidence}}<span class="muted">Not uploaded</span>{{/upload_snug_tightening_evidence}}</td></tr>
     <tr><th>Pending Point / Bolting Note</th><td>{{pending_point_bolting_note}}</td></tr>
   </table>
 
@@ -129,8 +129,7 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Upload Snug Tightening Evidence</div>
-      <div class="cap">{{#upload_snug_tightening_evidence_drive_url}}<a href="{{upload_snug_tightening_evidence_drive_url}}">{{upload_snug_tightening_evidence_filename}}{{^upload_snug_tightening_evidence_filename}}Open in Drive{{/upload_snug_tightening_evidence_filename}}</a>{{/upload_snug_tightening_evidence_drive_url}}{{^upload_snug_tightening_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_snug_tightening_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_snug_tightening_evidence_ocr_status}}{{#upload_snug_tightening_evidence_ocr_confidence}} ({{upload_snug_tightening_evidence_ocr_confidence}}%){{/upload_snug_tightening_evidence_ocr_confidence}}</div>
+      <div class="cap">{{#upload_snug_tightening_evidence}}<a href="{{url}}">{{filename}}</a><br>{{/upload_snug_tightening_evidence}}{{^upload_snug_tightening_evidence}}<span class="muted">Not uploaded</span>{{/upload_snug_tightening_evidence}}</div>
     </div>
   </div>
 

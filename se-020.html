@@ -107,7 +107,7 @@
     <tr><th>Secondary Member Type / Member Mark</th><td>{{secondary_member_type_member_mark}}</td></tr>
     <tr><th>Installation Location / Grid Reference</th><td>{{installation_location_grid_reference}}</td></tr>
     <tr><th>Secondary Member Erection Condition</th><td>{{secondary_member_erection_condition}}</td></tr>
-    <tr><th>Upload Secondary Member Erection Evidence</th><td>{{upload_secondary_member_erection_evidence}}</td></tr>
+    <tr><th>Upload Secondary Member Erection Evidence</th><td>{{#upload_secondary_member_erection_evidence}}{{filename}}<br>{{/upload_secondary_member_erection_evidence}}{{^upload_secondary_member_erection_evidence}}<span class="muted">Not uploaded</span>{{/upload_secondary_member_erection_evidence}}</td></tr>
     <tr><th>Drawing / Erection Reference</th><td>{{drawing_erection_reference}}</td></tr>
     <tr><th>Pending Point / Site Activity Note</th><td>{{pending_point_site_activity_note}}</td></tr>
   </table>
@@ -128,11 +128,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_secondary_member_erection_evidence}}
     <div class="photo-tile">
-      <div class="ph">Upload Secondary Member Erection Evidence</div>
-      <div class="cap">{{#upload_secondary_member_erection_evidence_drive_url}}<a href="{{upload_secondary_member_erection_evidence_drive_url}}">{{upload_secondary_member_erection_evidence_filename}}{{^upload_secondary_member_erection_evidence_filename}}Open in Drive{{/upload_secondary_member_erection_evidence_filename}}</a>{{/upload_secondary_member_erection_evidence_drive_url}}{{^upload_secondary_member_erection_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_secondary_member_erection_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_secondary_member_erection_evidence_ocr_status}}{{#upload_secondary_member_erection_evidence_ocr_confidence}} ({{upload_secondary_member_erection_evidence_ocr_confidence}}%){{/upload_secondary_member_erection_evidence_ocr_confidence}}</div>
+      <div class="ph">Secondary Member Erection Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}</a></div>
     </div>
+    {{/upload_secondary_member_erection_evidence}}
+    {{^upload_secondary_member_erection_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Secondary Member Erection Evidence</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
+    </div>
+    {{/upload_secondary_member_erection_evidence}}
   </div>
 
 <h2>IQRA Review</h2>

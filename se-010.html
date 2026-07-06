@@ -107,7 +107,7 @@
     <tr><th>Crane ID / Registration Number</th><td>{{crane_id_registration_number}}</td></tr>
     <tr><th>Crane Type / Capacity</th><td>{{crane_type_capacity}}</td></tr>
     <tr><th>Crane Deployment Condition</th><td>{{crane_deployment_condition}}</td></tr>
-    <tr><th>Upload Crane Certificate / Deployment Evidence</th><td>{{upload_crane_certificate_deployment_evidence}}</td></tr>
+    <tr><th>Upload Crane Certificate / Deployment Evidence</th><td>{{#upload_crane_certificate_deployment_evidence}}{{filename}} {{/upload_crane_certificate_deployment_evidence}}{{^upload_crane_certificate_deployment_evidence}}<span class="muted">Not uploaded</span>{{/upload_crane_certificate_deployment_evidence}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -128,9 +128,9 @@
 <h2>Attachments</h2>
 <div class="photo-grid">
     <div class="photo-tile">
-      <div class="ph">Upload Crane Certificate / Deployment Evidence</div>
-      <div class="cap">{{#upload_crane_certificate_deployment_evidence_drive_url}}<a href="{{upload_crane_certificate_deployment_evidence_drive_url}}">{{upload_crane_certificate_deployment_evidence_filename}}{{^upload_crane_certificate_deployment_evidence_filename}}Open in Drive{{/upload_crane_certificate_deployment_evidence_filename}}</a>{{/upload_crane_certificate_deployment_evidence_drive_url}}{{^upload_crane_certificate_deployment_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_crane_certificate_deployment_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_crane_certificate_deployment_evidence_ocr_status}}{{#upload_crane_certificate_deployment_evidence_ocr_confidence}} ({{upload_crane_certificate_deployment_evidence_ocr_confidence}}%){{/upload_crane_certificate_deployment_evidence_ocr_confidence}}</div>
+      <div class="ph">Crane Certificate / Deployment Evidence</div>
+      {{#upload_crane_certificate_deployment_evidence}}<div class="cap"><a href="{{url}}">{{filename}}</a></div>{{/upload_crane_certificate_deployment_evidence}}
+      {{^upload_crane_certificate_deployment_evidence}}<div class="cap"><span class="muted">Not uploaded</span></div>{{/upload_crane_certificate_deployment_evidence}}
     </div>
   </div>
 

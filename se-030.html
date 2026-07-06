@@ -107,7 +107,7 @@
     <tr><th>System / Item Type</th><td>{{system_item_type}}</td></tr>
     <tr><th>Panel / Ventilator / Accessory Reference</th><td>{{panel_ventilator_accessory_reference}}</td></tr>
     <tr><th>Installation Location / Opening Reference</th><td>{{installation_location_opening_reference}}</td></tr>
-    <tr><th>Upload Installation Evidence</th><td>{{upload_installation_evidence}}</td></tr>
+    <tr><th>Upload Installation Evidence</th><td>{{#upload_installation_evidence_drive_url}}<a href="{{upload_installation_evidence_drive_url}}">View evidence in Drive</a>{{/upload_installation_evidence_drive_url}}{{^upload_installation_evidence_drive_url}}<span class="muted">See Attachments section</span>{{/upload_installation_evidence_drive_url}}</td></tr>
     <tr><th>Pending Point / Downstream Work Note</th><td>{{pending_point_downstream_work_note}}</td></tr>
   </table>
 
@@ -132,8 +132,7 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Upload Installation Evidence</div>
-      <div class="cap">{{#upload_installation_evidence_drive_url}}<a href="{{upload_installation_evidence_drive_url}}">{{upload_installation_evidence_filename}}{{^upload_installation_evidence_filename}}Open in Drive{{/upload_installation_evidence_filename}}</a>{{/upload_installation_evidence_drive_url}}{{^upload_installation_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_installation_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_installation_evidence_ocr_status}}{{#upload_installation_evidence_ocr_confidence}} ({{upload_installation_evidence_ocr_confidence}}%){{/upload_installation_evidence_ocr_confidence}}</div>
+      <div class="cap">{{#upload_installation_evidence_drive_url}}<a href="{{upload_installation_evidence_drive_url}}">Open in Drive</a>{{/upload_installation_evidence_drive_url}}{{^upload_installation_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_installation_evidence_drive_url}}</div>
     </div>
   </div>
 

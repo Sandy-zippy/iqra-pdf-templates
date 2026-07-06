@@ -129,8 +129,8 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Upload Bolt Issue / Identification Evidence</div>
-      <div class="cap">{{#upload_bolt_issue_identification_evidence_drive_url}}<a href="{{upload_bolt_issue_identification_evidence_drive_url}}">{{upload_bolt_issue_identification_evidence_filename}}{{^upload_bolt_issue_identification_evidence_filename}}Open in Drive{{/upload_bolt_issue_identification_evidence_filename}}</a>{{/upload_bolt_issue_identification_evidence_drive_url}}{{^upload_bolt_issue_identification_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_bolt_issue_identification_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_bolt_issue_identification_evidence_ocr_status}}{{#upload_bolt_issue_identification_evidence_ocr_confidence}} ({{upload_bolt_issue_identification_evidence_ocr_confidence}}%){{/upload_bolt_issue_identification_evidence_ocr_confidence}}</div>
+      {{#upload_bolt_issue_identification_evidence}}<div class="cap"><a href="{{url}}">{{filename}}</a></div>{{/upload_bolt_issue_identification_evidence}}
+      {{^upload_bolt_issue_identification_evidence}}<div class="cap"><span class="muted">Not uploaded</span></div>{{/upload_bolt_issue_identification_evidence}}
     </div>
   </div>
 
