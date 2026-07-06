@@ -107,7 +107,7 @@
     <tr><th>Site Activity / Work Package</th><td>{{site_activity_work_package}}</td></tr>
     <tr><th>Contractor / Provider Name</th><td>{{contractor_provider_name}}</td></tr>
     <tr><th>Responsibility Matrix Condition</th><td>{{responsibility_matrix_condition}}</td></tr>
-    <tr><th>Upload Responsibility Matrix / Issue Evidence</th><td>{{upload_responsibility_matrix_issue_evidence}}</td></tr>
+    <tr><th>Upload Responsibility Matrix / Issue Evidence</th><td>{{#upload_responsibility_matrix_issue_evidence}}{{filename}} {{/upload_responsibility_matrix_issue_evidence}}{{^upload_responsibility_matrix_issue_evidence}}<span class="muted">Not uploaded</span>{{/upload_responsibility_matrix_issue_evidence}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -127,11 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_responsibility_matrix_issue_evidence}}
     <div class="photo-tile">
-      <div class="ph">Upload Responsibility Matrix / Issue Evidence</div>
-      <div class="cap">{{#upload_responsibility_matrix_issue_evidence_drive_url}}<a href="{{upload_responsibility_matrix_issue_evidence_drive_url}}">{{upload_responsibility_matrix_issue_evidence_filename}}{{^upload_responsibility_matrix_issue_evidence_filename}}Open in Drive{{/upload_responsibility_matrix_issue_evidence_filename}}</a>{{/upload_responsibility_matrix_issue_evidence_drive_url}}{{^upload_responsibility_matrix_issue_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_responsibility_matrix_issue_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_responsibility_matrix_issue_evidence_ocr_status}}{{#upload_responsibility_matrix_issue_evidence_ocr_confidence}} ({{upload_responsibility_matrix_issue_evidence_ocr_confidence}}%){{/upload_responsibility_matrix_issue_evidence_ocr_confidence}}</div>
+      <div class="ph">Responsibility Matrix / Issue Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}{{^filename}}Open evidence{{/filename}}</a></div>
     </div>
+    {{/upload_responsibility_matrix_issue_evidence}}
+    {{^upload_responsibility_matrix_issue_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Responsibility Matrix / Issue Evidence</div>
+      <div class="cap muted">Not uploaded</div>
+    </div>
+    {{/upload_responsibility_matrix_issue_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
