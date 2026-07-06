@@ -107,7 +107,7 @@
     <tr><th>Roof Sheet Bundle / Panel Reference</th><td>{{roof_sheet_bundle_panel_reference}}</td></tr>
     <tr><th>Installation Location / Roof Run Reference</th><td>{{installation_location_roof_run_reference}}</td></tr>
     <tr><th>Roof Sheeting Installation Condition</th><td>{{roof_sheeting_installation_condition}}</td></tr>
-    <tr><th>Upload Roof Sheeting Evidence</th><td>{{#upload_roof_sheeting_evidence}}{{filename}}<br>{{/upload_roof_sheeting_evidence}}{{^upload_roof_sheeting_evidence}}<span class="muted">Not uploaded</span>{{/upload_roof_sheeting_evidence}}</td></tr>
+    <tr><th>Upload Roof Sheeting Evidence</th><td>{{upload_roof_sheeting_evidence}}</td></tr>
     <tr><th>Pending Point / Downstream Work Note</th><td>{{pending_point_downstream_work_note}}</td></tr>
   </table>
 
@@ -130,18 +130,10 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
-    {{#upload_roof_sheeting_evidence}}
-    <div class="photo-tile">
-      <img src="{{url}}" style="max-width:100%;max-height:230px;object-fit:contain;" alt="Roof Sheeting Evidence">
-      <div class="cap">{{filename}}</div>
-    </div>
-    {{/upload_roof_sheeting_evidence}}
-    {{^upload_roof_sheeting_evidence}}
     <div class="photo-tile">
       <div class="ph">Upload Roof Sheeting Evidence</div>
-      <div class="cap"><span class="muted">Not uploaded</span></div>
+      <div class="cap">{{#upload_roof_sheeting_evidence_drive_url}}<a href="{{upload_roof_sheeting_evidence_drive_url}}">{{upload_roof_sheeting_evidence_filename}}{{^upload_roof_sheeting_evidence_filename}}Open in Drive{{/upload_roof_sheeting_evidence_filename}}</a>{{/upload_roof_sheeting_evidence_drive_url}}{{^upload_roof_sheeting_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_roof_sheeting_evidence_drive_url}}</div>
     </div>
-    {{/upload_roof_sheeting_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
