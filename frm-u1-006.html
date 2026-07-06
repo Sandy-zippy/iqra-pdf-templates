@@ -124,7 +124,7 @@
     <tr><th>Forms Released After Closure</th><td>{{forms_released_after_closure}}</td></tr>
     <tr><th>Original Record Retained Flag</th><td>{{original_record_retained_flag}}</td></tr>
     <tr><th>Report Output Number</th><td>{{report_output_number}}</td></tr>
-    <tr><th>PDF Output Link</th><td>{{pdf_output_link}}</td></tr>
+    <tr><th>PDF Output Link</th><td>{{pdf_url}}</td></tr>
     <tr><th>Dossier Linkage</th><td>{{dossier_linkage}}</td></tr>
   </table>
 
@@ -134,11 +134,6 @@
       <div class="ph">Evidence Upload</div>
       <div class="cap">{{#evidence_upload_drive_url}}<a href="{{evidence_upload_drive_url}}">{{evidence_upload_filename}}{{^evidence_upload_filename}}Open in Drive{{/evidence_upload_filename}}</a>{{/evidence_upload_drive_url}}{{^evidence_upload_drive_url}}<span class="muted">Not uploaded</span>{{/evidence_upload_drive_url}}</div>
       <div class="cap small">OCR: {{evidence_upload_ocr_status}}{{#evidence_upload_ocr_confidence}} ({{evidence_upload_ocr_confidence}}%){{/evidence_upload_ocr_confidence}}</div>
-    </div>
-    <div class="photo-tile">
-      <div class="ph">PDF Output Link</div>
-      <div class="cap">{{#pdf_output_link_drive_url}}<a href="{{pdf_output_link_drive_url}}">{{pdf_output_link_filename}}{{^pdf_output_link_filename}}Open in Drive{{/pdf_output_link_filename}}</a>{{/pdf_output_link_drive_url}}{{^pdf_output_link_drive_url}}<span class="muted">Not uploaded</span>{{/pdf_output_link_drive_url}}</div>
-      <div class="cap small">OCR: {{pdf_output_link_ocr_status}}{{#pdf_output_link_ocr_confidence}} ({{pdf_output_link_ocr_confidence}}%){{/pdf_output_link_ocr_confidence}}</div>
     </div>
   </div>
 

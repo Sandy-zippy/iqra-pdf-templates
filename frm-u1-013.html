@@ -131,18 +131,11 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Setup Photo</div>
-      <div class="cap">{{#setup_photo_drive_url}}<a href="{{setup_photo_drive_url}}">{{setup_photo_filename}}{{^setup_photo_filename}}Open in Drive{{/setup_photo_filename}}</a>{{/setup_photo_drive_url}}{{^setup_photo_drive_url}}<span class="muted">Not uploaded</span>{{/setup_photo_drive_url}}</div>
-      <div class="cap small">OCR: {{setup_photo_ocr_status}}{{#setup_photo_ocr_confidence}} ({{setup_photo_ocr_confidence}}%){{/setup_photo_ocr_confidence}}</div>
+      <div class="cap">{{#setup_photo_drive_url}}<a href="{{setup_photo_drive_url}}">Open in Drive</a>{{/setup_photo_drive_url}}{{^setup_photo_drive_url}}<span class="muted">Not uploaded</span>{{/setup_photo_drive_url}}</div>
     </div>
     <div class="photo-tile">
       <div class="ph">First-off Sample Photo</div>
-      <div class="cap">{{#first_off_sample_photo_drive_url}}<a href="{{first_off_sample_photo_drive_url}}">{{first_off_sample_photo_filename}}{{^first_off_sample_photo_filename}}Open in Drive{{/first_off_sample_photo_filename}}</a>{{/first_off_sample_photo_drive_url}}{{^first_off_sample_photo_drive_url}}<span class="muted">Not uploaded</span>{{/first_off_sample_photo_drive_url}}</div>
-      <div class="cap small">OCR: {{first_off_sample_photo_ocr_status}}{{#first_off_sample_photo_ocr_confidence}} ({{first_off_sample_photo_ocr_confidence}}%){{/first_off_sample_photo_ocr_confidence}}</div>
-    </div>
-    <div class="photo-tile">
-      <div class="ph">PDF Output Link</div>
-      <div class="cap">{{#pdf_output_link_drive_url}}<a href="{{pdf_output_link_drive_url}}">{{pdf_output_link_filename}}{{^pdf_output_link_filename}}Open in Drive{{/pdf_output_link_filename}}</a>{{/pdf_output_link_drive_url}}{{^pdf_output_link_drive_url}}<span class="muted">Not uploaded</span>{{/pdf_output_link_drive_url}}</div>
-      <div class="cap small">OCR: {{pdf_output_link_ocr_status}}{{#pdf_output_link_ocr_confidence}} ({{pdf_output_link_ocr_confidence}}%){{/pdf_output_link_ocr_confidence}}</div>
+      <div class="cap">{{#first_off_sample_photo_drive_url}}<a href="{{first_off_sample_photo_drive_url}}">Open in Drive</a>{{/first_off_sample_photo_drive_url}}{{^first_off_sample_photo_drive_url}}<span class="muted">Not uploaded</span>{{/first_off_sample_photo_drive_url}}</div>
     </div>
   </div>
 
@@ -157,7 +150,6 @@
   <div class="box">
     <div class="role">NSPL — Maker</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="name">{{nspl_name}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Unit I{{/nspl_role}}</div>
     <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
@@ -165,8 +157,6 @@
   {{#iqra_signed_date}}
   <div class="box">
     <div class="role">IQRA — Checker</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="name">{{iqra_name}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>

@@ -140,11 +140,6 @@
       <div class="cap">{{#upload_packing_label_photo_drive_url}}<a href="{{upload_packing_label_photo_drive_url}}">{{upload_packing_label_photo_filename}}{{^upload_packing_label_photo_filename}}Open in Drive{{/upload_packing_label_photo_filename}}</a>{{/upload_packing_label_photo_drive_url}}{{^upload_packing_label_photo_drive_url}}<span class="muted">Not uploaded</span>{{/upload_packing_label_photo_drive_url}}</div>
       <div class="cap small">OCR: {{upload_packing_label_photo_ocr_status}}{{#upload_packing_label_photo_ocr_confidence}} ({{upload_packing_label_photo_ocr_confidence}}%){{/upload_packing_label_photo_ocr_confidence}}</div>
     </div>
-    <div class="photo-tile">
-      <div class="ph">PDF Output Link</div>
-      <div class="cap">{{#pdf_output_link_drive_url}}<a href="{{pdf_output_link_drive_url}}">{{pdf_output_link_filename}}{{^pdf_output_link_filename}}Open in Drive{{/pdf_output_link_filename}}</a>{{/pdf_output_link_drive_url}}{{^pdf_output_link_drive_url}}<span class="muted">Not uploaded</span>{{/pdf_output_link_drive_url}}</div>
-      <div class="cap small">OCR: {{pdf_output_link_ocr_status}}{{#pdf_output_link_ocr_confidence}} ({{pdf_output_link_ocr_confidence}}%){{/pdf_output_link_ocr_confidence}}</div>
-    </div>
   </div>
 
 <h2>IQRA Review</h2>
@@ -158,7 +153,6 @@
   <div class="box">
     <div class="role">NSPL — Maker</div>
     {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
     <div class="name">{{nspl_name}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Unit I{{/nspl_role}}</div>
     <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
@@ -166,8 +160,6 @@
   {{#iqra_signed_date}}
   <div class="box">
     <div class="role">IQRA — Checker</div>
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <div class="name">{{iqra_name}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>
