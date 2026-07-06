@@ -107,7 +107,7 @@
     <tr><th>Material Category / Package</th><td>{{material_category_package}}</td></tr>
     <tr><th>Unloading / Storage Condition</th><td>{{unloading_storage_condition}}</td></tr>
     <tr><th>Identification Control Status</th><td>{{identification_control_status}}</td></tr>
-    <tr><th>Upload Unloading / Storage / Identification Evidence</th><td>{{upload_unloading_storage_identification_evidence}}</td></tr>
+    <tr><th>Upload Unloading / Storage / Identification Evidence</th><td>{{#upload_unloading_storage_identification_evidence}}{{filename}} {{/upload_unloading_storage_identification_evidence}}{{^upload_unloading_storage_identification_evidence}}<span class="muted">Not uploaded</span>{{/upload_unloading_storage_identification_evidence}}</td></tr>
     <tr><th>Pending Point / Site Activity Note</th><td>{{pending_point_site_activity_note}}</td></tr>
   </table>
 
@@ -127,10 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_unloading_storage_identification_evidence}}
     <div class="photo-tile">
-      <div class="ph">Upload Unloading / Storage / Identification Evidence</div>
-      <div class="cap">{{#upload_unloading_storage_identification_evidence_drive_url}}<a href="{{upload_unloading_storage_identification_evidence_drive_url}}">{{upload_unloading_storage_identification_evidence_filename}}{{^upload_unloading_storage_identification_evidence_filename}}Open in Drive{{/upload_unloading_storage_identification_evidence_filename}}</a>{{/upload_unloading_storage_identification_evidence_drive_url}}{{^upload_unloading_storage_identification_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_unloading_storage_identification_evidence_drive_url}}</div>
+      <div class="ph">Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}</a></div>
     </div>
+    {{/upload_unloading_storage_identification_evidence}}
+    {{^upload_unloading_storage_identification_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Unloading / Storage / Identification Evidence</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
+    </div>
+    {{/upload_unloading_storage_identification_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
