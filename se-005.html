@@ -107,7 +107,7 @@
     <tr><th>Contractor / Provider Name</th><td>{{contractor_provider_name}}</td></tr>
     <tr><th>Scope / Activity Family</th><td>{{scope_activity_family}}</td></tr>
     <tr><th>Contractor / Provider Use Condition</th><td>{{contractor_provider_use_condition}}</td></tr>
-    <tr><th>Upload Contractor / Provider Documents</th><td>{{upload_contractor_provider_documents}}</td></tr>
+    <tr><th>Upload Contractor / Provider Documents</th><td>{{#upload_contractor_provider_documents}}{{filename}} {{/upload_contractor_provider_documents}}{{^upload_contractor_provider_documents}}<span class="muted">None</span>{{/upload_contractor_provider_documents}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -127,11 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_contractor_provider_documents}}
+    <div class="photo-tile">
+      <div class="ph">Provider Document</div>
+      <div class="cap"><a href="{{url}}">{{filename}}</a></div>
+    </div>
+    {{/upload_contractor_provider_documents}}
+    {{^upload_contractor_provider_documents}}
     <div class="photo-tile">
       <div class="ph">Upload Contractor / Provider Documents</div>
-      <div class="cap">{{#upload_contractor_provider_documents_drive_url}}<a href="{{upload_contractor_provider_documents_drive_url}}">{{upload_contractor_provider_documents_filename}}{{^upload_contractor_provider_documents_filename}}Open in Drive{{/upload_contractor_provider_documents_filename}}</a>{{/upload_contractor_provider_documents_drive_url}}{{^upload_contractor_provider_documents_drive_url}}<span class="muted">Not uploaded</span>{{/upload_contractor_provider_documents_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_contractor_provider_documents_ocr_status}}{{#upload_contractor_provider_documents_ocr_confidence}} ({{upload_contractor_provider_documents_ocr_confidence}}%){{/upload_contractor_provider_documents_ocr_confidence}}</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
     </div>
+    {{/upload_contractor_provider_documents}}
   </div>
 
 <h2>IQRA Review</h2>
