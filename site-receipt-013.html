@@ -108,11 +108,11 @@
 <div class="photo-grid">
   <div class="photo-tile">
     <div class="ph">Unloading / Site Receipt Photos</div>
-    <div class="cap">{{site_receipt_photo_caption}}{{^site_receipt_photo_caption}}Drive: {{site_receipt_photo_set_drive_url}}{{/site_receipt_photo_caption}}</div>
+    <div class="cap">{{#site_receipt_photo_set}}<a href="{{url}}">{{filename}}</a> {{/site_receipt_photo_set}}{{^site_receipt_photo_set}}Not uploaded.{{/site_receipt_photo_set}}</div>
   </div>
   <div class="photo-tile">
     <div class="ph">Packing List Match Photo</div>
-    <div class="cap">{{site_packing_list_match_photo_caption}}{{^site_packing_list_match_photo_caption}}Drive: {{site_packing_list_match_photo_drive_url}}{{/site_packing_list_match_photo_caption}}</div>
+    <div class="cap">{{#site_packing_list_match_photo}}<a href="{{url}}">{{filename}}</a> {{/site_packing_list_match_photo}}{{^site_packing_list_match_photo}}Not uploaded.{{/site_packing_list_match_photo}}</div>
   </div>
 </div>
 
