@@ -107,7 +107,7 @@
     <tr><th>Equipment / Tool / Tackle Category</th><td>{{equipment_tool_tackle_category}}</td></tr>
     <tr><th>Equipment / Tool / Tackle Description / ID</th><td>{{equipment_tool_tackle_description_id}}</td></tr>
     <tr><th>Equipment / Tool / Tackle Use Condition</th><td>{{equipment_tool_tackle_use_condition}}</td></tr>
-    <tr><th>Upload Equipment / Tool / Tackle Evidence</th><td>{{upload_equipment_tool_tackle_evidence}}</td></tr>
+    <tr><th>Upload Equipment / Tool / Tackle Evidence</th><td>{{#upload_equipment_tool_tackle_evidence}}{{filename}}<br>{{/upload_equipment_tool_tackle_evidence}}{{^upload_equipment_tool_tackle_evidence}}<span class="muted">Not uploaded</span>{{/upload_equipment_tool_tackle_evidence}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -127,11 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_equipment_tool_tackle_evidence}}
+    <div class="photo-tile">
+      <img src="{{url}}" style="max-width:100%;max-height:230px;object-fit:contain;" alt="Equipment / Tool / Tackle Evidence">
+      <div class="cap">{{filename}}</div>
+    </div>
+    {{/upload_equipment_tool_tackle_evidence}}
+    {{^upload_equipment_tool_tackle_evidence}}
     <div class="photo-tile">
       <div class="ph">Upload Equipment / Tool / Tackle Evidence</div>
-      <div class="cap">{{#upload_equipment_tool_tackle_evidence_drive_url}}<a href="{{upload_equipment_tool_tackle_evidence_drive_url}}">{{upload_equipment_tool_tackle_evidence_filename}}{{^upload_equipment_tool_tackle_evidence_filename}}Open in Drive{{/upload_equipment_tool_tackle_evidence_filename}}</a>{{/upload_equipment_tool_tackle_evidence_drive_url}}{{^upload_equipment_tool_tackle_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_equipment_tool_tackle_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_equipment_tool_tackle_evidence_ocr_status}}{{#upload_equipment_tool_tackle_evidence_ocr_confidence}} ({{upload_equipment_tool_tackle_evidence_ocr_confidence}}%){{/upload_equipment_tool_tackle_evidence_ocr_confidence}}</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
     </div>
+    {{/upload_equipment_tool_tackle_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
