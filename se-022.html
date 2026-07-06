@@ -107,7 +107,7 @@
     <tr><th>Erection Stage / Work-front</th><td>{{erection_stage_work_front}}</td></tr>
     <tr><th>Temporary Stability Condition</th><td>{{temporary_stability_condition}}</td></tr>
     <tr><th>Erection Sequence Condition</th><td>{{erection_sequence_condition}}</td></tr>
-    <tr><th>Upload Temporary Stability / Sequence Evidence</th><td>{{#upload_temporary_stability_sequence_evidence}}{{filename}} {{/upload_temporary_stability_sequence_evidence}}{{^upload_temporary_stability_sequence_evidence}}<span class="muted">Not uploaded</span>{{/upload_temporary_stability_sequence_evidence}}</td></tr>
+    <tr><th>Upload Temporary Stability / Sequence Evidence</th><td>{{upload_temporary_stability_sequence_evidence}}</td></tr>
     <tr><th>Drawing / Erection Reference</th><td>{{drawing_erection_reference}}</td></tr>
     <tr><th>Pending Point / Site Activity Note</th><td>{{pending_point_site_activity_note}}</td></tr>
   </table>
@@ -130,7 +130,7 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Upload Temporary Stability / Sequence Evidence</div>
-      <div class="cap">{{#upload_temporary_stability_sequence_evidence}}<a href="{{url}}">{{filename}}</a> {{/upload_temporary_stability_sequence_evidence}}{{^upload_temporary_stability_sequence_evidence}}<span class="muted">Not uploaded</span>{{/upload_temporary_stability_sequence_evidence}}{{#upload_temporary_stability_sequence_evidence_drive_url}} &middot; <a href="{{upload_temporary_stability_sequence_evidence_drive_url}}">Open in Drive</a>{{/upload_temporary_stability_sequence_evidence_drive_url}}</div>
+      <div class="cap">{{#upload_temporary_stability_sequence_evidence_drive_url}}<a href="{{upload_temporary_stability_sequence_evidence_drive_url}}">Open in Drive</a>{{/upload_temporary_stability_sequence_evidence_drive_url}}{{^upload_temporary_stability_sequence_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_temporary_stability_sequence_evidence_drive_url}}</div>
     </div>
   </div>
 
