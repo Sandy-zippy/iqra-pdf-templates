@@ -107,7 +107,7 @@
     <tr><th>Rafter / Beam / Member Mark</th><td>{{rafter_beam_member_mark}}</td></tr>
     <tr><th>Erection Location / Grid Reference</th><td>{{erection_location_grid_reference}}</td></tr>
     <tr><th>Rafter / Beam Erection Condition</th><td>{{rafter_beam_erection_condition}}</td></tr>
-    <tr><th>Upload Rafter / Beam Erection Evidence</th><td>{{upload_rafter_beam_erection_evidence}}</td></tr>
+    <tr><th>Upload Rafter / Beam Erection Evidence</th><td>{{#upload_rafter_beam_erection_evidence}}{{filename}} {{/upload_rafter_beam_erection_evidence}}{{^upload_rafter_beam_erection_evidence}}Not uploaded.{{/upload_rafter_beam_erection_evidence}}</td></tr>
     <tr><th>Drawing / Erection Reference</th><td>{{drawing_erection_reference}}</td></tr>
     <tr><th>Pending Point / Site Activity Note</th><td>{{pending_point_site_activity_note}}</td></tr>
   </table>
