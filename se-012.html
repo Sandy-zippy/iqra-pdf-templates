@@ -107,7 +107,7 @@
     <tr><th>Lifting / Rigging Gear Type</th><td>{{lifting_rigging_gear_type}}</td></tr>
     <tr><th>Gear ID / Description</th><td>{{gear_id_description}}</td></tr>
     <tr><th>Pre-use Gear Condition</th><td>{{pre_use_gear_condition}}</td></tr>
-    <tr><th>Upload Gear Certificate / Inspection Evidence</th><td>{{upload_gear_certificate_inspection_evidence}}</td></tr>
+    <tr><th>Upload Gear Certificate / Inspection Evidence</th><td>{{#upload_gear_certificate_inspection_evidence}}{{filename}} {{/upload_gear_certificate_inspection_evidence}}{{^upload_gear_certificate_inspection_evidence}}<span class="muted">Not uploaded</span>{{/upload_gear_certificate_inspection_evidence}}</td></tr>
     <tr><th>Pending Point / Readiness Note</th><td>{{pending_point_readiness_note}}</td></tr>
   </table>
 
@@ -127,11 +127,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_gear_certificate_inspection_evidence}}
     <div class="photo-tile">
-      <div class="ph">Upload Gear Certificate / Inspection Evidence</div>
-      <div class="cap">{{#upload_gear_certificate_inspection_evidence_drive_url}}<a href="{{upload_gear_certificate_inspection_evidence_drive_url}}">{{upload_gear_certificate_inspection_evidence_filename}}{{^upload_gear_certificate_inspection_evidence_filename}}Open in Drive{{/upload_gear_certificate_inspection_evidence_filename}}</a>{{/upload_gear_certificate_inspection_evidence_drive_url}}{{^upload_gear_certificate_inspection_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_gear_certificate_inspection_evidence_drive_url}}</div>
-      <div class="cap small">OCR: {{upload_gear_certificate_inspection_evidence_ocr_status}}{{#upload_gear_certificate_inspection_evidence_ocr_confidence}} ({{upload_gear_certificate_inspection_evidence_ocr_confidence}}%){{/upload_gear_certificate_inspection_evidence_ocr_confidence}}</div>
+      <div class="ph">Gear Certificate / Inspection Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}</a></div>
     </div>
+    {{/upload_gear_certificate_inspection_evidence}}
+    {{^upload_gear_certificate_inspection_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Gear Certificate / Inspection Evidence</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
+    </div>
+    {{/upload_gear_certificate_inspection_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
