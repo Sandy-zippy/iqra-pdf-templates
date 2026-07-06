@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>IMIR Report - {{record_id}}</title>
+<!-- ponytail: tokens renamed to real IMIR field names (heat_lot_batch_no/standard_grade/imir_lot_id/...) 2026-07-06; orphan tokens (report_no,package_name,ncr_*,sticker_*,severity_*,mech_*) have no backing field and stay blank pending Raghu data contract --><title>IMIR Report - {{record_id}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -156,15 +156,15 @@
     <tr><th>Phase / Package</th><td>{{phase}} / {{package_name}}</td>
         <th>Material Family</th><td>{{material_family}}</td></tr>
     <tr><th>Material Description</th><td colspan="3">{{material_description}}</td></tr>
-    <tr><th>PO Number</th><td>{{po_number}}</td>
-        <th>MTC No.</th><td>{{mtc_no}}</td></tr>
-    <tr><th>Challan No.</th><td>{{challan_no}}</td>
-        <th>Heat No.</th><td>{{heat_no}}</td></tr>
-    <tr><th>Lot No.</th><td>{{lot_no}}</td>
-        <th>Grade</th><td>{{grade}}</td></tr>
-    <tr><th>Quantity Received</th><td class="num">{{qty_received}} MT</td>
-        <th>Quantity Accepted</th><td class="num">{{qty_accepted}} MT</td></tr>
-    <tr><th>Quantity on Hold</th><td class="num">{{qty_hold}} MT</td>
+    <tr><th>PO Number</th><td>{{po_purchase_reference}}</td>
+        <th>MTC No.</th><td>{{mtc_tc_no_date}}</td></tr>
+    <tr><th>Challan No.</th><td>{{invoice_challan_ref}}</td>
+        <th>Heat No.</th><td>{{heat_lot_batch_no}}</td></tr>
+    <tr><th>Lot No.</th><td>{{imir_lot_id}}</td>
+        <th>Grade</th><td>{{standard_grade}}</td></tr>
+    <tr><th>Quantity Received</th><td class="num">{{quantity_received}} MT</td>
+        <th>Quantity Accepted</th><td class="num">{{quantity_accepted}} MT</td></tr>
+    <tr><th>Quantity on Hold</th><td class="num">{{quantity_hold}} MT</td>
         <th>Storage Location</th><td>{{storage_location}}</td></tr>
   </table>
 </section>
@@ -223,8 +223,8 @@
   <table class="compact">
     <thead><tr><th>Source</th><th>Captured Value</th><th>Expected (MTC)</th><th>OCR Confidence</th><th>Match</th></tr></thead>
     <tbody>
-      <tr><td>Heat-Marking Photo (stamped on plate)</td><td>{{heat_mark_extracted}}</td><td>{{heat_no}}</td><td class="num">{{heat_mark_ocr_confidence}}%</td><td>{{heat_mark_match_result}}</td></tr>
-      <tr><td>Sticker / Tag Photo</td><td>{{sticker_extracted}}</td><td>{{lot_no}}</td><td class="num">{{sticker_ocr_confidence}}%</td><td>{{sticker_match_result}}</td></tr>
+      <tr><td>Heat-Marking Photo (stamped on plate)</td><td>{{photo_extracted_heat_lot_batch_no}}</td><td>{{heat_lot_batch_no}}</td><td class="num">{{material_identification_photo_ocr_confidence}}%</td><td>{{photo_heat_tc_heat_match_status}}</td></tr>
+      <tr><td>Sticker / Tag Photo</td><td>{{sticker_extracted}}</td><td>{{imir_lot_id}}</td><td class="num">{{sticker_ocr_confidence}}%</td><td>{{sticker_match_result}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -268,7 +268,7 @@
       <div class="photo-thumb">[ Photo: {{filename}} ]</div>
       <div class="photo-meta">
         <span><strong>Captured:</strong> {{captured_at}}</span>
-        <span><strong>OCR:</strong> {{ocr_confidence}}% ({{ocr_status}})</span>
+        <span><strong>OCR:</strong> {{mtc_tc_upload_ocr_confidence}}% ({{mtc_tc_upload_ocr_status}})</span>
       </div>
       <div class="photo-meta"><span><strong>Note:</strong> {{note}}</span></div>
     </div>
