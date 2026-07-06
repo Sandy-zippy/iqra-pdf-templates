@@ -133,7 +133,7 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">Upload Work Instruction / Issue Evidence</div>
-      <div class="cap">{{#upload_work_instruction_issue_evidence_drive_url}}<a href="{{upload_work_instruction_issue_evidence_drive_url}}">{{upload_work_instruction_issue_evidence_filename}}{{^upload_work_instruction_issue_evidence_filename}}Open in Drive{{/upload_work_instruction_issue_evidence_filename}}</a>{{/upload_work_instruction_issue_evidence_drive_url}}{{^upload_work_instruction_issue_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_work_instruction_issue_evidence_drive_url}}</div>
+      <div class="cap">{{#upload_work_instruction_issue_evidence_drive_url}}<a href="{{upload_work_instruction_issue_evidence_drive_url}}">{{upload_work_instruction_issue_evidence_filename}}{{^upload_work_instruction_issue_evidence_filename}}Open in Drive{{/upload_work_instruction_issue_evidence_filename}}</a>{{/upload_work_instruction_issue_evidence_drive_url}}{{^upload_work_instruction_issue_evidence_drive_url}}{{#upload_work_instruction_issue_evidence}}<a href="{{url}}">{{filename}}</a> {{/upload_work_instruction_issue_evidence}}{{^upload_work_instruction_issue_evidence}}<span class="muted">Not uploaded</span>{{/upload_work_instruction_issue_evidence}}{{/upload_work_instruction_issue_evidence_drive_url}}</div>
       <div class="cap small">OCR: {{upload_work_instruction_issue_evidence_ocr_status}}{{#upload_work_instruction_issue_evidence_ocr_confidence}} ({{upload_work_instruction_issue_evidence_ocr_confidence}}%){{/upload_work_instruction_issue_evidence_ocr_confidence}}</div>
     </div>
   </div>
