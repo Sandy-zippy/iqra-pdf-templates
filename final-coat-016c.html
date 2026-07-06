@@ -76,9 +76,9 @@
   </div>
   <div class="header-meta">
     <div class="title">Final Coat Application</div>
-    <div class="row"><span class="label">Form:</span> FRM-U2-016C &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{report_no}}</strong></div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-016C &nbsp;|&nbsp; <span class="label">Report No:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
-    <div class="row"><span class="label">Final Coat Record ID:</span> <strong>{{final_coat_record_id}}</strong></div>
+    <div class="row"><span class="label">Final Coat Record ID:</span> <strong>{{u2_016c_record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Activity Date:</span> {{activity_date}}</div>
   </div>
 </div>
@@ -86,15 +86,15 @@
 <section>
   <h2>1. Member &amp; Final-Coat Header</h2>
   <table class="kv-table compact">
-    <tr><th>Released Primer Ref</th><td><span class="link-pill">{{parent_016b_ref}}</span></td>
-        <th>Member Mark</th><td><strong>{{member_mark}}</strong></td></tr>
-    <tr><th>Approved Final Coat System</th><td>{{approved_finalcoat_system_ref}}</td>
-        <th>Final Coat Brand</th><td>{{finalcoat_brand}}</td></tr>
-    <tr><th>Final Coat Product Name</th><td>{{finalcoat_product_name}}</td>
-        <th>Batch / Lot No.</th><td>{{finalcoat_batch_lot_no}}</td></tr>
-    <tr><th>Shade Code</th><td><span class="shade-swatch" style="background:{{shade_swatch_hex}};"></span>{{finalcoat_shade_code}}</td>
-        <th>Shade Label</th><td>{{finalcoat_shade_label}}</td></tr>
-    <tr><th>Application Method Observed</th><td>{{application_method}}</td>
+    <tr><th>Released Primer Ref</th><td><span class="link-pill">{{parent_016b_release_ref_read_only}}</span></td>
+        <th>Member Mark</th><td><strong>{{member_mark_read_only}}</strong></td></tr>
+    <tr><th>Approved Final Coat System</th><td>{{approved_final_coat_system_ref_read_only}}</td>
+        <th>Final Coat Brand</th><td>{{final_coat_brand_read_only}}</td></tr>
+    <tr><th>Final Coat Product Name</th><td>{{final_coat_product_name_read_only}}</td>
+        <th>Batch / Lot No.</th><td>{{final_coat_batch_lot_no_read_only}}</td></tr>
+    <tr><th>Shade Code</th><td><span class="shade-swatch" style="background:{{shade_swatch_hex}};"></span>{{final_coat_shade_code_read_only}}</td>
+        <th>Shade Label</th><td>{{final_coat_shade_label_read_only}}</td></tr>
+    <tr><th>Application Method Observed</th><td>{{application_method_observed}}</td>
         <th>WFT Measurement (microns)</th><td class="num">{{wft_measurement}}</td></tr>
   </table>
 </section>
@@ -102,14 +102,14 @@
 <section>
   <h2>2. Primer-to-Final-Coat Window</h2>
   <table class="compact kv-table">
-    <tr><th>Parent Primer Completion</th><td>{{parent_primer_completion_ts}}</td>
-        <th>Earliest Final-Coat Timestamp</th><td>{{primer_cure_earliest_ts}}</td></tr>
-    <tr><th>Maximum Recoat Deadline</th><td>{{primer_max_recoat_deadline_ts}}</td>
-        <th>Final Coat Start Timestamp</th><td>{{finalcoat_start_ts}}</td></tr>
-    <tr><th>Final Coat Completion Timestamp</th><td>{{finalcoat_completion_ts}}</td>
+    <tr><th>Parent Primer Completion</th><td>{{parent_016b_primer_completion_timestamp_read_only}}</td>
+        <th>Earliest Final-Coat Timestamp</th><td>{{primer_cure_earliest_final_coat_timestamp_read_only}}</td></tr>
+    <tr><th>Maximum Recoat Deadline</th><td>{{primer_maximum_recoat_deadline_timestamp_read_only}}</td>
+        <th>Final Coat Start Timestamp</th><td>{{final_coat_start_timestamp}}</td></tr>
+    <tr><th>Final Coat Completion Timestamp</th><td>{{final_coat_application_completion_timestamp}}</td>
         <th>Recoat Window Compliance</th><td><span class="window-{{window_class}}">{{recoat_window_compliance_status}}</span></td></tr>
-    <tr><th>Expired Window Surface Reactivation</th><td>{{expired_window_reactivation_status}}</td>
-        <th>Reactivation Note</th><td>{{expired_window_reactivation_note}}</td></tr>
+    <tr><th>Expired Window Surface Reactivation</th><td>{{expired_window_surface_reactivation_status}}</td>
+        <th>Reactivation Note</th><td>{{expired_window_surface_reactivation_note}}</td></tr>
   </table>
 </section>
 
@@ -118,10 +118,10 @@
   <table class="compact">
     <thead><tr><th>Parameter</th><th>Measured</th><th>Acceptance</th></tr></thead>
     <tbody>
-      <tr><td>Ambient Temperature (&deg;C)</td><td class="num">{{ambient_temp}}</td><td>{{ambient_temp_criteria}}</td></tr>
-      <tr><td>Relative Humidity (%)</td><td class="num">{{relative_humidity}}</td><td>{{rh_criteria}}</td></tr>
-      <tr><td>Steel Surface Temperature (&deg;C)</td><td class="num">{{steel_surface_temp}}</td><td>{{steel_surface_temp_criteria}}</td></tr>
-      <tr><td>Dew Point Temperature (&deg;C)</td><td class="num">{{dew_point_temp}}</td><td>-</td></tr>
+      <tr><td>Ambient Temperature (&deg;C)</td><td class="num">{{ambient_temperature}}</td><td>10 &ndash; 40 &deg;C</td></tr>
+      <tr><td>Relative Humidity (%)</td><td class="num">{{relative_humidity}}</td><td>&le; 85%</td></tr>
+      <tr><td>Steel Surface Temperature (&deg;C)</td><td class="num">{{steel_surface_temperature}}</td><td>&ge; 3&deg;C above dew point</td></tr>
+      <tr><td>Dew Point Temperature (&deg;C)</td><td class="num">{{dew_point_temperature}}</td><td>-</td></tr>
       <tr><td>Dew Point Margin (&deg;C)</td><td class="num">{{dew_point_margin}}</td><td>&ge; 3&deg;C steel above dew point</td></tr>
     </tbody>
   </table>
@@ -133,10 +133,10 @@
   <table class="compact">
     <thead><tr><th>Check</th><th>Specified</th><th>Measured</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Final Coat DFT Min/Max (microns)</td><td class="num">{{finalcoat_dft_min}} / {{finalcoat_dft_max}}</td><td class="num">{{finalcoat_dft_measurement}}</td><td class="{{finalcoat_dft_class}}">{{finalcoat_dft_compliance_status}}</td></tr>
-      <tr><td>Parent Primer DFT (microns)</td><td>-</td><td class="num">{{parent_primer_dft_measurement}}</td><td>-</td></tr>
-      <tr><td>Total System DFT Min/Max (microns)</td><td class="num">{{total_system_dft_min}} / {{total_system_dft_max}}</td><td class="num">{{total_system_dft}}</td><td class="{{total_system_dft_class}}">{{total_system_dft_compliance_status}}</td></tr>
-      <tr><td>Final Coat Visual Appearance</td><td>{{visual_criteria}}</td><td>{{visual_obs}}</td><td class="{{visual_class}}">{{finalcoat_visual_status}}</td></tr>
+      <tr><td>Final Coat DFT Min/Max (microns)</td><td class="num">{{approved_final_coat_dft_minimum_read_only}} / {{approved_final_coat_dft_maximum_read_only}}</td><td class="num">{{final_coat_dft_measurement}}</td><td class="{{finalcoat_dft_class}}">{{final_coat_dft_compliance_status}}</td></tr>
+      <tr><td>Parent Primer DFT (microns)</td><td>-</td><td class="num">{{parent_primer_dft_measurement_read_only}}</td><td>-</td></tr>
+      <tr><td>Total System DFT Min/Max (microns)</td><td class="num">{{approved_total_system_dft_minimum_read_only}} / {{approved_total_system_dft_maximum_read_only}}</td><td class="num">{{total_system_dft}}</td><td class="{{total_system_dft_class}}">{{total_system_dft_compliance_status}}</td></tr>
+      <tr><td>Final Coat Visual Appearance</td><td>{{visual_criteria}}</td><td>{{visual_obs}}</td><td class="{{visual_class}}">{{final_coat_visual_appearance_status}}</td></tr>
     </tbody>
   </table>
 </section>
@@ -163,7 +163,7 @@
       <tr><td>{{iqra_review_status}}</td><td>{{iqra_review_date}}</td><td>{{iqra_reviewer}}</td><td>{{iqra_review_note}}</td></tr>
     </tbody>
   </table>
-  <div class="small">Auto Final Coat Readiness Pack: <strong>{{auto_finalcoat_readiness_pack}}</strong> &nbsp;|&nbsp; Gate Release: <strong>{{gate_release_status}}</strong></div>
+  <div class="small">Auto Final Coat Readiness Pack: <strong>{{auto_final_coat_readiness_pack}}</strong> &nbsp;|&nbsp; Gate Release: <strong>{{gate_release_status}}</strong></div>
 </section>
 
 <section class="signoff">
