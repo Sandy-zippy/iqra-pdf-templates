@@ -109,7 +109,7 @@
     <tr><th>WI Number</th><td>{{wi_number}}</td></tr>
     <tr><th>Revision</th><td>{{revision}}</td></tr>
     <tr><th>Applicable Form / Activity</th><td>{{applicable_form_activity}}</td></tr>
-    <tr><th>WI Upload</th><td>{{wi_upload}}</td></tr>
+    <tr><th>WI Upload</th><td>{{#wi_upload_drive_url}}<a href="{{wi_upload_drive_url}}">{{wi_upload_filename}}{{^wi_upload_filename}}Open in Drive{{/wi_upload_filename}}</a>{{/wi_upload_drive_url}}{{^wi_upload_drive_url}}{{#wi_upload}}<a href="{{url}}">{{filename}}</a> {{/wi_upload}}{{^wi_upload}}<span class="muted">Not uploaded</span>{{/wi_upload}}{{/wi_upload_drive_url}}</td></tr>
     <tr><th>Status</th><td>{{status}}</td></tr>
     <tr><th>Activity Availability Sync</th><td>{{activity_availability_sync}}</td></tr>
     <tr><th>Original Record Retained Flag</th><td>{{original_record_retained_flag}}</td></tr>
@@ -122,7 +122,7 @@
 <div class="photo-grid">
     <div class="photo-tile">
       <div class="ph">WI Upload</div>
-      <div class="cap">{{#wi_upload_drive_url}}<a href="{{wi_upload_drive_url}}">{{wi_upload_filename}}{{^wi_upload_filename}}Open in Drive{{/wi_upload_filename}}</a>{{/wi_upload_drive_url}}{{^wi_upload_drive_url}}<span class="muted">Not uploaded</span>{{/wi_upload_drive_url}}</div>
+      <div class="cap">{{#wi_upload_drive_url}}<a href="{{wi_upload_drive_url}}">{{wi_upload_filename}}{{^wi_upload_filename}}Open in Drive{{/wi_upload_filename}}</a>{{/wi_upload_drive_url}}{{^wi_upload_drive_url}}{{#wi_upload}}<a href="{{url}}">{{filename}}</a><br><img src="{{url}}" style="max-width:100%;max-height:340px;margin-top:6px;border:1px solid #ccc">{{/wi_upload}}{{^wi_upload}}<span class="muted">Not uploaded</span>{{/wi_upload}}{{/wi_upload_drive_url}}</div>
     </div>
     <div class="photo-tile">
       <div class="ph">PDF Output Link</div>
