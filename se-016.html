@@ -107,7 +107,7 @@
     <tr><th>Survey Reference / Benchmark Reference</th><td>{{survey_reference_benchmark_reference}}</td></tr>
     <tr><th>Working Point / Grid Reference Status</th><td>{{working_point_grid_reference_status}}</td></tr>
     <tr><th>Pre-Erection Survey Condition</th><td>{{pre_erection_survey_condition}}</td></tr>
-    <tr><th>Upload Survey / Reference Evidence</th><td>{{upload_survey_reference_evidence}}</td></tr>
+    <tr><th>Upload Survey / Reference Evidence</th><td>{{#upload_survey_reference_evidence}}{{filename}} {{/upload_survey_reference_evidence}}{{^upload_survey_reference_evidence}}<span class="muted">Not uploaded</span>{{/upload_survey_reference_evidence}}</td></tr>
     <tr><th>Drawing / Erection Reference</th><td>{{drawing_erection_reference}}</td></tr>
     <tr><th>Pending Point / Site Activity Note</th><td>{{pending_point_site_activity_note}}</td></tr>
   </table>
@@ -128,10 +128,18 @@
 
 <h2>Attachments</h2>
 <div class="photo-grid">
+    {{#upload_survey_reference_evidence}}
+    <div class="photo-tile">
+      <div class="ph">Survey / Reference Evidence</div>
+      <div class="cap"><a href="{{url}}">{{filename}}</a></div>
+    </div>
+    {{/upload_survey_reference_evidence}}
+    {{^upload_survey_reference_evidence}}
     <div class="photo-tile">
       <div class="ph">Upload Survey / Reference Evidence</div>
-      <div class="cap">{{#upload_survey_reference_evidence_drive_url}}<a href="{{upload_survey_reference_evidence_drive_url}}">{{upload_survey_reference_evidence_filename}}{{^upload_survey_reference_evidence_filename}}Open in Drive{{/upload_survey_reference_evidence_filename}}</a>{{/upload_survey_reference_evidence_drive_url}}{{^upload_survey_reference_evidence_drive_url}}<span class="muted">Not uploaded</span>{{/upload_survey_reference_evidence_drive_url}}</div>
+      <div class="cap"><span class="muted">Not uploaded</span></div>
     </div>
+    {{/upload_survey_reference_evidence}}
   </div>
 
 <h2>IQRA Review</h2>
