@@ -93,6 +93,8 @@
   </div>
 </div>
 
+{{#is_uat}}<div style="background:#FFF6E0;border:1pt solid #D4A017;color:#8A6A00;padding:6px 10px;margin:8px 0;border-radius:3px;font-weight:700;font-size:9pt;">UAT Test — Exclude from outward issue and production dossier.</div>{{/is_uat}}
+
 <div class="cover-title">
   <div class="kicker">Site Receipt &amp; Erection Dossier</div>
   <div class="main">{{dossier_type}}</div>
@@ -110,8 +112,8 @@
   </div>
 </div>
 
-{{#is_ready}}<div class="readiness ready">{{dossier_readiness_status}}</div>{{/is_ready}}
-{{^is_ready}}<div class="readiness hold">{{dossier_readiness_status}}</div>{{/is_ready}}
+{{#is_ready}}<div class="readiness ready">{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div>{{/is_ready}}
+{{^is_ready}}<div class="readiness hold">{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div>{{/is_ready}}
 
 <section>
   <h2>1. Project &amp; Dossier Header</h2>
@@ -123,11 +125,11 @@
     <tr><th>Unit / Lane</th><td>{{unit_lane}}</td>
         <th>Phase</th><td>{{phase}}</td></tr>
     <tr><th>Dossier Type</th><td>{{dossier_type}}</td>
-        <th>Dossier Status</th><td><strong>{{dossier_status}}</strong></td></tr>
+        <th>Dossier Status</th><td><strong>{{#is_uat}}UAT Test — not for production dossier{{/is_uat}}{{^is_uat}}{{dossier_status}}{{/is_uat}}</strong></td></tr>
     <tr><th>Compilation Date</th><td>{{compilation_date}}</td>
         <th>Coverage Cut-off</th><td>{{dossier_coverage_cutoff}}</td></tr>
     <tr><th>Evidence Completeness</th><td>{{evidence_completeness_status}}</td>
-        <th>Readiness</th><td>{{dossier_readiness_status}}</td></tr>
+        <th>Readiness</th><td>{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</td></tr>
   </table>
 </section>
 

@@ -69,7 +69,7 @@
 <div class="meta-strip">
   <div class="cell"><div class="l">Completion</div><div class="v">{{dossier_completion_percentage}}%</div></div>
   <div class="cell"><div class="l">Annexures Indexed</div><div class="v">{{annexure_count}}</div></div>
-  <div class="cell"><div class="l">Readiness</div><div class="v">{{dossier_readiness_status}}</div></div>
+  <div class="cell"><div class="l">Readiness</div><div class="v">{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div></div>
 </div>
 
 <section>
@@ -102,6 +102,7 @@
   <div class="pending">No annexures flagged for this dossier yet</div>
   {{/annexures}}
 </section>
+{{#is_uat}}<div style="background:#FFF6E0;border:1pt solid #D4A017;color:#8A6A00;padding:6px 10px;margin:8px 0;border-radius:3px;font-weight:700;font-size:9pt;">UAT Test — Exclude from outward issue and production dossier.</div>{{/is_uat}}
 
 <section>
   <h2>Site Evidence Coverage</h2>

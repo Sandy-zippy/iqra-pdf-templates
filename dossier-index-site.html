@@ -74,7 +74,7 @@
     </div>
   </div>
   <div class="header-meta">
-    <div class="title">Dossier Index (FRM-UI-022 style)</div>
+    <div class="title">Site Dossier Index</div>
     <div class="row"><span class="label">Form:</span> FRM-SE-038 &nbsp;|&nbsp; <span class="label">Dossier ID:</span> <strong>{{dossier_id}}</strong></div>
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
     <div class="row"><span class="label">Dispatch Trip:</span> <span class="link-pill">{{dispatch_trip_id}}</span></div>
@@ -93,13 +93,14 @@
     <tr><th>Unit / Lane</th><td>{{unit_lane}}</td>
         <th>Phase</th><td>{{phase}}</td></tr>
     <tr><th>Dossier Type</th><td>{{dossier_type}}</td>
-        <th>Dossier Status</th><td><strong>{{dossier_status}}</strong></td></tr>
+        <th>Dossier Status</th><td><strong>{{#is_uat}}UAT Test — not for production dossier{{/is_uat}}{{^is_uat}}{{dossier_status}}{{/is_uat}}</strong></td></tr>
     <tr><th>Dossier Coverage Cut-off</th><td>{{coverage_cutoff}}</td>
-        <th>Dossier Readiness Status</th><td>{{dossier_readiness_status}}</td></tr>
+        <th>Dossier Readiness Status</th><td>{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</td></tr>
     <tr><th>Site Receipt Reference (SE-013)</th><td>{{site_receipt_reference}}{{^site_receipt_reference}}<span class="muted">Not available</span>{{/site_receipt_reference}}</td>
         <th>Site Area / Grid</th><td>{{site_area_grid}}{{^site_area_grid}}<span class="muted">Not available</span>{{/site_area_grid}}</td></tr>
   </table>
 </section>
+{{#is_uat}}<div style="background:#FFF6E0;border:1pt solid #D4A017;color:#8A6A00;padding:6px 10px;margin:8px 0;border-radius:3px;font-weight:700;font-size:9pt;">UAT Test — Exclude from outward issue and production dossier.</div>{{/is_uat}}
 
 <section>
   <h2>2. Compilation KPIs</h2>
