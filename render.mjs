@@ -16,7 +16,7 @@ import url from 'node:url';
 import { hydrateLoops } from './hydrate-loops.mjs';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const PUPPETEER_PATH = '/Users/sandy/Downloads/Claude Code/client-data/pilani-group/pitch-deck/node_modules/puppeteer';
+const PUPPETEER_PATH = '/Users/sandy/zippyscale-hub/client-data/pilani-group/pitch-deck/node_modules/puppeteer';
 
 // ---- Tiny mustache implementation (subset) ----------------------------
 // Supports:
@@ -138,6 +138,7 @@ const templates = [
   'marking-packing-017a',
   'dispatch-017b',
   'dossier-index-018',
+  'dossier-index-site',
   'nspl-weekly'
 ];
 const only = process.argv[2];

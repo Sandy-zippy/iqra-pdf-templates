@@ -84,6 +84,7 @@
     <div class="row"><span class="label">Phase:</span> Unit I — Workshop</div>
     <div class="row"><span class="label">Record:</span> <strong>{{record_id}}</strong></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}}</div>
+    {{#source_mode}}<div class="row"><span class="label">Mode:</span> <span class="lime-pill">{{source_mode}}</span></div>{{/source_mode}}
   </div>
 </div>
 
@@ -111,26 +112,26 @@
 
 <h2>Layer 2 / 5 — Derived &amp; System Fields</h2>
 <table class="kv-table compact">
-    <tr><th>Dossier Object Type</th><td>{{dossier_object_type}}</td></tr>
-    <tr><th>Final Dossier Index PDF Link</th><td>{{final_dossier_index_pdf_link}}</td></tr>
-    <tr><th>Final Dossier Cover PDF Link</th><td>{{final_dossier_cover_pdf_link}}</td></tr>
-    <tr><th>Signatory Configuration ID</th><td>{{signatory_configuration_id}}</td></tr>
-    <tr><th>Pending Item Count</th><td>{{pending_item_count}}</td></tr>
-    <tr><th>Dossier Completion Percentage</th><td>{{dossier_completion_percentage}}</td></tr>
-    <tr><th>Linked Material / Bought-out Records</th><td>{{linked_material_bought_out_records}}</td></tr>
-    <tr><th>Linked U1-010 Traveller Records</th><td>{{linked_u1_010_traveller_records}}</td></tr>
-    <tr><th>Linked Stage Records U1-011 to U1-017</th><td>{{linked_stage_records_u1_011_to_u1_017}}</td></tr>
-    <tr><th>Linked Issue Closure Records</th><td>{{linked_issue_closure_records}}</td></tr>
-    <tr><th>Linked U1-020 Final Release</th><td>{{linked_u1_020_final_release}}</td></tr>
-    <tr><th>Linked U1-021 Dispatch Clearance</th><td>{{linked_u1_021_dispatch_clearance}}</td></tr>
-    <tr><th>Required Checklist Source</th><td>{{required_checklist_source}}</td></tr>
-    <tr><th>Dossier Completeness Result</th><td>{{dossier_completeness_result}}</td></tr>
-    <tr><th>IQRA Dossier Review Status</th><td>{{iqra_dossier_review_status}}</td></tr>
-    <tr><th>Original Record Retained Flag</th><td>{{original_record_retained_flag}}</td></tr>
-    <tr><th>Report Output Number</th><td>{{report_output_number}}</td></tr>
-    <tr><th>PDF Output Link</th><td>{{pdf_output_link}}</td></tr>
-    <tr><th>Dossier Linkage</th><td>{{dossier_linkage}}</td></tr>
-    <tr><th>Missing Evidence Count</th><td>{{missing_evidence_count}}</td></tr>
+    <tr><th>Dossier Object Type</th><td>{{dossier_object_type}}{{^dossier_object_type}}<span class="muted">Not available</span>{{/dossier_object_type}}</td></tr>
+    <tr><th>Final Dossier Index PDF Link</th><td>{{final_dossier_index_pdf_link}}{{^final_dossier_index_pdf_link}}<span class="muted">Not available</span>{{/final_dossier_index_pdf_link}}</td></tr>
+    <tr><th>Final Dossier Cover PDF Link</th><td>{{final_dossier_cover_pdf_link}}{{^final_dossier_cover_pdf_link}}<span class="muted">Not available</span>{{/final_dossier_cover_pdf_link}}</td></tr>
+    <tr><th>Signatory Configuration ID</th><td>{{signatory_configuration_id}}{{^signatory_configuration_id}}<span class="muted">Not available</span>{{/signatory_configuration_id}}</td></tr>
+    <tr><th>Pending Item Count</th><td>{{pending_item_count}}{{^pending_item_count}}<span class="muted">Pending</span>{{/pending_item_count}}</td></tr>
+    <tr><th>Dossier Completion Percentage</th><td>{{dossier_completion_percentage}}{{^dossier_completion_percentage}}<span class="muted">Pending</span>{{/dossier_completion_percentage}}</td></tr>
+    <tr><th>Linked Material / Bought-out Records</th><td>{{linked_material_bought_out_records}}{{^linked_material_bought_out_records}}<span class="muted">Not available</span>{{/linked_material_bought_out_records}}</td></tr>
+    <tr><th>Linked U1-010 Traveller Records</th><td>{{linked_u1_010_traveller_records}}{{^linked_u1_010_traveller_records}}<span class="muted">Not available</span>{{/linked_u1_010_traveller_records}}</td></tr>
+    <tr><th>Linked Stage Records U1-011 to U1-017</th><td>{{linked_stage_records_u1_011_to_u1_017}}{{^linked_stage_records_u1_011_to_u1_017}}<span class="muted">Not available</span>{{/linked_stage_records_u1_011_to_u1_017}}</td></tr>
+    <tr><th>Linked Issue Closure Records</th><td>{{linked_issue_closure_records}}{{^linked_issue_closure_records}}<span class="muted">Not available</span>{{/linked_issue_closure_records}}</td></tr>
+    <tr><th>Linked U1-020 Final Release</th><td>{{linked_u1_020_final_release}}{{^linked_u1_020_final_release}}<span class="muted">Not available</span>{{/linked_u1_020_final_release}}</td></tr>
+    <tr><th>Linked U1-021 Dispatch Clearance</th><td>{{linked_u1_021_dispatch_clearance}}{{^linked_u1_021_dispatch_clearance}}<span class="muted">Not available</span>{{/linked_u1_021_dispatch_clearance}}</td></tr>
+    <tr><th>Required Checklist Source</th><td>{{required_checklist_source}}{{^required_checklist_source}}<span class="muted">Not available</span>{{/required_checklist_source}}</td></tr>
+    <tr><th>Dossier Completeness Result</th><td>{{dossier_completeness_result}}{{^dossier_completeness_result}}<span class="muted">Pending</span>{{/dossier_completeness_result}}</td></tr>
+    <tr><th>IQRA Dossier Review Status</th><td>{{iqra_dossier_review_status}}{{^iqra_dossier_review_status}}<span class="muted">Pending</span>{{/iqra_dossier_review_status}}</td></tr>
+    <tr><th>Original Record Retained Flag</th><td>{{original_record_retained_flag}}{{^original_record_retained_flag}}<span class="muted">Not available</span>{{/original_record_retained_flag}}</td></tr>
+    <tr><th>Report Output Number</th><td>{{report_output_number}}{{^report_output_number}}<span class="muted">Not available</span>{{/report_output_number}}</td></tr>
+    <tr><th>PDF Output Link</th><td>{{pdf_output_link}}{{^pdf_output_link}}<span class="muted">Not available</span>{{/pdf_output_link}}</td></tr>
+    <tr><th>Dossier Linkage</th><td>{{dossier_linkage}}{{^dossier_linkage}}<span class="muted">Not available</span>{{/dossier_linkage}}</td></tr>
+    <tr><th>Missing Evidence Count</th><td>{{missing_evidence_count}}{{^missing_evidence_count}}<span class="muted">Pending</span>{{/missing_evidence_count}}</td></tr>
   </table>
 
 <h2>Attachments</h2>
