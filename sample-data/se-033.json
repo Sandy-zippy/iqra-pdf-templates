@@ -44,5 +44,6 @@
   "upload_touch_up_evidence_filename": "upload_touch_up_evidence_sample.pdf",
   "upload_touch_up_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_touch_up_evidence/view",
   "upload_touch_up_evidence_ocr_status": "OK",
-  "upload_touch_up_evidence_ocr_confidence": 96
+  "upload_touch_up_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

@@ -45,5 +45,6 @@
   "upload_wall_cladding_evidence_filename": "upload_wall_cladding_evidence_sample.pdf",
   "upload_wall_cladding_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_wall_cladding_evidence/view",
   "upload_wall_cladding_evidence_ocr_status": "OK",
-  "upload_wall_cladding_evidence_ocr_confidence": 96
+  "upload_wall_cladding_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

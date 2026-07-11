@@ -17,8 +17,8 @@
   "first_off_or_repeat": "First-Off",
   "drilling_method": "CNC magnetic-base drill (Hougen HMD904)",
   "hole_pattern_source": "Part drawing EPE-J126-U2-P-220 Rev3",
-  "cnc_drill_program_setup": "N/A — magnetic-base drill with template jig",
-  "cnc_program_parse_result": "N/A — manual setup with template jig TJ-J126-018",
+  "cnc_drill_program_setup": "N/A \u2014 magnetic-base drill with template jig",
+  "cnc_program_parse_result": "N/A \u2014 manual setup with template jig TJ-J126-018",
   "cnc_program_machine_ref": "Hougen HMD904 / Asset NSPL-DRL-04",
   "qty_parts_drilled": "16",
   "total_holes_drilled": "64",
@@ -54,10 +54,38 @@
   "cumulative_holes_check": "Within scope",
   "cumulative_holes_class": "result-pass",
   "photos": [
-    { "title": "Template jig TJ-J126-018 in position", "filename": "drl_0011_jig.jpg", "captured_at": "2026-04-13 09:42 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Jig clamped to first stiffener; hole pattern confirmed against drawing P-220." },
-    { "title": "First-off stiffener after drilling", "filename": "drl_0011_firstoff.jpg", "captured_at": "2026-04-13 10:14 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "4 holes at 100mm pitch, edge distance 36.5mm clear." },
-    { "title": "Hole edge close-up (deburred)", "filename": "drl_0011_burr_check.jpg", "captured_at": "2026-04-13 10:22 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Edges deburred with countersink, no sharp protrusion." },
-    { "title": "Vernier reading 22.2mm on representative hole", "filename": "drl_0011_dia.jpg", "captured_at": "2026-04-13 10:31 IST", "ocr_confidence": "84", "ocr_status": "High", "note": "Mitutoyo digital vernier; within +0.5/-0 tolerance." }
+    {
+      "title": "Template jig TJ-J126-018 in position",
+      "filename": "drl_0011_jig.jpg",
+      "captured_at": "2026-04-13 09:42 IST",
+      "ocr_confidence": "\u2014",
+      "ocr_status": "\u2014",
+      "note": "Jig clamped to first stiffener; hole pattern confirmed against drawing P-220."
+    },
+    {
+      "title": "First-off stiffener after drilling",
+      "filename": "drl_0011_firstoff.jpg",
+      "captured_at": "2026-04-13 10:14 IST",
+      "ocr_confidence": "\u2014",
+      "ocr_status": "\u2014",
+      "note": "4 holes at 100mm pitch, edge distance 36.5mm clear."
+    },
+    {
+      "title": "Hole edge close-up (deburred)",
+      "filename": "drl_0011_burr_check.jpg",
+      "captured_at": "2026-04-13 10:22 IST",
+      "ocr_confidence": "\u2014",
+      "ocr_status": "\u2014",
+      "note": "Edges deburred with countersink, no sharp protrusion."
+    },
+    {
+      "title": "Vernier reading 22.2mm on representative hole",
+      "filename": "drl_0011_dia.jpg",
+      "captured_at": "2026-04-13 10:31 IST",
+      "ocr_confidence": "84",
+      "ocr_status": "High",
+      "note": "Mitutoyo digital vernier; within +0.5/-0 tolerance."
+    }
   ],
   "iqra_review_status": "Accepted",
   "iqra_review_date": "2026-04-13",
@@ -71,5 +99,24 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-13",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true,
+  "child_parts": [
+    {
+      "part_mark": "P-C1-A",
+      "member_mark": "EPE-U2-COL-C1",
+      "qty": 2,
+      "heat_lot": "C107625",
+      "status": "Accepted",
+      "status_class": "pass"
+    },
+    {
+      "part_mark": "P-C2-A",
+      "member_mark": "EPE-U2-COL-C2",
+      "qty": 4,
+      "heat_lot": "C107625",
+      "status": "Accepted",
+      "status_class": "pass"
+    }
+  ]
 }

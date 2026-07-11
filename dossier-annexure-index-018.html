@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Dossier Annexure Index - {{dossier_id}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 portrait; margin: 15mm 15mm 22mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 10.5pt; color: #444; line-height: 1.4; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3, h4 { color: #000; font-weight: 600; margin: 0; }
+  h2 { font-size: 12pt; margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1.5px solid #D4A017; text-transform: uppercase; letter-spacing: 0.5px; }
+  .small { font-size: 9pt; color: #666; }
+  .accent { color: #D4A017; font-weight: 600; }
+  .doc-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 14px; }
+  .brand { display: flex; }
+  .brand .tag { font-size: 8pt; color: #D4A017; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+  .header-meta { text-align: right; font-size: 9pt; color: #444; }
+  .header-meta .title { font-size: 13pt; color: #000; font-weight: 700; letter-spacing: 0.5px; }
+  .header-meta .row { margin-top: 3px; }
+  .header-meta .label { color: #888; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9pt; }
+  th, td { border: 0.6pt solid #BBB; padding: 4px 6px; vertical-align: top; text-align: left; }
+  th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .compact td, .compact th { padding: 3px 5px; font-size: 8.5pt; }
+  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .stamp-locked { position: fixed; top: 40mm; right: -8mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 58pt; font-weight: 700; color: #D4A017; opacity: 0.28; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
+  .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
+  .status-present  { color: #2a6a2a; font-weight: 600; }
+  .status-pending  { color: #8A6A00; font-weight: 600; }
+  .status-missing  { color: #A02020; font-weight: 700; }
+  .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 12px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 9.5pt; margin-top: 10px; }
+  .brand .logo-img { height: 56px; width: auto; display: block; }
+  .brand .nspl-logo-img { height: 50px; width: auto; display: block; margin-top: 4px; }
+  .brand-row { display: flex; flex-direction: column; gap: 4px; }
+  .meta-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 4px 0 8px; }
+  .meta-strip .cell { border: 0.6pt solid #BBB; background: #FAFAFA; padding: 6px 10px; }
+  .meta-strip .cell .l { font-size: 7.5pt; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meta-strip .cell .v { font-size: 10pt; color: #000; font-weight: 600; }
+</style>
+</head>
+<body>
+
+{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+
+<div class="doc-header">
+  <div class="brand">
+    <div class="brand-row">
+      <img class="logo-img" src="brand-assets/iqra-logo.jpg" alt="Iqra Quality Services">
+      <div class="tag">Quality Assured.</div>
+    </div>
+    <div class="brand-row" style="margin-left:18px;">
+      <img class="nspl-logo-img" src="brand-assets/nspl-logo.jpeg" alt="Nischay Steels Pvt Ltd">
+      <div class="tag" style="font-size:7.5pt;">Nischay Steels Pvt. Ltd.</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="title">Dossier Annexure Index</div>
+    <div class="row"><span class="label">Form:</span> FRM-U2-018 &nbsp;|&nbsp; <span class="label">Dossier ID:</span> <strong>{{dossier_id}}</strong></div>
+    <div class="row"><span class="label">Project:</span> {{project}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
+    <div class="row"><span class="label">Dispatch Trip:</span> <span class="link-pill">{{dispatch_trip_id}}</span></div>
+    <div class="row"><span class="label">Compilation Date:</span> {{compilation_date}}</div>
+  </div>
+</div>
+
+<div class="meta-strip">
+  <div class="cell"><div class="l">Completion</div><div class="v">{{dossier_completion_percentage}}%</div></div>
+  <div class="cell"><div class="l">Annexures Indexed</div><div class="v">{{annexure_count}}</div></div>
+  <div class="cell"><div class="l">Readiness</div><div class="v">{{dossier_readiness_status}}</div></div>
+</div>
+
+<section>
+  <h2>Annexure Register &mdash; Table of Contents</h2>
+  <table class="compact">
+    <thead>
+      <tr>
+        <th style="width:8%;">Page</th>
+        <th style="width:20%;">Annexure ID</th>
+        <th style="width:14%;">Source Form</th>
+        <th style="width:20%;">Source Record</th>
+        <th style="width:16%;">Type</th>
+        <th>Caption</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#annexures}}
+      <tr>
+        <td class="num">{{page_order}}</td>
+        <td><span class="link-pill">{{annexure_id}}</span></td>
+        <td>{{source_form_code}}</td>
+        <td>{{source_record_id}}</td>
+        <td>{{annexure_type}}</td>
+        <td>{{caption}}</td>
+      </tr>
+      {{/annexures}}
+    </tbody>
+  </table>
+  {{^annexures}}
+  <div class="pending">No annexures flagged for this dossier yet</div>
+  {{/annexures}}
+</section>
+
+<section>
+  <h2>QAP Form-Group Coverage</h2>
+  <table class="compact">
+    <thead>
+      <tr><th style="width:10%;">Seq</th><th style="width:18%;">Form</th><th>Form Title</th><th style="width:16%;">Accepted</th><th style="width:16%;">Status</th></tr>
+    </thead>
+    <tbody>
+      {{#form_coverage}}
+      <tr>
+        <td class="num">{{seq}}</td>
+        <td>{{form_code}}</td>
+        <td>{{form_title}}</td>
+        <td class="num">{{accepted_count}}</td>
+        <td class="status-{{status_class}}">{{group_status}}</td>
+      </tr>
+      {{/form_coverage}}
+    </tbody>
+  </table>
+  {{^form_coverage}}
+  <div class="small">Per-form coverage breakdown is emitted in <span class="accent">lot_member_dispatch_coverage</span> on FRM-U2-018; render-time expansion into this table pending (see design note).</div>
+  {{/form_coverage}}
+</section>
+
+<div class="doc-footer">
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | Dossier {{dossier_id}}</div>
+  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+</div>
+
+</body>
+</html>

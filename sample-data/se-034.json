@@ -43,5 +43,6 @@
   "upload_issue_correction_recheck_evidence_filename": "upload_issue_correction_recheck_evidence_sample.pdf",
   "upload_issue_correction_recheck_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_issue_correction_recheck_evidence/view",
   "upload_issue_correction_recheck_evidence_ocr_status": "OK",
-  "upload_issue_correction_recheck_evidence_ocr_confidence": 96
+  "upload_issue_correction_recheck_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

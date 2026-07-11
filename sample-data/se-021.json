@@ -43,5 +43,6 @@
   "upload_geometry_check_evidence_filename": "upload_geometry_check_evidence_sample.pdf",
   "upload_geometry_check_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_geometry_check_evidence/view",
   "upload_geometry_check_evidence_ocr_status": "OK",
-  "upload_geometry_check_evidence_ocr_confidence": 96
+  "upload_geometry_check_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

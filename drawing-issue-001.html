@@ -89,32 +89,53 @@
   </table>
 </section>
 
+<!-- §2/§3 converted to child-record loops 2026-07-07 (I-11): a drawing register is inherently multi-row.
+     n8n MUST pass `drawings` [{drawing_no,drawing_title,drawing_type,revision,release_date,release_status,status_class}]
+     and `bom_rows` [{member_mark,part_mark,material_description,grade,size_thickness,bom_quantity,bom_weight,link_status}]. -->
 <section>
   <h2>2. Confirmed Drawings (Assembly &amp; Part)</h2>
-  <table class="kv-table compact">
-    <tr><th>Assembly Drawing No</th><td><strong>{{assembly_drawing_number}}</strong></td>
-        <th>Part Drawing No</th><td><strong>{{part_drawing_number}}</strong></td></tr>
-    <tr><th>Title</th><td>{{drawing_title}}</td>
-        <th>Type</th><td>{{drawing_type}}</td></tr>
-    <tr><th>Revision</th><td>{{revision}}</td>
-        <th>Release Date</th><td>{{release_date}}</td></tr>
-    <tr><th>Release Status</th><td colspan="3">{{release_status}}</td></tr>
+  <table class="compact">
+    <thead><tr><th>Drawing No</th><th>Title</th><th>Type</th><th>Rev</th><th>Release Date</th><th>Status</th></tr></thead>
+    <tbody>
+      {{#drawings}}
+      <tr>
+        <td><strong>{{drawing_no}}</strong></td>
+        <td>{{drawing_title}}</td>
+        <td>{{drawing_type}}</td>
+        <td>{{revision}}</td>
+        <td>{{release_date}}</td>
+        <td><span class="status-{{status_class}}">{{release_status}}</span></td>
+      </tr>
+      {{/drawings}}
+      {{^drawings}}
+      <tr><td colspan="6" class="small">No drawing records joined for this package.</td></tr>
+      {{/drawings}}
+    </tbody>
   </table>
   <div class="small">Source: approved drawing lists + drawing title-block extraction. Rule A6: NSPL confirms extracted values; IQRA reviews for downstream availability.</div>
 </section>
 
 <section>
   <h2>3. BOM &mdash; Member &amp; Part Mapping</h2>
-  <table class="kv-table compact">
-    <tr><th>Member Mark</th><td>{{member_mark}}</td>
-        <th>Part Mark</th><td><strong>{{part_mark}}</strong></td></tr>
-    <tr><th>Material Description</th><td>{{bom_material_description}}</td>
-        <th>Grade / Standard</th><td>{{bom_grade_standard}}</td></tr>
-    <tr><th>Size / Thickness</th><td>{{bom_size_thickness}}</td>
-        <th>Quantity</th><td class="num">{{bom_quantity}}</td></tr>
-    <tr><th>Weight (MT)</th><td class="num">{{bom_weight}}</td>
-        <th>Assembly&rarr;Part Link</th><td>{{assembly_to_part_link_status}}</td></tr>
-    <tr><th>Part&rarr;Part-Mark Link</th><td colspan="3">{{part_drawing_part_mark_link_status}}</td></tr>
+  <table class="compact">
+    <thead><tr><th>Member Mark</th><th>Part Mark</th><th>Material</th><th>Grade</th><th>Size / Thk</th><th>Qty</th><th>Wt (MT)</th><th>Link</th></tr></thead>
+    <tbody>
+      {{#bom_rows}}
+      <tr>
+        <td>{{member_mark}}</td>
+        <td><strong>{{part_mark}}</strong></td>
+        <td>{{material_description}}</td>
+        <td>{{grade}}</td>
+        <td>{{size_thickness}}</td>
+        <td class="num">{{bom_quantity}}</td>
+        <td class="num">{{bom_weight}}</td>
+        <td>{{link_status}}</td>
+      </tr>
+      {{/bom_rows}}
+      {{^bom_rows}}
+      <tr><td colspan="8" class="small">No BOM rows joined for this package.</td></tr>
+      {{/bom_rows}}
+    </tbody>
   </table>
 </section>
 
@@ -144,13 +165,13 @@
   <div class="sigbox">
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; confirmed by NSPL Engineering</div>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="signame">{{nspl_name}}</div>
+    {{#submission_timestamp}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_timestamp}}
+    <div class="signame">{{nspl_responsible_person}}</div>
     <div class="sigrole">{{nspl_role}}</div>
-    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+    <div class="sigdate">Signed: {{submission_timestamp}}</div>
   </div>
 
-  {{#iqra_signed_date}}
+  {{#iqra_approved}}
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
@@ -158,15 +179,15 @@
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="signame">{{iqra_name}}</div>
+    <div class="signame">{{iqra_reviewer}}</div>
     <div class="sigrole">{{iqra_role}}</div>
-    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+    <div class="sigdate">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 
-  {{^iqra_signed_date}}
+  {{^iqra_approved}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 </section>
 
 <div class="doc-footer">

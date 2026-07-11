@@ -13,28 +13,226 @@
   "partial_count": "2",
   "readiness_package_status": "Controlled Start Allowed (2 items conditional)",
   "items": [
-    { "item_number": 1,  "readiness_item": "Approved drawing revision available at NSPL fabrication shop", "required_evidence": "Stamped Rev3 drawing set + Drawing Master link", "nspl_status": "Closed", "owner": "NSPL Engg", "target_date": "2026-04-02", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 2,  "readiness_item": "BOM uploaded and synced to BOQ / Part Mark Master", "required_evidence": "DWG-J126-U2-P03-008 + BOQ sync confirmation", "nspl_status": "Closed", "owner": "NSPL Engg", "target_date": "2026-04-02", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 3,  "readiness_item": "QAP / ITP active and held at point of use", "required_evidence": "EPE-J126-QAP-001 Rev2 + ITP-005/006/012/016 Rev current", "nspl_status": "Closed", "owner": "NSPL DC", "target_date": "2026-04-03", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 4,  "readiness_item": "Material lot (E350BR) accepted IMIR available", "required_evidence": "IMIR-J126-005-0042 Accepted", "nspl_status": "Closed", "owner": "NSPL QA", "target_date": "2026-04-09", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 5,  "readiness_item": "Measuring tools valid calibration", "required_evidence": "CAL-NSPL-VRN-006 + CAL-NSPL-TAPE-002", "nspl_status": "Closed", "owner": "NSPL QC", "target_date": "2026-04-03", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 6,  "readiness_item": "Welding machines valid calibration", "required_evidence": "CAL-NSPL-SAW-001 + CAL-NSPL-FCAW-003", "nspl_status": "Closed", "owner": "NSPL Welding", "target_date": "2026-04-04", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 7,  "readiness_item": "DFT instrument valid calibration", "required_evidence": "CAL-NSPL-DFT-002 valid till 2026-10-04", "nspl_status": "Closed", "owner": "NSPL Coating", "target_date": "2026-04-05", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 8,  "readiness_item": "Light meter for DPT valid calibration", "required_evidence": "CAL-NSPL-LUX-004", "nspl_status": "Closed", "owner": "NSPL NDT", "target_date": "2026-04-04", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 9,  "readiness_item": "SAW WPS / PQR / WPQ approved and current", "required_evidence": "EPE-J126-WPS-SAW-01 Rev1 + PQR + S. Vasudevan WPQ", "nspl_status": "Closed", "owner": "NSPL Welding", "target_date": "2026-04-04", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 10, "readiness_item": "FCAW WPS / PQR / WPQ approved and current", "required_evidence": "EPE-J126-WPS-FCAW-04 Rev2 + PQR + 4 welder WPQs", "nspl_status": "Closed", "owner": "NSPL Welding", "target_date": "2026-04-04", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 11, "readiness_item": "Welder continuity records up to date", "required_evidence": "Continuity log signed for all 6 nominated welders", "nspl_status": "Closed", "owner": "NSPL Welding", "target_date": "2026-04-05", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 12, "readiness_item": "PT route — qualified personnel, approved consumables, dark room available", "required_evidence": "ASNT Level II cert + Magnaflux SKL kit + light meter", "nspl_status": "Closed", "owner": "NSPL NDT", "target_date": "2026-04-06", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 13, "readiness_item": "QC manpower sufficient for shift coverage", "required_evidence": "Roster for Bay 3 Bay 4 — both shifts", "nspl_status": "Closed", "owner": "NSPL QC Mgr", "target_date": "2026-04-06", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 14, "readiness_item": "Blasting / primer facility cleared and segregated", "required_evidence": "Paint shop Bay 7 photo + RH log", "nspl_status": "Closed", "owner": "NSPL Coating", "target_date": "2026-04-07", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 15, "readiness_item": "Approved primer system batch on site", "required_evidence": "Berger ZP-Epoxy Batch BJ-26-04-117", "nspl_status": "Closed", "owner": "NSPL Coating", "target_date": "2026-04-07", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 16, "readiness_item": "Approved final-coat system batch on site", "required_evidence": "Berger PU Topcoat Shade RAL 7032 Batch BJ-26-04-128", "nspl_status": "Closed", "owner": "NSPL Coating", "target_date": "2026-04-07", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 17, "readiness_item": "Welding consumables — flux and wire", "required_evidence": "Lincoln 761 flux + L-61 wire — lot certs available", "nspl_status": "Partial", "owner": "NSPL Stores", "target_date": "2026-04-08", "readiness_item_closure_result": "Closed (Conditional)", "result_class": "partial" },
-    { "item_number": 18, "readiness_item": "Dispatch / dossier route confirmed", "required_evidence": "Transporter listed + dossier template loaded", "nspl_status": "Closed", "owner": "NSPL Dispatch", "target_date": "2026-04-08", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 19, "readiness_item": "Site safety induction completed for new operators", "required_evidence": "EHS log signed; 4 operators inducted on 2026-04-07", "nspl_status": "Closed", "owner": "NSPL EHS", "target_date": "2026-04-07", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 20, "readiness_item": "Material handling — overhead crane SWL certs valid", "required_evidence": "Crane #2 (10T) cert valid till 2026-09-15", "nspl_status": "Closed", "owner": "NSPL Stores", "target_date": "2026-04-06", "readiness_item_closure_result": "Closed", "result_class": "closed" },
-    { "item_number": 21, "readiness_item": "Calibration sticker audit of all in-use measuring tools", "required_evidence": "Floor audit walkthrough by NSPL QC Mgr", "nspl_status": "Partial", "owner": "NSPL QC Mgr", "target_date": "2026-04-09", "readiness_item_closure_result": "Closed (Conditional)", "result_class": "partial" },
-    { "item_number": 22, "readiness_item": "Power supply / shop air pressure stable for SAW", "required_evidence": "Maintenance log + Bay 3 sub-station test", "nspl_status": "Open", "owner": "NSPL Maint", "target_date": "2026-04-10", "readiness_item_closure_result": "Open", "result_class": "open" }
+    {
+      "item_number": 1,
+      "readiness_item": "Approved drawing revision available at NSPL fabrication shop",
+      "required_evidence": "Stamped Rev3 drawing set + Drawing Master link",
+      "nspl_status": "Closed",
+      "owner": "NSPL Engg",
+      "target_date": "2026-04-02",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 2,
+      "readiness_item": "BOM uploaded and synced to BOQ / Part Mark Master",
+      "required_evidence": "DWG-J126-U2-P03-008 + BOQ sync confirmation",
+      "nspl_status": "Closed",
+      "owner": "NSPL Engg",
+      "target_date": "2026-04-02",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 3,
+      "readiness_item": "QAP / ITP active and held at point of use",
+      "required_evidence": "EPE-J126-QAP-001 Rev2 + ITP-005/006/012/016 Rev current",
+      "nspl_status": "Closed",
+      "owner": "NSPL DC",
+      "target_date": "2026-04-03",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 4,
+      "readiness_item": "Material lot (E350BR) accepted IMIR available",
+      "required_evidence": "IMIR-J126-005-0042 Accepted",
+      "nspl_status": "Closed",
+      "owner": "NSPL QA",
+      "target_date": "2026-04-09",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 5,
+      "readiness_item": "Measuring tools valid calibration",
+      "required_evidence": "CAL-NSPL-VRN-006 + CAL-NSPL-TAPE-002",
+      "nspl_status": "Closed",
+      "owner": "NSPL QC",
+      "target_date": "2026-04-03",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 6,
+      "readiness_item": "Welding machines valid calibration",
+      "required_evidence": "CAL-NSPL-SAW-001 + CAL-NSPL-FCAW-003",
+      "nspl_status": "Closed",
+      "owner": "NSPL Welding",
+      "target_date": "2026-04-04",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 7,
+      "readiness_item": "DFT instrument valid calibration",
+      "required_evidence": "CAL-NSPL-DFT-002 valid till 2026-10-04",
+      "nspl_status": "Closed",
+      "owner": "NSPL Coating",
+      "target_date": "2026-04-05",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 8,
+      "readiness_item": "Light meter for DPT valid calibration",
+      "required_evidence": "CAL-NSPL-LUX-004",
+      "nspl_status": "Closed",
+      "owner": "NSPL NDT",
+      "target_date": "2026-04-04",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 9,
+      "readiness_item": "SAW WPS / PQR / WPQ approved and current",
+      "required_evidence": "EPE-J126-WPS-SAW-01 Rev1 + PQR + S. Vasudevan WPQ",
+      "nspl_status": "Closed",
+      "owner": "NSPL Welding",
+      "target_date": "2026-04-04",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 10,
+      "readiness_item": "FCAW WPS / PQR / WPQ approved and current",
+      "required_evidence": "EPE-J126-WPS-FCAW-04 Rev2 + PQR + 4 welder WPQs",
+      "nspl_status": "Closed",
+      "owner": "NSPL Welding",
+      "target_date": "2026-04-04",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 11,
+      "readiness_item": "Welder continuity records up to date",
+      "required_evidence": "Continuity log signed for all 6 nominated welders",
+      "nspl_status": "Closed",
+      "owner": "NSPL Welding",
+      "target_date": "2026-04-05",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 12,
+      "readiness_item": "PT route — qualified personnel, approved consumables, dark room available",
+      "required_evidence": "ASNT Level II cert + Magnaflux SKL kit + light meter",
+      "nspl_status": "Closed",
+      "owner": "NSPL NDT",
+      "target_date": "2026-04-06",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 13,
+      "readiness_item": "QC manpower sufficient for shift coverage",
+      "required_evidence": "Roster for Bay 3 Bay 4 — both shifts",
+      "nspl_status": "Closed",
+      "owner": "NSPL QC Mgr",
+      "target_date": "2026-04-06",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 14,
+      "readiness_item": "Blasting / primer facility cleared and segregated",
+      "required_evidence": "Paint shop Bay 7 photo + RH log",
+      "nspl_status": "Closed",
+      "owner": "NSPL Coating",
+      "target_date": "2026-04-07",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 15,
+      "readiness_item": "Approved primer system batch on site",
+      "required_evidence": "Berger ZP-Epoxy Batch BJ-26-04-117",
+      "nspl_status": "Closed",
+      "owner": "NSPL Coating",
+      "target_date": "2026-04-07",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 16,
+      "readiness_item": "Approved final-coat system batch on site",
+      "required_evidence": "Berger PU Topcoat Shade RAL 7032 Batch BJ-26-04-128",
+      "nspl_status": "Closed",
+      "owner": "NSPL Coating",
+      "target_date": "2026-04-07",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 17,
+      "readiness_item": "Welding consumables — flux and wire",
+      "required_evidence": "Lincoln 761 flux + L-61 wire — lot certs available",
+      "nspl_status": "Partial",
+      "owner": "NSPL Stores",
+      "target_date": "2026-04-08",
+      "readiness_item_closure_result": "Closed (Conditional)",
+      "result_class": "partial"
+    },
+    {
+      "item_number": 18,
+      "readiness_item": "Dispatch / dossier route confirmed",
+      "required_evidence": "Transporter listed + dossier template loaded",
+      "nspl_status": "Closed",
+      "owner": "NSPL Dispatch",
+      "target_date": "2026-04-08",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 19,
+      "readiness_item": "Site safety induction completed for new operators",
+      "required_evidence": "EHS log signed; 4 operators inducted on 2026-04-07",
+      "nspl_status": "Closed",
+      "owner": "NSPL EHS",
+      "target_date": "2026-04-07",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 20,
+      "readiness_item": "Material handling — overhead crane SWL certs valid",
+      "required_evidence": "Crane #2 (10T) cert valid till 2026-09-15",
+      "nspl_status": "Closed",
+      "owner": "NSPL Stores",
+      "target_date": "2026-04-06",
+      "readiness_item_closure_result": "Closed",
+      "result_class": "closed"
+    },
+    {
+      "item_number": 21,
+      "readiness_item": "Calibration sticker audit of all in-use measuring tools",
+      "required_evidence": "Floor audit walkthrough by NSPL QC Mgr",
+      "nspl_status": "Partial",
+      "owner": "NSPL QC Mgr",
+      "target_date": "2026-04-09",
+      "readiness_item_closure_result": "Closed (Conditional)",
+      "result_class": "partial"
+    },
+    {
+      "item_number": 22,
+      "readiness_item": "Power supply / shop air pressure stable for SAW",
+      "required_evidence": "Maintenance log + Bay 3 sub-station test",
+      "nspl_status": "Open",
+      "owner": "NSPL Maint",
+      "target_date": "2026-04-10",
+      "readiness_item_closure_result": "Open",
+      "result_class": "open"
+    }
   ],
   "linked_drawing_register_status": "Accepted (DWG-J126-U2-P03-008 R3)",
   "linked_drawing_note": "Current revision feeds object-first dropdowns.",
@@ -73,5 +271,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-09",
-  "is_locked": false
+  "is_locked": false,
+  "iqra_approved": false
 }

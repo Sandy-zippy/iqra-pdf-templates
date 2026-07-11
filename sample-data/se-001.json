@@ -45,5 +45,6 @@
   "upload_drawing_issue_evidence_filename": "upload_drawing_issue_evidence_sample.pdf",
   "upload_drawing_issue_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_drawing_issue_evidence/view",
   "upload_drawing_issue_evidence_ocr_status": "OK",
-  "upload_drawing_issue_evidence_ocr_confidence": 96
+  "upload_drawing_issue_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

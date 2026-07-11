@@ -1,0 +1,41 @@
+{
+  "record_id": "NSPL-EPE-DOS-0004",
+  "dossier_id": "DOS-J126-PH3-RB4-009",
+  "dispatch_trip_id": "DSP-J126-017B-0011",
+  "project": "J-126 EPE Jinnaram PEB",
+  "phase": "Phase III",
+  "compilation_date": "2026-04-26",
+  "dossier_completion_percentage": "100",
+  "annexure_count": "12",
+  "dossier_readiness_status": "Ready for outward issue",
+  "is_locked": true,
+  "annexures": [
+    { "page_order": 1,  "annexure_id": "DOS-J126-PH3-RB4-009-A01", "source_form_code": "FRM-U2-005",  "source_record_id": "NSPL-EPE-IMIR-0001",  "annexure_type": "Form Snapshot PDF", "caption": "IMIR — Lot E350BR Heat HJ4-26-04-018 accepted" },
+    { "page_order": 2,  "annexure_id": "DOS-J126-PH3-RB4-009-A02", "source_form_code": "FRM-U2-006",  "source_record_id": "NSPL-EPE-TRV-0014",  "annexure_type": "Form Snapshot PDF", "caption": "Traveller — PM-C1 family from Lot 0042" },
+    { "page_order": 3,  "annexure_id": "DOS-J126-PH3-RB4-009-A03", "source_form_code": "FRM-U2-007A", "source_record_id": "NSPL-EPE-CUT-0027",  "annexure_type": "Form Snapshot PDF", "caption": "Cutting — Flange plates MC-C1 family" },
+    { "page_order": 4,  "annexure_id": "DOS-J126-PH3-RB4-009-A04", "source_form_code": "FRM-U2-007B", "source_record_id": "NSPL-EPE-DRL-P-0011","annexure_type": "Form Snapshot PDF", "caption": "Drilling (Parts) — Stiffener bolt holes" },
+    { "page_order": 5,  "annexure_id": "DOS-J126-PH3-RB4-009-A05", "source_form_code": "FRM-U2-008A", "source_record_id": "NSPL-EPE-FIT-S-0009","annexure_type": "Form Snapshot PDF", "caption": "Fit-up (SAW) — MC-C1 built-up fit-up" },
+    { "page_order": 6,  "annexure_id": "DOS-J126-PH3-RB4-009-A06", "source_form_code": "FRM-U2-012A", "source_record_id": "NSPL-EPE-WLD-S-0009","annexure_type": "Form Snapshot PDF", "caption": "Welding (SAW) — MC-C1 SAW welding" },
+    { "page_order": 7,  "annexure_id": "DOS-J126-PH3-RB4-009-A07", "source_form_code": "FRM-U2-012B", "source_record_id": "NSPL-EPE-WLD-F-0017","annexure_type": "Form Snapshot PDF", "caption": "Welding (FCAW) — MC-C1 16 stiffeners FCAW" },
+    { "page_order": 8,  "annexure_id": "DOS-J126-PH3-RB4-009-A08", "source_form_code": "FRM-U2-013",  "source_record_id": "NSPL-EPE-DPT-0003",  "annexure_type": "Form Snapshot PDF", "caption": "PT / DPT — MC-C1 16 stiffeners DPT ACCEPT" },
+    { "page_order": 9,  "annexure_id": "DOS-J126-PH3-RB4-009-A09", "source_form_code": "FRM-U2-015",  "source_record_id": "NSPL-EPE-FNL-0006",  "annexure_type": "Form Snapshot PDF", "caption": "Final Release — MC-C1 final release" },
+    { "page_order": 10, "annexure_id": "DOS-J126-PH3-RB4-009-A10", "source_form_code": "FRM-U2-016C", "source_record_id": "NSPL-EPE-FCT-0006",  "annexure_type": "Form Snapshot PDF", "caption": "Final Coat — MC-C1 PU topcoat RAL 7032" },
+    { "page_order": 11, "annexure_id": "DOS-J126-PH3-RB4-009-A11", "source_form_code": "FRM-U2-017A", "source_record_id": "NSPL-EPE-PKG-0009",  "annexure_type": "Form Snapshot PDF", "caption": "Marking / Packing — Bundle 3 columns 12.84 MT" },
+    { "page_order": 12, "annexure_id": "DOS-J126-PH3-RB4-009-A12", "source_form_code": "FRM-U2-017B", "source_record_id": "NSPL-EPE-DSP-0011",  "annexure_type": "Form Snapshot PDF", "caption": "Dispatch Clearance — Trip dispatch clearance" }
+  ],
+  "form_coverage": [
+    { "seq": 1,  "form_code": "FRM-U2-005",  "form_title": "IMIR (Incoming Material Inspection)", "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 2,  "form_code": "FRM-U2-006",  "form_title": "Traveller",                          "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 3,  "form_code": "FRM-U2-007A", "form_title": "Cutting",                            "accepted_count": 2, "group_status": "Present", "status_class": "present" },
+    { "seq": 4,  "form_code": "FRM-U2-007B", "form_title": "Drilling (Parts)",                   "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 5,  "form_code": "FRM-U2-008A", "form_title": "Fit-up (SAW)",                       "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 6,  "form_code": "FRM-U2-012A", "form_title": "Welding (SAW)",                      "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 7,  "form_code": "FRM-U2-012B", "form_title": "Welding (FCAW)",                     "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 8,  "form_code": "FRM-U2-013",  "form_title": "PT / DPT",                           "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 9,  "form_code": "FRM-U2-014",  "form_title": "Repair Closure",                     "accepted_count": 0, "group_status": "Not Applicable", "status_class": "present" },
+    { "seq": 10, "form_code": "FRM-U2-015",  "form_title": "Final Release",                      "accepted_count": 3, "group_status": "Present", "status_class": "present" },
+    { "seq": 11, "form_code": "FRM-U2-016A", "form_title": "Blasting / Primer / Coat",           "accepted_count": 3, "group_status": "Present", "status_class": "present" },
+    { "seq": 12, "form_code": "FRM-U2-017A", "form_title": "Marking / Packing",                  "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 13, "form_code": "FRM-U2-017B", "form_title": "Dispatch Clearance",                 "accepted_count": 1, "group_status": "Present", "status_class": "present" }
+  ]
+}

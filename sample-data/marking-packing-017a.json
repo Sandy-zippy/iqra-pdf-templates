@@ -13,9 +13,27 @@
   "erection_area_sequence": "Phase III - Roof Bay 4 - Crane Column Set A (erection week 18)",
   "source_mode": "Bundle assembly post-coating",
   "included_members": [
-    { "seq": 1, "member_mark": "MC-C1", "finalcoat_ref": "FCT-016C-0006", "shade_label": "RAL 7032 Pebble Grey", "member_weight_mt": "4.28" },
-    { "seq": 2, "member_mark": "MC-C2", "finalcoat_ref": "FCT-016C-0007", "shade_label": "RAL 7032 Pebble Grey", "member_weight_mt": "4.28" },
-    { "seq": 3, "member_mark": "MC-C3", "finalcoat_ref": "FCT-016C-0008", "shade_label": "RAL 7032 Pebble Grey", "member_weight_mt": "4.28" }
+    {
+      "seq": 1,
+      "member_mark": "MC-C1",
+      "finalcoat_ref": "FCT-016C-0006",
+      "shade_label": "RAL 7032 Pebble Grey",
+      "member_weight_mt": "4.28"
+    },
+    {
+      "seq": 2,
+      "member_mark": "MC-C2",
+      "finalcoat_ref": "FCT-016C-0007",
+      "shade_label": "RAL 7032 Pebble Grey",
+      "member_weight_mt": "4.28"
+    },
+    {
+      "seq": 3,
+      "member_mark": "MC-C3",
+      "finalcoat_ref": "FCT-016C-0008",
+      "shade_label": "RAL 7032 Pebble Grey",
+      "member_weight_mt": "4.28"
+    }
   ],
   "surface_condition_criteria": "Coating intact; no fresh damage; no fingermarks",
   "surface_condition_obs": "All 3 columns inspected; coating intact; no transit damage; no fingermarks",
@@ -30,10 +48,38 @@
   "packing_protection_status": "Pass",
   "packing_class": "result-pass",
   "photos": [
-    { "title": "Bundle PKG-J126-PH3-RB4-009 — full view", "filename": "pkg_0009_bundle.jpg", "captured_at": "2026-04-26 11:18 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "3 crane columns bundled on hardwood dunnage." },
-    { "title": "Member marking (MC-C1 end stamp + sticker)", "filename": "pkg_0009_marking.jpg", "captured_at": "2026-04-26 11:24 IST", "ocr_confidence": "88", "ocr_status": "High", "note": "Hard stamp + project sticker both visible." },
-    { "title": "Edge protectors and steel banding", "filename": "pkg_0009_bands.jpg", "captured_at": "2026-04-26 11:32 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "PVC edge protectors under steel bands at 4 lifting points." },
-    { "title": "Final coat condition close-up", "filename": "pkg_0009_finish.jpg", "captured_at": "2026-04-26 11:38 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "RAL 7032 finish intact; no damage from staging." }
+    {
+      "title": "Bundle PKG-J126-PH3-RB4-009 — full view",
+      "filename": "pkg_0009_bundle.jpg",
+      "captured_at": "2026-04-26 11:18 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "3 crane columns bundled on hardwood dunnage."
+    },
+    {
+      "title": "Member marking (MC-C1 end stamp + sticker)",
+      "filename": "pkg_0009_marking.jpg",
+      "captured_at": "2026-04-26 11:24 IST",
+      "ocr_confidence": "88",
+      "ocr_status": "High",
+      "note": "Hard stamp + project sticker both visible."
+    },
+    {
+      "title": "Edge protectors and steel banding",
+      "filename": "pkg_0009_bands.jpg",
+      "captured_at": "2026-04-26 11:32 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "PVC edge protectors under steel bands at 4 lifting points."
+    },
+    {
+      "title": "Final coat condition close-up",
+      "filename": "pkg_0009_finish.jpg",
+      "captured_at": "2026-04-26 11:38 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "RAL 7032 finish intact; no damage from staging."
+    }
   ],
   "upstream_acceptance_pack": "All 3 members FCT-016C ACCEPT, surface condition ACCEPT.",
   "auto_readiness_pack": "All gates green; ready for FRM-U2-017B dispatch clearance.",
@@ -49,5 +95,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-26",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

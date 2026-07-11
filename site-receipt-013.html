@@ -125,22 +125,22 @@
 <div class="signoff">
   <div class="box">
     <div class="role">NSPL Site QC &mdash; Checked &amp; Signed</div>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="name">{{nspl_name}}</div>
-    <div class="date">{{nspl_role}} &middot; {{nspl_signed_date}}</div>
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
+    <div class="name">{{nspl_responsible_person}}{{^nspl_responsible_person}}{{maker_name}}{{/nspl_responsible_person}}</div>
+    <div class="date">{{nspl_role}} &middot; {{submission_date}}</div>
   </div>
-  {{#iqra_signed_date}}
+  {{#iqra_approved}}
   <div class="box">
     <div class="role">IQRA &mdash; Verified &amp; Signed</div>
-    <div class="name">{{iqra_name}}</div>
-    <div class="date">{{iqra_role}} &middot; {{iqra_signed_date}}</div>
+    <div class="name">{{checker_name}}{{^checker_name}}{{iqra_reviewer}}{{/checker_name}}</div>
+    <div class="date">{{iqra_role}} &middot; {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
-  {{^iqra_signed_date}}
+  {{/iqra_approved}}
+  {{^iqra_approved}}
   <div class="pending-block">
     Pending IQRA approval &mdash; not for outward issue.
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 </div>
 
 <div class="footer">

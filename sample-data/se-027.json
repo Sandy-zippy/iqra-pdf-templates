@@ -45,5 +45,6 @@
   "upload_roof_sheeting_evidence_filename": "upload_roof_sheeting_evidence_sample.pdf",
   "upload_roof_sheeting_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_roof_sheeting_evidence/view",
   "upload_roof_sheeting_evidence_ocr_status": "OK",
-  "upload_roof_sheeting_evidence_ocr_confidence": 96
+  "upload_roof_sheeting_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

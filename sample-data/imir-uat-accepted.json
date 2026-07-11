@@ -1,0 +1,170 @@
+{
+  "extracted_supplier_make": "SAIL",
+  "nspl_confirmation_extracted_data": true,
+  "mtc_tc_upload_ocr_status": "High",
+  "grade_standard_match_status": "Review needed",
+  "project_id": [
+    "recPOptMRzI9MiwrO"
+  ],
+  "tc_dc_mismatches_json": "[{\"field\":\"standard_grade\",\"mtc\":\"IS 2062 E350BR 2021 RA 2021\",\"nspl_confirmed\":\"IS 2062 E350 BR\",\"severity\":\"High\"},{\"field\":\"supplier_make\",\"mtc\":\"SAIL\",\"nspl_confirmed\":\"SAIL Bhilai\",\"severity\":\"Medium\"},{\"field\":\"quantity_mt\",\"extracted\":4.75,\"nspl_received\":24.5,\"severity\":\"High\"}]",
+  "physical_condition_photo_ocr_status": "High",
+  "mtc_tc_upload_ocr_confidence": 95,
+  "invoice_challan_upload_ocr_status": "High",
+  "submission_date": "2026-07-07T10:19:11.000Z",
+  "quantity_accepted": 24.5,
+  "form_version": "R1",
+  "extracted_mtc_tc_no_date": "890908420 (2023-01-11)",
+  "FRM-U2-006_Traveller": [
+    "reczCqE7GA7T71huc"
+  ],
+  "material_family": "steel_plate",
+  "quantity_balance_for_consumption": 24.5,
+  "photo_heat_tc_heat_match_status": "Not visible",
+  "source_mode": "UAT Test",
+  "tc_dc_crosscheck_status": "Fail",
+  "physical_condition_photo_ocr_confidence": 90,
+  "extracted_heat_lot_batch_no": "3448534/6",
+  "tc_dc_crosscheck_summary": "Crosscheck FAIL \u2014 3 mismatch(es): [{\"field\":\"standard_grade\",\"mtc\":\"IS 2062 E350BR 2021 RA 2021\",\"nspl_confirmed\":\"IS 2062 E350 BR\",\"severity\":\"High\"},{\"field\":\"supplier_make\",\"mtc\":\"SAIL\",\"nspl_confirmed\":\"SAIL Bhilai\",\"severity\":\"Medium\"},{\"field\":\"quantity_mt\",\"extracted\":4.75,\"nspl_received\":24.5,\"severity\":\"High\"}]",
+  "material_description": "IS 2062 E350BR Plate SAIL Bhilai (UAT E2E) ",
+  "is_locked": true,
+  "extracted_additional_heats_json": "[{\"heat_number\":\"3448534/6\",\"plate_no\":\"3450648/1\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450648/2\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450647/1\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450647/2\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450646/1\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450646/2\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450645/1\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450645/2\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450644/1\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450644/2\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450643/1\",\"size\":\"16x2500x12000mm\"},{\"heat_number\":\"408768\",\"plate_no\":\"3450643/2\",\"size\":\"16x2500x12000mm\"}]",
+  "tc_dc_crosscheck_run_at": "2026-07-07T10:30:59.701Z",
+  "nspl_remarks": "UAT E2E full-chain test \u2014 real MTC 00003091.",
+  "invoice_challan_upload_ocr_confidence": 95,
+  "physical_condition_photo": [
+    {
+      "id": "att1gz84uzcsf388U",
+      "width": 900,
+      "height": 1600,
+      "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/6TVsxwNYWsOF2rPB8O6uLw/eeuAr4XqJ4qU7ho3cPgcin3cCQvPpz8-XK_FwwJy5R8HulNl5iR98PBMMLHAZNP9d9wyd-Q4y2XSnBP-TDIkrEmYqaKngzeW6Wfu1Po-DmiravKQVIpjIWI6Z5oFFvq5_7gFrVDNyVNoYRGUjBdWEKadSsZUF7qduwUwuZwVkbg/22_vLEuWeYZRAruwos9_ElbR-TymbvihHER07fxxdCI",
+      "filename": "set1-plate-photo-2.jpg",
+      "size": 261072,
+      "type": "image/jpeg",
+      "thumbnails": {
+        "small": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/ovR2igMBuiqIbl5ALtiOfw/E3VFDW_6i45gpp2YuntApXG2zxpbHCa5zFKcwh__vOpq05DBW-U3gNUkAEJu27RxzJcgIQILwUuov5YkfLr90oT2zsYgdl7oc_x6zJvwHaBrc0mVajwpwhRLJs2avgl1NlACtzwlTTYVuK5yLD5OBw/q2ESTtvVdLxM8b1zt760FeJ1PZeDOICWkvdB9BGwzVk",
+          "width": 20,
+          "height": 35
+        },
+        "large": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/O8ODZRg97dgNG5Tmfips1Q/qXns2TN_owpYErNDzHVFRQakC-aEDfilEPSiqcYms9qZIDElvc7aUsUs3di9BAwotXE_HoqQFbsKzxBeuOBoourLAFcIUKfQ6TeIBLES-myOKozkHxkFsDoo6zatbDzKcdySVEN8Ljm8fOozzAxa4w/CsBrLlEmoDrLAmzx1SS6sCv2vZRLUZ7aG1tqu92FBvk",
+          "width": 512,
+          "height": 910
+        },
+        "full": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/eYwv-cPbZLkx3eY1qErH8Q/AJZ67j9Lb8JU42PJDNS0QpKFXpITroKX8SqJMKfgOoe3dPKull24Euclm5tQ2rzWBFMbzXemyCQwGyECrLSbyk3zlP1l9G0-tYSjC_KoSvDJtivu7jWiYDfVWChE_gjEfISgoWNzdemEPGJRrL_Frg/bb9cIMfUCPUQKj1a9DJ16CPtp1xqfQbG7G8m9uEmFgA",
+          "width": 900,
+          "height": 1600
+        }
+      }
+    }
+  ],
+  "material_identification_photo_ocr_confidence": 90,
+  "storage_location": "Bay UAT-E2E",
+  "size_thickness": "12mm",
+  "po_purchase_reference": "PO 2530014",
+  "backfill_flag": "No",
+  "extracted_size_thickness": "16x2500x12000mm",
+  "extracted_challan_invoice_ref": "27892",
+  "tc_dc_warnings_json": "[\"Photo heat not extracted (or photo absent) \u2014 Material Identity Conflict cannot be auto-checked\",\"MTC certificate (890908420) not referenced in invoice/challan (27892) \u2014 verify manually\",\"No material_control_link on IMIR - approved make / grade not auto-checked\"]",
+  "material_identification_photo_ocr_status": "High",
+  "heat_lot_batch_no": "3448534/6",
+  "invoice_challan_upload": [
+    {
+      "id": "attPmR1SNa0xaykt5",
+      "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/10wWKEb_KJh9oQPHMFT_wQ/j6Avra0LZKoJMTeoKpBPwP4-w6XE0iJxvr-ql98oQmxI2VWkOCwRQAsre6wXw1tw2IJlw6BVZ9XP8X0Zu4JN7zeOwWf0AuVIZ67zljModY5EcQICItyN4L6ZvHHTwPJ8RYnoYSOfSVxJJ8Ai4sb20obHNMkuE5YCmXTpQuHx19Q82ifzNFPjRTkRC6xjyAMj/VPapRtV2Zo2hMzqlhmt-XP7p88IGu_Vh3m8A6TKSmG8",
+      "filename": "set1-bhilai-invoice.pdf",
+      "size": 2287593,
+      "type": "application/pdf",
+      "thumbnails": {
+        "small": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/Hq2nsdc-GnZGULi9Ai-q0w/o-R8GRmiNHclREa48hwyQd-cl5NNRoz_rUa18LA6lK1KBpSKX0equNXZfDu2-pWo9QbKag0-g76oYfnh8vRmz6G4HxaFQvg0N53FF73W2vMexghhpDMdJnjAD1iqwheUgJxw6t9g1x8J87s3a8yLBw/rcI83OxedmnSWQjdsOr2z5I8jBAnPcn6lp1cCLW13j8",
+          "width": 27,
+          "height": 36
+        },
+        "large": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/yThlPgB7FjFRrYbXgwrS4Q/e01Sh7_2_XBIf8As-G1GawUo-WpVF5u5etx7_NDGl6e_n_aH9-mlUI_PADcp4VYR33OrtzyAq-6cmzmAHH4SxPYkj-0iwQhuV8Bc3qQhRyZbRZCwlEm3tooZZ5uyntFo6N1ZncXDkYdleBzxmnObJg/oB1AUpdg76itMDCTtBOLDp1qCKetQ0wXRrp8VWghBgM",
+          "width": 512,
+          "height": 689
+        }
+      }
+    }
+  ],
+  "record_id": "UAT-IMIR-20260707-154910",
+  "standard_grade": "IS 2062 E350 BR",
+  "iqra_review_date": "2026-07-07",
+  "extracted_quantity_from_challan": 4.75,
+  "report_issue_date": "2026-07-07",
+  "approved_make_match_status": "Review needed",
+  "lane": "Unit II",
+  "locked_at": "2026-07-07T10:43:54.139Z",
+  "supplier_make": "SAIL Bhilai",
+  "iqra_review_remarks": "J-126 plate marking detected: J-126 10X1260X11,200 5 nos | OCR for invoice_challan_upload (conf=95) skipped \u2014 existing value has higher confidence (95). Dropped: extracted_challan_invoice_ref, extracted_quantity_from_challan | OCR for physical_condition_photo (conf=90) skipped \u2014 existing value has higher confidence (90). Dropped: iqra_review_remarks | OCR for material_identification_photo (conf=90) skipped \u2014 existing value has higher confidence (90). Dropped: iqra_review_remarks | OCR for mtc_tc_upload (conf=95) skipped \u2014 existing value has higher confidence (95). Dropped: extracted_heat_lot_batch_no, extracted_standard_grade, extracted_supplier_make, extracted_mtc_tc_no_date, extracted_size_thickness, extracted_additional_heats_json",
+  "imir_lot_id": "NSPL-EPE-LOT-xfmD2TMD",
+  "material_condition_status": "Accepted",
+  "extracted_standard_grade": "IS 2062 E350BR 2021 RA 2021",
+  "activity_date": "2026-07-07",
+  "invoice_challan_ref": "27892",
+  "pdf_url": "https://drive.google.com/file/d/16dANbxkvJza5pZ-yJfuDW66zXddRkhSk/view?usp=drivesdk",
+  "Material_Lot_Register": [
+    "recNCH0yW1crAJRJN",
+    "reckOPP3g1hK1DwZl"
+  ],
+  "material_identification_photo": [
+    {
+      "id": "attbDPuitSPkOEdGe",
+      "width": 900,
+      "height": 1600,
+      "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/gJldmzAY1RpHoOhrmwPnRQ/aa8940XXQ9WOrn4yd2PaOTGNcMnlnwphSfy8_69GxPBbiVyjzuxRTeundEUJHKmwxIKfT5yskuUdfTma9BTv6kctXkpV6LR8unlNO3TSqU31sh0ldOxmlwcoeYKNTCMujRgPoaWsDyycdA6BpyMHkeb3-nHbFbTQCHuO6p70SPc/iMvR-Bj-ye3rZpmBdKjGE7QhqojPl69rRALsjKGKLCA",
+      "filename": "set1-plate-photo-1.jpg",
+      "size": 279663,
+      "type": "image/jpeg",
+      "thumbnails": {
+        "small": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/jbTStDaFaUw55l2nZx1eYA/GvfMYeysH5vH4m_vvX-G9AvUkeyBoBn0qGrrKeK4gz_3kUWgjcRXZ6BHT_uJ5Dam3U9Ymd_3CmFEwEXjma9Cu-oGgL7c8JUMYdTNdOHT_53EjcUYxtHPux7cm27fxG7IDDXsu6U5ndTsQrm8gEVbKA/nb8gX-D7BE243QZL2GEBRph5L6FGdpdqG0qoX05O5fA",
+          "width": 20,
+          "height": 35
+        },
+        "large": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/dkMemOGej3VmpOz43AaoQA/hDL9X0McBBA4v2UTNFUIwbUdY6nvMQcB17koAjjI8cOKlNMSrZU3FffLowQR9BXQzbtLUEpflCj2xS1tqdYf87adGpSALBZnlwM1wcrvJt7jqoYjFeCpocB8Y4vkIQuVPp6Ap90ZlIBOpk5hX8JEbQ/LUrURvXnnRiEN_AcwtlXbxPT3tCZ8m1JOQrCNpgrikA",
+          "width": 512,
+          "height": 910
+        },
+        "full": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/dqObnWKW-STfo-BCxn35gw/p6sLVwJB7Yg5cvOjXswPnNxyTmvPRgWm7Fvx0Iv87Fuh4V4L3gAA5467fXft0EUg8Pi7v-Y7crePciEPG0RgwTogDxzkVKQMOeIDh_4sasmIG50SpcS-Iq2WEVolN0UP0YA58xdblmSQdOEwlu-T3A/W8BtsYc-5Zy-Xiq-p7mlYnWwEb_kEW_FD-BPdpuFE0Y",
+          "width": 900,
+          "height": 1600
+        }
+      }
+    }
+  ],
+  "iqra_approved": "true",
+  "tc_dc_mismatch_count": 3,
+  "iqra_review_status": "Accepted",
+  "quantity_received": 24.5,
+  "auto_record_id": "NSPL-EPE-U2-005-202607071019-2TMD",
+  "mtc_tc_upload": [
+    {
+      "id": "attCuQUw1Tre2l5Ql",
+      "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/e_AEwP2J4Zj6fjq4GKHWfw/8MLtf43sZLKxxcg9zsjceL4-qlkqSLLtuuFGujcn-MnaAdRyIXJMO0LQKi-Jmr_--iT2CIJhvWnYC3o90XH7BdUpNnB4gxXJmVuvG7qxLCCDdhcXuPua8qRtmcFO-9ETt29nd4U7gVGsHsYmTVWKqq21J3vEm6rm0ZJmxUJll24/yij8WlbBzJsFgcMz2ssC5qhJLucBf6TPo0CFg2TM6fU",
+      "filename": "set1-bhilai-mtc.pdf",
+      "size": 2873929,
+      "type": "application/pdf",
+      "thumbnails": {
+        "small": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/kDB3GN7lQ5x0-dE8xKvBWw/UDy1b5UE_bH_9hxPmN9vlhLX1ViDDHk-yY11mOSIdXPlBn5yE6V6gcIcCVNCibNHWm39czkccGOS7twfnPD6sVMCEW7BgYZoXMnhCI1K0m041btsfKVpzS2_cRJPiZ7cRGHUWiR4OTDI0TDyzuLobQ/Ge7WX3e-gVP6RZkuFU1TFoZQTIv_GCtsZj-1Biy_kdQ",
+          "width": 26,
+          "height": 35
+        },
+        "large": {
+          "url": "https://v5.airtableusercontent.com/v3/u/55/55/1783440000000/x6i-WIP4i3K_5mQr2u2SFg/Y4nZljV133JzQaSSbE7NKz2pHfuiDnJ0fzpFXrERYzKTkpb8basXNN4-YpQvlgbU6VdncZFkfk_R35lDiyMZqcDdTZEtz32_DrE2sl7wTSlwYEHjaQ9GXW5HNh3KRdK-CavqH-S1dPak06V9bGXSfg/XRXShxjbBEhRd0H4VNN2rA4XiE2_KGERtstfdwnBjoI",
+          "width": 512,
+          "height": 698
+        }
+      }
+    }
+  ],
+  "quantity_hold": 0,
+  "final_material_lot_release_status": "Hold - Identity Conflict",
+  "report_no": "UAT-IMIR-20260707-154910"
+}

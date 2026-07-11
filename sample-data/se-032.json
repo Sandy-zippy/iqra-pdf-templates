@@ -45,5 +45,6 @@
   "upload_fastener_sealant_evidence_filename": "upload_fastener_sealant_evidence_sample.pdf",
   "upload_fastener_sealant_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_fastener_sealant_evidence/view",
   "upload_fastener_sealant_evidence_ocr_status": "OK",
-  "upload_fastener_sealant_evidence_ocr_confidence": 96
+  "upload_fastener_sealant_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

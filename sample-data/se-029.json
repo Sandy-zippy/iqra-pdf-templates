@@ -45,5 +45,6 @@
   "upload_installation_evidence_filename": "upload_installation_evidence_sample.pdf",
   "upload_installation_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_installation_evidence/view",
   "upload_installation_evidence_ocr_status": "OK",
-  "upload_installation_evidence_ocr_confidence": 96
+  "upload_installation_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

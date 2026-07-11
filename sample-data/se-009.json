@@ -42,5 +42,6 @@
   "upload_equipment_tool_tackle_evidence_filename": "upload_equipment_tool_tackle_evidence_sample.pdf",
   "upload_equipment_tool_tackle_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_equipment_tool_tackle_evidence/view",
   "upload_equipment_tool_tackle_evidence_ocr_status": "OK",
-  "upload_equipment_tool_tackle_evidence_ocr_confidence": 96
+  "upload_equipment_tool_tackle_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

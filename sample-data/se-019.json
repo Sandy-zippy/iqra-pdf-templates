@@ -43,5 +43,6 @@
   "upload_bracing_tie_member_evidence_filename": "upload_bracing_tie_member_evidence_sample.pdf",
   "upload_bracing_tie_member_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_bracing_tie_member_evidence/view",
   "upload_bracing_tie_member_evidence_ocr_status": "OK",
-  "upload_bracing_tie_member_evidence_ocr_confidence": 96
+  "upload_bracing_tie_member_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

@@ -22,10 +22,38 @@
   "repair_welder_ref": "M. Pavan Kumar (NSPL Welder 2, original welder, WPQ valid)",
   "repair_completion_note": "Defect ground out to depth 2.8mm; sound metal confirmed by MT; rebuild with FCAW 2 passes; final dress with grinder; surface ready for re-DPT.",
   "repair_photos": [
-    { "title": "Pre-repair: marked defect area (S-07 east face)", "filename": "rpr_0002_pre.jpg", "captured_at": "2026-04-11 10:14 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Linear indication 4.2mm length highlighted with marker." },
-    { "title": "Excavation complete (2.8mm deep, 35mm long)", "filename": "rpr_0002_excavate.jpg", "captured_at": "2026-04-11 10:48 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Defect ground out; cavity profile smooth and clean." },
-    { "title": "MT confirmation — sound metal", "filename": "rpr_0002_mt.jpg", "captured_at": "2026-04-11 11:08 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Magnetic particle test in cavity — no residual indications." },
-    { "title": "Post-rebuild and final dress", "filename": "rpr_0002_post.jpg", "captured_at": "2026-04-11 13:22 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Cavity filled with FCAW (2 passes), final profile dressed flush." }
+    {
+      "title": "Pre-repair: marked defect area (S-07 east face)",
+      "filename": "rpr_0002_pre.jpg",
+      "captured_at": "2026-04-11 10:14 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Linear indication 4.2mm length highlighted with marker."
+    },
+    {
+      "title": "Excavation complete (2.8mm deep, 35mm long)",
+      "filename": "rpr_0002_excavate.jpg",
+      "captured_at": "2026-04-11 10:48 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Defect ground out; cavity profile smooth and clean."
+    },
+    {
+      "title": "MT confirmation — sound metal",
+      "filename": "rpr_0002_mt.jpg",
+      "captured_at": "2026-04-11 11:08 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Magnetic particle test in cavity — no residual indications."
+    },
+    {
+      "title": "Post-rebuild and final dress",
+      "filename": "rpr_0002_post.jpg",
+      "captured_at": "2026-04-11 13:22 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Cavity filled with FCAW (2 passes), final profile dressed flush."
+    }
   ],
   "auto_repair_trigger_validation_pack": "Parent 013 REJECT verified, repair WPS = original WPS (no qualification change), welder WPQ valid, machine cal valid.",
   "re_dpt_required_status": "Required",
@@ -47,5 +75,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-11",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
+import { hydrateLoops } from './hydrate-loops.mjs';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const PUPPETEER_PATH = '/Users/sandy/Downloads/Claude Code/client-data/pilani-group/pitch-deck/node_modules/puppeteer';
@@ -149,6 +150,7 @@ const puppeteer = (await import(path.join(PUPPETEER_PATH, 'lib', 'esm', 'puppete
 
 const browser = await puppeteer.launch({
   headless: 'new',
+  ...(process.env.PUPPETEER_EXECUTABLE_PATH ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH } : {}), // ponytail: pin cached Chrome-for-Testing when bundled ver missing
   args: ['--no-sandbox', '--disable-setuid-sandbox'],
 });
 
@@ -163,6 +165,7 @@ try {
 
     const tpl = fs.readFileSync(tplPath, 'utf8');
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    hydrateLoops(data, tpl);
     const html = render(tpl, data);
 
     // also drop the rendered HTML for visual inspection

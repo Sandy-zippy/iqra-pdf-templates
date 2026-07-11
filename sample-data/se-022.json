@@ -43,5 +43,6 @@
   "upload_temporary_stability_sequence_evidence_filename": "upload_temporary_stability_sequence_evidence_sample.pdf",
   "upload_temporary_stability_sequence_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_temporary_stability_sequence_evidence/view",
   "upload_temporary_stability_sequence_evidence_ocr_status": "OK",
-  "upload_temporary_stability_sequence_evidence_ocr_confidence": 96
+  "upload_temporary_stability_sequence_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

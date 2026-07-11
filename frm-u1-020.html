@@ -151,28 +151,28 @@
 <div class="signoff">
   <div class="box">
     <div class="role">NSPL — Maker</div>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="name">{{nspl_name}}</div>
+    {{#submission_timestamp}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_timestamp}}
+    {{#submission_timestamp}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_timestamp}}
+    <div class="name">{{nspl_responsible_person}}</div>
     <div class="date">{{nspl_role}}{{^nspl_role}}NSPL Unit I{{/nspl_role}}</div>
-    <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{nspl_signed_date}}</div>
+    <div class="date">{{#nspl_mobile}}Mobile: {{nspl_mobile}} &middot; {{/nspl_mobile}}Signed: {{submission_timestamp}}</div>
   </div>
-  {{#iqra_signed_date}}
+  {{#iqra_approved}}
   <div class="box">
     <div class="role">IQRA — Checker</div>
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="name">{{iqra_name}}</div>
+    <div class="name">{{iqra_reviewer}}</div>
     <div class="date">{{iqra_role}}{{^iqra_role}}IQRA{{/iqra_role}}</div>
-    <div class="date">Signed: {{iqra_signed_date}}</div>
+    <div class="date">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
-  {{^iqra_signed_date}}
+  {{/iqra_approved}}
+  {{^iqra_approved}}
   <div class="pending-block">
     Pending IQRA approval — record not yet locked for outward issue.
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 </div>
 
 <div class="footer">

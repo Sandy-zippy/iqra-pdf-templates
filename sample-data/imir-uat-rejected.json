@@ -1,0 +1,18 @@
+{
+  "submission_date": "2026-07-07T13:16:16.000Z",
+  "quantity_accepted": 0,
+  "source_mode": "UAT Test",
+  "material_description": "Plate, HR, IS 2062 E350BR, 10mm (UAT reject-path proof)",
+  "heat_lot_batch_no": "UATREJ-HEAT-0001",
+  "record_id": "UAT-IMIR-REJECT-20260707",
+  "standard_grade": "IS 2062 E350 BR",
+  "iqra_review_remarks": "UAT render-proof: rejected record must show Pending IQRA approval stamp",
+  "activity_date": "2026-07-07",
+  "iqra_review_status": "Return",
+  "quantity_received": 20,
+  "auto_record_id": "NSPL-EPE-U2-005-202607071316-tf2s",
+  "quantity_hold": 20,
+  "iqra_approved": "",
+  "is_locked": false,
+  "report_no": "UAT-IMIR-REJECT-20260707"
+}

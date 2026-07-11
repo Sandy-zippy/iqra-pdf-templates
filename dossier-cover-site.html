@@ -182,7 +182,7 @@
     {{#nspl_acknowledgement_remarks}}<div class="small" style="margin-top:6px;">{{nspl_acknowledgement_remarks}}</div>{{/nspl_acknowledgement_remarks}}
   </div>
 
-  {{#iqra_review_date}}
+  {{#iqra_approved}}
   <div class="sigbox">
     <h4>IQRA &mdash; Reviewed &amp; Approved</h4>
     {{#is_locked}}<img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">{{/is_locked}}
@@ -192,11 +192,11 @@
     <div class="sigdate">Review Status: {{final_iqra_compilation_review_status}} &middot; {{iqra_review_date}}</div>
     {{#iqra_compilation_remarks}}<div class="small" style="margin-top:6px;">{{iqra_compilation_remarks}}</div>{{/iqra_compilation_remarks}}
   </div>
-  {{/iqra_review_date}}
+  {{/iqra_approved}}
 
-  {{^iqra_review_date}}
+  {{^iqra_approved}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_review_date}}
+  {{/iqra_approved}}
 </section>
 
 <div class="doc-footer">

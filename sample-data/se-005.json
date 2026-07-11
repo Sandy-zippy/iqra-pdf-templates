@@ -42,5 +42,6 @@
   "upload_contractor_provider_documents_filename": "upload_contractor_provider_documents_sample.pdf",
   "upload_contractor_provider_documents_drive_url": "https://drive.google.com/file/d/sample-upload_contractor_provider_documents/view",
   "upload_contractor_provider_documents_ocr_status": "OK",
-  "upload_contractor_provider_documents_ocr_confidence": 96
+  "upload_contractor_provider_documents_ocr_confidence": 96,
+  "iqra_approved": true
 }

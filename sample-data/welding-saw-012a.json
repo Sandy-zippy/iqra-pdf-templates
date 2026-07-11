@@ -38,10 +38,38 @@
   "bead_status": "Pass",
   "bead_class": "result-pass",
   "photos": [
-    { "title": "SAW twin-head setup on MC-C1", "filename": "wld_0009s_setup.jpg", "captured_at": "2026-04-16 08:55 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Twin-head Lincoln DC1000 positioned at midpoint." },
-    { "title": "Mid-run weld pool", "filename": "wld_0009s_pool.jpg", "captured_at": "2026-04-16 10:14 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Stable pool, flux coverage even." },
-    { "title": "Completed bilateral fillet (full length)", "filename": "wld_0009s_complete.jpg", "captured_at": "2026-04-16 12:30 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Both sides complete, no visible defects." },
-    { "title": "Leg length gauge check", "filename": "wld_0009s_leg.jpg", "captured_at": "2026-04-16 12:42 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Welder's fillet gauge confirms 6mm leg length." }
+    {
+      "title": "SAW twin-head setup on MC-C1",
+      "filename": "wld_0009s_setup.jpg",
+      "captured_at": "2026-04-16 08:55 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Twin-head Lincoln DC1000 positioned at midpoint."
+    },
+    {
+      "title": "Mid-run weld pool",
+      "filename": "wld_0009s_pool.jpg",
+      "captured_at": "2026-04-16 10:14 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Stable pool, flux coverage even."
+    },
+    {
+      "title": "Completed bilateral fillet (full length)",
+      "filename": "wld_0009s_complete.jpg",
+      "captured_at": "2026-04-16 12:30 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Both sides complete, no visible defects."
+    },
+    {
+      "title": "Leg length gauge check",
+      "filename": "wld_0009s_leg.jpg",
+      "captured_at": "2026-04-16 12:42 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Welder's fillet gauge confirms 6mm leg length."
+    }
   ],
   "upstream_acceptance_pack": "FIT-008A-0009 ACCEPT, WPS-SAW-01 R1 active, S. Vasudevan WPQ valid, CAL-SAW-001 valid.",
   "saw_welding_readiness_pack": "All upstream gates green; production released.",
@@ -57,5 +85,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-16",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

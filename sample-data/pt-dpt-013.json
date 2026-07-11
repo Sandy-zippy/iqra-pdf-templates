@@ -28,10 +28,38 @@
   "linked_014_repair_ref": "—",
   "dpt_clearance_to_007c": "Cleared — DPT acceptance feeds gate to FRM-U2-007C post-weld drilling for MC-C1 base plate anchor holes.",
   "photos": [
-    { "title": "Penetrant application (Magnaflux SKL-WP2)", "filename": "dpt_0003_apply.jpg", "captured_at": "2026-04-20 09:42 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Red dye penetrant applied to stiffener S-01 weld faces both sides." },
-    { "title": "Excess penetrant wipe & developer", "filename": "dpt_0003_developer.jpg", "captured_at": "2026-04-20 09:58 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "White developer SKD-S2 applied; 10 min dwell." },
-    { "title": "Indication review — stiffener S-08 (cosmetic spot)", "filename": "dpt_0003_s08.jpg", "captured_at": "2026-04-20 10:14 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "One sub-1mm spot, not rejectable per ASME V Art 6." },
-    { "title": "Light meter reading (1240 lux)", "filename": "dpt_0003_lux.jpg", "captured_at": "2026-04-20 09:38 IST", "ocr_confidence": "82", "ocr_status": "High", "note": "Extech LT45 confirms ambient 1240 lux at inspection bench, above 1000 lux minimum." }
+    {
+      "title": "Penetrant application (Magnaflux SKL-WP2)",
+      "filename": "dpt_0003_apply.jpg",
+      "captured_at": "2026-04-20 09:42 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Red dye penetrant applied to stiffener S-01 weld faces both sides."
+    },
+    {
+      "title": "Excess penetrant wipe & developer",
+      "filename": "dpt_0003_developer.jpg",
+      "captured_at": "2026-04-20 09:58 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "White developer SKD-S2 applied; 10 min dwell."
+    },
+    {
+      "title": "Indication review — stiffener S-08 (cosmetic spot)",
+      "filename": "dpt_0003_s08.jpg",
+      "captured_at": "2026-04-20 10:14 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "One sub-1mm spot, not rejectable per ASME V Art 6."
+    },
+    {
+      "title": "Light meter reading (1240 lux)",
+      "filename": "dpt_0003_lux.jpg",
+      "captured_at": "2026-04-20 09:38 IST",
+      "ocr_confidence": "82",
+      "ocr_status": "High",
+      "note": "Extech LT45 confirms ambient 1240 lux at inspection bench, above 1000 lux minimum."
+    }
   ],
   "dpt_trigger_acceptance_pack": "WLD-F-012B-0017 ACCEPT, FCAW welds 100% complete, inspector qualified, light meter valid.",
   "auto_dpt_acceptance_pack": "All 32 faces ACCEPT; no indications above ASME V Art 6 limits.",
@@ -46,5 +74,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-20",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

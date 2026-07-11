@@ -43,10 +43,38 @@
   "weld_clearance_status": "Pass",
   "weld_clearance_class": "result-pass",
   "photos": [
-    { "title": "Stiffener batch overview on web", "filename": "fit_0017f_overview.jpg", "captured_at": "2026-04-18 10:05 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "16 stiffeners distributed at 250mm c/c along web." },
-    { "title": "Fit-up gap check", "filename": "fit_0017f_gap.jpg", "captured_at": "2026-04-18 10:14 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Feeler 1mm max — tight fit-up." },
-    { "title": "Tack weld distribution", "filename": "fit_0017f_tacks.jpg", "captured_at": "2026-04-18 10:22 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "4 tacks per stiffener (corners), bilateral." },
-    { "title": "Pre-drilled hole pattern verified", "filename": "fit_0017f_holes.jpg", "captured_at": "2026-04-18 10:29 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "DRL-007B-0011 holes intact after fit-up." }
+    {
+      "title": "Stiffener batch overview on web",
+      "filename": "fit_0017f_overview.jpg",
+      "captured_at": "2026-04-18 10:05 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "16 stiffeners distributed at 250mm c/c along web."
+    },
+    {
+      "title": "Fit-up gap check",
+      "filename": "fit_0017f_gap.jpg",
+      "captured_at": "2026-04-18 10:14 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Feeler 1mm max — tight fit-up."
+    },
+    {
+      "title": "Tack weld distribution",
+      "filename": "fit_0017f_tacks.jpg",
+      "captured_at": "2026-04-18 10:22 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "4 tacks per stiffener (corners), bilateral."
+    },
+    {
+      "title": "Pre-drilled hole pattern verified",
+      "filename": "fit_0017f_holes.jpg",
+      "captured_at": "2026-04-18 10:29 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "DRL-007B-0011 holes intact after fit-up."
+    }
   ],
   "upstream_acceptance_pack": "FIT-008A-0009 ACCEPT, WLD-S-012A-0009 ACCEPT, DRL-007B-0011 ACCEPT, WPS-FCAW-04 R2 active.",
   "fitup_readiness_for_fcaw": "Ready",
@@ -62,5 +90,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-18",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

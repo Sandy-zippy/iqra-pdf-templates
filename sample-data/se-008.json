@@ -42,5 +42,6 @@
   "upload_manpower_competency_evidence_filename": "upload_manpower_competency_evidence_sample.pdf",
   "upload_manpower_competency_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_manpower_competency_evidence/view",
   "upload_manpower_competency_evidence_ocr_status": "OK",
-  "upload_manpower_competency_evidence_ocr_confidence": 96
+  "upload_manpower_competency_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

@@ -42,5 +42,6 @@
   "upload_responsibility_matrix_issue_evidence_filename": "upload_responsibility_matrix_issue_evidence_sample.pdf",
   "upload_responsibility_matrix_issue_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_responsibility_matrix_issue_evidence/view",
   "upload_responsibility_matrix_issue_evidence_ocr_status": "OK",
-  "upload_responsibility_matrix_issue_evidence_ocr_confidence": 96
+  "upload_responsibility_matrix_issue_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

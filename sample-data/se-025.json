@@ -48,5 +48,6 @@
   "upload_final_bolting_evidence_filename": "upload_final_bolting_evidence_sample.pdf",
   "upload_final_bolting_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_final_bolting_evidence/view",
   "upload_final_bolting_evidence_ocr_status": "OK",
-  "upload_final_bolting_evidence_ocr_confidence": 96
+  "upload_final_bolting_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

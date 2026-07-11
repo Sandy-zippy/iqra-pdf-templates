@@ -27,10 +27,34 @@
   "bom_required_qty": "1.842",
   "has_parent_child": true,
   "child_marks": [
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-FLG-001", "drawing_ref": "EPE-J126-U2-S-031 R3", "required_qty": "1.842", "status": "Assigned" },
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-FLG-002", "drawing_ref": "EPE-J126-U2-S-031 R3", "required_qty": "1.842", "status": "Pending Traveller" },
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-WEB-001", "drawing_ref": "EPE-J126-U2-S-032 R2", "required_qty": "2.215", "status": "Pending Traveller" },
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-STF-001", "drawing_ref": "EPE-J126-U2-S-033 R1", "required_qty": "0.124", "status": "Pending Traveller" }
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-FLG-001",
+      "drawing_ref": "EPE-J126-U2-S-031 R3",
+      "required_qty": "1.842",
+      "status": "Assigned"
+    },
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-FLG-002",
+      "drawing_ref": "EPE-J126-U2-S-031 R3",
+      "required_qty": "1.842",
+      "status": "Pending Traveller"
+    },
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-WEB-001",
+      "drawing_ref": "EPE-J126-U2-S-032 R2",
+      "required_qty": "2.215",
+      "status": "Pending Traveller"
+    },
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-STF-001",
+      "drawing_ref": "EPE-J126-U2-S-033 R1",
+      "required_qty": "0.124",
+      "status": "Pending Traveller"
+    }
   ],
   "photos": [
     {
@@ -60,5 +84,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-11",
-  "is_locked": false
+  "is_locked": false,
+  "iqra_approved": true
 }

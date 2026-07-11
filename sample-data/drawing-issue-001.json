@@ -14,20 +14,121 @@
   "nspl_confirmation_status": "Confirmed",
   "nspl_remarks": "All 27 drawing files matched to extracted list. BOM weights cross-checked against released revisions.",
   "drawings": [
-    { "drawing_no": "EPE-J126-U2-S-031", "drawing_title": "Main Crane Column MC-C1 Assembly", "drawing_type": "Assembly", "revision": "R3", "release_date": "2026-04-02", "release_status": "Current", "status_class": "current" },
-    { "drawing_no": "EPE-J126-U2-S-032", "drawing_title": "Main Crane Column MC-C2 Assembly", "drawing_type": "Assembly", "revision": "R3", "release_date": "2026-04-02", "release_status": "Current", "status_class": "current" },
-    { "drawing_no": "EPE-J126-U2-S-033", "drawing_title": "Roof Truss RT-B4 Assembly", "drawing_type": "Assembly", "revision": "R2", "release_date": "2026-04-04", "release_status": "Current", "status_class": "current" },
-    { "drawing_no": "EPE-J126-U2-P-218", "drawing_title": "Flange Plate PM-C1-FLG-001", "drawing_type": "Part", "revision": "R3", "release_date": "2026-04-02", "release_status": "Current", "status_class": "current" },
-    { "drawing_no": "EPE-J126-U2-P-219", "drawing_title": "Web Plate PM-C1-WEB-001", "drawing_type": "Part", "revision": "R3", "release_date": "2026-04-02", "release_status": "Current", "status_class": "current" },
-    { "drawing_no": "EPE-J126-U2-P-220", "drawing_title": "Gusset Stiffener PM-C1-STF-014", "drawing_type": "Part", "revision": "R3", "release_date": "2026-04-02", "release_status": "Current", "status_class": "current" },
-    { "drawing_no": "EPE-J126-U2-P-217", "drawing_title": "Flange Plate (Old) PM-C1-FLG-001", "drawing_type": "Part", "revision": "R2", "release_date": "2026-03-12", "release_status": "Superseded", "status_class": "superseded" }
+    {
+      "drawing_no": "EPE-J126-U2-S-031",
+      "drawing_title": "Main Crane Column MC-C1 Assembly",
+      "drawing_type": "Assembly",
+      "revision": "R3",
+      "release_date": "2026-04-02",
+      "release_status": "Current",
+      "status_class": "current"
+    },
+    {
+      "drawing_no": "EPE-J126-U2-S-032",
+      "drawing_title": "Main Crane Column MC-C2 Assembly",
+      "drawing_type": "Assembly",
+      "revision": "R3",
+      "release_date": "2026-04-02",
+      "release_status": "Current",
+      "status_class": "current"
+    },
+    {
+      "drawing_no": "EPE-J126-U2-S-033",
+      "drawing_title": "Roof Truss RT-B4 Assembly",
+      "drawing_type": "Assembly",
+      "revision": "R2",
+      "release_date": "2026-04-04",
+      "release_status": "Current",
+      "status_class": "current"
+    },
+    {
+      "drawing_no": "EPE-J126-U2-P-218",
+      "drawing_title": "Flange Plate PM-C1-FLG-001",
+      "drawing_type": "Part",
+      "revision": "R3",
+      "release_date": "2026-04-02",
+      "release_status": "Current",
+      "status_class": "current"
+    },
+    {
+      "drawing_no": "EPE-J126-U2-P-219",
+      "drawing_title": "Web Plate PM-C1-WEB-001",
+      "drawing_type": "Part",
+      "revision": "R3",
+      "release_date": "2026-04-02",
+      "release_status": "Current",
+      "status_class": "current"
+    },
+    {
+      "drawing_no": "EPE-J126-U2-P-220",
+      "drawing_title": "Gusset Stiffener PM-C1-STF-014",
+      "drawing_type": "Part",
+      "revision": "R3",
+      "release_date": "2026-04-02",
+      "release_status": "Current",
+      "status_class": "current"
+    },
+    {
+      "drawing_no": "EPE-J126-U2-P-217",
+      "drawing_title": "Flange Plate (Old) PM-C1-FLG-001",
+      "drawing_type": "Part",
+      "revision": "R2",
+      "release_date": "2026-03-12",
+      "release_status": "Superseded",
+      "status_class": "superseded"
+    }
   ],
   "bom_rows": [
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-FLG-001", "material_description": "Plate HR IS 2062 E350BR", "grade": "E350BR", "size_thickness": "12mm x 650 x 4250", "bom_quantity": "4", "bom_weight": "0.815", "link_status": "Linked" },
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-WEB-001", "material_description": "Plate HR IS 2062 E350BR", "grade": "E350BR", "size_thickness": "10mm x 600 x 4250", "bom_quantity": "2", "bom_weight": "0.640", "link_status": "Linked" },
-    { "member_mark": "MC-C1", "part_mark": "PM-C1-STF-014", "material_description": "Plate HR IS 2062 E350BR", "grade": "E350BR", "size_thickness": "8mm x 200 x 590", "bom_quantity": "16", "bom_weight": "0.142", "link_status": "Linked" },
-    { "member_mark": "MC-C2", "part_mark": "PM-C2-FLG-001", "material_description": "Plate HR IS 2062 E350BR", "grade": "E350BR", "size_thickness": "12mm x 650 x 4250", "bom_quantity": "4", "bom_weight": "0.815", "link_status": "Linked" },
-    { "member_mark": "RT-B4-T01", "part_mark": "PM-RT-B4-CHR-01", "material_description": "Tube SHS IS 4923 YST310", "grade": "YST310", "size_thickness": "100x100x6", "bom_quantity": "12", "bom_weight": "1.232", "link_status": "Linked" }
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-FLG-001",
+      "material_description": "Plate HR IS 2062 E350BR",
+      "grade": "E350BR",
+      "size_thickness": "12mm x 650 x 4250",
+      "bom_quantity": "4",
+      "bom_weight": "0.815",
+      "link_status": "Linked"
+    },
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-WEB-001",
+      "material_description": "Plate HR IS 2062 E350BR",
+      "grade": "E350BR",
+      "size_thickness": "10mm x 600 x 4250",
+      "bom_quantity": "2",
+      "bom_weight": "0.640",
+      "link_status": "Linked"
+    },
+    {
+      "member_mark": "MC-C1",
+      "part_mark": "PM-C1-STF-014",
+      "material_description": "Plate HR IS 2062 E350BR",
+      "grade": "E350BR",
+      "size_thickness": "8mm x 200 x 590",
+      "bom_quantity": "16",
+      "bom_weight": "0.142",
+      "link_status": "Linked"
+    },
+    {
+      "member_mark": "MC-C2",
+      "part_mark": "PM-C2-FLG-001",
+      "material_description": "Plate HR IS 2062 E350BR",
+      "grade": "E350BR",
+      "size_thickness": "12mm x 650 x 4250",
+      "bom_quantity": "4",
+      "bom_weight": "0.815",
+      "link_status": "Linked"
+    },
+    {
+      "member_mark": "RT-B4-T01",
+      "part_mark": "PM-RT-B4-CHR-01",
+      "material_description": "Tube SHS IS 4923 YST310",
+      "grade": "YST310",
+      "size_thickness": "100x100x6",
+      "bom_quantity": "12",
+      "bom_weight": "1.232",
+      "link_status": "Linked"
+    }
   ],
   "current_revision_flag": "MC-C1, MC-C2, RT-B4 set to Current Revision R3 (R2)",
   "superseded_revision": "EPE-J126-U2-P-217 R2 superseded by R3",
@@ -44,5 +145,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-08",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

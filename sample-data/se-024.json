@@ -42,5 +42,6 @@
   "upload_snug_tightening_evidence_filename": "upload_snug_tightening_evidence_sample.pdf",
   "upload_snug_tightening_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_snug_tightening_evidence/view",
   "upload_snug_tightening_evidence_ocr_status": "OK",
-  "upload_snug_tightening_evidence_ocr_confidence": 96
+  "upload_snug_tightening_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

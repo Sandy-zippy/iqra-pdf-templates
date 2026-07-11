@@ -42,5 +42,6 @@
   "upload_calibration_tool_evidence_filename": "upload_calibration_tool_evidence_sample.pdf",
   "upload_calibration_tool_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_calibration_tool_evidence/view",
   "upload_calibration_tool_evidence_ocr_status": "OK",
-  "upload_calibration_tool_evidence_ocr_confidence": 96
+  "upload_calibration_tool_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

@@ -109,15 +109,16 @@
   <table class="kv-table compact">
     <tr><th>Repair Completion Note</th><td colspan="3">{{repair_completion_note}}</td></tr>
   </table>
+  <!-- loop key aligned to data 2026-07-07 (I-11): repair evidence child array is `repair_photos`, not `photos`. n8n must pass repair_photos[{title,filename,captured_at,note}]. -->
   <div class="photo-grid">
-    {{#photos}}
+    {{#repair_photos}}
     <div class="photo-card">
       <div class="ph-title">{{title}}</div>
       <div class="photo-thumb">[ Photo: {{filename}} ]</div>
       <div class="photo-meta"><span><strong>Captured:</strong> {{captured_at}}</span></div>
       <div class="photo-meta"><span><strong>Note:</strong> {{note}}</span></div>
     </div>
-    {{/photos}}
+    {{/repair_photos}}
   </div>
 </section>
 
@@ -158,26 +159,26 @@
   <div class="sigbox">
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; verified by NSPL QA/QC</div>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="signame">{{nspl_name}}</div>
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
+    <div class="signame">{{nspl_responsible_person}}</div>
     <div class="sigrole">{{nspl_role}}</div>
-    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+    <div class="sigdate">Signed: {{submission_date}}</div>
   </div>
 
-  {{#iqra_signed_date}}
+  {{#iqra_approved}}
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="signame">{{iqra_name}}</div>
+    <div class="signame">{{iqra_reviewer}}</div>
     <div class="sigrole">{{iqra_role}}</div>
-    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+    <div class="sigdate">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 
-  {{^iqra_signed_date}}
+  {{^iqra_approved}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 </section>
 
 <div class="doc-footer">

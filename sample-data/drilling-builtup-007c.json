@@ -44,10 +44,38 @@
   "cumulative_overrun_guard": "Within scope",
   "overrun_class": "result-pass",
   "photos": [
-    { "title": "Base plate template jig set", "filename": "drl_0004c_jig.jpg", "captured_at": "2026-04-22 14:20 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Jig TJ-J126-031 clamped to base plate against datum edge." },
-    { "title": "Drilled hole pattern", "filename": "drl_0004c_pattern.jpg", "captured_at": "2026-04-22 14:48 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "6 anchor holes at correct pitch and edge distance." },
-    { "title": "Vernier reading on representative hole (26.1mm)", "filename": "drl_0004c_vernier.jpg", "captured_at": "2026-04-22 14:55 IST", "ocr_confidence": "85", "ocr_status": "High", "note": "Mitutoyo digital vernier; within tolerance." },
-    { "title": "Sweep measurement (3.2mm over 4250mm)", "filename": "drl_0004c_sweep.jpg", "captured_at": "2026-04-22 15:04 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Steel tape pulled along bottom flange; deviation gauge confirms 3.2mm." }
+    {
+      "title": "Base plate template jig set",
+      "filename": "drl_0004c_jig.jpg",
+      "captured_at": "2026-04-22 14:20 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Jig TJ-J126-031 clamped to base plate against datum edge."
+    },
+    {
+      "title": "Drilled hole pattern",
+      "filename": "drl_0004c_pattern.jpg",
+      "captured_at": "2026-04-22 14:48 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "6 anchor holes at correct pitch and edge distance."
+    },
+    {
+      "title": "Vernier reading on representative hole (26.1mm)",
+      "filename": "drl_0004c_vernier.jpg",
+      "captured_at": "2026-04-22 14:55 IST",
+      "ocr_confidence": "85",
+      "ocr_status": "High",
+      "note": "Mitutoyo digital vernier; within tolerance."
+    },
+    {
+      "title": "Sweep measurement (3.2mm over 4250mm)",
+      "filename": "drl_0004c_sweep.jpg",
+      "captured_at": "2026-04-22 15:04 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Steel tape pulled along bottom flange; deviation gauge confirms 3.2mm."
+    }
   ],
   "iqra_review_status": "Accepted",
   "iqra_review_date": "2026-04-22",
@@ -61,5 +89,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-22",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

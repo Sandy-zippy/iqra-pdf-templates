@@ -43,5 +43,6 @@
   "upload_survey_reference_evidence_filename": "upload_survey_reference_evidence_sample.pdf",
   "upload_survey_reference_evidence_drive_url": "https://drive.google.com/file/d/sample-upload_survey_reference_evidence/view",
   "upload_survey_reference_evidence_ocr_status": "OK",
-  "upload_survey_reference_evidence_ocr_confidence": 96
+  "upload_survey_reference_evidence_ocr_confidence": 96,
+  "iqra_approved": true
 }

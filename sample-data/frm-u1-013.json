@@ -1,7 +1,7 @@
 {
   "record_id": "NSPL-EPE-FRM-U1-013-0001",
   "project_id": "J-126 EPE Jinnaram PEB",
-  "phase": "Unit I \u2014 Workshop",
+  "phase": "Unit I — Workshop",
   "lane": "U1",
   "activity_date": "2026-05-20",
   "submission_timestamp": "2026-05-20T11:42:00+05:30",
@@ -52,5 +52,6 @@
   "pdf_output_link_filename": "pdf_output_link_sample.pdf",
   "pdf_output_link_drive_url": "https://drive.google.com/file/d/sample-pdf_output_link/view",
   "pdf_output_link_ocr_status": "OK",
-  "pdf_output_link_ocr_confidence": 96
+  "pdf_output_link_ocr_confidence": 96,
+  "iqra_approved": true
 }

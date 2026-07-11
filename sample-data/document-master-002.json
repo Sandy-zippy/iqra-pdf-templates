@@ -11,27 +11,175 @@
   "total_superseded": "4",
   "total_withdrawn": "1",
   "documents": [
-    { "document_number": "EPE-J126-QAP-001", "document_title": "Project Quality Assurance Plan", "document_type": "QAP", "revision": "R2", "issue_date": "2026-03-20", "applicable_stage": "All Stages", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-ITP-005", "document_title": "Inspection &amp; Test Plan - Plate Receipt", "document_type": "ITP", "revision": "R3", "issue_date": "2026-03-22", "applicable_stage": "IMIR (FRM-U2-005)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-ITP-006", "document_title": "Inspection &amp; Test Plan - Traveller", "document_type": "ITP", "revision": "R2", "issue_date": "2026-03-22", "applicable_stage": "Traveller (FRM-U2-006)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-ITP-012", "document_title": "Inspection &amp; Test Plan - SAW / FCAW Welding", "document_type": "ITP", "revision": "R3", "issue_date": "2026-04-01", "applicable_stage": "Welding (U2-012A/B)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-ITP-016", "document_title": "Inspection &amp; Test Plan - Coating", "document_type": "ITP", "revision": "R2", "issue_date": "2026-03-28", "applicable_stage": "Coating (U2-016A/B/C)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-WPS-SAW-01", "document_title": "SAW WPS - Built-up Member Web/Flange", "document_type": "WPS", "revision": "R1", "issue_date": "2026-03-15", "applicable_stage": "Welding (U2-012A)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-WPS-FCAW-04", "document_title": "FCAW WPS - Attachment Fillet Welds", "document_type": "WPS", "revision": "R2", "issue_date": "2026-03-26", "applicable_stage": "Welding (U2-012B)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-NDT-DPT-01", "document_title": "DPT Procedure (ASME V Art 6)", "document_type": "NDT", "revision": "R1", "issue_date": "2026-03-15", "applicable_stage": "PT/DPT (U2-013)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-COAT-01", "document_title": "Approved Coating System - Berger Epoxy Primer + Polyurethane Top", "document_type": "Coating Spec", "revision": "R2", "issue_date": "2026-03-28", "applicable_stage": "Coating (U2-016B/C)", "status": "Active", "status_class": "active", "active_document_flag": "Yes" },
-    { "document_number": "EPE-J126-WPS-SAW-01", "document_title": "SAW WPS - Built-up Member (Old)", "document_type": "WPS", "revision": "R0", "issue_date": "2026-02-22", "applicable_stage": "Welding (U2-012A)", "status": "Superseded", "status_class": "superseded", "active_document_flag": "No" },
-    { "document_number": "EPE-J126-WPS-FCAW-04", "document_title": "FCAW WPS - Attachment (Old)", "document_type": "WPS", "revision": "R1", "issue_date": "2026-03-10", "applicable_stage": "Welding (U2-012B)", "status": "Superseded", "status_class": "superseded", "active_document_flag": "No" }
+    {
+      "document_number": "EPE-J126-QAP-001",
+      "document_title": "Project Quality Assurance Plan",
+      "document_type": "QAP",
+      "revision": "R2",
+      "issue_date": "2026-03-20",
+      "applicable_stage": "All Stages",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-ITP-005",
+      "document_title": "Inspection &amp; Test Plan - Plate Receipt",
+      "document_type": "ITP",
+      "revision": "R3",
+      "issue_date": "2026-03-22",
+      "applicable_stage": "IMIR (FRM-U2-005)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-ITP-006",
+      "document_title": "Inspection &amp; Test Plan - Traveller",
+      "document_type": "ITP",
+      "revision": "R2",
+      "issue_date": "2026-03-22",
+      "applicable_stage": "Traveller (FRM-U2-006)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-ITP-012",
+      "document_title": "Inspection &amp; Test Plan - SAW / FCAW Welding",
+      "document_type": "ITP",
+      "revision": "R3",
+      "issue_date": "2026-04-01",
+      "applicable_stage": "Welding (U2-012A/B)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-ITP-016",
+      "document_title": "Inspection &amp; Test Plan - Coating",
+      "document_type": "ITP",
+      "revision": "R2",
+      "issue_date": "2026-03-28",
+      "applicable_stage": "Coating (U2-016A/B/C)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-WPS-SAW-01",
+      "document_title": "SAW WPS - Built-up Member Web/Flange",
+      "document_type": "WPS",
+      "revision": "R1",
+      "issue_date": "2026-03-15",
+      "applicable_stage": "Welding (U2-012A)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-WPS-FCAW-04",
+      "document_title": "FCAW WPS - Attachment Fillet Welds",
+      "document_type": "WPS",
+      "revision": "R2",
+      "issue_date": "2026-03-26",
+      "applicable_stage": "Welding (U2-012B)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-NDT-DPT-01",
+      "document_title": "DPT Procedure (ASME V Art 6)",
+      "document_type": "NDT",
+      "revision": "R1",
+      "issue_date": "2026-03-15",
+      "applicable_stage": "PT/DPT (U2-013)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-COAT-01",
+      "document_title": "Approved Coating System - Berger Epoxy Primer + Polyurethane Top",
+      "document_type": "Coating Spec",
+      "revision": "R2",
+      "issue_date": "2026-03-28",
+      "applicable_stage": "Coating (U2-016B/C)",
+      "status": "Active",
+      "status_class": "active",
+      "active_document_flag": "Yes"
+    },
+    {
+      "document_number": "EPE-J126-WPS-SAW-01",
+      "document_title": "SAW WPS - Built-up Member (Old)",
+      "document_type": "WPS",
+      "revision": "R0",
+      "issue_date": "2026-02-22",
+      "applicable_stage": "Welding (U2-012A)",
+      "status": "Superseded",
+      "status_class": "superseded",
+      "active_document_flag": "No"
+    },
+    {
+      "document_number": "EPE-J126-WPS-FCAW-04",
+      "document_title": "FCAW WPS - Attachment (Old)",
+      "document_type": "WPS",
+      "revision": "R1",
+      "issue_date": "2026-03-10",
+      "applicable_stage": "Welding (U2-012B)",
+      "status": "Superseded",
+      "status_class": "superseded",
+      "active_document_flag": "No"
+    }
   ],
   "holder_map": [
-    { "document_number": "EPE-J126-QAP-001", "revision": "R2", "controlled_copy_location": "QA/QC Office Cabinet A1, Folder 03", "holder_location": "NSPL QC Manager", "downstream_use_rule": "Reference baseline for all FRM-U2-* records" },
-    { "document_number": "EPE-J126-ITP-005", "revision": "R3", "controlled_copy_location": "Stockyard QC Hut, Folder 01", "holder_location": "NSPL Material Inspector", "downstream_use_rule": "Mandatory for every IMIR record" },
-    { "document_number": "EPE-J126-WPS-SAW-01", "revision": "R1", "controlled_copy_location": "Bay 3 SAW Booth wall mount", "holder_location": "SAW Operator (S. Vasudevan)", "downstream_use_rule": "Required at point of welding; copy must match active rev." },
-    { "document_number": "EPE-J126-COAT-01", "revision": "R2", "controlled_copy_location": "Paint Shop office, Folder 02", "holder_location": "NSPL Paint Foreman", "downstream_use_rule": "Mandatory for every 016A/B/C record" }
+    {
+      "document_number": "EPE-J126-QAP-001",
+      "revision": "R2",
+      "controlled_copy_location": "QA/QC Office Cabinet A1, Folder 03",
+      "holder_location": "NSPL QC Manager",
+      "downstream_use_rule": "Reference baseline for all FRM-U2-* records"
+    },
+    {
+      "document_number": "EPE-J126-ITP-005",
+      "revision": "R3",
+      "controlled_copy_location": "Stockyard QC Hut, Folder 01",
+      "holder_location": "NSPL Material Inspector",
+      "downstream_use_rule": "Mandatory for every IMIR record"
+    },
+    {
+      "document_number": "EPE-J126-WPS-SAW-01",
+      "revision": "R1",
+      "controlled_copy_location": "Bay 3 SAW Booth wall mount",
+      "holder_location": "SAW Operator (S. Vasudevan)",
+      "downstream_use_rule": "Required at point of welding; copy must match active rev."
+    },
+    {
+      "document_number": "EPE-J126-COAT-01",
+      "revision": "R2",
+      "controlled_copy_location": "Paint Shop office, Folder 02",
+      "holder_location": "NSPL Paint Foreman",
+      "downstream_use_rule": "Mandatory for every 016A/B/C record"
+    }
   ],
   "supersession_log": [
-    { "document_number": "EPE-J126-WPS-SAW-01", "old_revision": "R0", "new_revision": "R1", "superseded_status": "Superseded", "withdrawal_confirmed": "Yes", "note": "Travel speed range updated post-PQR re-test 2026-03-12." },
-    { "document_number": "EPE-J126-WPS-FCAW-04", "old_revision": "R1", "new_revision": "R2", "superseded_status": "Superseded", "withdrawal_confirmed": "Yes", "note": "Voltage range widened; verified against AWS D1.1 essential variables." }
+    {
+      "document_number": "EPE-J126-WPS-SAW-01",
+      "old_revision": "R0",
+      "new_revision": "R1",
+      "superseded_status": "Superseded",
+      "withdrawal_confirmed": "Yes",
+      "note": "Travel speed range updated post-PQR re-test 2026-03-12."
+    },
+    {
+      "document_number": "EPE-J126-WPS-FCAW-04",
+      "old_revision": "R1",
+      "new_revision": "R2",
+      "superseded_status": "Superseded",
+      "withdrawal_confirmed": "Yes",
+      "note": "Voltage range widened; verified against AWS D1.1 essential variables."
+    }
   ],
   "iqra_review_status": "Accepted",
   "iqra_review_date": "2026-04-08",
@@ -43,5 +191,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-08",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

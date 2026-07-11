@@ -185,7 +185,7 @@
     <div class="sigdate">Signed: {{submission_date}}</div>
   </div>
 
-  {{#iqra_review_date}}
+  {{#iqra_approved}}
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
@@ -197,11 +197,11 @@
     <div class="sigrole">{{iqra_role}}</div>
     <div class="sigdate">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_review_date}}
+  {{/iqra_approved}}
 
-  {{^iqra_review_date}}
+  {{^iqra_approved}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_review_date}}
+  {{/iqra_approved}}
 </section>
 
 <div class="doc-footer">

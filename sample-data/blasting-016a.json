@@ -40,10 +40,38 @@
   "window_class": "ok",
   "reblast_required_status": "Not required",
   "photos": [
-    { "title": "Pre-blast — member in Bay 7", "filename": "blt_0006_pre.jpg", "captured_at": "2026-04-23 10:42 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Member MC-C1 staged for blasting; free of grease and loose contaminants." },
-    { "title": "Mid-blast — wheel-blast in progress", "filename": "blt_0006_mid.jpg", "captured_at": "2026-04-23 11:18 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Wheel-blast unit applied; portable nozzle for corners." },
-    { "title": "Post-blast — Sa 2.5 cleanliness", "filename": "blt_0006_clean.jpg", "captured_at": "2026-04-23 11:42 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Surface uniformly cleaned; near-white metal achieved." },
-    { "title": "Profile gauge reading (58 microns)", "filename": "blt_0006_profile.jpg", "captured_at": "2026-04-23 11:48 IST", "ocr_confidence": "—", "ocr_status": "—", "note": "Testex tape replica reading 58 microns; within 40-75 micron requirement." }
+    {
+      "title": "Pre-blast — member in Bay 7",
+      "filename": "blt_0006_pre.jpg",
+      "captured_at": "2026-04-23 10:42 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Member MC-C1 staged for blasting; free of grease and loose contaminants."
+    },
+    {
+      "title": "Mid-blast — wheel-blast in progress",
+      "filename": "blt_0006_mid.jpg",
+      "captured_at": "2026-04-23 11:18 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Wheel-blast unit applied; portable nozzle for corners."
+    },
+    {
+      "title": "Post-blast — Sa 2.5 cleanliness",
+      "filename": "blt_0006_clean.jpg",
+      "captured_at": "2026-04-23 11:42 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Surface uniformly cleaned; near-white metal achieved."
+    },
+    {
+      "title": "Profile gauge reading (58 microns)",
+      "filename": "blt_0006_profile.jpg",
+      "captured_at": "2026-04-23 11:48 IST",
+      "ocr_confidence": "—",
+      "ocr_status": "—",
+      "note": "Testex tape replica reading 58 microns; within 40-75 micron requirement."
+    }
   ],
   "iqra_review_status": "Accepted",
   "iqra_review_date": "2026-04-23",
@@ -57,5 +85,6 @@
   "iqra_name": "Padmanabhan Krishnan",
   "iqra_role": "IQRA Site Quality Lead",
   "iqra_signed_date": "2026-04-23",
-  "is_locked": true
+  "is_locked": true,
+  "iqra_approved": true
 }

@@ -175,26 +175,26 @@
 <section class="signoff">
   <div class="sigbox">
     <h4>Compiled by NSPL</h4>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
     <div class="siglabel">Dossier compiled by NSPL Document Control</div>
-    <div class="signame">{{nspl_name}}</div>
+    <div class="signame">{{nspl_responsible_person}}</div>
     <div class="sigrole">{{nspl_role}}</div>
-    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+    <div class="sigdate">Signed: {{submission_date}}</div>
   </div>
 
-  {{#iqra_signed_date}}
+  {{#iqra_approved}}
   <div class="sigbox">
     <h4>IQRA &mdash; Reviewed &amp; Approved</h4>
     <div class="siglabel">Owner-side compilation review (Iqra Quality Services)</div>
-    <div class="signame">{{iqra_name}}</div>
+    <div class="signame">{{iqra_reviewer}}</div>
     <div class="sigrole">{{iqra_role}}</div>
-    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+    <div class="sigdate">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 
-  {{^iqra_signed_date}}
+  {{^iqra_approved}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 </section>
 
 <div class="doc-footer">

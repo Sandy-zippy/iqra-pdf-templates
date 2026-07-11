@@ -1,0 +1,24 @@
+{
+  "record_id": "NSPL-EPE-SDOS-0002",
+  "dossier_id": "SDOS-J126-PH3-RB4-009",
+  "dispatch_trip_id": "DSP-J126-017B-0011",
+  "project": "J-126 EPE Jinnaram PEB",
+  "phase": "Phase III",
+  "compilation_date": "2026-05-03",
+  "dossier_completion_percentage": "100",
+  "annexure_count": "4",
+  "dossier_readiness_status": "Ready for outward issue",
+  "is_locked": true,
+  "annexures": [
+    { "page_order": 1, "annexure_id": "SDOS-J126-PH3-RB4-009-A01", "source_form_code": "SE-013", "source_record_id": "NSPL-EPE-SE-0011", "annexure_type": "Form Snapshot PDF", "caption": "Site Receipt — all packages received, reconciled vs DSP-0011" },
+    { "page_order": 2, "annexure_id": "SDOS-J126-PH3-RB4-009-A02", "source_form_code": "SE-014", "source_record_id": "NSPL-EPE-SE-0014", "annexure_type": "Form Snapshot PDF", "caption": "Unloading, Storage & Identification Control Record" },
+    { "page_order": 3, "annexure_id": "SDOS-J126-PH3-RB4-009-A03", "source_form_code": "SE-015", "source_record_id": "NSPL-EPE-SE-0015", "annexure_type": "Form Snapshot PDF", "caption": "Civil Interface — Pedestal & Anchor Bolt Check Record" },
+    { "page_order": 4, "annexure_id": "SDOS-J126-PH3-RB4-009-A04", "source_form_code": "SE-016", "source_record_id": "NSPL-EPE-SE-0016", "annexure_type": "Form Snapshot PDF", "caption": "Pre-Erection Survey & Reference Check Record" }
+  ],
+  "form_coverage": [
+    { "seq": 1, "form_code": "SE-013", "form_title": "Site Receipt & Reconciliation",             "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 2, "form_code": "SE-014", "form_title": "Unloading, Storage & Identification Control", "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 3, "form_code": "SE-015", "form_title": "Civil Interface — Pedestal / Anchor Bolt",    "accepted_count": 1, "group_status": "Present", "status_class": "present" },
+    { "seq": 4, "form_code": "SE-016", "form_title": "Pre-Erection Survey & Reference Check",        "accepted_count": 1, "group_status": "Present", "status_class": "present" }
+  ]
+}

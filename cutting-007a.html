@@ -107,7 +107,52 @@
   </table>
 </section>
 
-<!-- Dimension Check + Edge Condition sections removed 2026-07-06: no backing fields on FRM-U2-007A_Cutting table (per-dimension / per-edge data lives in Cutting_Child_Output child records, which the PDF-generation workflow does not currently expand). Re-add with a {{#dimensions}} array only if the workflow is extended to join child records. -->
+<!-- Dimension Check re-added 2026-07-07 (I-11): renders the per-part child rows. n8n MUST join Cutting_Child_Output and pass a `dimensions` array [{name,specified,tolerance,measured,deviation,result,result_class}] on the PDF payload; empty/absent array simply renders no rows. -->
+<section>
+  <h2>Dimension Check &mdash; Child Parts</h2>
+  <table class="compact">
+    <thead><tr><th>Dimension</th><th>Specified</th><th>Tol (&plusmn;)</th><th>Measured</th><th>Deviation</th><th>Result</th></tr></thead>
+    <tbody>
+      {{#dimensions}}
+      <tr>
+        <td>{{name}}</td>
+        <td class="num">{{specified}}</td>
+        <td class="num">{{tolerance}}</td>
+        <td class="num">{{measured}}</td>
+        <td class="num">{{deviation}}</td>
+        <td class="{{result_class}}">{{result}}</td>
+      </tr>
+      {{/dimensions}}
+      {{^dimensions}}
+      <tr><td colspan="6" class="small">No child dimension records joined for this cutting submission.</td></tr>
+      {{/dimensions}}
+    </tbody>
+  </table>
+</section>
+
+<!-- Child-part join added 2026-07-07 (must-fix #3): per-child-part rows. n8n MUST join the
+     child-allocation table (Cutting_Child_Allocation / drilled parts) and pass a `child_parts`
+     array [{part_mark,member_mark,qty,heat_lot,status,status_class}]; empty/absent renders no rows. -->
+<section>
+  <h2>Child Parts</h2>
+  <table class="compact">
+    <thead><tr><th>Part Mark</th><th>Member Mark</th><th>Qty</th><th>Heat / Lot</th><th>Status</th></tr></thead>
+    <tbody>
+      {{#child_parts}}
+      <tr>
+        <td>{{part_mark}}</td>
+        <td>{{member_mark}}</td>
+        <td class="num">{{qty}}</td>
+        <td>{{heat_lot}}</td>
+        <td class="{{status_class}}">{{status}}</td>
+      </tr>
+      {{/child_parts}}
+      {{^child_parts}}
+      <tr><td colspan="5" class="small">No child-part records joined for this submission.</td></tr>
+      {{/child_parts}}
+    </tbody>
+  </table>
+</section>
 
 <section>
   <h2>3. Quantity</h2>
@@ -145,15 +190,15 @@
   <div class="sigbox">
     <h4>NSPL &mdash; Checked &amp; Signed</h4>
     <div class="siglabel">Submitted &amp; verified by NSPL QA/QC</div>
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    {{#nspl_signed_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/nspl_signed_date}}
-    <div class="signame">{{nspl_name}}</div>
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
+    {{#submission_date}}<img class="stamp-img" src="brand-assets/nspl-qc-stamp.png" alt="NSPL QC Stamp">{{/submission_date}}
+    <div class="signame">{{nspl_responsible_person}}</div>
     <div class="sigrole">{{nspl_role}}</div>
-    <div class="sigdate">Signed: {{nspl_signed_date}}</div>
+    <div class="sigdate">Signed: {{submission_date}}</div>
   </div>
 
-  {{#iqra_signed_date}}
+  {{#iqra_approved}}
   <div class="sigbox">
     <h4>IQRA &mdash; Verified &amp; Signed</h4>
     <div class="siglabel">Owner-side verification (Iqra Quality Services)</div>
@@ -161,15 +206,15 @@
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
     <img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">
-    <div class="signame">{{iqra_name}}</div>
+    <div class="signame">{{iqra_reviewer}}</div>
     <div class="sigrole">{{iqra_role}}</div>
-    <div class="sigdate">Signed: {{iqra_signed_date}}</div>
+    <div class="sigdate">Signed: {{iqra_review_date}}</div>
   </div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 
-  {{^iqra_signed_date}}
+  {{^iqra_approved}}
   <div class="pending">Pending IQRA approval &mdash; not for outward issue</div>
-  {{/iqra_signed_date}}
+  {{/iqra_approved}}
 </section>
 
 <div class="doc-footer">
