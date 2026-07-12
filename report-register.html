@@ -26,6 +26,10 @@
   th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.4px; }
   .kv-table th { width: 30%; }
   .narrative { border: 0.6pt solid #BBB; background: #FAFAFA; padding: 12px 14px; font-size: 9.5pt; white-space: pre-wrap; font-family: 'Inter', sans-serif; }
+  .narrative.md { white-space: normal; }
+  .narrative.md h2.md-h, .narrative.md h3.md-h, .narrative.md h4.md-h, .narrative.md h5.md-h { border: none; text-transform: none; letter-spacing: 0; margin: 10px 0 4px; }
+  .narrative.md h2.md-h { font-size: 11.5pt; } .narrative.md h3.md-h { font-size: 10.5pt; } .narrative.md h4.md-h, .narrative.md h5.md-h { font-size: 10pt; }
+  .narrative.md ul { margin: 4px 0 8px 18px; } .narrative.md p { margin: 3px 0; } .narrative.md .md-gap { height: 5px; }
   .badge-uat { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 8px; border-radius: 3px; font-size: 8.5pt; font-weight: 700; text-transform: uppercase; }
   .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
   section { page-break-inside: avoid; }
@@ -61,7 +65,7 @@
 
 <section>
   <h2>Report Narrative</h2>
-  {{#notes}}<div class="narrative">{{notes}}</div>{{/notes}}
+  {{#notes_html}}<div class="narrative md">{{{notes_html}}}</div>{{/notes_html}}{{^notes_html}}{{#notes}}<div class="narrative">{{notes}}</div>{{/notes}}{{/notes_html}}
   {{^notes}}<div class="narrative">No narrative content recorded on this report row.</div>{{/notes}}
 </section>
 

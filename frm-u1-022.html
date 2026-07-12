@@ -88,6 +88,7 @@
   </div>
 </div>
 
+{{#is_uat}}<div style="background:#FFF6E0;border:1pt solid #D4A017;color:#8A6A00;padding:6px 10px;margin:8px 0;border-radius:3px;font-weight:700;font-size:9pt;">UAT Test - Not for outward issue</div>{{/is_uat}}
 <p class="small"><strong>Purpose:</strong> Dossier Index - Unit I issue / release / dispatch / dossier form; NSPL fills, IQRA reviews, System logs.</p>
 
 <h2>Record Metadata</h2>
@@ -107,7 +108,7 @@
     <tr><th>Dispatch Trip ID / LDP Reference</th><td>{{dispatch_trip_id_ldp_reference}}</td></tr>
     <tr><th>Dossier Checklist Confirmation Panel</th><td>{{dossier_checklist_confirmation_panel}}</td></tr>
     <tr><th>NSPL Remarks</th><td>{{nspl_remarks}}</td></tr>
-    <tr><th>NSPL Acknowledgement</th><td>{{nspl_acknowledgement}}</td></tr>
+    <tr><th>NSPL Acknowledgement</th><td>{{#nspl_acknowledgement}}Yes{{/nspl_acknowledgement}}{{^nspl_acknowledgement}}No{{/nspl_acknowledgement}}</td></tr>
   </table>
 
 <h2>Layer 2 / 5 — Derived &amp; System Fields</h2>

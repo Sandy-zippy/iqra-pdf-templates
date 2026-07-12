@@ -68,6 +68,15 @@ function render(tpl, data) {
       const open = str.indexOf('{{', i);
       if (open === -1) { out += str.slice(i); break; }
       out += str.slice(i, open);
+      if (str[open + 2] === '{') {
+        const close3 = str.indexOf('}}}', open + 3);
+        if (close3 === -1) { out += str.slice(open); break; }
+        const tag3 = str.slice(open + 3, close3).trim();
+        i = close3 + 3;
+        const v3 = lookup(ctxStack, tag3);
+        if (v3 != null && v3 !== false) out += String(v3);
+        continue;
+      }
       const close = str.indexOf('}}', open + 2);
       if (close === -1) { out += str.slice(open); break; }
       const tag = str.slice(open + 2, close).trim();
@@ -103,7 +112,7 @@ function render(tpl, data) {
         // stray closer — skip
       } else {
         const val = lookup(ctxStack, tag);
-        if (val == null) out += '';
+        if (val == null || val === false) out += '';
         else out += escapeHtml(val);
       }
     }
@@ -111,6 +120,28 @@ function render(tpl, data) {
   }
 
   return walk(tpl);
+}
+
+function mdToHtml(md) {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const lines = md.split(/\r?\n/);
+  let out = [], inList = false;
+  const inline = t => esc(t)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+    .replace(/_([^_]+)_/g, '<em>$1</em>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>');
+  for (const ln of lines) {
+    const h = ln.match(/^(#{1,4})\s+(.*)$/);
+    const li = ln.match(/^\s*[-*]\s+(.*)$/);
+    if (li) { if (!inList) { out.push('<ul>'); inList = true; } out.push('<li>' + inline(li[1]) + '</li>'); continue; }
+    if (inList) { out.push('</ul>'); inList = false; }
+    if (h) { const l = Math.min(h[1].length + 1, 5); out.push(`<h${l} class="md-h">` + inline(h[2]) + `</h${l}>`); continue; }
+    if (ln.trim() === '') { out.push('<div class="md-gap"></div>'); continue; }
+    out.push('<p>' + inline(ln) + '</p>');
+  }
+  if (inList) out.push('</ul>');
+  return out.join('\n');
 }
 
 // ---- Main -------------------------------------------------------------
@@ -166,6 +197,7 @@ try {
 
     const tpl = fs.readFileSync(tplPath, 'utf8');
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    if (data.notes && tpl.includes('notes_html')) data.notes_html = mdToHtml(String(data.notes));
     hydrateLoops(data, tpl);
     const html = render(tpl, data);
 
