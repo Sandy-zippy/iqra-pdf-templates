@@ -35,7 +35,7 @@
   .sigbox .sigrole { font-size: 9pt; color: #555; }
   .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
   .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10pt; }
-  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .doc-footer { margin-top: 18px; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
   .stamp-locked { position: fixed; top: 40mm; right: -8mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 58pt; font-weight: 700; color: #D4A017; opacity: 0.28; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
   section { page-break-inside: avoid; }
   .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
@@ -71,7 +71,7 @@
 </head>
 <body>
 
-{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+{{#is_uat}}<div class="stamp-locked">UAT TEST</div>{{/is_uat}}{{^is_uat}}{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}{{/is_uat}}
 
 <div class="doc-header">
   <div class="brand">
@@ -89,7 +89,7 @@
     <div class="row"><span class="label">Form:</span> FRM-SE-038 &nbsp;|&nbsp; <span class="label">Output Ver:</span> {{dossier_output_version}}</div>
     <div class="row"><span class="label">Project:</span> {{project}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}}</div>
-    {{#source_mode}}<div class="row"><span class="badge-mode">{{source_mode}}</span></div>{{/source_mode}}
+    {{#source_mode}}<div class="row"><span class="badge-mode" style="text-transform:none;">{{source_mode}}</span></div>{{/source_mode}}
   </div>
 </div>
 
@@ -112,8 +112,8 @@
   </div>
 </div>
 
-{{#is_ready}}<div class="readiness ready">{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div>{{/is_ready}}
-{{^is_ready}}<div class="readiness hold">{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div>{{/is_ready}}
+{{#is_ready}}<div class="readiness ready">{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div>{{/is_ready}}
+{{^is_ready}}<div class="readiness hold">{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div>{{/is_ready}}
 
 <section>
   <h2>1. Project &amp; Dossier Header</h2>
@@ -125,11 +125,11 @@
     <tr><th>Unit / Lane</th><td>{{unit_lane}}</td>
         <th>Phase</th><td>{{phase}}</td></tr>
     <tr><th>Dossier Type</th><td>{{dossier_type}}</td>
-        <th>Dossier Status</th><td><strong>{{#is_uat}}UAT Test — not for production dossier{{/is_uat}}{{^is_uat}}{{dossier_status}}{{/is_uat}}</strong></td></tr>
+        <th>Dossier Status</th><td><strong>{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_status}}{{/is_uat}}</strong></td></tr>
     <tr><th>Compilation Date</th><td>{{compilation_date}}</td>
         <th>Coverage Cut-off</th><td>{{dossier_coverage_cutoff}}</td></tr>
     <tr><th>Evidence Completeness</th><td>{{evidence_completeness_status}}</td>
-        <th>Readiness</th><td>{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</td></tr>
+        <th>Readiness</th><td>{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</td></tr>
   </table>
 </section>
 
@@ -192,7 +192,7 @@
     {{#is_locked}}<img class="stamp-img" src="brand-assets/iqra-stamp.png" alt="IQRA Stamp">{{/is_locked}}
     <div class="siglabel">Owner-side compilation review (Iqra Quality Services)</div>
     <div class="signame">{{reviewed_approved_by}}</div>
-    <div class="sigrole">IQRA Site Quality Lead</div>
+    <div class="sigrole">IQRA Approver (Director)</div>
     <div class="sigdate">Review Status: {{final_iqra_compilation_review_status}} &middot; {{iqra_review_date}}</div>
     {{#iqra_compilation_remarks}}<div class="small" style="margin-top:6px;">{{iqra_compilation_remarks}}</div>{{/iqra_compilation_remarks}}
   </div>
@@ -205,7 +205,6 @@
 
 <div class="doc-footer">
   <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | Dossier {{dossier_id}}</div>
-  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 
 </body>

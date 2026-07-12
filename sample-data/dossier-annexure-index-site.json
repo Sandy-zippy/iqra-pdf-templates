@@ -7,7 +7,7 @@
  "compilation_date": "2026-05-03",
  "dossier_completion_percentage": "100",
  "annexure_count": "4",
- "dossier_readiness_status": "Ready for outward issue",
+ "dossier_readiness_status": "UAT Test - Exclude from outward issue and production dossier",
  "is_locked": true,
  "annexures": [
   {
@@ -16,7 +16,7 @@
    "source_form_code": "SE-013",
    "source_record_id": "NSPL-EPE-SE-0011",
    "annexure_type": "Form Snapshot PDF",
-   "caption": "Site Receipt \u2014 all packages received, reconciled vs DSP-0011"
+   "caption": "Site Receipt — all packages received, reconciled vs DSP-0011"
   },
   {
    "page_order": 2,
@@ -32,7 +32,7 @@
    "source_form_code": "SE-015",
    "source_record_id": "NSPL-EPE-SE-0015",
    "annexure_type": "Form Snapshot PDF",
-   "caption": "Civil Interface \u2014 Pedestal & Anchor Bolt Check Record"
+   "caption": "Civil Interface — Pedestal & Anchor Bolt Check Record"
   },
   {
    "page_order": 4,
@@ -63,7 +63,7 @@
   {
    "seq": 3,
    "form_code": "SE-015",
-   "form_title": "Civil Interface \u2014 Pedestal / Anchor Bolt",
+   "form_title": "Civil Interface — Pedestal / Anchor Bolt",
    "accepted_count": 1,
    "group_status": "Present",
    "status_class": "present"
@@ -81,6 +81,7 @@
  "client": "EPE Process Filters & Accumulators Pvt. Ltd.",
  "vendor_name": "Nischay Steel Private Limited",
  "client_name": "EPE Process Filters & Accumulators Pvt. Ltd.",
- "is_uat": false,
- "dossier_ready": true
+ "is_uat": true,
+ "dossier_ready": true,
+ "source_mode": "UAT Template Proof - Not for outward issue"
 }

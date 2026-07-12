@@ -26,7 +26,7 @@
   th { background: #F5F5F5; color: #000; font-weight: 600; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.4px; }
   td.num { text-align: right; font-variant-numeric: tabular-nums; }
   .compact td, .compact th { padding: 3px 5px; font-size: 8.5pt; }
-  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .doc-footer { margin-top: 18px; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
   .stamp-locked { position: fixed; top: 40mm; right: -8mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 58pt; font-weight: 700; color: #D4A017; opacity: 0.28; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
   .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
   .status-present  { color: #2a6a2a; font-weight: 600; }
@@ -44,7 +44,7 @@
 </head>
 <body>
 
-{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+{{#is_uat}}<div class="stamp-locked">UAT TEST</div>{{/is_uat}}{{^is_uat}}{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}{{/is_uat}}
 
 <div class="doc-header">
   <div class="brand">
@@ -63,13 +63,14 @@
     <div class="row"><span class="label">Project:</span> {{project}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
     <div class="row"><span class="label">Dispatch Trip:</span> <span class="link-pill">{{dispatch_trip_id}}</span></div>
     <div class="row"><span class="label">Compilation Date:</span> {{compilation_date}}</div>
+    {{#source_mode}}<div class="row"><span class="link-pill">{{source_mode}}</span></div>{{/source_mode}}
   </div>
 </div>
 
 <div class="meta-strip">
   <div class="cell"><div class="l">Completion</div><div class="v">{{dossier_completion_percentage}}%</div></div>
   <div class="cell"><div class="l">Annexures Indexed</div><div class="v">{{annexure_count}}</div></div>
-  <div class="cell"><div class="l">Readiness</div><div class="v">{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div></div>
+  <div class="cell"><div class="l">Readiness</div><div class="v">{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</div></div>
 </div>
 
 <section>
@@ -129,7 +130,6 @@
 
 <div class="doc-footer">
   <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | Dossier {{dossier_id}}</div>
-  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
 </div>
 
 </body>

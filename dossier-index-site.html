@@ -35,7 +35,7 @@
   .sigbox .sigrole { font-size: 9pt; color: #555; }
   .sigbox .sigdate { font-size: 9pt; color: #555; margin-top: 6px; }
   .pending { background: #FBE5E5; border: 0.6pt dashed #A02020; color: #A02020; padding: 14px; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 10pt; }
-  .doc-footer { position: fixed; bottom: 8mm; left: 15mm; right: 15mm; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
+  .doc-footer { margin-top: 18px; border-top: 0.6pt solid #999; padding-top: 4px; font-size: 8.5pt; color: #666; display: flex; justify-content: space-between; }
   .stamp-locked { position: fixed; top: 35mm; right: -10mm; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 60pt; font-weight: 700; color: #D4A017; opacity: 0.30; transform: rotate(-30deg); pointer-events: none; z-index: 999; letter-spacing: 2px; white-space: nowrap; }
   section { page-break-inside: avoid; }
   .link-pill { display: inline-block; background: #FFF6E0; border: 0.6pt solid #D4A017; color: #8A6A00; padding: 1px 6px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
@@ -60,7 +60,7 @@
 </head>
 <body>
 
-{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}
+{{#is_uat}}<div class="stamp-locked">UAT TEST</div>{{/is_uat}}{{^is_uat}}{{#is_locked}}<div class="stamp-locked">LOCKED &mdash; FINAL</div>{{/is_locked}}{{/is_uat}}
 
 <div class="doc-header">
   <div class="brand">
@@ -79,7 +79,7 @@
     <div class="row"><span class="label">Project:</span> {{project_id}} &nbsp;|&nbsp; <span class="label">Phase:</span> {{phase}}</div>
     <div class="row"><span class="label">Dispatch Trip:</span> <span class="link-pill">{{dispatch_trip_id}}</span></div>
     <div class="row"><span class="label">Issue Date:</span> {{report_issue_date}} &nbsp;|&nbsp; <span class="label">Compilation Date:</span> {{compilation_date}}</div>
-    {{#source_mode}}<div class="row"><span class="badge-mode">{{source_mode}}</span></div>{{/source_mode}}
+    {{#source_mode}}<div class="row"><span class="badge-mode" style="text-transform:none;">{{source_mode}}</span></div>{{/source_mode}}
   </div>
 </div>
 
@@ -93,9 +93,9 @@
     <tr><th>Unit / Lane</th><td>{{unit_lane}}</td>
         <th>Phase</th><td>{{phase}}</td></tr>
     <tr><th>Dossier Type</th><td>{{dossier_type}}</td>
-        <th>Dossier Status</th><td><strong>{{#is_uat}}UAT Test — not for production dossier{{/is_uat}}{{^is_uat}}{{dossier_status}}{{/is_uat}}</strong></td></tr>
+        <th>Dossier Status</th><td><strong>{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_status}}{{/is_uat}}</strong></td></tr>
     <tr><th>Dossier Coverage Cut-off</th><td>{{coverage_cutoff}}</td>
-        <th>Dossier Readiness Status</th><td>{{#is_uat}}Excluded from outward issue (UAT Test){{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</td></tr>
+        <th>Dossier Readiness Status</th><td>{{#is_uat}}UAT Test - Exclude from outward issue and production dossier{{/is_uat}}{{^is_uat}}{{dossier_readiness_status}}{{/is_uat}}</td></tr>
     <tr><th>Site Receipt Reference (SE-013)</th><td>{{site_receipt_reference}}{{^site_receipt_reference}}<span class="muted">Not available</span>{{/site_receipt_reference}}</td>
         <th>Site Area / Grid</th><td>{{site_area_grid}}{{^site_area_grid}}<span class="muted">Not available</span>{{/site_area_grid}}</td></tr>
   </table>
@@ -129,10 +129,10 @@
 </section>
 
 <section>
-  <h2>3. Line-Item Index</h2>
+  <h2>3. Line-Item Index (Site Route)</h2>
   <table class="compact">
     <thead>
-      <tr><th>#</th><th>Source Form</th><th>Source Record ID</th><th>Doc Ref / Rev</th><th>Lot / Member / Trip Coverage</th><th>Date</th><th>PDF</th><th>Status</th></tr>
+      <tr><th>#</th><th>Source Form</th><th>Source Record ID</th><th>Doc Ref / Rev</th><th>Area / Grid / Coverage</th><th>Date</th><th>PDF</th><th>Status</th></tr>
     </thead>
     <tbody>
       {{#line_items}}
@@ -150,6 +150,32 @@
     </tbody>
   </table>
 </section>
+
+{{#has_upstream}}
+<section>
+  <h2>3A. Upstream Factory / Dispatch Reference</h2>
+  <div class="small">Factory Unit II / Unit I documents referenced by this Site dossier. These are upstream references only, not Site dossier line items.</div>
+  <table class="compact">
+    <thead>
+      <tr><th>#</th><th>Source Form</th><th>Source Record ID</th><th>Doc Ref / Rev</th><th>Coverage</th><th>Date</th><th>PDF</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      {{#upstream_refs}}
+      <tr>
+        <td class="num">{{seq}}</td>
+        <td>{{source_form_no}}</td>
+        <td><span class="link-pill">{{source_record_id}}</span></td>
+        <td>{{document_reference}} / R{{rev_no}}</td>
+        <td>{{coverage}}</td>
+        <td>{{date_of_issue}}</td>
+        <td>{{report_pdf_link}}</td>
+        <td class="status-{{status_class}}">{{line_item_status}}</td>
+      </tr>
+      {{/upstream_refs}}
+    </tbody>
+  </table>
+</section>
+{{/has_upstream}}
 
 <section>
   <h2>4. Cross-System Linkages</h2>
@@ -204,8 +230,7 @@
 </section>
 
 <div class="doc-footer">
-  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | NSPL/EPE/DOS/{{seq_padded}}</div>
-  <div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>
+  <div>Confidential | Iqra Quality Services Pvt. Ltd. + Nischay Steels Pvt. Ltd. | NSPL/EPE/SDOS/{{seq_padded}}</div>
 </div>
 
 </body>
